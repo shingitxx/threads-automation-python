@@ -1,0 +1,70 @@
+{
+  "contents": [
+    {
+      "account_id": "ACC001",
+      "id": "CONTENT_001",
+      "main_text": "今からオ〇しようと思うけど、もうしこった〜？🍌おかずいる？？笑笑",
+      "used_count": 0,
+      "use_image": "NO"
+    },
+    {
+      "account_id": "ACCOUNT_002",
+      "id": "CONTENT_002",
+      "main_text": "最近のスマホアプリって種類多すぎて選べないよね🤔\nみんなはどうやって選んでる？",
+      "used_count": 0,
+      "use_image": "NO"
+    },
+    {
+      "account_id": "ACC001",
+      "id": "CONTENT_003",
+      "main_text": "作業効率を10倍にしたツールがあるって聞いたんだけど...\n本当にそんなのある？🤯",
+      "used_count": 0,
+      "use_image": "NO"
+    },
+    {
+      "account_id": "ACCOUNT_002",
+      "id": "CONTENT_004",
+      "main_text": "夜中に見つけた神アプリ...これマジでやばい😱\n使いすぎ注意かも",
+      "used_count": 0,
+      "use_image": "NO"
+    }
+  ],
+  "affiliates": [
+    {
+      "id": "AFF_001",
+      "account_id": "ACC001",
+      "content_id": "CONTENT_001",
+      "app_name": "",
+      "description": "ここに載せてるから好きに見ていいよ❤",
+      "affiliate_url": "https://1link.jp/is001",
+      "call_to_action": ""
+    },
+    {
+      "id": "AFF_002",
+      "account_id": "ACCOUNT_002",
+      "content_id": "CONTENT_002",
+      "app_name": "おすすめアプリ",
+      "description": "ユーザー評価4.8の人気アプリ！",
+      "affiliate_url": "https://example.com/affiliate/app1",
+      "call_to_action": "無料ダウンロードはこちら👆"
+    },
+    {
+      "id": "AFF_003",
+      "account_id": "ACC001",
+      "content_id": "CONTENT_003",
+      "app_name": "効率化アプリ",
+      "description": "作業効率が本当に上がる神アプリ",
+      "affiliate_url": "https://example.com/affiliate/app2",
+      "call_to_action": "今すぐ試してみる🚀"
+    },
+    {
+      "id": "AFF_004",
+      "account_id": "ACCOUNT_002",
+      "content_id": "CONTENT_004",
+      "app_name": "神アプリ",
+      "description": "夜中に見つけた話題のアプリ",
+      "affiliate_url": "https://example.com/affiliate/app3",
+      "call_to_action": "チェックしてみて✨"
+    }
+  ]
+}

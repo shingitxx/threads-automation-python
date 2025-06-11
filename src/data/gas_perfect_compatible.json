@@ -1,0 +1,142 @@
+{
+  "main_contents": {
+    "CONTENT_001": {
+      "id": "CONTENT_001",
+      "account_id": "ACC001",
+      "main_text": "今からオ〇しようと思うけど、もうしこった〜？🍌おかずいる？？笑笑！\nお酒飲んで酔っちゃって脱いでガツガツ腰振るしまちらちゃん店行ってメメントな❤",
+      "usage_count": 13,
+      "replacement_usage": true,
+      "active": true
+    },
+    "CONTENT_002": {
+      "id": "CONTENT_002",
+      "account_id": "ACC001",
+      "main_text": "あ、Switch2買えた人いる？\n買えた人いたら一緒にゲームしたいなー❤",
+      "usage_count": 10,
+      "replacement_usage": false,
+      "active": true
+    },
+    "CONTENT_003": {
+      "id": "CONTENT_003",
+      "account_id": "ACC001",
+      "main_text": "当事間始しまあーす❤\nパセツ脱くたりに。",
+      "usage_count": 10,
+      "replacement_usage": true,
+      "active": true
+    },
+    "CONTENT_004": {
+      "id": "CONTENT_004",
+      "account_id": "ACC001",
+      "main_text": "すごいかい、薄かに定規がけたりい。って思う自分がいて、\n終わってんなってど思うけど...ってもいまんない笑",
+      "usage_count": 12,
+      "replacement_usage": true,
+      "active": true
+    },
+    "CONTENT_005": {
+      "id": "CONTENT_005",
+      "account_id": "ACC001",
+      "main_text": "近くなうらあろう？",
+      "usage_count": 11,
+      "replacement_usage": true,
+      "active": true
+    },
+    "CONTENT_101": {
+      "id": "CONTENT_101",
+      "account_id": "ACCOUNT_002",
+      "main_text": "最近のスマホアプリって種類多すぎて選べないよね🤔\nみんなはどうやって選んでる？",
+      "usage_count": 8,
+      "replacement_usage": true,
+      "active": true
+    },
+    "CONTENT_102": {
+      "id": "CONTENT_102",
+      "account_id": "ACCOUNT_002",
+      "main_text": "夜中に見つけた神アプリ...これマジでやばい😱",
+      "usage_count": 5,
+      "replacement_usage": true,
+      "active": true
+    }
+  },
+  "affiliate_contents": {
+    "AFF_001": {
+      "id": "AFF_001",
+      "account_id": "ACC001",
+      "content_id": "CONTENT_001",
+      "reply_text": "ここに載せてるから好きに見ていいよ❤",
+      "affiliate_url": "https://b-short.link/ZzDGuk",
+      "replacement_usage": true
+    },
+    "AFF_002": {
+      "id": "AFF_002",
+      "account_id": "ACC001",
+      "content_id": "CONTENT_002",
+      "reply_text": "こうちにもあいて❤",
+      "affiliate_url": "https://b-short.link/ZzDGuk",
+      "replacement_usage": true
+    },
+    "AFF_003": {
+      "id": "AFF_003",
+      "account_id": "ACC001",
+      "content_id": "CONTENT_003",
+      "reply_text": "ここに載せてないエッすする動画は❤",
+      "affiliate_url": "https://b-short.link/ZzDGuk",
+      "replacement_usage": true
+    },
+    "AFF_004": {
+      "id": "AFF_004",
+      "account_id": "ACC001",
+      "content_id": "CONTENT_004",
+      "reply_text": "ここで覚せないのはこうちに❤",
+      "affiliate_url": "https://b-short.link/ZzDGuk",
+      "replacement_usage": true
+    },
+    "AFF_005": {
+      "id": "AFF_005",
+      "account_id": "ACC001",
+      "content_id": "CONTENT_005",
+      "reply_text": "過激すぎて...。",
+      "affiliate_url": "https://b-short.link/ZzDGuk",
+      "replacement_usage": true
+    },
+    "AFF_101": {
+      "id": "AFF_101",
+      "account_id": "ACCOUNT_002",
+      "content_id": "CONTENT_101",
+      "reply_text": "こうちにもあいて❤",
+      "affiliate_url": "https://b-short.link/ZzDGuk",
+      "replacement_usage": true
+    },
+    "AFF_102": {
+      "id": "AFF_102",
+      "account_id": "ACCOUNT_002",
+      "content_id": "CONTENT_102",
+      "reply_text": "ここに載せてないエッすする動画は❤",
+      "affiliate_url": "https://b-short.link/ZzDGuk",
+      "replacement_usage": true
+    }
+  },
+  "usage_history": {
+    "CONTENT_002": [
+      {
+        "used_at": "2025-06-11T18:07:18.469259",
+        "account_id": "ACC001",
+        "type": "main_post"
+      }
+    ],
+    "CONTENT_102": [
+      {
+        "used_at": "2025-06-11T18:07:18.470526",
+        "account_id": "ACCOUNT_002",
+        "type": "main_post"
+      }
+    ],
+    "CONTENT_003": [
+      {
+        "used_at": "2025-06-11T18:07:18.471098",
+        "account_id": "ACC001",
+        "type": "main_post"
+      }
+    ]
+  },
+  "last_updated": "2025-06-11T18:07:18.472639"
+}
