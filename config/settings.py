@@ -4,9 +4,29 @@ Threads自動投稿システム - 設定管理
 """
 
 import os
+import logging
 from typing import Dict, List, Optional
 from dataclasses import dataclass
 from pathlib import Path
+
+# dotenvの読み込み
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # .envファイルを自動読み込み
+    print("✅ .env file loaded successfully")
+except ImportError:
+    print("⚠️ python-dotenv not installed, using system environment variables only")
+
+# ログ設定
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler('threads_automation.log')
+    ]
+)
+logger = logging.getLogger('threads-automation')
 
 # プロジェクトルートディレクトリ
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -14,7 +34,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 @dataclass
 class ThreadsConfig:
     """Threads API設定"""
-    api_base: str = "https://graph.threads.net/v1.0"
+    api_base: str = "https://graph.facebook.com/v18.0"
     app_id: str = "2542581129421398"  # 既存GAS版と同じ
     
 @dataclass 
@@ -64,7 +84,16 @@ class DataConfig:
     """データ管理設定"""
     accounts_file: str = "src/data/accounts.json"
     content_file: str = "src/data/content.json"
+    main_csv: str = "main.csv"
+    affiliate_csv: str = "affiliate.csv"
     logs_dir: str = "logs"
+    
+    # エンコーディング候補
+    encoding_candidates: List[str] = None
+    
+    def __post_init__(self):
+        if self.encoding_candidates is None:
+            self.encoding_candidates = ['utf-8', 'shift_jis', 'cp932']
     
     @property
     def accounts_path(self) -> Path:
@@ -119,8 +148,8 @@ class Settings:
         """アカウントのアクセストークンを取得"""
         tokens = {}
         
-        # 既存GAS版のアカウントID形式を継承
-        account_ids = ["ACC001", "ACCOUNT_002", "ACCOUNT_003", "ACCOUNT_004"]
+        # 既存GAS版のアカウントID形式を継承 + ACCOUNT_011を追加
+        account_ids = ["ACC001", "ACCOUNT_002", "ACCOUNT_003", "ACCOUNT_004", "ACCOUNT_011"]
         
         for account_id in account_ids:
             token_key = f"TOKEN_{account_id}"
@@ -157,6 +186,28 @@ class Settings:
 # グローバル設定インスタンス
 settings = Settings()
 
+# 既存GAS版との互換性のための定数 + 他のモジュールとの互換性
+THREADS_API_BASE_URL = settings.threads.api_base
+THREADS_ACCESS_TOKEN = os.getenv('THREADS_ACCESS_TOKEN')
+INSTAGRAM_USER_ID = os.getenv('INSTAGRAM_USER_ID')
+
+# Cloudinary 設定
+CLOUDINARY_CLOUD_NAME = settings.cloudinary.cloud_name
+CLOUDINARY_API_KEY = settings.cloudinary.api_key
+CLOUDINARY_API_SECRET = settings.cloudinary.api_secret
+
+# データファイルパス
+MAIN_CONTENT_CSV = settings.data.main_csv
+AFFILIATE_CONTENT_CSV = settings.data.affiliate_csv
+ACCOUNTS_JSON = settings.data.accounts_file
+CONTENT_CACHE_JSON = settings.data.content_file
+
+# 投稿スケジュール（時間）
+POSTING_SCHEDULE = settings.schedule.posting_hours
+
+# エンコーディング候補
+ENCODING_CANDIDATES = settings.data.encoding_candidates
+
 # 既存GAS版との互換性のための定数
 CONFIG = {
     "THREADS_API_BASE": settings.threads.api_base,
@@ -171,24 +222,3 @@ CONFIG = {
     "MAX_DAILY_POSTS": settings.posting.max_daily_posts,
     "REPLY_DELAY_MINUTES": settings.posting.reply_delay_minutes
 }
-
-if __name__ == "__main__":
-    # 設定テスト
-    print("🔧 設定システムテスト")
-    print(f"✅ Threads API Base: {settings.threads.api_base}")
-    print(f"✅ App ID: {settings.threads.app_id}")
-    print(f"✅ 投稿時間: {settings.schedule.posting_hours}")
-    print(f"✅ 最大投稿数: {settings.posting.max_daily_posts} (無制限)")
-    
-    # 設定検証
-    errors = settings.validate()
-    if errors:
-        print("❌ 設定エラー:")
-        for error in errors:
-            print(f"  - {error}")
-    else:
-        print("✅ 設定は正常です")
-    
-    # ディレクトリ作成
-    settings.setup_directories()
-    print("✅ 必要なディレクトリを作成しました")

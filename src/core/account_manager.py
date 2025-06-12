@@ -11,7 +11,10 @@ from datetime import datetime
 from pathlib import Path
 
 from config.settings import settings
-from src.core.threads_api import Account, threads_api
+from src.core.threads_api import Account, ThreadsAPI
+
+# グローバルインスタンスを作成（既存コードとの互換性のため）
+threads_api = ThreadsAPI()
 
 @dataclass
 class AccountInfo:
@@ -268,39 +271,3 @@ class AccountManager:
 
 # グローバルアカウントマネージャーインスタンス
 account_manager = AccountManager()
-
-if __name__ == "__main__":
-    # アカウント管理システムテスト
-    print("🔧 アカウント管理システムテスト")
-    
-    # アカウント状況表示
-    status = account_manager.get_account_status()
-    print(f"📊 総アカウント数: {status['total_accounts']}")
-    print(f"📊 アクティブアカウント: {status['active_accounts']}")
-    print(f"📊 トークン設定済み: {status['accounts_with_tokens']}")
-    
-    # アカウント詳細表示
-    print("\n👥 アカウント一覧:")
-    for account_data in status['accounts']:
-        token_status = "✅" if account_data['has_token'] else "❌"
-        print(f"  {account_data['id']}: {account_data['username']} "
-              f"({account_data['status']}) トークン: {token_status}")
-    
-    # アクティブアカウント取得テスト
-    active_accounts = account_manager.get_active_accounts()
-    print(f"\n🎯 投稿可能アカウント: {len(active_accounts)}件")
-    
-    for account in active_accounts:
-        print(f"  ✅ {account.username} ({account.id})")
-    
-    # トークンテスト（環境変数設定済みの場合のみ）
-    if active_accounts:
-        print(f"\n🔑 トークン有効性テスト:")
-        test_results = account_manager.test_account_tokens()
-        valid_tokens = sum(test_results.values())
-        print(f"📊 有効なトークン: {valid_tokens}/{len(test_results)}")
-    else:
-        print("\n⚠️ アクセストークンが設定されていません")
-        print("💡 .env ファイルを作成して TOKEN_ACC001, TOKEN_ACCOUNT_002 を設定してください")
-    
-    print("✅ アカウント管理システムテスト完了")

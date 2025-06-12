@@ -1,38 +1,38 @@
-"""
-Threads API 動作確認テスト - スタンドアロン版
-"""
-
-import sys
+# api_test.py
 import os
+import requests
+from dotenv import load_dotenv
 
-# プロジェクトルートをパスに追加
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# 環境変数の読み込み
+load_dotenv()
+
+# トークンとユーザーIDを取得
+token = os.getenv("THREADS_ACCESS_TOKEN")
+user_id = os.getenv("INSTAGRAM_USER_ID")
+
+# APIリクエスト
+url = f"https://graph.facebook.com/v18.0/{user_id}/threads"
+headers = {
+    "Authorization": f"Bearer {token}",
+    "Content-Type": "application/json"
+}
+data = {
+    "text": "APIテスト投稿 - " + str(os.urandom(4).hex()),
+    "access_token": token
+}
+
+print("APIリクエスト送信中...")
+print(f"URL: {url}")
+print(f"ユーザーID: {user_id}")
+print(f"トークン: {token[:10]}...{token[-10:]}")
 
 try:
-    from config.settings import settings
-    print("✅ config.settings インポート成功")
-    
-    print("🔧 Threads API基本テスト")
-    print(f"✅ API Base URL: {settings.threads.api_base}")
-    print(f"✅ App ID: {settings.threads.app_id}")
-    print(f"✅ 投稿時間: {settings.schedule.posting_hours}")
-    print(f"✅ 最大投稿数: {settings.posting.max_daily_posts} (無制限)")
-    
-    # アクセストークン確認
-    tokens = settings.get_account_tokens()
-    if tokens:
-        print(f"✅ 設定済みアカウント: {list(tokens.keys())}")
-    else:
-        print("⚠️ アクセストークンが設定されていません")
-        print("💡 .env ファイルを作成して TOKEN_ACC001 等を設定してください")
-    
-    print("✅ 基本設定テスト完了")
-    
-except ImportError as e:
-    print(f"❌ インポートエラー: {e}")
-    print("📁 現在のディレクトリ:", os.getcwd())
-    print("📁 スクリプトの場所:", os.path.dirname(os.path.abspath(__file__)))
-    print("🔍 sys.path:", sys.path[:3])
-    
+    response = requests.post(url, json=data, headers=headers)
+    response.raise_for_status()
+    result = response.json()
+    print("レスポンス:", response.status_code)
+    print("レスポンス内容:", result)
+    print("投稿成功!" if "id" in result else "投稿失敗")
 except Exception as e:
-    print(f"❌ その他のエラー: {e}")
+    print("エラー:", e)
+    print("レスポンス:", response.text if 'response' in locals() else "なし")

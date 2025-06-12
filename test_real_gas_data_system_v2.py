@@ -539,15 +539,30 @@ class RealGASDataSystemV2:
             main_post_id = f"POST_{random.randint(1000000000, 9999999999)}"
             print(f"   ✅ Main post successful (simulate): {main_post_id}")
         else:
-            # Actual API call here
-            if hasattr(self, 'threads_api') and self.threads_api:
+            # 実際のAPI呼び出し
+            try:
+                from src.core.threads_api import threads_api
+                
+                # アカウント情報の準備
+                account_data = {
+                    "user_id": os.getenv("10068250716584647"),
+                    "username": account_id
+                }
+                
+                # APIを呼び出して実際に投稿
                 print(f"   📡 Calling real Threads API...")
-                # 実際のAPI呼び出しは外部で設定されたAPIとアカウント情報を使用
-                main_post_id = "REAL_POST_ID_HERE"
-                print(f"   ✅ Main post successful: {main_post_id}")
-            else:
-                main_post_id = "REAL_POST_ID_HERE"
-                print(f"   ✅ Main post successful: {main_post_id}")
+                result = threads_api.create_text_post(account_data, main_text)
+                
+                if result and "id" in result:
+                    main_post_id = result["id"]
+                    print(f"   ✅ Main post successful: {main_post_id}")
+                else:
+                    print(f"   ❌ Main post failed: {result}")
+                    return False
+            except Exception as e:
+                print(f"   ❌ Main post error: {e}")
+                main_post_id = f"ERROR_{random.randint(1000000000, 9999999999)}"
+                return False
         
         # 4. Execute reply post
         print(f"⏸️ Reply preparation (5 second wait)...")
@@ -564,14 +579,29 @@ class RealGASDataSystemV2:
             reply_post_id = f"REPLY_{random.randint(1000000000, 9999999999)}"
             print(f"   ✅ Affiliate reply successful (simulate): {reply_post_id}")
         else:
-            # Actual API call here
-            if hasattr(self, 'threads_api') and self.threads_api:
+            # 実際のAPI呼び出し
+            try:
+                from src.core.threads_api import threads_api
+                
+                # アカウント情報の準備
+                account_data = {
+                    "user_id": os.getenv("10068250716584647"),
+                    "username": account_id
+                }
+                
+                # APIを呼び出して実際にリプライを投稿
                 print(f"   📡 Calling real Threads API for reply...")
-                reply_post_id = "REAL_REPLY_ID_HERE"
-                print(f"   ✅ Affiliate reply successful: {reply_post_id}")
-            else:
-                reply_post_id = "REAL_REPLY_ID_HERE"
-                print(f"   ✅ Affiliate reply successful: {reply_post_id}")
+                result = threads_api.create_reply_post(account_data, reply_text, main_post_id)
+                
+                if result and "id" in result:
+                    reply_post_id = result["id"]
+                    print(f"   ✅ Affiliate reply successful: {reply_post_id}")
+                else:
+                    print(f"   ❌ Affiliate reply failed: {result}")
+                    reply_post_id = None
+            except Exception as e:
+                print(f"   ❌ Affiliate reply error: {e}")
+                reply_post_id = None
         
         print(f"🎉 {account_id}: Tree posting complete (Main + Affiliate Reply)")
         

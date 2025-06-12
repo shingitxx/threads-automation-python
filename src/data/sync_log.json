@@ -101,5 +101,56 @@
       "source_file": "affiliate.csv"
     },
     "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-12T22:04:36.393589",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-12T22:15:27.513299",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-12T22:15:31.590165",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
   }
 ]
