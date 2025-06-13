@@ -34,7 +34,8 @@ PROJECT_ROOT = Path(__file__).parent.parent
 @dataclass
 class ThreadsConfig:
     """Threads API設定"""
-    api_base: str = "https://graph.facebook.com/v18.0"
+    # Threads APIの正しいベースURLに更新
+    api_base: str = "https://graph.threads.net/v1.0"
     app_id: str = "2542581129421398"  # 既存GAS版と同じ
     
 @dataclass 
@@ -125,6 +126,8 @@ class Settings:
     def _load_from_env(self):
         """環境変数から設定を読み込み"""
         # Threads API設定
+        if os.getenv("THREADS_API_BASE_URL"):
+            self.threads.api_base = os.getenv("THREADS_API_BASE_URL")
         if os.getenv("THREADS_APP_ID"):
             self.threads.app_id = os.getenv("THREADS_APP_ID")
             
