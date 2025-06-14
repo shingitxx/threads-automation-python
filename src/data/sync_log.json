@@ -1,39 +1,6 @@
 [
   {
     "success": true,
-    "timestamp": "2025-06-11T18:45:10.317498",
-    "main_contents": {
-      "before": 0,
-      "after": 0,
-      "updated": true,
-      "source_file": "auto-generated"
-    },
-    "affiliates": {
-      "before": 0,
-      "after": 0,
-      "updated": false
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-11T18:48:34.256219",
-    "main_contents": {
-      "before": 0,
-      "after": 25,
-      "updated": true,
-      "source_file": "auto-generated"
-    },
-    "affiliates": {
-      "before": 0,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
     "timestamp": "2025-06-11T18:49:41.349091",
     "main_contents": {
       "before": 25,
@@ -139,6 +106,57 @@
   {
     "success": true,
     "timestamp": "2025-06-12T22:15:31.590165",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-13T19:41:37.090815",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-13T20:10:15.547566",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-13T20:15:38.124591",
     "main_contents": {
       "before": 25,
       "after": 25,

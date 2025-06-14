@@ -30,14 +30,11 @@ class DirectPost:
     def post_text(account_id, text):
         """テキスト投稿を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
-            
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": settings.INSTAGRAM_USER_ID
             }
             
             # 投稿実行
@@ -53,14 +50,11 @@ class DirectPost:
     def post_reply(account_id, text, reply_to_id):
         """リプライ投稿を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
-            
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": settings.INSTAGRAM_USER_ID
             }
             
             # リプライ実行
@@ -76,40 +70,31 @@ class DirectPost:
     def post_image(account_id, text, image_url):
         """画像投稿を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
-            
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": settings.INSTAGRAM_USER_ID
             }
             
             # 画像投稿実行
             print(f"📡 APIを呼び出して画像投稿中...")
-            print(f"🔍 画像URL: {image_url}")
-            print(f"🔍 アカウント情報: {account_data}")
             result = threads_api.create_image_post(account_data, text, image_url)
             
             return result
         except Exception as e:
             print(f"❌ 画像投稿エラー: {e}")
-            traceback.print_exc()  # スタックトレース表示
             return None
     
     @staticmethod
     def post_image_reply(account_id, text, image_url, reply_to_id):
         """画像リプライ投稿を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
-            
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": settings.INSTAGRAM_USER_ID
             }
             
             # 画像リプライ実行
@@ -125,14 +110,11 @@ class DirectPost:
     def post_carousel(account_id, text, image_urls):
         """カルーセル投稿（複数画像）を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
-            
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": settings.INSTAGRAM_USER_ID
             }
             
             # カルーセル投稿実行
@@ -214,82 +196,16 @@ class ThreadsAutomationSystem:
             print(main_text[:200] + "..." if len(main_text) > 200 else main_text)
             
             # 4. 画像URLを取得（もし画像付き投稿の場合）
-            # 画像使用フラグの詳細チェック
             image_url = None
-            
-            # メインコンテンツの全キーと値を出力（デバッグ用）
-            print(f"\n🔍 === コンテンツ詳細情報 ===")
-            for key, value in main_content.items():
-                print(f"  {key}: {value}")
-            
-            # 画像使用フラグのチェック（複数の可能なキーと値をサポート）
-            is_image_post = False
-            image_flags = {
-                'use_image': main_content.get('use_image'),
-                '画像使用': main_content.get('画像使用'),
-                'image_use': main_content.get('image_use'),
-                'image_usage': main_content.get('image_usage')
-            }
-            
-            print(f"\n🔍 === 画像使用フラグ詳細 ===")
-            for key, value in image_flags.items():
-                print(f"  {key}: {value}")
-                
-                # 様々な形式の「YES」値に対応
-                if isinstance(value, str) and value.upper() in ['YES', 'TRUE', '1', 'はい', 'Y']:
-                    is_image_post = True
-                    print(f"  ✅ 画像使用フラグ '{key}' が有効: {value}")
-                elif value is True:
-                    is_image_post = True
-                    print(f"  ✅ 画像使用フラグ '{key}' が有効: {value}")
-            
-            print(f"\n🔍 画像投稿判定結果: {is_image_post}")
-            
-            # コンテンツIDの確認
-            content_id = main_content.get('id', '')
-            print(f"🔍 使用するコンテンツID: {content_id}")
-            
-            if is_image_post:
+            if main_content.get('use_image') == 'YES' or main_content.get('use_image') is True:
                 print(f"🖼️ 画像付きコンテンツのため、画像URL取得中...")
-                
-                # imagesディレクトリの存在確認
-                images_dir = "images"
-                if not os.path.exists(images_dir):
-                    print(f"⚠️ 警告: {images_dir} ディレクトリが存在しません。作成します。")
-                    os.makedirs(images_dir)
-                
-                # 対応する画像ファイルの存在確認
-                expected_image_path = os.path.join(images_dir, f"{content_id}_image.jpg")
-                expected_image_path_png = os.path.join(images_dir, f"{content_id}_image.png")
-                expected_image_path_JPG = os.path.join(images_dir, f"{content_id}_image.JPG")
-                
-                print(f"🔍 画像ファイルの検索: {expected_image_path}")
-                print(f"🔍 画像ファイルの検索: {expected_image_path_png}")
-                print(f"🔍 画像ファイルの検索: {expected_image_path_JPG}")
-                
-                if os.path.exists(expected_image_path):
-                    print(f"✅ 画像ファイル発見: {expected_image_path}")
-                elif os.path.exists(expected_image_path_png):
-                    print(f"✅ 画像ファイル発見: {expected_image_path_png}")
-                elif os.path.exists(expected_image_path_JPG):
-                    print(f"✅ 画像ファイル発見: {expected_image_path_JPG}")
-                else:
-                    print(f"⚠️ 警告: コンテンツID {content_id} に対応する画像ファイルが見つかりません")
-                
-                # Cloudinaryから画像URLを取得
-                cloud_result = get_cloudinary_image_url(content_id)
-                
-                # 詳細なデバッグ情報
-                print(f"🔍 Cloudinary結果: {cloud_result}")
+                cloud_result = get_cloudinary_image_url(main_content['id'])
                 
                 if cloud_result and cloud_result.get('success') and cloud_result.get('image_url'):
                     image_url = cloud_result.get('image_url')
                     print(f"✅ 画像URL取得成功: {image_url}")
                 else:
                     print("⚠️ 画像が見つからないか、アップロードに失敗したため、テキストのみで投稿します")
-                    print(f"🔍 詳細: {cloud_result}")
-            else:
-                print("📝 画像なしのテキスト投稿として処理します")
             
             # テストモードの場合はシミュレーションのみ
             if test_mode:
@@ -314,23 +230,14 @@ class ThreadsAutomationSystem:
                     "main_post_id": main_post_id,
                     "reply_post_id": reply_post_id,
                     "main_content": main_content,
-                    "affiliate": affiliate,
-                    "is_image_post": is_image_post,
-                    "image_url": image_url
+                    "affiliate": affiliate
                 }
             
             # 実際の投稿処理
             # 5. メイン投稿を実行（テキストまたは画像）
-            print("\n📤 === 実際の投稿実行 ===")
             if image_url:
-                print(f"🖼️ 画像URL: {image_url} で投稿を実行します")
                 main_result = DirectPost.post_image(account_id, main_text, image_url)
-                if main_result:
-                    print(f"🔍 画像投稿結果: {main_result}")
-                else:
-                    print(f"🔍 画像投稿失敗: None")
             else:
-                print(f"📝 テキストのみで投稿を実行します")
                 main_result = DirectPost.post_text(account_id, main_text)
             
             if not main_result:
@@ -370,9 +277,7 @@ class ThreadsAutomationSystem:
                 "main_post_id": main_post_id,
                 "reply_post_id": reply_post_id,
                 "main_content": main_content,
-                "affiliate": affiliate,
-                "is_image_post": is_image_post,
-                "image_url": image_url
+                "affiliate": affiliate
             }
                 
         except Exception as e:
@@ -406,8 +311,7 @@ class ThreadsAutomationSystem:
                         "account_id": account_id,
                         "status": "success",
                         "main_post_id": result.get("main_post_id") if isinstance(result, dict) else None,
-                        "reply_post_id": result.get("reply_post_id") if isinstance(result, dict) else None,
-                        "is_image_post": result.get("is_image_post") if isinstance(result, dict) else False
+                        "reply_post_id": result.get("reply_post_id") if isinstance(result, dict) else None
                     })
                     print(f"✅ {account_id}: 投稿成功")
                 else:
@@ -439,120 +343,24 @@ class ThreadsAutomationSystem:
         return results
     
     def update_data(self):
-        """データ更新とCloudinary画像アップロード"""
+        """データ更新"""
         print("\n🔄 === データ更新実行 ===")
         
         try:
-            # 1. CSVデータを更新
             result = self.content_system.update_from_csv()
             
             if result and result.get("success"):
                 print("✅ データ更新成功")
                 print(f"📊 メインコンテンツ: {len(self.content_system.main_contents)}件")
                 print(f"📊 アフィリエイト: {len(self.content_system.affiliates)}件")
-                
-                # 2. 画像アップロードを実行
-                print("\n🖼️ === 画像アップロード処理 ===")
-                self.upload_all_images()
-                
                 return True
             else:
                 print("❌ データ更新失敗")
                 return False
-                    
+                
         except Exception as e:
             print(f"❌ データ更新エラー: {e}")
             return False
-    
-    def upload_all_images(self):
-        """全コンテンツの画像をCloudinaryにアップロード"""
-        from src.core.cloudinary_util import get_cloudinary_image_url
-        
-        # 画像付きコンテンツのみを抽出 - 異なるキー名に対応
-        image_contents = []
-        
-        print("🔍 === 画像付きコンテンツのチェック ===")
-        for content_id, content in self.content_system.main_contents.items():
-            print(f"コンテンツID: {content_id} をチェック中...")
-            
-            # 複数の可能なキーと値をチェック
-            is_image_content = False
-            
-            # 様々な形式の画像使用フラグをチェック
-            for key in ['use_image', '画像使用', 'image_use', 'image_usage']:
-                value = content.get(key)
-                if value:
-                    print(f"  {key}: {value}")
-                    
-                    # 様々な「YES」の形式に対応
-                    if isinstance(value, str) and value.upper() in ['YES', 'TRUE', '1', 'はい', 'Y']:
-                        is_image_content = True
-                        print(f"  ✅ 画像使用フラグ '{key}' が有効: {value}")
-                    elif value is True:
-                        is_image_content = True
-                        print(f"  ✅ 画像使用フラグ '{key}' が有効: {value}")
-            
-            if is_image_content:
-                image_contents.append(content)
-                print(f"✅ 画像付きコンテンツとして追加: {content_id}")
-            else:
-                print(f"❌ 画像なしコンテンツ: {content_id}")
-        
-        print(f"\n📊 画像付きコンテンツ: {len(image_contents)}件")
-        
-        # imagesディレクトリの存在確認
-        images_dir = "images"
-        if not os.path.exists(images_dir):
-            print(f"⚠️ {images_dir} ディレクトリが存在しません。作成します。")
-            os.makedirs(images_dir)
-        
-        # 画像ファイルの存在確認
-        print("\n🔍 === 画像ファイルの確認 ===")
-        for content in image_contents:
-            content_id = content.get('id')
-            expected_image_path = os.path.join(images_dir, f"{content_id}_image.jpg")
-            expected_image_path_png = os.path.join(images_dir, f"{content_id}_image.png")
-            expected_image_path_JPG = os.path.join(images_dir, f"{content_id}_image.JPG")
-            
-            if os.path.exists(expected_image_path):
-                print(f"✅ 画像ファイル発見: {expected_image_path}")
-            elif os.path.exists(expected_image_path_png):
-                print(f"✅ 画像ファイル発見: {expected_image_path_png}")
-            elif os.path.exists(expected_image_path_JPG):
-                print(f"✅ 画像ファイル発見: {expected_image_path_JPG}")
-            else:
-                print(f"⚠️ 画像ファイルなし: {content_id}")
-        
-        success_count = 0
-        fail_count = 0
-        
-        # 各コンテンツの画像をアップロード
-        print("\n🚀 === 画像アップロード実行 ===")
-        for content in image_contents:
-            content_id = content.get('id')
-            print(f"🔄 コンテンツ {content_id} の画像処理中...")
-            
-            try:
-                # 画像URLを取得（自動的にアップロードを実行）
-                result = get_cloudinary_image_url(content_id)
-                
-                if result and result.get('success'):
-                    print(f"✅ {content_id}: アップロード成功 - {result.get('image_url')}")
-                    success_count += 1
-                else:
-                    print(f"❌ {content_id}: アップロード失敗")
-                    if result:
-                        print(f"  詳細: {result}")
-                    fail_count += 1
-                    
-            except Exception as e:
-                print(f"❌ {content_id}: エラー - {e}")
-                fail_count += 1
-        
-        # 結果サマリー
-        print(f"\n📊 === 画像アップロード結果 ===")
-        print(f"✅ 成功: {success_count}件")
-        print(f"❌ 失敗: {fail_count}件")
     
     def system_status(self):
         """システム状況確認"""
@@ -591,14 +399,6 @@ class ThreadsAutomationSystem:
                 print(f"  ☁️ Cloudinary接続: ❌ 失敗")
         except Exception:
             print(f"  ☁️ Cloudinary接続: ❌ エラー")
-        
-        # imagesディレクトリ確認
-        images_dir = "images"
-        if os.path.exists(images_dir):
-            image_files = [f for f in os.listdir(images_dir) if f.endswith(('.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'))]
-            print(f"  📁 画像ファイル: {len(image_files)}件")
-        else:
-            print(f"  📁 画像ディレクトリ: ❌ 存在しません")
     
     def test_image_post(self, test_mode=True):
         """画像投稿テスト"""
@@ -617,29 +417,9 @@ class ThreadsAutomationSystem:
             # テスト用コンテンツID（実際のIDを指定）
             content_id = input("📝 テスト用コンテンツID（例: CONTENT_001）を入力: ").strip()
             
-            # 画像ファイル確認
-            images_dir = "images"
-            expected_image_path = os.path.join(images_dir, f"{content_id}_image.jpg")
-            expected_image_path_png = os.path.join(images_dir, f"{content_id}_image.png")
-            expected_image_path_JPG = os.path.join(images_dir, f"{content_id}_image.JPG")
-            
-            if os.path.exists(expected_image_path):
-                print(f"✅ 画像ファイル発見: {expected_image_path}")
-            elif os.path.exists(expected_image_path_png):
-                print(f"✅ 画像ファイル発見: {expected_image_path_png}")
-            elif os.path.exists(expected_image_path_JPG):
-                print(f"✅ 画像ファイル発見: {expected_image_path_JPG}")
-            else:
-                print(f"⚠️ 警告: コンテンツID {content_id} に対応する画像ファイルが見つかりません")
-                continue_anyway = input("画像ファイルがありませんが続行しますか？ (y/n): ")
-                if continue_anyway.lower() != 'y':
-                    return False
-            
             # CloudinaryからURLを取得
             print(f"🔍 コンテンツID {content_id} の画像を検索中...")
             cloud_result = get_cloudinary_image_url(content_id)
-            
-            print(f"🔍 Cloudinary結果: {cloud_result}")
             
             if not cloud_result or not cloud_result.get('success'):
                 print("❌ 画像が見つからないか、アップロードに失敗しました")
@@ -694,29 +474,11 @@ class ThreadsAutomationSystem:
                 print("❌ コンテンツIDが指定されていません")
                 return False
             
-            # 画像ファイル確認
-            images_dir = "images"
-            for content_id in content_ids:
-                expected_image_path = os.path.join(images_dir, f"{content_id}_image.jpg")
-                expected_image_path_png = os.path.join(images_dir, f"{content_id}_image.png")
-                expected_image_path_JPG = os.path.join(images_dir, f"{content_id}_image.JPG")
-                
-                if os.path.exists(expected_image_path):
-                    print(f"✅ 画像ファイル発見: {expected_image_path}")
-                elif os.path.exists(expected_image_path_png):
-                    print(f"✅ 画像ファイル発見: {expected_image_path_png}")
-                elif os.path.exists(expected_image_path_JPG):
-                    print(f"✅ 画像ファイル発見: {expected_image_path_JPG}")
-                else:
-                    print(f"⚠️ 警告: コンテンツID {content_id} に対応する画像ファイルが見つかりません")
-            
             # 各コンテンツIDから画像URLを取得
             image_urls = []
             for content_id in content_ids:
                 print(f"🔍 コンテンツID {content_id} の画像を検索中...")
                 cloud_result = get_cloudinary_image_url(content_id)
-                
-                print(f"🔍 Cloudinary結果: {cloud_result}")
                 
                 if cloud_result and cloud_result.get('success'):
                     image_url = cloud_result.get('image_url')

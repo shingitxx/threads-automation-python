@@ -21,6 +21,8 @@ try:
     from config.settings import settings
     from test_scheduler import posting_scheduler
     from test_real_gas_data_system_v2 import RealGASDataSystemV2
+    # 修正: ThreadsAutomationSystemをインポート
+    from final_system import ThreadsAutomationSystem
     print("✅ スケジューラーシステムの初期化に成功しました")
 except ImportError as e:
     print(f"❌ インポートエラー: {e}")
@@ -80,6 +82,9 @@ def setup_posting_function():
     # RealGASDataSystemV2 を初期化
     gas_system = RealGASDataSystemV2()
     
+    # ThreadsAutomationSystem を初期化
+    threads_system = ThreadsAutomationSystem()
+    
     # 投稿関数を定義
     def posting_function():
         """スケジュール投稿実行関数"""
@@ -103,9 +108,10 @@ def setup_posting_function():
             account_id = accounts[0]
             print(f"👤 アカウント {account_id} で投稿実行")
             
-            result = gas_system.execute_single_account_post(account_id, test_mode=False)
+            # 修正: ThreadsAutomationSystemのsingle_postメソッドを使用
+            result = threads_system.single_post(account_id=account_id, test_mode=False)
             
-            if result and result.get("success"):
+            if result and isinstance(result, dict) and result.get("success"):
                 print(f"✅ 投稿成功: {result.get('main_post_id')}")
                 return {
                     "success": True,
@@ -125,6 +131,8 @@ def setup_posting_function():
                 
         except Exception as e:
             print(f"❌ 投稿エラー: {e}")
+            import traceback
+            traceback.print_exc()  # エラーのスタックトレースを表示
             return {
                 "success": False,
                 "error": str(e),
@@ -171,6 +179,9 @@ def run_immediate_post(post_type):
     # RealGASDataSystemV2 を初期化
     gas_system = RealGASDataSystemV2()
     
+    # ThreadsAutomationSystem を初期化
+    threads_system = ThreadsAutomationSystem()
+    
     # アクティブなアカウント確認
     account_stats = gas_system.get_system_stats()
     accounts = list(account_stats["account_stats"].keys())
@@ -183,12 +194,16 @@ def run_immediate_post(post_type):
     account_id = accounts[0]
     print(f"👤 アカウント {account_id} で{post_type}投稿実行")
     
-    result = gas_system.execute_single_account_post(account_id, test_mode=False)
+    # 修正: ThreadsAutomationSystemのsingle_postメソッドを使用
+    result = threads_system.single_post(account_id=account_id, test_mode=False)
     
-    if result and result.get("success"):
+    if result and isinstance(result, dict) and result.get("success"):
         print(f"✅ 投稿成功！ メインID: {result.get('main_post_id')}")
         if result.get("affiliate"):
             print(f"  アフィリエイト: {result.get('affiliate')['id']}")
+        if result.get("is_image_post"):
+            print(f"  画像投稿: {'はい' if result.get('is_image_post') else 'いいえ'}")
+            print(f"  画像URL: {result.get('image_url')}")
         return True
     else:
         print(f"❌ 投稿失敗: {result}")
@@ -242,6 +257,8 @@ def main():
         
     except Exception as e:
         print(f"❌ 予期しないエラー: {e}")
+        import traceback
+        traceback.print_exc()  # エラーのスタックトレースを表示
         return 1
 
 if __name__ == "__main__":
