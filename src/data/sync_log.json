@@ -1,127 +1,6 @@
 [
   {
     "success": true,
-    "timestamp": "2025-06-11T18:49:41.349091",
-    "main_contents": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "auto-generated"
-    },
-    "affiliates": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": false,
-    "timestamp": "2025-06-11T19:56:20.977920",
-    "main_contents": {
-      "before": 25,
-      "after": 0,
-      "updated": false
-    },
-    "affiliates": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": [
-      "Update error: 'RealGASDataSystemV2' object has no attribute '_update_main_contents_from_csv'"
-    ]
-  },
-  {
-    "success": false,
-    "timestamp": "2025-06-11T19:58:30.457812",
-    "main_contents": {
-      "before": 25,
-      "after": 0,
-      "updated": false
-    },
-    "affiliates": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": [
-      "Update error: 'RealGASDataSystemV2' object has no attribute '_update_main_contents_from_csv'"
-    ]
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-11T20:08:19.723046",
-    "main_contents": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-12T22:04:36.393589",
-    "main_contents": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-12T22:15:27.513299",
-    "main_contents": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-12T22:15:31.590165",
-    "main_contents": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
     "timestamp": "2025-06-13T19:41:37.090815",
     "main_contents": {
       "before": 25,
@@ -157,6 +36,125 @@
   {
     "success": true,
     "timestamp": "2025-06-13T20:15:38.124591",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-15T12:42:36.243219",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-15T12:50:53.568308",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-15T12:54:31.852344",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-15T12:57:03.071693",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-15T12:58:26.003376",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-15T13:00:06.347467",
+    "main_contents": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 25,
+      "after": 25,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-15T13:21:01.063416",
     "main_contents": {
       "before": 25,
       "after": 25,

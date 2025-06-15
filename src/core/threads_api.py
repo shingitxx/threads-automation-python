@@ -356,5 +356,152 @@ class ThreadsAPI:
         """複数画像投稿を作成（2枚画像問題の解決策）"""
         return self.create_carousel_post(account, text, image_urls)
 
+    def create_media_container(self, account, media_type, image_url=None, text=None, is_carousel_item=False):
+        """メディアコンテナを作成（カルーセルアイテム用）"""
+        try:
+            # 1. ユーザーIDを取得
+            user_info = self.get_user_info()
+            if not user_info or 'id' not in user_info:
+                self.logger.error("ユーザーIDの取得に失敗しました")
+                return None
+            
+            user_id = user_info['id']
+            token = self.access_token
+            
+            # 2. メディアコンテナの作成
+            url = f"{self.base_url}/{user_id}/threads"
+            payload = {
+                "media_type": media_type,
+                "is_carousel_item": is_carousel_item
+            }
+            
+            if text:
+                payload["text"] = text
+                
+            if image_url and media_type == "IMAGE":
+                payload["image_url"] = image_url
+            
+            self.logger.info(f"メディアコンテナ作成URL: {url}")
+            self.logger.info(f"ペイロード: {payload}")
+            
+            headers = self.get_headers(token)
+            response = requests.post(url, json=payload, headers=headers)
+            
+            self.logger.info(f"レスポンスステータス: {response.status_code}")
+            self.logger.info(f"レスポンス内容: {response.text}")
+            
+            response.raise_for_status()
+            result = response.json()
+            container_id = result.get("id")
+            
+            if not container_id:
+                self.logger.error("メディアコンテナIDの取得に失敗しました")
+                return None
+            
+            self.logger.info(f"メディアコンテナ作成成功: {container_id}")
+            return container_id
+            
+        except Exception as e:
+            self.logger.error(f"メディアコンテナ作成エラー: {str(e)}")
+            return None
+
+    def create_carousel_container(self, account, children_ids, text=None):
+        """複数のメディアアイテムを含むカルーセルコンテナを作成"""
+        try:
+            # 1. ユーザーIDを取得
+            user_info = self.get_user_info()
+            if not user_info or 'id' not in user_info:
+                self.logger.error("ユーザーIDの取得に失敗しました")
+                return None
+            
+            user_id = user_info['id']
+            token = self.access_token
+            
+            # 2. カルーセルコンテナの作成
+            url = f"{self.base_url}/{user_id}/threads"
+            payload = {
+                "media_type": "CAROUSEL",
+                "children": ",".join(children_ids)
+            }
+            
+            if text:
+                payload["text"] = text
+            
+            self.logger.info(f"カルーセルコンテナ作成URL: {url}")
+            self.logger.info(f"ペイロード: {payload}")
+            
+            headers = self.get_headers(token)
+            response = requests.post(url, json=payload, headers=headers)
+            
+            self.logger.info(f"レスポンスステータス: {response.status_code}")
+            self.logger.info(f"レスポンス内容: {response.text}")
+            
+            response.raise_for_status()
+            result = response.json()
+            container_id = result.get("id")
+            
+            if not container_id:
+                self.logger.error("カルーセルコンテナIDの取得に失敗しました")
+                return None
+            
+            self.logger.info(f"カルーセルコンテナ作成成功: {container_id}")
+            return container_id
+            
+        except Exception as e:
+            self.logger.error(f"カルーセルコンテナ作成エラー: {str(e)}")
+            return None
+
+    def create_true_carousel_post(self, account, text, image_urls):
+        """真のカルーセル投稿（複数画像が1つの投稿内でスワイプ可能）を作成"""
+        try:
+            if not image_urls or len(image_urls) < 2:
+                self.logger.error("カルーセル投稿には少なくとも2つの画像が必要です")
+                return None
+                
+            if len(image_urls) > 10:
+                self.logger.warning("カルーセル投稿は最大10枚までです。最初の10枚のみ使用します。")
+                image_urls = image_urls[:10]
+            
+            # 1. 各画像のメディアコンテナを作成
+            children_ids = []
+            for i, img_url in enumerate(image_urls):
+                self.logger.info(f"カルーセルアイテム {i+1}/{len(image_urls)} 作成中")
+                container_id = self.create_media_container(account, "IMAGE", img_url, is_carousel_item=True)
+                if not container_id:
+                    self.logger.error(f"カルーセルアイテム {i+1} の作成に失敗しました")
+                    return None
+                    
+                children_ids.append(container_id)
+                # APIレート制限対策で少し待機
+                time.sleep(2)
+            
+            # 2. カルーセルコンテナを作成
+            carousel_container_id = self.create_carousel_container(account, children_ids, text)
+            if not carousel_container_id:
+                self.logger.error("カルーセルコンテナの作成に失敗しました")
+                return None
+            
+            # 3. 少し待機してからスレッドを公開
+            self.logger.info("APIの処理を待機中（5秒）...")
+            time.sleep(5)
+            
+            # 4. スレッドの公開
+            publish_url = f"{self.base_url}/{account['user_id']}/threads_publish"
+            publish_payload = {
+                "creation_id": carousel_container_id
+            }
+            
+            headers = self.get_headers()
+            publish_response = requests.post(publish_url, json=publish_payload, headers=headers)
+            publish_response.raise_for_status()
+            publish_result = publish_response.json()
+            
+            self.logger.info(f"カルーセル投稿成功: {publish_result}")
+            return publish_result
+            
+        except Exception as e:
+            self.logger.error(f"カルーセル投稿エラー: {str(e)}")
+            return None
+
 # グローバルインスタンス作成
 threads_api = ThreadsAPI()

@@ -317,3 +317,363 @@
 2025-06-14 16:16:01,119 - threads-automation - INFO - レスポンスステータス: 200
 2025-06-14 16:16:01,119 - threads-automation - INFO - レスポンス内容: {"id":"17952601880974149"}
 2025-06-14 16:16:09,544 - threads-automation - INFO - リプライ投稿成功: {'id': '18076863145850827'}
+2025-06-15 11:38:17,744 - PostingScheduler - INFO - 投稿関数を設定: posting_function
+2025-06-15 11:38:17,745 - PostingScheduler - INFO - スケジュール設定: 02:00
+2025-06-15 11:38:17,745 - PostingScheduler - INFO - スケジュール設定: 05:00
+2025-06-15 11:38:17,746 - PostingScheduler - INFO - スケジュール設定: 08:00
+2025-06-15 11:38:17,746 - PostingScheduler - INFO - スケジュール設定: 12:00
+2025-06-15 11:38:17,746 - PostingScheduler - INFO - スケジュール設定: 17:00
+2025-06-15 11:38:17,746 - PostingScheduler - INFO - スケジュール設定: 20:00
+2025-06-15 11:38:17,746 - PostingScheduler - INFO - スケジュール設定: 22:00
+2025-06-15 11:38:17,746 - PostingScheduler - INFO - スケジュール設定: 00:00
+2025-06-15 12:00:18,825 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_013
+2025-06-15 12:00:20,959 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 12:00:20,959 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 12:00:20,960 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 12:00:20,960 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749956420/threads/CONTENT_013.jpg
+2025-06-15 12:00:23,934 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 12:00:23,935 - threads-automation - INFO - レスポンス内容: {"id":"18062467913333961"}
+2025-06-15 12:00:28,664 - threads-automation - INFO - 画像投稿成功: {'id': '18027106223494867'}
+2025-06-15 12:00:33,919 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 12:00:33,920 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 12:00:33,920 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 12:00:33,921 - threads-automation - INFO - リプライ先ID: 18027106223494867
+2025-06-15 12:00:36,257 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 12:00:36,258 - threads-automation - INFO - レスポンス内容: {"id":"18390023479138005"}
+2025-06-15 12:00:42,191 - threads-automation - INFO - リプライ投稿成功: {'id': '18039321746329244'}
+2025-06-15 12:42:37,585 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_003
+2025-06-15 12:42:39,363 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_004
+2025-06-15 12:42:40,523 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_005
+2025-06-15 12:42:42,226 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_006
+2025-06-15 12:42:43,564 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_007
+2025-06-15 12:42:44,643 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_008
+2025-06-15 12:42:45,656 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_009
+2025-06-15 12:42:46,636 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_010
+2025-06-15 12:42:47,697 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_011
+2025-06-15 12:42:48,629 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_012
+2025-06-15 12:42:50,064 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_015
+2025-06-15 12:42:51,411 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_017
+2025-06-15 12:42:52,437 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_018
+2025-06-15 12:42:53,853 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_019
+2025-06-15 12:42:55,046 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_020
+2025-06-15 12:42:56,141 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_021
+2025-06-15 12:42:57,221 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_023
+2025-06-15 12:42:58,169 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_024
+2025-06-15 12:42:59,073 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_025
+2025-06-15 12:43:27,001 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_001_1
+2025-06-15 12:44:32,672 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-15 12:44:33,022 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 12:44:33,024 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 12:44:33,025 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749813047/threads/CONTENT_001.jpg'}
+2025-06-15 12:44:35,275 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 12:44:35,276 - threads-automation - INFO - レスポンス内容: {"id":"18279714472254059"}
+2025-06-15 12:44:35,278 - threads-automation - INFO - メディアコンテナ作成成功: 18279714472254059
+2025-06-15 12:44:37,293 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-15 12:44:37,564 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 12:44:37,566 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 12:44:37,567 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749959007/threads/CONTENT_001_1.jpg'}
+2025-06-15 12:44:40,040 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 12:44:40,042 - threads-automation - INFO - レスポンス内容: {"id":"18277220878258512"}
+2025-06-15 12:44:40,043 - threads-automation - INFO - メディアコンテナ作成成功: 18277220878258512
+2025-06-15 12:44:42,339 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 12:44:42,341 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 12:44:44,541 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 12:44:44,542 - threads-automation - INFO - レスポンス内容: {"id":"18050182532454364"}
+2025-06-15 12:44:44,543 - threads-automation - INFO - カルーセルコンテナ作成成功: 18050182532454364
+2025-06-15 12:44:44,545 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-15 12:44:52,726 - threads-automation - INFO - カルーセル投稿成功: {'id': '17848394244493470'}
+2025-06-15 12:51:07,475 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 12:51:07,477 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 12:51:07,479 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 12:51:07,480 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958970/threads/CONTENT_015.jpg
+2025-06-15 12:51:10,654 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 12:51:10,656 - threads-automation - INFO - レスポンス内容: {"id":"17862683517351441"}
+2025-06-15 12:51:15,403 - threads-automation - INFO - 画像投稿成功: {'id': '18045280268227618'}
+2025-06-15 12:51:20,809 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 12:51:20,811 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 12:51:20,812 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 12:51:20,813 - threads-automation - INFO - リプライ先ID: 18045280268227618
+2025-06-15 12:51:22,436 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 12:51:22,437 - threads-automation - INFO - レスポンス内容: {"id":"18046607828431646"}
+2025-06-15 12:51:27,404 - threads-automation - INFO - リプライ投稿成功: {'id': '17955805115957765'}
+2025-06-15 13:02:49,955 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:02:49,958 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:02:49,959 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:02:49,960 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958979/threads/CONTENT_025.jpg
+2025-06-15 13:02:49,962 - threads-automation - INFO - ペイロード: {'text': 'これが売れることがおかしいと思わない。すごい国である。', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958979/threads/CONTENT_025.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:03:02,283 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:03:02,285 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:03:02,286 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:03:02,287 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958974/threads/CONTENT_019.jpg
+2025-06-15 13:03:02,288 - threads-automation - INFO - ペイロード: {'text': 'ニトリにペン立て買いに来たらメッチャ笑われた', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958974/threads/CONTENT_019.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:03:13,502 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:03:13,504 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:03:13,505 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:03:13,506 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958973/threads/CONTENT_018.jpg
+2025-06-15 13:03:13,507 - threads-automation - INFO - ペイロード: {'text': '旧札で会計しようと思ったら末尾9Zは\n使わない方がいいと店員に止められたんだけどなんでかわかる？？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958973/threads/CONTENT_018.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:03:23,439 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:03:23,442 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:03:23,443 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:03:23,444 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958970/threads/CONTENT_015.jpg
+2025-06-15 13:03:26,275 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:03:26,276 - threads-automation - INFO - レスポンス内容: {"id":"17848788066459055"}
+2025-06-15 13:03:30,728 - threads-automation - INFO - 画像投稿成功: {'id': '18047567840427182'}
+2025-06-15 13:03:36,140 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:03:36,142 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:03:36,143 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:03:36,144 - threads-automation - INFO - リプライ先ID: 18047567840427182
+2025-06-15 13:03:45,141 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:03:45,142 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:03:45,142 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:03:45,142 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958958/threads/CONTENT_003.jpg
+2025-06-15 13:03:53,509 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:03:53,512 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:03:53,513 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:03:53,514 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958960/threads/CONTENT_004.jpg
+2025-06-15 13:03:53,515 - threads-automation - INFO - ペイロード: {'text': 'パ●ツ脱ぐたびに、\r\n「この匂い…誰かに嗅がせたい」って思う自分がいて、\r\n終わってんなって思うけど…でも止まんない笑', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958960/threads/CONTENT_004.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:03:56,170 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:03:56,171 - threads-automation - INFO - レスポンス内容: {"id":"18034878071374692"}
+2025-06-15 13:04:06,621 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:04:06,623 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:04:06,624 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:04:06,625 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg
+2025-06-15 13:04:06,625 - threads-automation - INFO - ペイロード: {'text': 'ホラーようちえん', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:04:10,783 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:04:10,784 - threads-automation - INFO - レスポンス内容: {"id":"17919865821070512"}
+2025-06-15 13:04:16,029 - threads-automation - INFO - 画像投稿成功: {'id': '18143203816392585'}
+2025-06-15 13:04:21,321 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:04:21,323 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:04:21,325 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:04:21,326 - threads-automation - INFO - リプライ先ID: 18143203816392585
+2025-06-15 13:04:23,347 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:04:23,348 - threads-automation - INFO - レスポンス内容: {"id":"17850210606480168"}
+2025-06-15 13:04:32,154 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:04:32,157 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:04:32,158 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:04:32,159 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg
+2025-06-15 13:04:32,160 - threads-automation - INFO - ペイロード: {'text': 'ホラーようちえん', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:04:34,729 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:04:34,731 - threads-automation - INFO - レスポンス内容: {"id":"18043607792267301"}
+2025-06-15 13:04:39,541 - threads-automation - INFO - 画像投稿成功: {'id': '18053970266367022'}
+2025-06-15 13:04:45,688 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:04:45,689 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:04:45,689 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:04:45,689 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958977/threads/CONTENT_023.jpg
+2025-06-15 13:04:45,689 - threads-automation - INFO - ペイロード: {'text': 'Threadsで出会った人にAF開発された時によく使ってた(*ﾉωﾉ)\n1滴垂らすだけで臭い消えてとてもよかった(*ﾉωﾉ)', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958977/threads/CONTENT_023.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:04:48,842 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:04:48,844 - threads-automation - INFO - レスポンス内容: {"id":"18099079738570643"}
+2025-06-15 13:04:54,194 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:04:54,196 - threads-automation - INFO - 投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:04:54,197 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:04:57,105 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:04:57,106 - threads-automation - INFO - レスポンス内容: {"id":"18102700609550704"}
+2025-06-15 13:05:01,516 - threads-automation - INFO - 投稿成功: {'id': '18073787305938252'}
+2025-06-15 13:05:10,048 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:05:10,051 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:05:10,052 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:05:10,053 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958965/threads/CONTENT_008.jpg
+2025-06-15 13:05:10,054 - threads-automation - INFO - ペイロード: {'text': 'こっちのけんとの母親、懇談会でこちけんのいい所をひとつも言えないで泣き出すのバケモンすぎて笑えない\nなきたいのこちけんだろ', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958965/threads/CONTENT_008.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:05:13,640 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:05:13,641 - threads-automation - INFO - レスポンス内容: {"id":"18101606671553291"}
+2025-06-15 13:05:19,847 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:05:19,849 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:05:19,851 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:05:19,852 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg
+2025-06-15 13:05:19,853 - threads-automation - INFO - ペイロード: {'text': 'ホラーようちえん', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:05:22,586 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:05:22,587 - threads-automation - INFO - レスポンス内容: {"id":"18045454214226492"}
+2025-06-15 13:05:32,992 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:05:32,994 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:05:32,994 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:05:32,994 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg
+2025-06-15 13:05:32,994 - threads-automation - INFO - ペイロード: {'text': 'ホラーようちえん', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:05:36,095 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:05:36,096 - threads-automation - INFO - レスポンス内容: {"id":"18072666251494970"}
+2025-06-15 13:05:42,393 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:05:42,395 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:05:42,397 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:05:42,398 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958970/threads/CONTENT_015.jpg
+2025-06-15 13:05:50,062 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:05:50,065 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:05:50,066 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:05:50,067 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958962/threads/CONTENT_006.jpg
+2025-06-15 13:05:50,068 - threads-automation - INFO - ペイロード: {'text': 'いま日本政府が販売してる古古古米って60kgたった1000円って知ってた？\r\n\r\nしかも元々は家畜のエサなんだって、、、\r\nみんなどう思う？\r\n#古古古米', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958962/threads/CONTENT_006.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:05:54,353 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:05:54,354 - threads-automation - INFO - レスポンス内容: {"id":"17848830438459220"}
+2025-06-15 13:05:58,774 - threads-automation - INFO - 画像投稿成功: {'id': '18066832187319452'}
+2025-06-15 13:06:04,072 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:06:04,074 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:06:04,075 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:06:04,076 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958974/threads/CONTENT_019.jpg
+2025-06-15 13:06:04,076 - threads-automation - INFO - ペイロード: {'text': 'ニトリにペン立て買いに来たらメッチャ笑われた', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958974/threads/CONTENT_019.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:06:11,583 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:06:11,586 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:06:11,587 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:06:11,588 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749813047/threads/CONTENT_001.jpg
+2025-06-15 13:06:15,543 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:06:15,545 - threads-automation - INFO - レスポンス内容: {"id":"18031756778449546"}
+2025-06-15 13:06:20,470 - threads-automation - INFO - 画像投稿成功: {'id': '18101220778484550'}
+2025-06-15 13:06:25,776 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:06:25,777 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:06:25,777 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:06:25,777 - threads-automation - INFO - リプライ先ID: 18101220778484550
+2025-06-15 13:06:27,558 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:06:27,559 - threads-automation - INFO - レスポンス内容: {"id":"18070712050803884"}
+2025-06-15 13:06:32,853 - threads-automation - INFO - リプライ投稿成功: {'id': '18045599411240343'}
+2025-06-15 13:07:26,716 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-15 13:07:26,992 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:07:26,994 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:07:26,995 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749813047/threads/CONTENT_001.jpg'}
+2025-06-15 13:07:30,158 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:07:30,160 - threads-automation - INFO - レスポンス内容: {"id":"17866550328399543"}
+2025-06-15 13:07:30,161 - threads-automation - INFO - メディアコンテナ作成成功: 17866550328399543
+2025-06-15 13:07:32,174 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-15 13:07:32,445 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:07:32,446 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:07:32,447 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749959007/threads/CONTENT_001_1.jpg'}
+2025-06-15 13:07:34,922 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:07:34,923 - threads-automation - INFO - レスポンス内容: {"id":"18046914005421928"}
+2025-06-15 13:07:34,924 - threads-automation - INFO - メディアコンテナ作成成功: 18046914005421928
+2025-06-15 13:07:37,204 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:07:37,206 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:07:39,538 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:07:39,539 - threads-automation - INFO - レスポンス内容: {"id":"18075134218902897"}
+2025-06-15 13:07:39,541 - threads-automation - INFO - カルーセルコンテナ作成成功: 18075134218902897
+2025-06-15 13:07:39,542 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-15 13:07:47,874 - threads-automation - INFO - カルーセル投稿成功: {'id': '18354957064152344'}
+2025-06-15 13:31:30,310 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:31:30,313 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:31:30,314 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:31:30,315 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958976/threads/CONTENT_021.jpg
+2025-06-15 13:31:30,316 - threads-automation - INFO - ペイロード: {'text': '20代が1日でも早く気付くべきことはズバリこれみたい\nみんなはどう思う？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958976/threads/CONTENT_021.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:31:34,038 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:31:34,040 - threads-automation - INFO - レスポンス内容: {"id":"17951774897972021"}
+2025-06-15 13:31:41,660 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:31:41,662 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:31:41,663 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:31:41,664 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958965/threads/CONTENT_008.jpg
+2025-06-15 13:31:41,665 - threads-automation - INFO - ペイロード: {'text': 'こっちのけんとの母親、懇談会でこちけんのいい所をひとつも言えないで泣き出すのバケモンすぎて笑えない\nなきたいのこちけんだろ', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958965/threads/CONTENT_008.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:31:44,075 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:31:44,076 - threads-automation - INFO - レスポンス内容: {"id":"17907214614057784"}
+2025-06-15 13:31:55,241 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:31:55,243 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:31:55,244 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:31:55,245 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958971/threads/CONTENT_017.jpg
+2025-06-15 13:32:15,247 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:32:15,248 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:32:15,248 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:32:15,248 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958958/threads/CONTENT_003.jpg
+2025-06-15 13:32:23,142 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:32:23,145 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:32:23,146 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:32:23,148 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958976/threads/CONTENT_021.jpg
+2025-06-15 13:32:23,149 - threads-automation - INFO - ペイロード: {'text': '20代が1日でも早く気付くべきことはズバリこれみたい\nみんなはどう思う？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958976/threads/CONTENT_021.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:32:31,767 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:32:31,769 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:32:31,771 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:32:31,772 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749881003/threads/CONTENT_016.png
+2025-06-15 13:32:31,773 - threads-automation - INFO - ペイロード: {'text': 'これ分かる人いますか？\n答えは...続きを見る', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749881003/threads/CONTENT_016.png', 'media_type': 'IMAGE'}
+2025-06-15 13:32:40,303 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:32:40,306 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:32:40,307 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:32:40,308 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958973/threads/CONTENT_018.jpg
+2025-06-15 13:32:40,310 - threads-automation - INFO - ペイロード: {'text': '旧札で会計しようと思ったら末尾9Zは\n使わない方がいいと店員に止められたんだけどなんでかわかる？？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958973/threads/CONTENT_018.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:32:47,865 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:32:47,868 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:32:47,869 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:32:47,870 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958976/threads/CONTENT_021.jpg
+2025-06-15 13:32:47,872 - threads-automation - INFO - ペイロード: {'text': '20代が1日でも早く気付くべきことはズバリこれみたい\nみんなはどう思う？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958976/threads/CONTENT_021.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:32:56,190 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:32:56,192 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:32:56,193 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:32:56,194 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958975/threads/CONTENT_020.jpg
+2025-06-15 13:32:56,196 - threads-automation - INFO - ペイロード: {'text': '買ってきた塩をサラサラにする作業毎回楽しい\nと言う投稿に賛否両論の意見が...\nみんなはどう思う？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958975/threads/CONTENT_020.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:33:04,626 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:33:04,628 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:33:04,629 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:33:04,630 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958975/threads/CONTENT_020.jpg
+2025-06-15 13:33:04,630 - threads-automation - INFO - ペイロード: {'text': '買ってきた塩をサラサラにする作業毎回楽しい\nと言う投稿に賛否両論の意見が...\nみんなはどう思う？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958975/threads/CONTENT_020.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:33:11,710 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:33:11,710 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:33:11,710 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:33:11,711 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958964/threads/CONTENT_007.jpg
+2025-06-15 13:33:11,711 - threads-automation - INFO - ペイロード: {'text': '流石にこんなでかけつじゃ運転しんどいよね。', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958964/threads/CONTENT_007.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:33:19,525 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:33:19,527 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:33:19,528 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:33:19,529 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958973/threads/CONTENT_018.jpg
+2025-06-15 13:33:19,530 - threads-automation - INFO - ペイロード: {'text': '旧札で会計しようと思ったら末尾9Zは\n使わない方がいいと店員に止められたんだけどなんでかわかる？？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958973/threads/CONTENT_018.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:33:28,239 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-15 13:33:28,498 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:33:28,500 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:33:28,502 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749813047/threads/CONTENT_001.jpg'}
+2025-06-15 13:33:30,580 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:33:30,581 - threads-automation - INFO - レスポンス内容: {"id":"18350777794154524"}
+2025-06-15 13:33:30,582 - threads-automation - INFO - メディアコンテナ作成成功: 18350777794154524
+2025-06-15 13:33:32,586 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-15 13:33:32,882 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:33:32,883 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:33:32,883 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749959007/threads/CONTENT_001_1.jpg'}
+2025-06-15 13:33:35,333 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:33:35,335 - threads-automation - INFO - レスポンス内容: {"id":"18510290584000869"}
+2025-06-15 13:33:35,336 - threads-automation - INFO - メディアコンテナ作成成功: 18510290584000869
+2025-06-15 13:33:37,601 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:33:37,603 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:33:39,747 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:33:39,748 - threads-automation - INFO - レスポンス内容: {"id":"17934610533047666"}
+2025-06-15 13:33:39,749 - threads-automation - INFO - カルーセルコンテナ作成成功: 17934610533047666
+2025-06-15 13:33:39,751 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-15 13:33:47,462 - threads-automation - INFO - カルーセル投稿成功: {'id': '18282834865254137'}
+2025-06-15 13:37:48,026 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:37:48,028 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:37:48,030 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:37:48,031 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958974/threads/CONTENT_019.jpg
+2025-06-15 13:37:48,031 - threads-automation - INFO - ペイロード: {'text': 'ニトリにペン立て買いに来たらメッチャ笑われた', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958974/threads/CONTENT_019.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:37:55,837 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:37:55,839 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:37:55,840 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:37:55,841 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958968/threads/CONTENT_011.jpg
+2025-06-15 13:37:55,842 - threads-automation - INFO - ペイロード: {'text': 'なんで参政党が無いの？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958968/threads/CONTENT_011.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:38:04,045 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:38:04,047 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:38:04,049 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:38:04,050 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958968/threads/CONTENT_011.jpg
+2025-06-15 13:38:04,051 - threads-automation - INFO - ペイロード: {'text': 'なんで参政党が無いの？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958968/threads/CONTENT_011.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:38:11,533 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:38:11,536 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:38:11,537 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:38:11,537 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958962/threads/CONTENT_006.jpg
+2025-06-15 13:38:11,538 - threads-automation - INFO - ペイロード: {'text': 'いま日本政府が販売してる古古古米って60kgたった1000円って知ってた？\r\n\r\nしかも元々は家畜のエサなんだって、、、\r\nみんなどう思う？\r\n#古古古米', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958962/threads/CONTENT_006.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:38:19,061 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:38:19,064 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:38:19,064 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:38:19,066 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958975/threads/CONTENT_020.jpg
+2025-06-15 13:38:19,066 - threads-automation - INFO - ペイロード: {'text': '買ってきた塩をサラサラにする作業毎回楽しい\nと言う投稿に賛否両論の意見が...\nみんなはどう思う？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958975/threads/CONTENT_020.jpg', 'media_type': 'IMAGE'}
+2025-06-15 13:38:40,644 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-15 13:38:40,909 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:38:40,911 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:38:40,911 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749813047/threads/CONTENT_001.jpg'}
+2025-06-15 13:38:43,506 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:38:43,508 - threads-automation - INFO - レスポンス内容: {"id":"18070212031975219"}
+2025-06-15 13:38:43,509 - threads-automation - INFO - メディアコンテナ作成成功: 18070212031975219
+2025-06-15 13:38:45,517 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-15 13:38:45,757 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:38:45,757 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:38:45,757 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749959007/threads/CONTENT_001_1.jpg'}
+2025-06-15 13:38:47,758 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:38:47,760 - threads-automation - INFO - レスポンス内容: {"id":"18043260329556337"}
+2025-06-15 13:38:47,762 - threads-automation - INFO - メディアコンテナ作成成功: 18043260329556337
+2025-06-15 13:38:50,034 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:38:50,036 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:38:52,547 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:38:52,549 - threads-automation - INFO - レスポンス内容: {"id":"18052881452079912"}
+2025-06-15 13:38:52,550 - threads-automation - INFO - カルーセルコンテナ作成成功: 18052881452079912
+2025-06-15 13:38:52,552 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-15 13:39:01,561 - threads-automation - INFO - カルーセル投稿成功: {'id': '18051979265600473'}
+2025-06-15 13:39:06,858 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-15 13:39:06,859 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-15 13:39:06,859 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-15 13:39:06,859 - threads-automation - INFO - リプライ先ID: 18051979265600473
+2025-06-15 13:39:08,455 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-15 13:39:08,456 - threads-automation - INFO - レスポンス内容: {"id":"18121594912462264"}
+2025-06-15 13:39:14,002 - threads-automation - INFO - リプライ投稿成功: {'id': '17904709788189682'}

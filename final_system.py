@@ -1,6 +1,7 @@
 """
 🎉 Python版Threads自動投稿システム - 最終統合版
-GAS版完全互換 + 画像投稿 + スケジューラー
+GAS版完全互換 + 画像投稿 + 真のカルーセル投稿 + スケジューラー
+✨ 完全自動判定機能付き ✨
 """
 import os
 import sys
@@ -123,7 +124,7 @@ class DirectPost:
     
     @staticmethod
     def post_carousel(account_id, text, image_urls):
-        """カルーセル投稿（複数画像）を直接実行"""
+        """カルーセル投稿（複数画像）を直接実行 - リプライチェーン方式"""
         try:
             # 環境変数から直接ユーザーIDを取得
             instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
@@ -142,6 +143,34 @@ class DirectPost:
             return result
         except Exception as e:
             print(f"❌ カルーセル投稿エラー: {e}")
+            return None
+    
+    @staticmethod
+    def post_true_carousel(account_id, text, image_urls):
+        """真のカルーセル投稿（1つの投稿内で複数画像をスワイプ可能）を直接実行"""
+        try:
+            # 環境変数から直接ユーザーIDを取得
+            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
+            
+            # アカウント情報
+            account_data = {
+                "id": account_id,
+                "username": account_id,
+                "user_id": instagram_user_id
+            }
+            
+            # 真のカルーセル投稿実行
+            print(f"🎠 APIを呼び出して真のカルーセル投稿中...")
+            print(f"🔍 画像数: {len(image_urls)}")
+            for i, url in enumerate(image_urls, 1):
+                print(f"  画像{i}: {url}")
+            
+            result = threads_api.create_true_carousel_post(account_data, text, image_urls)
+            
+            return result
+        except Exception as e:
+            print(f"❌ 真のカルーセル投稿エラー: {e}")
+            traceback.print_exc()
             return None
 
 class ThreadsAutomationSystem:
@@ -172,9 +201,56 @@ class ThreadsAutomationSystem:
         # 最初のアカウントを選択（通常は1つしかないため）
         return list(self.tokens.keys())[0]
     
+    def detect_carousel_images(self, main_content_id):
+        """カルーセル用の複数画像を検出（画像ファイルの存在による自動判定）"""
+        image_urls = []
+        images_dir = "images"
+        
+        print(f"🔍 コンテンツID {main_content_id} の画像を自動検出中...")
+        
+        # メイン画像を取得
+        main_cloud_result = get_cloudinary_image_url(main_content_id)
+        if main_cloud_result and main_cloud_result.get('success'):
+            image_urls.append(main_cloud_result.get('image_url'))
+            print(f"✅ メイン画像: {main_cloud_result.get('image_url')}")
+        else:
+            print(f"❌ メイン画像の取得に失敗: {main_content_id}")
+            return image_urls  # メイン画像がない場合は空のリストを返す
+        
+        # 追加画像を検索（CONTENT_XXX_1, CONTENT_XXX_2 などの形式）
+        for i in range(1, 10):  # 最大9枚の追加画像をチェック
+            additional_id = f"{main_content_id}_{i}"
+            
+            # 物理的なファイルの存在を確認
+            potential_files = [
+                os.path.join(images_dir, f"{additional_id}_image.jpg"),
+                os.path.join(images_dir, f"{additional_id}_image.png"),
+                os.path.join(images_dir, f"{additional_id}_image.JPG"),
+                os.path.join(images_dir, f"{additional_id}_image.PNG")
+            ]
+            
+            file_exists = any(os.path.exists(file) for file in potential_files)
+            if file_exists:
+                print(f"🔍 追加画像ID発見: {additional_id}")
+                add_cloud_result = get_cloudinary_image_url(additional_id)
+                if add_cloud_result and add_cloud_result.get('success'):
+                    image_urls.append(add_cloud_result.get('image_url'))
+                    print(f"✅ 追加画像{i}: {add_cloud_result.get('image_url')}")
+                else:
+                    print(f"⚠️ 追加画像{i}のCloudinary取得失敗: {additional_id}")
+                    break  # 連続した画像が見つからない場合は終了
+            else:
+                break  # ファイルが見つからない場合は終了
+        
+        print(f"📊 検出した画像数: {len(image_urls)}")
+        return image_urls
+    
     def single_post(self, account_id=None, test_mode=False, custom_text=None):
-        """単発投稿実行"""
-        print("\n🎯 === 単発投稿実行 ===")
+        """
+        単発投稿実行 - 完全自動判定版
+        画像ファイルの存在に基づいて自動的に投稿タイプを決定
+        """
+        print("\n🎯 === 単発投稿実行（完全自動判定版） ===")
         
         if not account_id:
             # デフォルトアカウントを使用
@@ -213,92 +289,48 @@ class ThreadsAutomationSystem:
             print(f"📝 メイン投稿テキスト:")
             print(main_text[:200] + "..." if len(main_text) > 200 else main_text)
             
-            # 4. 画像URLを取得（もし画像付き投稿の場合）
-            # 画像使用フラグの詳細チェック
-            image_url = None
-            
-            # メインコンテンツの全キーと値を出力（デバッグ用）
-            print(f"\n🔍 === コンテンツ詳細情報 ===")
-            for key, value in main_content.items():
-                print(f"  {key}: {value}")
-            
-            # 画像使用フラグのチェック（複数の可能なキーと値をサポート）
-            is_image_post = False
-            image_flags = {
-                'use_image': main_content.get('use_image'),
-                '画像使用': main_content.get('画像使用'),
-                'image_use': main_content.get('image_use'),
-                'image_usage': main_content.get('image_usage')
-            }
-            
-            print(f"\n🔍 === 画像使用フラグ詳細 ===")
-            for key, value in image_flags.items():
-                print(f"  {key}: {value}")
-                
-                # 様々な形式の「YES」値に対応
-                if isinstance(value, str) and value.upper() in ['YES', 'TRUE', '1', 'はい', 'Y']:
-                    is_image_post = True
-                    print(f"  ✅ 画像使用フラグ '{key}' が有効: {value}")
-                elif value is True:
-                    is_image_post = True
-                    print(f"  ✅ 画像使用フラグ '{key}' が有効: {value}")
-            
-            print(f"\n🔍 画像投稿判定結果: {is_image_post}")
-            
-            # コンテンツIDの確認
+            # 4. 【重要】画像ファイルの存在による完全自動判定
             content_id = main_content.get('id', '')
-            print(f"🔍 使用するコンテンツID: {content_id}")
+            print(f"\n🔍 使用するコンテンツID: {content_id}")
+            print(f"🤖 画像ファイルの存在を自動チェック中...")
             
-            if is_image_post:
-                print(f"🖼️ 画像付きコンテンツのため、画像URL取得中...")
-                
-                # imagesディレクトリの存在確認
-                images_dir = "images"
-                if not os.path.exists(images_dir):
-                    print(f"⚠️ 警告: {images_dir} ディレクトリが存在しません。作成します。")
-                    os.makedirs(images_dir)
-                
-                # 対応する画像ファイルの存在確認
-                expected_image_path = os.path.join(images_dir, f"{content_id}_image.jpg")
-                expected_image_path_png = os.path.join(images_dir, f"{content_id}_image.png")
-                expected_image_path_JPG = os.path.join(images_dir, f"{content_id}_image.JPG")
-                
-                print(f"🔍 画像ファイルの検索: {expected_image_path}")
-                print(f"🔍 画像ファイルの検索: {expected_image_path_png}")
-                print(f"🔍 画像ファイルの検索: {expected_image_path_JPG}")
-                
-                if os.path.exists(expected_image_path):
-                    print(f"✅ 画像ファイル発見: {expected_image_path}")
-                elif os.path.exists(expected_image_path_png):
-                    print(f"✅ 画像ファイル発見: {expected_image_path_png}")
-                elif os.path.exists(expected_image_path_JPG):
-                    print(f"✅ 画像ファイル発見: {expected_image_path_JPG}")
-                else:
-                    print(f"⚠️ 警告: コンテンツID {content_id} に対応する画像ファイルが見つかりません")
-                
-                # Cloudinaryから画像URLを取得
-                cloud_result = get_cloudinary_image_url(content_id)
-                
-                # 詳細なデバッグ情報
-                print(f"🔍 Cloudinary結果: {cloud_result}")
-                
-                if cloud_result and cloud_result.get('success') and cloud_result.get('image_url'):
-                    image_url = cloud_result.get('image_url')
-                    print(f"✅ 画像URL取得成功: {image_url}")
-                else:
-                    print("⚠️ 画像が見つからないか、アップロードに失敗したため、テキストのみで投稿します")
-                    print(f"🔍 詳細: {cloud_result}")
+            # imagesディレクトリの存在確認
+            images_dir = "images"
+            if not os.path.exists(images_dir):
+                print(f"⚠️ 警告: {images_dir} ディレクトリが存在しません。作成します。")
+                os.makedirs(images_dir)
+            
+            # 画像ファイルの存在チェック（CSVフラグに依存しない）
+            image_urls = self.detect_carousel_images(content_id)
+            
+            # 投稿タイプの自動判定
+            if len(image_urls) > 1:
+                post_type = "真のカルーセル"
+                print(f"🎠 自動判定結果: 真のカルーセル投稿（{len(image_urls)}枚の画像）")
+                for i, url in enumerate(image_urls, 1):
+                    print(f"  画像{i}: {url}")
+            elif len(image_urls) == 1:
+                post_type = "単一画像"
+                print(f"📷 自動判定結果: 単一画像投稿")
+                print(f"  画像: {image_urls[0]}")
             else:
-                print("📝 画像なしのテキスト投稿として処理します")
+                post_type = "テキスト"
+                print(f"📝 自動判定結果: テキストのみ投稿（画像ファイルなし）")
             
             # テストモードの場合はシミュレーションのみ
             if test_mode:
                 main_post_id = f"POST_{random.randint(1000000000, 9999999999)}"
-                if image_url:
-                    print(f"🧪 画像投稿シミュレーション: {image_url}")
-                print(f"✅ メイン投稿成功（シミュレーション）: {main_post_id}")
                 
-                # リプライもシミュレーション
+                if post_type == "真のカルーセル":
+                    print(f"🧪 真のカルーセル投稿シミュレーション: {len(image_urls)}枚")
+                elif post_type == "単一画像":
+                    print(f"🧪 画像投稿シミュレーション: {image_urls[0]}")
+                else:
+                    print(f"🧪 テキスト投稿シミュレーション")
+                
+                print(f"✅ メイン投稿成功（シミュレーション）: {main_post_id} - {post_type}")
+                
+                # リプライもシミュレーション（すべての投稿タイプ）
                 reply_text = self.content_system.format_affiliate_reply_text(affiliate)
                 print(f"💬 リプライテキスト:")
                 print(reply_text[:200] + "..." if len(reply_text) > 200 else reply_text)
@@ -306,7 +338,7 @@ class ThreadsAutomationSystem:
                 reply_post_id = f"REPLY_{random.randint(1000000000, 9999999999)}"
                 print(f"✅ リプライ投稿成功（シミュレーション）: {reply_post_id}")
                 
-                print(f"🎉 {account_id}: ツリー投稿完了（シミュレーション）")
+                print(f"🎉 {account_id}: 投稿完了（シミュレーション）")
                 
                 return {
                     "success": True,
@@ -315,21 +347,24 @@ class ThreadsAutomationSystem:
                     "reply_post_id": reply_post_id,
                     "main_content": main_content,
                     "affiliate": affiliate,
-                    "is_image_post": is_image_post,
-                    "image_url": image_url
+                    "image_urls": image_urls,
+                    "post_type": post_type,
+                    "auto_detected": True
                 }
             
             # 実際の投稿処理
-            # 5. メイン投稿を実行（テキストまたは画像）
             print("\n📤 === 実際の投稿実行 ===")
-            if image_url:
-                print(f"🖼️ 画像URL: {image_url} で投稿を実行します")
-                main_result = DirectPost.post_image(account_id, main_text, image_url)
-                if main_result:
-                    print(f"🔍 画像投稿結果: {main_result}")
-                else:
-                    print(f"🔍 画像投稿失敗: None")
+            
+            if post_type == "真のカルーセル":
+                # 真のカルーセル投稿
+                print(f"🎠 真のカルーセル投稿として {len(image_urls)}枚の画像で投稿を実行します")
+                main_result = DirectPost.post_true_carousel(account_id, main_text, image_urls)
+            elif post_type == "単一画像":
+                # 単一画像投稿
+                print(f"🖼️ 画像URL: {image_urls[0]} で投稿を実行します")
+                main_result = DirectPost.post_image(account_id, main_text, image_urls[0])
             else:
+                # テキストのみ投稿
                 print(f"📝 テキストのみで投稿を実行します")
                 main_result = DirectPost.post_text(account_id, main_text)
             
@@ -338,18 +373,19 @@ class ThreadsAutomationSystem:
                 return False
             
             main_post_id = main_result.get('id')
-            print(f"✅ 投稿成功: {main_post_id}")
+            print(f"✅ {post_type}投稿成功: {main_post_id}")
             
-            # 6. リプライ投稿を準備
+            # リプライ投稿を準備（すべての投稿タイプでアフィリエイトリプライを投稿）
+            
             print(f"⏸️ リプライ準備中（5秒待機）...")
             time.sleep(5)
             
-            # 7. リプライテキストを整形
+            # リプライテキストを整形
             reply_text = self.content_system.format_affiliate_reply_text(affiliate)
             print(f"💬 リプライテキスト:")
             print(reply_text[:200] + "..." if len(reply_text) > 200 else reply_text)
             
-            # 8. リプライ投稿を実行
+            # リプライ投稿を実行
             reply_result = DirectPost.post_reply(account_id, reply_text, main_post_id)
             
             if not reply_result:
@@ -371,8 +407,9 @@ class ThreadsAutomationSystem:
                 "reply_post_id": reply_post_id,
                 "main_content": main_content,
                 "affiliate": affiliate,
-                "is_image_post": is_image_post,
-                "image_url": image_url
+                "image_urls": image_urls,
+                "post_type": post_type,
+                "auto_detected": True
             }
                 
         except Exception as e:
@@ -407,7 +444,8 @@ class ThreadsAutomationSystem:
                         "status": "success",
                         "main_post_id": result.get("main_post_id") if isinstance(result, dict) else None,
                         "reply_post_id": result.get("reply_post_id") if isinstance(result, dict) else None,
-                        "is_image_post": result.get("is_image_post") if isinstance(result, dict) else False
+                        "post_type": result.get("post_type") if isinstance(result, dict) else "unknown",
+                        "auto_detected": result.get("auto_detected") if isinstance(result, dict) else False
                     })
                     print(f"✅ {account_id}: 投稿成功")
                 else:
@@ -465,71 +503,36 @@ class ThreadsAutomationSystem:
             return False
     
     def upload_all_images(self):
-        """全コンテンツの画像をCloudinaryにアップロード"""
+        """全コンテンツの画像をCloudinaryにアップロード（画像ファイル存在ベース）"""
         from src.core.cloudinary_util import get_cloudinary_image_url
         
-        # 画像付きコンテンツのみを抽出 - 異なるキー名に対応
-        image_contents = []
-        
-        print("🔍 === 画像付きコンテンツのチェック ===")
-        for content_id, content in self.content_system.main_contents.items():
-            print(f"コンテンツID: {content_id} をチェック中...")
-            
-            # 複数の可能なキーと値をチェック
-            is_image_content = False
-            
-            # 様々な形式の画像使用フラグをチェック
-            for key in ['use_image', '画像使用', 'image_use', 'image_usage']:
-                value = content.get(key)
-                if value:
-                    print(f"  {key}: {value}")
-                    
-                    # 様々な「YES」の形式に対応
-                    if isinstance(value, str) and value.upper() in ['YES', 'TRUE', '1', 'はい', 'Y']:
-                        is_image_content = True
-                        print(f"  ✅ 画像使用フラグ '{key}' が有効: {value}")
-                    elif value is True:
-                        is_image_content = True
-                        print(f"  ✅ 画像使用フラグ '{key}' が有効: {value}")
-            
-            if is_image_content:
-                image_contents.append(content)
-                print(f"✅ 画像付きコンテンツとして追加: {content_id}")
-            else:
-                print(f"❌ 画像なしコンテンツ: {content_id}")
-        
-        print(f"\n📊 画像付きコンテンツ: {len(image_contents)}件")
+        print("🔍 === 画像ファイルの自動検出とアップロード ===")
         
         # imagesディレクトリの存在確認
         images_dir = "images"
         if not os.path.exists(images_dir):
             print(f"⚠️ {images_dir} ディレクトリが存在しません。作成します。")
             os.makedirs(images_dir)
+            return
         
-        # 画像ファイルの存在確認
-        print("\n🔍 === 画像ファイルの確認 ===")
-        for content in image_contents:
-            content_id = content.get('id')
-            expected_image_path = os.path.join(images_dir, f"{content_id}_image.jpg")
-            expected_image_path_png = os.path.join(images_dir, f"{content_id}_image.png")
-            expected_image_path_JPG = os.path.join(images_dir, f"{content_id}_image.JPG")
-            
-            if os.path.exists(expected_image_path):
-                print(f"✅ 画像ファイル発見: {expected_image_path}")
-            elif os.path.exists(expected_image_path_png):
-                print(f"✅ 画像ファイル発見: {expected_image_path_png}")
-            elif os.path.exists(expected_image_path_JPG):
-                print(f"✅ 画像ファイル発見: {expected_image_path_JPG}")
-            else:
-                print(f"⚠️ 画像ファイルなし: {content_id}")
+        # 画像ファイルを直接検索
+        image_files = []
+        for file in os.listdir(images_dir):
+            if file.endswith(('.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG')):
+                # ファイル名からコンテンツIDを抽出
+                if '_image.' in file:
+                    content_id = file.split('_image.')[0]
+                    image_files.append((content_id, file))
+        
+        print(f"📊 検出した画像ファイル: {len(image_files)}件")
         
         success_count = 0
         fail_count = 0
         
-        # 各コンテンツの画像をアップロード
-        print("\n🚀 === 画像アップロード実行 ===")
-        for content in image_contents:
-            content_id = content.get('id')
+        # 各画像ファイルをアップロード
+        unique_content_ids = list(set([content_id for content_id, _ in image_files]))
+        
+        for content_id in unique_content_ids:
             print(f"🔄 コンテンツ {content_id} の画像処理中...")
             
             try:
@@ -581,6 +584,7 @@ class ThreadsAutomationSystem:
         print(f"  投稿時間: {settings.schedule.posting_hours}")
         print(f"  テストモード: {os.getenv('TEST_MODE', 'False')}")
         print(f"  Cloudinary: 設定済み")
+        print(f"  🤖 自動判定システム: 有効")
         
         # Cloudinary接続テスト
         try:
@@ -597,6 +601,29 @@ class ThreadsAutomationSystem:
         if os.path.exists(images_dir):
             image_files = [f for f in os.listdir(images_dir) if f.endswith(('.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'))]
             print(f"  📁 画像ファイル: {len(image_files)}件")
+            
+            # カルーセル用画像の確認
+            carousel_image_count = 0
+            main_image_count = 0
+            for f in image_files:
+                if '_1_image' in f or '_2_image' in f or '_3_image' in f:
+                    carousel_image_count += 1
+                elif '_image.' in f and not any(x in f for x in ['_1_', '_2_', '_3_']):
+                    main_image_count += 1
+            
+            print(f"  📷 メイン画像: {main_image_count}件")
+            print(f"  🎠 カルーセル用追加画像: {carousel_image_count}件")
+            
+            # 自動判定例の表示
+            print(f"\n🤖 === 自動判定例 ===")
+            content_ids = list(set([f.split('_image.')[0] for f in image_files if '_image.' in f]))[:5]
+            for content_id in content_ids:
+                # このコンテンツIDの画像数をチェック
+                related_files = [f for f in image_files if f.startswith(content_id)]
+                if len(related_files) > 1:
+                    print(f"  {content_id}: 🎠 カルーセル投稿 ({len(related_files)}枚)")
+                else:
+                    print(f"  {content_id}: 📷 単一画像投稿")
         else:
             print(f"  📁 画像ディレクトリ: ❌ 存在しません")
     
@@ -754,6 +781,69 @@ class ThreadsAutomationSystem:
             traceback.print_exc()
             return False
     
+    def test_true_carousel_post(self, test_mode=True):
+        """真のカルーセル投稿テスト（1つの投稿内で複数画像をスワイプ可能）"""
+        try:
+            print("\n🎠 === 真のカルーセル投稿テスト ===")
+            
+            # アカウント選択
+            account_id = self.select_account()
+            if not account_id:
+                print("❌ アカウントが見つかりません")
+                return False
+            
+            # テスト用テキスト
+            test_text = "これは真のカルーセル投稿のテストです🎠📷 #テスト #カルーセル"
+            
+            # メインコンテンツID入力
+            print("📝 メインコンテンツIDを入力してください（例: CONTENT_001）")
+            main_content_id = input("メインコンテンツID: ").strip()
+            
+            if not main_content_id:
+                print("❌ コンテンツIDが指定されていません")
+                return False
+            
+            # カルーセル用画像を検出
+            print("🔍 カルーセル用画像を検索中...")
+            image_urls = self.detect_carousel_images(main_content_id)
+            
+            if len(image_urls) < 2:
+                print(f"⚠️ カルーセル投稿には最低2枚の画像が必要です。検出された画像: {len(image_urls)}枚")
+                if len(image_urls) == 1:
+                    print("単一画像投稿として実行しますか？")
+                    continue_single = input("(y/n): ")
+                    if continue_single.lower() != 'y':
+                        return False
+                else:
+                    return False
+            
+            print(f"📊 検出した画像数: {len(image_urls)}")
+            for i, url in enumerate(image_urls, 1):
+                print(f"  画像{i}: {url}")
+            
+            # 真のカルーセル投稿実行
+            print("🎠 APIを呼び出して真のカルーセル投稿中...")
+            
+            if test_mode:
+                print("🧪 テストモード: 実際には投稿されません")
+                print(f"📝 投稿テキスト: {test_text}")
+                print(f"🖼️ 画像数: {len(image_urls)}")
+                result = {"id": f"test_true_carousel_{int(time.time())}"}
+            else:
+                result = DirectPost.post_true_carousel(account_id, test_text, image_urls)
+            
+            if result:
+                print(f"✅ 真のカルーセル投稿成功: {result.get('id')}")
+                return True
+            else:
+                print("❌ 真のカルーセル投稿失敗")
+                return False
+                
+        except Exception as e:
+            print(f"❌ 真のカルーセル投稿テストエラー: {e}")
+            traceback.print_exc()
+            return False
+    
     def start_scheduler_menu(self):
         """スケジューラーメニュー"""
         print("\n⏰ === スケジューラーシステム ===")
@@ -761,6 +851,7 @@ class ThreadsAutomationSystem:
         print("1. scheduler_system.py の実行")
         print("2. バックグラウンド実行での24時間自動投稿")
         print("3. 投稿時間: [2, 5, 8, 12, 17, 20, 22, 0]時")
+        print("4. 🤖 完全自動判定システム対応")
         
         choice = input("スケジューラーを起動しますか？ (y/n): ")
         if choice.lower() == 'y':
@@ -779,10 +870,12 @@ class ThreadsAutomationSystem:
 ✅ GAS版からの完全移行成功
 ✅ 275件のデータ統合完了  
 ✅ 画像投稿機能実装
+✅ 真のカルーセル投稿機能実装
+✅ 🤖 完全自動判定システム実装
 ✅ スケジューラー機能完成
 ✅ 全自動化システム完成
 
-#Python #自動化 #Threads #開発完了"""
+#Python #自動化 #Threads #開発完了 #カルーセル #AI判定"""
         
         print("📝 完成記念投稿内容:")
         print(celebration_text)
@@ -827,9 +920,10 @@ class ThreadsAutomationSystem:
         while True:
             print("\n" + "="*50)
             print("🎯 Python版Threads自動投稿システム")
+            print("🤖 完全自動判定機能付き")
             print("="*50)
             print("1. 📱 単発投稿（テストモード）")
-            print("2. 🚀 単発投稿（実際の投稿）")
+            print("2. 🚀 単発投稿（実際の投稿）🤖")
             print("3. 👥 全アカウント投稿（テストモード）")
             print("4. 🌟 全アカウント投稿（実際の投稿）")
             print("5. 🔄 データ更新（CSV読み込み）")
@@ -840,11 +934,18 @@ class ThreadsAutomationSystem:
             print("10. 📷 画像投稿テスト（実際の投稿）")
             print("11. 🎠 カルーセル投稿テスト（テストモード）")
             print("12. 🌄 カルーセル投稿テスト（実際の投稿）")
+            print("13. ✨ 真のカルーセル投稿テスト（テストモード）")
+            print("14. 🌈 真のカルーセル投稿テスト（実際の投稿）")
             print("0. 🚪 終了")
+            print("-"*50)
+            print("🤖 項目2は画像ファイルの存在を自動判定します")
+            print("   - 複数画像 → 真のカルーセル投稿")
+            print("   - 単一画像 → 画像投稿")
+            print("   - 画像なし → テキスト投稿")
             print("-"*50)
             
             try:
-                choice = input("選択してください (0-12): ").strip()
+                choice = input("選択してください (0-14): ").strip()
                 
                 if choice == "0":
                     print("👋 システムを終了します")
@@ -852,7 +953,7 @@ class ThreadsAutomationSystem:
                 elif choice == "1":
                     self.single_post(test_mode=True)
                 elif choice == "2":
-                    confirm = input("🚨 実際にThreadsに投稿します。続行しますか？ (y/n): ")
+                    confirm = input("🚨 実際にThreadsに投稿します（自動判定機能付き）。続行しますか？ (y/n): ")
                     if confirm.lower() == 'y':
                         self.single_post(test_mode=False)
                 elif choice == "3":
@@ -881,6 +982,12 @@ class ThreadsAutomationSystem:
                     confirm = input("🚨 実際にカルーセル投稿します。続行しますか？ (y/n): ")
                     if confirm.lower() == 'y':
                         self.test_carousel_post(test_mode=False)
+                elif choice == "13":
+                    self.test_true_carousel_post(test_mode=True)
+                elif choice == "14":
+                    confirm = input("🚨 実際に真のカルーセル投稿します。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.test_true_carousel_post(test_mode=False)
                 else:
                     print("❌ 無効な選択です")
                     
@@ -894,7 +1001,8 @@ def main():
     """メイン実行関数"""
     print("🚀 Python版Threads自動投稿システム")
     print("=" * 50)
-    print("🎉 GAS版完全互換 + 画像投稿 + スケジューラー")
+    print("🎉 GAS版完全互換 + 画像投稿 + 真のカルーセル + スケジューラー")
+    print("🤖 完全自動判定機能付き")
     print("=" * 50)
     
     try:
