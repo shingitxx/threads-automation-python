@@ -677,3 +677,22 @@
 2025-06-15 13:39:08,455 - threads-automation - INFO - レスポンスステータス: 200
 2025-06-15 13:39:08,456 - threads-automation - INFO - レスポンス内容: {"id":"18121594912462264"}
 2025-06-15 13:39:14,002 - threads-automation - INFO - リプライ投稿成功: {'id': '17904709788189682'}
+2025-06-16 09:27:38,953 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_002
+2025-06-16 09:27:45,284 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_001_reply
+2025-06-16 11:13:17,545 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-16 11:13:17,550 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-16 11:13:17,550 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-16 11:13:17,550 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958968/threads/CONTENT_011.jpg
+2025-06-16 11:13:17,551 - threads-automation - INFO - ペイロード: {'text': 'なんで参政党が無いの？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958968/threads/CONTENT_011.jpg', 'media_type': 'IMAGE'}
+2025-06-16 11:13:21,857 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-16 11:13:21,857 - threads-automation - INFO - レスポンス内容: {"id":"18093146872610448"}
+2025-06-16 11:13:27,390 - threads-automation - INFO - 画像投稿成功: {'id': '18072160432787826'}
+2025-06-16 11:13:32,656 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-16 11:13:32,656 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-16 11:13:32,657 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-16 11:13:32,657 - threads-automation - INFO - リプライ先ID: 18072160432787826
+2025-06-16 11:13:34,707 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-16 11:13:34,708 - threads-automation - INFO - レスポンス内容: {"id":"18096771766601437"}
+2025-06-16 11:13:40,547 - threads-automation - INFO - リプライ投稿成功: {'id': '17848913589487265'}
+2025-06-16 12:42:57,888 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_022
+2025-06-16 12:43:40,808 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_022

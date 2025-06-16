@@ -11,8 +11,17 @@ import traceback
 from datetime import datetime
 from typing import Dict, List, Optional
 
+
 # プロジェクトルートをパスに追加
 sys.path.append('.')
+
+# 新規アカウント追加機能のインポート
+try:
+    from account_setup import setup_new_account, verify_account_setup, bulk_setup_accounts
+    ACCOUNT_SETUP_AVAILABLE = True
+except ImportError:
+    ACCOUNT_SETUP_AVAILABLE = False
+    print("⚠️ account_setup.py が見つかりません。新規アカウント追加機能は無効です。")
 
 try:
     from config.settings import settings
@@ -206,7 +215,7 @@ class ThreadsAutomationSystem:
         image_urls = []
         images_dir = "images"
         
-        print(f"🔍 コンテンツID {main_content_id} の画像を自動検出中...")
+        print(f"🔍 カルーセル用画像を検索中...")
         
         # メイン画像を取得
         main_cloud_result = get_cloudinary_image_url(main_content_id)
@@ -936,6 +945,8 @@ class ThreadsAutomationSystem:
             print("12. 🌄 カルーセル投稿テスト（実際の投稿）")
             print("13. ✨ 真のカルーセル投稿テスト（テストモード）")
             print("14. 🌈 真のカルーセル投稿テスト（実際の投稿）")
+            if ACCOUNT_SETUP_AVAILABLE:
+                print("15. 🆕 新規アカウント追加（自動一括追加）")
             print("0. 🚪 終了")
             print("-"*50)
             print("🤖 項目2は画像ファイルの存在を自動判定します")
@@ -945,7 +956,7 @@ class ThreadsAutomationSystem:
             print("-"*50)
             
             try:
-                choice = input("選択してください (0-14): ").strip()
+                choice = input("選択してください (0-15): ").strip()
                 
                 if choice == "0":
                     print("👋 システムを終了します")
@@ -988,6 +999,19 @@ class ThreadsAutomationSystem:
                     confirm = input("🚨 実際に真のカルーセル投稿します。続行しますか？ (y/n): ")
                     if confirm.lower() == 'y':
                         self.test_true_carousel_post(test_mode=False)
+                elif choice == "15" and ACCOUNT_SETUP_AVAILABLE:
+                    print("\n🆕 === 新規アカウント自動一括追加 ===")
+                    print("account_setup.py の accounts_to_add リストからアカウントを追加します")
+                    print("💡 事前に account_setup.py を編集してください")
+                    
+                    confirm = input("アカウント自動一括追加を実行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        # 一括アカウント追加を実行
+                        bulk_setup_accounts()
+                        
+                        # 更新を反映するためにデータを再読み込み
+                        self.update_data()
+                        print("✅ アカウント追加後のデータを更新しました")
                 else:
                     print("❌ 無効な選択です")
                     
@@ -996,6 +1020,7 @@ class ThreadsAutomationSystem:
                 break
             except Exception as e:
                 print(f"❌ エラー: {e}")
+                traceback.print_exc()
 
 def main():
     """メイン実行関数"""

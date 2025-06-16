@@ -7,7 +7,7 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.830892"
   },
   "CONTENT_002": {
     "id": "CONTENT_002",
@@ -17,7 +17,7 @@
     "image_usage": "NO",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.830956"
   },
   "CONTENT_003": {
     "id": "CONTENT_003",
@@ -27,7 +27,7 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831022"
   },
   "CONTENT_004": {
     "id": "CONTENT_004",
@@ -37,17 +37,17 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831083"
   },
   "CONTENT_005": {
     "id": "CONTENT_005",
     "account_id": "ACCOUNT_011",
-    "main_text": "どこ住みですか？\n近くなら会おう？",
+    "main_text": "どこ住みですか？\r\n近くなら会おう？",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831140"
   },
   "CONTENT_006": {
     "id": "CONTENT_006",
@@ -57,7 +57,7 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831198"
   },
   "CONTENT_007": {
     "id": "CONTENT_007",
@@ -67,17 +67,17 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831257"
   },
   "CONTENT_008": {
     "id": "CONTENT_008",
     "account_id": "ACCOUNT_011",
-    "main_text": "こっちのけんとの母親、懇談会でこちけんのいい所をひとつも言えないで泣き出すのバケモンすぎて笑えない\nなきたいのこちけんだろ",
+    "main_text": "こっちのけんとの母親、懇談会でこちけんのいい所をひとつも言えないで泣き出すのバケモンすぎて笑えない\r\nなきたいのこちけんだろ",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831320"
   },
   "CONTENT_009": {
     "id": "CONTENT_009",
@@ -87,17 +87,17 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831382"
   },
   "CONTENT_010": {
     "id": "CONTENT_010",
     "account_id": "ACCOUNT_011",
-    "main_text": "最近気になってる参政党\n子供1人あたり毎月10万給付って公約\n3人いたら毎月30万ってこと😳？\nこれって現実的？",
+    "main_text": "最近気になってる参政党\r\n子供1人あたり毎月10万給付って公約\r\n3人いたら毎月30万ってこと😳？\r\nこれって現実的？",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831441"
   },
   "CONTENT_011": {
     "id": "CONTENT_011",
@@ -107,7 +107,7 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831500"
   },
   "CONTENT_012": {
     "id": "CONTENT_012",
@@ -117,7 +117,7 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831558"
   },
   "CONTENT_013": {
     "id": "CONTENT_013",
@@ -127,7 +127,7 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831633"
   },
   "CONTENT_014": {
     "id": "CONTENT_014",
@@ -137,47 +137,47 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831690"
   },
   "CONTENT_015": {
     "id": "CONTENT_015",
     "account_id": "ACCOUNT_011",
-    "main_text": "ゲームじゃないんだから\n明らかに可笑しいです😂",
+    "main_text": "ゲームじゃないんだから\r\n明らかに可笑しいです😂",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.100420"
+    "updated_at": "2025-06-16T12:48:08.831746"
   },
   "CONTENT_016": {
     "id": "CONTENT_016",
     "account_id": "ACCOUNT_011",
-    "main_text": "これ分かる人いますか？\n答えは...続きを見る",
+    "main_text": "これ分かる人いますか？\r\n答えは...続きを見る",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.831803"
   },
   "CONTENT_017": {
     "id": "CONTENT_017",
     "account_id": "ACCOUNT_011",
-    "main_text": "Googleの入社試験問題らしい。\nわかる人いらっしゃいますか？🤔\n答えはコメント欄に...続きを見る",
+    "main_text": "Googleの入社試験問題らしい。\r\nわかる人いらっしゃいますか？🤔\r\n答えはコメント欄に...続きを見る",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.831860"
   },
   "CONTENT_018": {
     "id": "CONTENT_018",
     "account_id": "ACCOUNT_011",
-    "main_text": "旧札で会計しようと思ったら末尾9Zは\n使わない方がいいと店員に止められたんだけどなんでかわかる？？",
+    "main_text": "旧札で会計しようと思ったら末尾9Zは\r\n使わない方がいいと店員に止められたんだけどなんでかわかる？？",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.831938"
   },
   "CONTENT_019": {
     "id": "CONTENT_019",
@@ -187,47 +187,47 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.832010"
   },
   "CONTENT_020": {
     "id": "CONTENT_020",
     "account_id": "ACCOUNT_011",
-    "main_text": "買ってきた塩をサラサラにする作業毎回楽しい\nと言う投稿に賛否両論の意見が...\nみんなはどう思う？",
+    "main_text": "買ってきた塩をサラサラにする作業毎回楽しい\r\nと言う投稿に賛否両論の意見が...\r\nみんなはどう思う？",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.832067"
   },
   "CONTENT_021": {
     "id": "CONTENT_021",
     "account_id": "ACCOUNT_011",
-    "main_text": "20代が1日でも早く気付くべきことはズバリこれみたい\nみんなはどう思う？",
+    "main_text": "20代が1日でも早く気付くべきことはズバリこれみたい\r\nみんなはどう思う？",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.832124"
   },
   "CONTENT_022": {
     "id": "CONTENT_022",
     "account_id": "ACCOUNT_011",
-    "main_text": "あなたの人生　このリストから3つ\n放棄しなきゃならないとしたら？\nどれ選ぶ？\n1. セ●●ス\n2. 食事\n3. 愛\n4. お金\n5. お酒\n6. タバコ\n7. 音楽",
+    "main_text": "あなたの人生　このリストから3つ\r\n放棄しなきゃならないとしたら？\r\nどれ選ぶ？\r\n1. セ●●ス\r\n2. 食事\r\n3. 愛\r\n4. お金\r\n5. お酒\r\n6. タバコ\r\n7. 音楽",
     "usage_count": 0,
     "image_usage": "NO",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.832185"
   },
   "CONTENT_023": {
     "id": "CONTENT_023",
     "account_id": "ACCOUNT_011",
-    "main_text": "Threadsで出会った人にAF開発された時によく使ってた(*ﾉωﾉ)\n1滴垂らすだけで臭い消えてとてもよかった(*ﾉωﾉ)",
+    "main_text": "Threadsで出会った人にAF開発された時によく使ってた(*ﾉωﾉ)\r\n1滴垂らすだけで臭い消えてとてもよかった(*ﾉωﾉ)",
     "usage_count": 0,
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.832243"
   },
   "CONTENT_024": {
     "id": "CONTENT_024",
@@ -237,7 +237,7 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.832316"
   },
   "CONTENT_025": {
     "id": "CONTENT_025",
@@ -247,6 +247,6 @@
     "image_usage": "YES",
     "active": true,
     "auto_generated": false,
-    "updated_at": "2025-06-15T13:21:01.101420"
+    "updated_at": "2025-06-16T12:48:08.832429"
   }
 }
