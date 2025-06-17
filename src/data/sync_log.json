@@ -1,50 +1,16 @@
 [
   {
     "success": true,
-    "timestamp": "2025-06-16T11:00:03.125776",
+    "timestamp": "2025-06-17T22:48:07.655769",
     "main_contents": {
-      "before": 0,
-      "after": 25,
-      "updated": true,
-      "source_file": "main copy.csv"
-    },
-    "affiliates": {
-      "before": 0,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-16T12:42:17.368356",
-    "main_contents": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "main copy.csv"
-    },
-    "affiliates": {
-      "before": 25,
-      "after": 25,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-16T12:44:35.631059",
-    "main_contents": {
-      "before": 25,
-      "after": 25,
+      "before": 275,
+      "after": 275,
       "updated": true,
       "source_file": "main.csv"
     },
     "affiliates": {
-      "before": 25,
-      "after": 25,
+      "before": 275,
+      "after": 275,
       "updated": true,
       "source_file": "affiliate.csv"
     },
@@ -52,18 +18,154 @@
   },
   {
     "success": true,
-    "timestamp": "2025-06-16T12:48:08.785756",
+    "timestamp": "2025-06-17T22:49:22.379426",
     "main_contents": {
-      "before": 25,
-      "after": 25,
+      "before": 275,
+      "after": 275,
       "updated": true,
       "source_file": "main.csv"
     },
     "affiliates": {
-      "before": 25,
-      "after": 25,
+      "before": 275,
+      "after": 275,
       "updated": true,
       "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-17T22:49:57.825185",
+    "main_contents": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-17T23:03:34.444555",
+    "main_contents": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-17T23:05:36.636414",
+    "main_contents": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-17T23:07:25.265545",
+    "main_contents": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-17T23:08:46.170843",
+    "main_contents": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-17T23:10:35.268017",
+    "main_contents": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-17T23:11:55.073606",
+    "main_contents": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "affiliate.csv"
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-17T23:15:17.680865",
+    "main_contents": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 275,
+      "after": 275,
+      "updated": true,
+      "source_file": "affiliate copy.csv"
     },
     "errors": []
   }

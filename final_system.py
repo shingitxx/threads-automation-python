@@ -11,6 +11,40 @@ import traceback
 from datetime import datetime
 from typing import Dict, List, Optional
 
+# ロガー設定の修正（エンコーディング問題対応）
+import logging
+import io
+
+# Windows環境でのロガーエンコーディング問題を解決
+class EncodingStreamHandler(logging.StreamHandler):
+    def __init__(self, stream=None):
+        if stream is None:
+            stream = sys.stdout
+        super().__init__(stream)
+        
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            stream = self.stream
+            # Windows環境でエンコードできない文字は置換する
+            try:
+                stream.write(msg + self.terminator)
+            except UnicodeEncodeError:
+                # 絵文字を含む場合、安全な文字に置換
+                safe_msg = ''.join(c if ord(c) < 0x10000 else '?' for c in msg)
+                stream.write(safe_msg + self.terminator)
+            self.flush()
+        except Exception:
+            self.handleError(record)
+
+# ロガー設定を上書き
+logger = logging.getLogger('threads-automation')
+for handler in logger.handlers[:]:
+    logger.removeHandler(handler)
+handler = EncodingStreamHandler()
+handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 # プロジェクトルートをパスに追加
 sys.path.append('.')
@@ -40,14 +74,21 @@ class DirectPost:
     def post_text(account_id, text):
         """テキスト投稿を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
+            # アカウント固有のユーザーIDを取得（修正版）
+            user_id_key = f"INSTAGRAM_USER_ID_{account_id}"
+            instagram_user_id = os.getenv(user_id_key, os.getenv("INSTAGRAM_USER_ID"))
+            print(f"DEBUG: アカウント {account_id} のユーザーID: {instagram_user_id}")
+            
+            # アカウント固有のアクセストークンを取得
+            token_key = f"TOKEN_{account_id}"
+            access_token = os.getenv(token_key, os.getenv("THREADS_ACCESS_TOKEN"))
             
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": instagram_user_id,
+                "access_token": access_token
             }
             
             # 投稿実行
@@ -63,14 +104,21 @@ class DirectPost:
     def post_reply(account_id, text, reply_to_id):
         """リプライ投稿を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
+            # アカウント固有のユーザーIDを取得（修正版）
+            user_id_key = f"INSTAGRAM_USER_ID_{account_id}"
+            instagram_user_id = os.getenv(user_id_key, os.getenv("INSTAGRAM_USER_ID"))
+            print(f"DEBUG: アカウント {account_id} のユーザーID: {instagram_user_id}")
+            
+            # アカウント固有のアクセストークンを取得
+            token_key = f"TOKEN_{account_id}"
+            access_token = os.getenv(token_key, os.getenv("THREADS_ACCESS_TOKEN"))
             
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": instagram_user_id,
+                "access_token": access_token
             }
             
             # リプライ実行
@@ -86,14 +134,21 @@ class DirectPost:
     def post_image(account_id, text, image_url):
         """画像投稿を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
+            # アカウント固有のユーザーIDを取得（修正版）
+            user_id_key = f"INSTAGRAM_USER_ID_{account_id}"
+            instagram_user_id = os.getenv(user_id_key, os.getenv("INSTAGRAM_USER_ID"))
+            print(f"DEBUG: アカウント {account_id} のユーザーID: {instagram_user_id}")
+            
+            # アカウント固有のアクセストークンを取得
+            token_key = f"TOKEN_{account_id}"
+            access_token = os.getenv(token_key, os.getenv("THREADS_ACCESS_TOKEN"))
             
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": instagram_user_id,
+                "access_token": access_token
             }
             
             # 画像投稿実行
@@ -112,14 +167,20 @@ class DirectPost:
     def post_image_reply(account_id, text, image_url, reply_to_id):
         """画像リプライ投稿を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
+            # アカウント固有のユーザーIDを取得
+            user_id_key = f"INSTAGRAM_USER_ID_{account_id}"
+            instagram_user_id = os.getenv(user_id_key, os.getenv("INSTAGRAM_USER_ID"))
+            
+            # アカウント固有のアクセストークンを取得
+            token_key = f"TOKEN_{account_id}"
+            access_token = os.getenv(token_key, os.getenv("THREADS_ACCESS_TOKEN"))
             
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": instagram_user_id,
+                "access_token": access_token
             }
             
             # 画像リプライ実行
@@ -136,13 +197,19 @@ class DirectPost:
         """カルーセル投稿（複数画像）を直接実行 - リプライチェーン方式"""
         try:
             # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
+            user_id_key = f"INSTAGRAM_USER_ID_{account_id}"
+            instagram_user_id = os.getenv(user_id_key, os.getenv("INSTAGRAM_USER_ID"))
+            
+            # アカウント固有のアクセストークンを取得
+            token_key = f"TOKEN_{account_id}"
+            access_token = os.getenv(token_key, os.getenv("THREADS_ACCESS_TOKEN"))
             
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": instagram_user_id,
+                "access_token": access_token
             }
             
             # カルーセル投稿実行
@@ -158,14 +225,20 @@ class DirectPost:
     def post_true_carousel(account_id, text, image_urls):
         """真のカルーセル投稿（1つの投稿内で複数画像をスワイプ可能）を直接実行"""
         try:
-            # 環境変数から直接ユーザーIDを取得
-            instagram_user_id = os.getenv("INSTAGRAM_USER_ID")
+            # アカウント固有のユーザーIDを取得
+            user_id_key = f"INSTAGRAM_USER_ID_{account_id}"
+            instagram_user_id = os.getenv(user_id_key, os.getenv("INSTAGRAM_USER_ID"))
+            
+            # アカウント固有のアクセストークンを取得
+            token_key = f"TOKEN_{account_id}"
+            access_token = os.getenv(token_key, os.getenv("THREADS_ACCESS_TOKEN"))
             
             # アカウント情報
             account_data = {
                 "id": account_id,
                 "username": account_id,
-                "user_id": instagram_user_id
+                "user_id": instagram_user_id,
+                "access_token": access_token
             }
             
             # 真のカルーセル投稿実行
@@ -277,11 +350,16 @@ class ThreadsAutomationSystem:
         
         # 通常の投稿処理
         try:
-            # 1. コンテンツを選択
+            # 1. コンテンツを選択 (修正部分)
             main_content = self.content_system.get_random_main_content_for_account(account_id)
             if not main_content:
-                print(f"❌ {account_id}: 利用可能なコンテンツがありません")
-                return False
+                print(f"❌ {account_id}: コンテンツの選択に失敗 - 任意のコンテンツを試行します")
+                # アカウント制限なしで任意のコンテンツを選択
+                if len(self.content_system.main_contents) > 0:
+                    main_content = random.choice(self.content_system.main_contents)
+                else:
+                    print(f"❌ {account_id}: 利用可能なコンテンツがありません")
+                    return False
             
             print(f"📝 選択されたコンテンツ: {main_content['id']} - {main_content['main_text'][:50]}...")
             
@@ -429,6 +507,9 @@ class ThreadsAutomationSystem:
     def all_accounts_post(self, test_mode=False):
         """全アカウント投稿実行"""
         print("\n🚀 === 全アカウント投稿実行 ===")
+        
+        # トークンリストを再読み込み（ここを追加）
+        self.tokens = settings.get_account_tokens()
         
         if not self.tokens:
             print("❌ 利用可能なアカウントがありません")
@@ -580,8 +661,10 @@ class ThreadsAutomationSystem:
         print(f"  メインコンテンツ: {len(self.content_system.main_contents)}件")
         print(f"  アフィリエイト: {len(self.content_system.affiliates)}件")
         
-        # アカウント状況
+        # アカウント状況 - ここを修正
         print(f"\n👥 アカウント状況:")
+        # トークンリストを再読み込み
+        self.tokens = settings.get_account_tokens()
         if self.tokens:
             for account_id in self.tokens.keys():
                 print(f"  ✅ {account_id}: トークン設定済み")
@@ -999,19 +1082,42 @@ class ThreadsAutomationSystem:
                     confirm = input("🚨 実際に真のカルーセル投稿します。続行しますか？ (y/n): ")
                     if confirm.lower() == 'y':
                         self.test_true_carousel_post(test_mode=False)
+                # 15番のメニュー項目（新規アカウント追加）を処理する部分に追加
                 elif choice == "15" and ACCOUNT_SETUP_AVAILABLE:
                     print("\n🆕 === 新規アカウント自動一括追加 ===")
                     print("account_setup.py の accounts_to_add リストからアカウントを追加します")
                     print("💡 事前に account_setup.py を編集してください")
-                    
                     confirm = input("アカウント自動一括追加を実行しますか？ (y/n): ")
                     if confirm.lower() == 'y':
-                        # 一括アカウント追加を実行
-                        bulk_setup_accounts()
-                        
-                        # 更新を反映するためにデータを再読み込み
-                        self.update_data()
-                        print("✅ アカウント追加後のデータを更新しました")
+                        try:
+                            # 一括アカウント追加を実行（リロードして最新のコードを使用）
+                            from importlib import reload
+                            import account_setup
+                            reload(account_setup)  # モジュールを再読み込み
+                            account_setup.bulk_setup_accounts()
+    
+                            # 更新を反映するためにデータを再読み込み
+                            self.update_data()
+                            print("✅ アカウント追加後のデータを更新しました")
+    
+                            # 環境変数ファイル修復の確認と実行 (新規追加部分)
+                            fix_env = input("環境変数ファイルの問題を修復しますか？ (y/n): ")
+                            if fix_env.lower() == 'y':
+                                try:
+                                    # 環境変数修復を実行
+                                    account_setup.fix_all_env_issues()
+                                    print("✅ 環境変数ファイルの修復が完了しました")
+                                except Exception as e:
+                                    print(f"❌ 環境変数修復エラー: {str(e)}")
+                                    
+                            # 環境変数ファイルを整理（オプション）
+                            organize = input("環境変数ファイルを整理しますか？ (y/n): ")
+                            if organize.lower() == 'y':
+                                account_setup.reorganize_env_file()
+    
+                        except Exception as e:
+                            print(f"❌ アカウント追加エラー: {str(e)}")
+                            traceback.print_exc()
                 else:
                     print("❌ 無効な選択です")
                     

@@ -66,14 +66,9 @@ class ThreadsAPI:
     def create_text_post(self, account, text):
         """テキスト投稿を作成"""
         try:
-            # 1. ユーザーIDを取得
-            user_info = self.get_user_info()
-            if not user_info or 'id' not in user_info:
-                self.logger.error("ユーザーIDの取得に失敗しました")
-                return None
-            
-            user_id = user_info['id']
-            token = self.access_token
+            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
+            user_id = account.get("user_id", self.user_id)
+            token = account.get("access_token", self.access_token)
             
             # 2. スレッド（投稿）の作成
             url = f"{self.base_url}/{user_id}/threads"
@@ -122,14 +117,9 @@ class ThreadsAPI:
     def create_reply_post(self, account, text, reply_to_id):
         """リプライ投稿を作成 (GASコードと同じパラメータ名)"""
         try:
-            # 1. ユーザーIDを取得
-            user_info = self.get_user_info()
-            if not user_info or 'id' not in user_info:
-                self.logger.error("ユーザーIDの取得に失敗しました")
-                return None
-            
-            user_id = user_info['id']
-            token = self.access_token
+            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
+            user_id = account.get("user_id", self.user_id)
+            token = account.get("access_token", self.access_token)
             
             # 2. リプライ投稿の作成 - GASコードと同じパラメータ名を使用
             url = f"{self.base_url}/{user_id}/threads"
@@ -180,14 +170,9 @@ class ThreadsAPI:
     def create_image_post(self, account, text, image_url):
         """画像付き投稿を作成"""
         try:
-            # 1. ユーザーIDを取得
-            user_info = self.get_user_info()
-            if not user_info or 'id' not in user_info:
-                self.logger.error("ユーザーIDの取得に失敗しました")
-                return None
-            
-            user_id = user_info['id']
-            token = self.access_token
+            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
+            user_id = account.get("user_id", self.user_id)
+            token = account.get("access_token", self.access_token)
             
             # 2. 画像付きスレッドの作成
             url = f"{self.base_url}/{user_id}/threads"
@@ -238,14 +223,9 @@ class ThreadsAPI:
     def create_image_reply_post(self, account, text, image_url, reply_to_id):
         """画像付きリプライ投稿を作成"""
         try:
-            # 1. ユーザーIDを取得
-            user_info = self.get_user_info()
-            if not user_info or 'id' not in user_info:
-                self.logger.error("ユーザーIDの取得に失敗しました")
-                return None
-            
-            user_id = user_info['id']
-            token = self.access_token
+            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
+            user_id = account.get("user_id", self.user_id)
+            token = account.get("access_token", self.access_token)
             
             # 2. 画像付きリプライの作成 - GASコードと同じパラメータ名を使用
             url = f"{self.base_url}/{user_id}/threads"
@@ -359,14 +339,9 @@ class ThreadsAPI:
     def create_media_container(self, account, media_type, image_url=None, text=None, is_carousel_item=False):
         """メディアコンテナを作成（カルーセルアイテム用）"""
         try:
-            # 1. ユーザーIDを取得
-            user_info = self.get_user_info()
-            if not user_info or 'id' not in user_info:
-                self.logger.error("ユーザーIDの取得に失敗しました")
-                return None
-            
-            user_id = user_info['id']
-            token = self.access_token
+            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
+            user_id = account.get("user_id", self.user_id)
+            token = account.get("access_token", self.access_token)
             
             # 2. メディアコンテナの作成
             url = f"{self.base_url}/{user_id}/threads"
@@ -408,14 +383,9 @@ class ThreadsAPI:
     def create_carousel_container(self, account, children_ids, text=None):
         """複数のメディアアイテムを含むカルーセルコンテナを作成"""
         try:
-            # 1. ユーザーIDを取得
-            user_info = self.get_user_info()
-            if not user_info or 'id' not in user_info:
-                self.logger.error("ユーザーIDの取得に失敗しました")
-                return None
-            
-            user_id = user_info['id']
-            token = self.access_token
+            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
+            user_id = account.get("user_id", self.user_id)
+            token = account.get("access_token", self.access_token)
             
             # 2. カルーセルコンテナの作成
             url = f"{self.base_url}/{user_id}/threads"
@@ -462,6 +432,10 @@ class ThreadsAPI:
                 self.logger.warning("カルーセル投稿は最大10枚までです。最初の10枚のみ使用します。")
                 image_urls = image_urls[:10]
             
+            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
+            user_id = account.get("user_id", self.user_id)
+            token = account.get("access_token", self.access_token)
+            
             # 1. 各画像のメディアコンテナを作成
             children_ids = []
             for i, img_url in enumerate(image_urls):
@@ -486,12 +460,12 @@ class ThreadsAPI:
             time.sleep(5)
             
             # 4. スレッドの公開
-            publish_url = f"{self.base_url}/{account['user_id']}/threads_publish"
+            publish_url = f"{self.base_url}/{user_id}/threads_publish"
             publish_payload = {
                 "creation_id": carousel_container_id
             }
             
-            headers = self.get_headers()
+            headers = self.get_headers(token)
             publish_response = requests.post(publish_url, json=publish_payload, headers=headers)
             publish_response.raise_for_status()
             publish_result = publish_response.json()

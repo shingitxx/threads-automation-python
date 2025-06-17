@@ -696,3 +696,262 @@
 2025-06-16 11:13:40,547 - threads-automation - INFO - リプライ投稿成功: {'id': '17848913589487265'}
 2025-06-16 12:42:57,888 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_022
 2025-06-16 12:43:40,808 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_022
+2025-06-17 08:53:07,000 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:09,131 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:09,834 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:10,532 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:11,562 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:12,213 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:13,355 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:13,795 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:14,832 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:15,627 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:16,111 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:18,176 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:18,947 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:19,386 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:20,189 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:21,314 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:21,809 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:22,730 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:23,669 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:24,649 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:25,310 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:25,896 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:26,714 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:27,139 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:28,042 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 08:53:28,518 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:50,307 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:52,606 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:53,081 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:53,519 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:53,937 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:54,532 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:55,492 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:56,262 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:57,028 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:57,874 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:41:58,723 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:00,757 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:01,167 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:01,577 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:02,512 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:03,311 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:04,631 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:05,615 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:06,549 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:07,689 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:09,333 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:10,481 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:11,064 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:11,654 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:12,234 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 12:42:12,988 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:18,653 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:20,713 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:21,342 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:21,973 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:23,171 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:24,028 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:24,475 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:25,187 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:26,014 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:26,498 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:26,916 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:27,399 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:28,117 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:28,697 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:29,518 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:31,041 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:31,915 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:32,854 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:33,297 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:34,273 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:35,242 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:36,426 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:37,234 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:38,218 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:38,642 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:54:39,783 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:03,623 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:05,975 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:06,811 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:07,237 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:07,872 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:08,511 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:09,002 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:09,428 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:10,224 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:11,052 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:11,828 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:12,273 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:13,269 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:13,857 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:14,640 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:15,064 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:15,842 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:16,653 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:17,480 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:19,330 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:20,351 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:20,810 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:22,019 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:23,531 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:24,502 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:56:25,647 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:13,313 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:15,186 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:15,982 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:16,934 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:17,510 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:18,143 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:18,923 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:19,516 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:20,234 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:20,669 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:21,218 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:22,056 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:22,703 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:23,705 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:24,553 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:25,348 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:26,277 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:27,092 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:27,597 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:28,519 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:29,304 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:29,743 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:30,594 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:31,019 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:32,585 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 19:57:32,982 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 401 - api_secret mismatch
+2025-06-17 21:49:14,585 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-17 21:49:14,586 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-17 21:49:14,587 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-17 21:49:14,587 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg
+2025-06-17 21:49:14,587 - threads-automation - INFO - ペイロード: {'text': 'ホラーようちえん', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg', 'media_type': 'IMAGE'}
+2025-06-17 21:49:21,366 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 21:49:21,367 - threads-automation - INFO - レスポンス内容: {"id":"18027338435678702"}
+2025-06-17 21:49:28,341 - threads-automation - INFO - 画像投稿成功: {'id': '18082405756763694'}
+2025-06-17 21:49:33,723 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-17 21:49:33,723 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-17 21:49:33,724 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-17 21:49:33,724 - threads-automation - INFO - リプライ先ID: 18082405756763694
+2025-06-17 21:49:38,157 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 21:49:38,157 - threads-automation - INFO - レスポンス内容: {"id":"18096070303600845"}
+2025-06-17 21:49:46,199 - threads-automation - INFO - リプライ投稿成功: {'id': '18064978646287356'}
+2025-06-17 21:50:17,071 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-17 21:50:17,072 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-17 21:50:17,072 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-17 21:50:17,073 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958975/threads/CONTENT_020.jpg
+2025-06-17 21:50:17,082 - threads-automation - INFO - ペイロード: {'text': '買ってきた塩をサラサラにする作業毎回楽しい\r\nと言う投稿に賛否両論の意見が...\r\nみんなはどう思う？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958975/threads/CONTENT_020.jpg', 'media_type': 'IMAGE'}
+2025-06-17 21:50:25,443 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 21:50:25,444 - threads-automation - INFO - レスポンス内容: {"id":"18228229171292046"}
+2025-06-17 21:50:32,840 - threads-automation - INFO - 画像投稿成功: {'id': '18057145079199358'}
+2025-06-17 21:50:38,261 - threads-automation - INFO - ユーザー情報取得成功: {'id': '10068250716584647'}
+2025-06-17 21:50:38,261 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-17 21:50:38,262 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-17 21:50:38,262 - threads-automation - INFO - リプライ先ID: 18057145079199358
+2025-06-17 21:50:42,790 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 21:50:42,790 - threads-automation - INFO - レスポンス内容: {"id":"17961176435941831"}
+2025-06-17 21:50:50,856 - threads-automation - INFO - リプライ投稿成功: {'id': '18077860372842085'}
+2025-06-17 22:04:42,727 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-17 22:04:42,728 - threads-automation - INFO - ユーザーID: 24116592981299477
+2025-06-17 22:04:42,729 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg
+2025-06-17 22:04:42,729 - threads-automation - INFO - ペイロード: {'text': 'ホラーようちえん', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749885335/threads/CONTENT_014.jpg', 'media_type': 'IMAGE'}
+2025-06-17 22:04:43,114 - threads-automation - INFO - レスポンスステータス: 400
+2025-06-17 22:04:43,114 - threads-automation - INFO - レスポンス内容: {"error":{"message":"Unsupported post request. Object with ID '24116592981299477' does not exist, cannot be loaded due to missing permissions, or does not support this operation","type":"THApiException","code":100,"error_subcode":33,"fbtrace_id":"AS4Y18GaLy0nhhggxmQwLLb"}}
+2025-06-17 22:04:43,116 - threads-automation - ERROR - 画像投稿エラー: 400 Client Error: Bad Request for url: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-17 22:26:14,853 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_022
+2025-06-17 22:28:30,175 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-17 22:28:30,175 - threads-automation - INFO - ユーザーID: 24116592981299477
+2025-06-17 22:28:30,176 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958976/threads/CONTENT_021.jpg
+2025-06-17 22:28:30,176 - threads-automation - INFO - ペイロード: {'text': '20代が1日でも早く気付くべきことはズバリこれみたい\r\nみんなはどう思う？', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958976/threads/CONTENT_021.jpg', 'media_type': 'IMAGE'}
+2025-06-17 22:28:38,078 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:28:38,078 - threads-automation - INFO - レスポンス内容: {"id":"18048508271614305"}
+2025-06-17 22:28:46,128 - threads-automation - INFO - 画像投稿成功: {'id': '18065830423886538'}
+2025-06-17 22:28:51,140 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-17 22:28:51,141 - threads-automation - INFO - ユーザーID: 24116592981299477
+2025-06-17 22:28:51,141 - threads-automation - INFO - リプライ先ID: 18065830423886538
+2025-06-17 22:28:55,711 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:28:55,711 - threads-automation - INFO - レスポンス内容: {"id":"18015347462548184"}
+2025-06-17 22:29:05,051 - threads-automation - INFO - リプライ投稿成功: {'id': '17929798542062611'}
+2025-06-17 22:29:35,277 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-17 22:29:35,277 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-17 22:29:35,278 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958965/threads/CONTENT_008.jpg
+2025-06-17 22:29:35,278 - threads-automation - INFO - ペイロード: {'text': 'こっちのけんとの母親、懇談会でこちけんのいい所をひとつも言えないで泣き出すのバケモンすぎて笑えない\r\nなきたいのこちけんだろ', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958965/threads/CONTENT_008.jpg', 'media_type': 'IMAGE'}
+2025-06-17 22:29:42,332 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:29:42,332 - threads-automation - INFO - レスポンス内容: {"id":"18102890686549599"}
+2025-06-17 22:29:49,313 - threads-automation - INFO - 画像投稿成功: {'id': '17957401238950973'}
+2025-06-17 22:29:54,316 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-17 22:29:54,316 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-17 22:29:54,317 - threads-automation - INFO - リプライ先ID: 17957401238950973
+2025-06-17 22:29:58,623 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:29:58,624 - threads-automation - INFO - レスポンス内容: {"id":"18032826050418893"}
+2025-06-17 22:30:06,918 - threads-automation - INFO - リプライ投稿成功: {'id': '18055529684357056'}
+2025-06-17 22:51:36,286 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_022
+2025-06-17 22:55:35,766 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-17 22:55:35,766 - threads-automation - INFO - ユーザーID: 24116592981299477
+2025-06-17 22:55:35,766 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958966/threads/CONTENT_009.jpg
+2025-06-17 22:55:35,767 - threads-automation - INFO - ペイロード: {'text': '毒親育ちの共通認識', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958966/threads/CONTENT_009.jpg', 'media_type': 'IMAGE'}
+2025-06-17 22:55:42,818 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:55:42,818 - threads-automation - INFO - レスポンス内容: {"id":"18058511216336175"}
+2025-06-17 22:55:49,886 - threads-automation - INFO - 画像投稿成功: {'id': '18090904972712775'}
+2025-06-17 22:55:54,892 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-17 22:55:54,892 - threads-automation - INFO - ユーザーID: 24116592981299477
+2025-06-17 22:55:54,893 - threads-automation - INFO - リプライ先ID: 18090904972712775
+2025-06-17 22:56:00,483 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:56:00,484 - threads-automation - INFO - レスポンス内容: {"id":"17925774797964279"}
+2025-06-17 22:56:13,685 - threads-automation - INFO - リプライ投稿成功: {'id': '18071685748797640'}
+2025-06-17 22:56:43,925 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-17 22:56:43,925 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-17 22:56:43,926 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958970/threads/CONTENT_015.jpg
+2025-06-17 22:56:51,376 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:56:51,377 - threads-automation - INFO - レスポンス内容: {"id":"17850396906481342"}
+2025-06-17 22:56:58,120 - threads-automation - INFO - 画像投稿成功: {'id': '18089156692628816'}
+2025-06-17 22:57:03,131 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-17 22:57:03,132 - threads-automation - INFO - ユーザーID: 10068250716584647
+2025-06-17 22:57:03,132 - threads-automation - INFO - リプライ先ID: 18089156692628816
+2025-06-17 22:57:07,639 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:57:07,639 - threads-automation - INFO - レスポンス内容: {"id":"17881357410336670"}
+2025-06-17 22:57:14,910 - threads-automation - INFO - リプライ投稿成功: {'id': '18012413249573959'}
+2025-06-17 22:57:45,158 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/CONTENT_022
+2025-06-17 22:57:45,167 - threads-automation - INFO - 投稿URL: https://graph.threads.net/v1.0/9926872104055991/threads
+2025-06-17 22:57:45,167 - threads-automation - INFO - ユーザーID: 9926872104055991
+2025-06-17 22:57:45,167 - threads-automation - INFO - ペイロード: {'text': 'あなたの人生\u3000このリストから3つ\r\n放棄しなきゃならないとしたら？\r\nどれ選ぶ？\r\n1. セ●●ス\r\n2. 食事\r\n3. 愛\r\n4. お金\r\n5. お酒\r\n6. タバコ\r\n7. 音楽', 'media_type': 'TEXT'}
+2025-06-17 22:57:49,849 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:57:49,849 - threads-automation - INFO - レスポンス内容: {"id":"17890533108266344"}
+2025-06-17 22:57:56,944 - threads-automation - INFO - 投稿成功: {'id': '17851985016470625'}
+2025-06-17 22:58:01,947 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/9926872104055991/threads
+2025-06-17 22:58:01,947 - threads-automation - INFO - ユーザーID: 9926872104055991
+2025-06-17 22:58:01,948 - threads-automation - INFO - リプライ先ID: 17851985016470625
+2025-06-17 22:58:06,497 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:58:06,498 - threads-automation - INFO - レスポンス内容: {"id":"18068881502075873"}
+2025-06-17 22:58:15,522 - threads-automation - INFO - リプライ投稿成功: {'id': '18281682097255151'}
+2025-06-17 22:58:45,851 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/23887572274188622/threads
+2025-06-17 22:58:45,851 - threads-automation - INFO - ユーザーID: 23887572274188622
+2025-06-17 22:58:45,851 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958971/threads/CONTENT_017.jpg
+2025-06-17 22:58:53,057 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:58:53,058 - threads-automation - INFO - レスポンス内容: {"id":"18095186389581528"}
+2025-06-17 22:58:59,955 - threads-automation - INFO - 画像投稿成功: {'id': '18028387124484898'}
+2025-06-17 22:59:04,957 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/23887572274188622/threads
+2025-06-17 22:59:04,957 - threads-automation - INFO - ユーザーID: 23887572274188622
+2025-06-17 22:59:04,958 - threads-automation - INFO - リプライ先ID: 18028387124484898
+2025-06-17 22:59:09,696 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:59:09,696 - threads-automation - INFO - レスポンス内容: {"id":"18083440522690938"}
+2025-06-17 22:59:16,765 - threads-automation - INFO - リプライ投稿成功: {'id': '18312088939241724'}
+2025-06-17 22:59:46,997 - threads-automation - INFO - 画像投稿URL: https://graph.threads.net/v1.0/24112122328393306/threads
+2025-06-17 22:59:46,997 - threads-automation - INFO - ユーザーID: 24112122328393306
+2025-06-17 22:59:46,997 - threads-automation - INFO - 画像URL: https://res.cloudinary.com/duu2ybdru/image/upload/v1749958964/threads/CONTENT_007.jpg
+2025-06-17 22:59:46,997 - threads-automation - INFO - ペイロード: {'text': '流石にこんなでかけつじゃ運転しんどいよね。', 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1749958964/threads/CONTENT_007.jpg', 'media_type': 'IMAGE'}
+2025-06-17 22:59:53,571 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 22:59:53,572 - threads-automation - INFO - レスポンス内容: {"id":"18060060034975864"}
+2025-06-17 23:00:00,647 - threads-automation - INFO - 画像投稿成功: {'id': '18138936409409356'}
+2025-06-17 23:00:05,649 - threads-automation - INFO - リプライURL: https://graph.threads.net/v1.0/24112122328393306/threads
+2025-06-17 23:00:05,650 - threads-automation - INFO - ユーザーID: 24112122328393306
+2025-06-17 23:00:05,650 - threads-automation - INFO - リプライ先ID: 18138936409409356
+2025-06-17 23:00:05,650 - threads-automation - INFO - ペイロード: {'text': 'こんな私でもいい人は...\nhttps://b-short.link/ZzDGuk', 'media_type': 'TEXT', 'reply_to_id': '18138936409409356'}
+2025-06-17 23:00:10,131 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-17 23:00:10,132 - threads-automation - INFO - レスポンス内容: {"id":"18058214606253043"}
+2025-06-17 23:00:17,812 - threads-automation - INFO - リプライ投稿成功: {'id': '18094874728600616'}

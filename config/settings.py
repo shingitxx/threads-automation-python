@@ -147,18 +147,16 @@ class Settings:
         if os.getenv("DEBUG_MODE"):
             self.random.debug_mode = os.getenv("DEBUG_MODE").lower() == "true"
     
-    def get_account_tokens(self) -> Dict[str, str]:
-        """アカウントのアクセストークンを取得"""
+    def get_account_tokens(self):
+        """アカウントトークンを環境変数から取得"""
         tokens = {}
-        
-        # 既存GAS版のアカウントID形式を継承 + ACCOUNT_011を追加
-        account_ids = ["ACC001", "ACCOUNT_002", "ACCOUNT_003", "ACCOUNT_004", "ACCOUNT_011"]
-        
-        for account_id in account_ids:
-            token_key = f"TOKEN_{account_id}"
-            if os.getenv(token_key):
-                tokens[account_id] = os.getenv(token_key)
-                
+    
+        # 環境変数から TOKEN_ACCOUNT_ で始まる変数を検索
+        for key, value in os.environ.items():
+            if key.startswith("TOKEN_ACCOUNT_"):
+                account_id = key.replace("TOKEN_ACCOUNT_", "")
+                tokens[f"ACCOUNT_{account_id}"] = value
+    
         return tokens
     
     def setup_directories(self):

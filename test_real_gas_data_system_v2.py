@@ -190,7 +190,9 @@ class RealGASDataSystemV2:
                         'updated_at': datetime.now().isoformat()
                     }
                     
-                    main_contents[content_id] = content_data
+                    # 修正: アカウントIDとコンテンツIDの組み合わせをキーとして使用
+                    unique_key = f"{account_id}_{content_id}"
+                    main_contents[unique_key] = content_data
                     processed_count += 1
                     
                 except Exception as e:
@@ -278,7 +280,9 @@ class RealGASDataSystemV2:
                     continue
                 
                 # Create affiliate
-                self.affiliates[str(affiliate_id)] = {
+                # 修正: アカウントIDとアフィリエイトIDの組み合わせをキーとして使用
+                unique_key = f"{account_id}_{affiliate_id}"
+                self.affiliates[unique_key] = {
                     "id": str(affiliate_id),
                     "account_id": str(account_id) if account_id else "",
                     "content_id": str(content_id) if content_id else "",
@@ -342,7 +346,9 @@ class RealGASDataSystemV2:
                 else:
                     main_text = f"Recommended content 📱\nCheck it out!\n\n※Auto-generated from affiliate data"
             
-            self.main_contents[content_id] = {
+            # 修正: アカウントIDとコンテンツIDの組み合わせをキーとして使用
+            unique_key = f"{account_id}_{content_id}"
+            self.main_contents[unique_key] = {
                 "id": content_id,
                 "account_id": account_id,
                 "main_text": main_text,
