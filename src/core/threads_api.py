@@ -142,27 +142,11 @@ class ThreadsAPI:
             
             response.raise_for_status()
             result = response.json()
-            creation_id = result.get("id")
             
-            if not creation_id:
-                self.logger.error("リプライ投稿IDの取得に失敗しました")
-                return None
+            # 修正: threads_publishを呼び出さずに直接結果を返す
+            self.logger.info(f"リプライ投稿成功: {result}")
+            return result
             
-            # 3. スレッドの公開
-            publish_url = f"{self.base_url}/{user_id}/threads_publish"
-            publish_payload = {
-                "creation_id": creation_id
-            }
-            
-            # 少し待機（API制限対策）
-            time.sleep(2)
-            
-            publish_response = requests.post(publish_url, json=publish_payload, headers=headers)
-            publish_response.raise_for_status()
-            publish_result = publish_response.json()
-            
-            self.logger.info(f"リプライ投稿成功: {publish_result}")
-            return publish_result
         except Exception as e:
             self.logger.error(f"リプライ投稿エラー: {str(e)}")
             return None

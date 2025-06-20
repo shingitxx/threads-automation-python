@@ -1,171 +1,161 @@
 [
   {
     "success": true,
-    "timestamp": "2025-06-17T22:48:07.655769",
+    "timestamp": "2025-06-19T21:19:03.757188",
     "main_contents": {
-      "before": 275,
-      "after": 275,
+      "before": 266,
+      "after": 266,
       "updated": true,
       "source_file": "main.csv"
     },
     "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
+      "before": 0,
+      "after": 0,
+      "updated": false
     },
     "errors": []
   },
   {
     "success": true,
-    "timestamp": "2025-06-17T22:49:22.379426",
+    "timestamp": "2025-06-19T21:20:26.962964",
     "main_contents": {
-      "before": 275,
-      "after": 275,
+      "before": 0,
+      "after": 266,
       "updated": true,
       "source_file": "main.csv"
     },
     "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
+      "before": 0,
+      "after": 0,
+      "updated": false
     },
     "errors": []
   },
   {
     "success": true,
-    "timestamp": "2025-06-17T22:49:57.825185",
+    "timestamp": "2025-06-20T08:13:09.700562",
     "main_contents": {
-      "before": 275,
-      "after": 275,
+      "before": 266,
+      "after": 266,
       "updated": true,
       "source_file": "main.csv"
     },
     "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
+      "before": 0,
+      "after": 0,
+      "updated": false
     },
     "errors": []
   },
   {
     "success": true,
-    "timestamp": "2025-06-17T23:03:34.444555",
+    "timestamp": "2025-06-20T08:17:24.881460",
     "main_contents": {
-      "before": 275,
-      "after": 275,
+      "before": 266,
+      "after": 266,
       "updated": true,
       "source_file": "main.csv"
     },
     "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
+      "before": 0,
+      "after": 0,
+      "updated": false
     },
     "errors": []
   },
   {
     "success": true,
-    "timestamp": "2025-06-17T23:05:36.636414",
+    "timestamp": "2025-06-20T19:07:33.147553",
     "main_contents": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-17T23:07:25.265545",
-    "main_contents": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-17T23:08:46.170843",
-    "main_contents": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-17T23:10:35.268017",
-    "main_contents": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-17T23:11:55.073606",
-    "main_contents": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 275,
-      "after": 275,
-      "updated": true,
-      "source_file": "affiliate.csv"
-    },
-    "errors": []
-  },
-  {
-    "success": true,
-    "timestamp": "2025-06-17T23:15:17.680865",
-    "main_contents": {
-      "before": 275,
-      "after": 275,
+      "before": 266,
+      "after": 266,
       "updated": true,
       "source_file": "main copy.csv"
     },
     "affiliates": {
-      "before": 275,
-      "after": 275,
+      "before": 0,
+      "after": 0,
+      "updated": false
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-20T20:43:58.367160",
+    "main_contents": {
+      "before": 266,
+      "after": 266,
       "updated": true,
-      "source_file": "affiliate copy.csv"
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 0,
+      "after": 0,
+      "updated": false
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-20T20:59:52.295892",
+    "main_contents": {
+      "before": 266,
+      "after": 266,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 0,
+      "after": 0,
+      "updated": false
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-20T21:09:54.592516",
+    "main_contents": {
+      "before": 0,
+      "after": 266,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 0,
+      "after": 0,
+      "updated": false
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-21T07:28:38.090089",
+    "main_contents": {
+      "before": 0,
+      "after": 266,
+      "updated": true,
+      "source_file": "main copy.csv"
+    },
+    "affiliates": {
+      "before": 0,
+      "after": 0,
+      "updated": false
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-06-21T07:41:04.553043",
+    "main_contents": {
+      "before": 0,
+      "after": 180,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 0,
+      "after": 0,
+      "updated": false
     },
     "errors": []
   }

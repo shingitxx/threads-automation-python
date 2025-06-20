@@ -504,6 +504,143 @@ class ThreadsAutomationSystem:
             traceback.print_exc()
             return False
     
+    def single_post_without_reply(self, account_id=None, test_mode=False, custom_text=None):
+        """
+        単発投稿実行 - ツリー投稿なし（リプライなし）
+        画像ファイルの存在に基づいて自動的に投稿タイプを決定するが、アフィリエイトリプライは行わない
+        """
+        print("\n🎯 === 単発投稿実行（リプライなし） ===")
+        
+        if not account_id:
+            # デフォルトアカウントを使用
+            account_id = self.select_account()
+            if not account_id:
+                print("❌ 利用可能なアカウントがありません")
+                return False
+        
+        # カスタムテキストの場合は直接APIを使用
+        if custom_text and not test_mode:
+            print(f"📝 カスタムテキスト投稿:")
+            print(custom_text)
+            result = DirectPost.post_text(account_id, custom_text)
+            return result
+        
+        # 通常の投稿処理
+        try:
+            # 1. コンテンツを選択
+            main_content = self.content_system.get_random_main_content_for_account(account_id)
+            if not main_content:
+                print(f"❌ {account_id}: コンテンツの選択に失敗 - 任意のコンテンツを試行します")
+                # アカウント制限なしで任意のコンテンツを選択
+                if len(self.content_system.main_contents) > 0:
+                    main_content = random.choice(self.content_system.main_contents)
+                else:
+                    print(f"❌ {account_id}: 利用可能なコンテンツがありません")
+                    return False
+            
+            print(f"📝 選択されたコンテンツ: {main_content['id']} - {main_content['main_text'][:50]}...")
+            
+            # 2. メイン投稿テキストを整形
+            main_text = self.content_system.format_main_post_text(main_content)
+            print(f"📝 メイン投稿テキスト:")
+            print(main_text[:200] + "..." if len(main_text) > 200 else main_text)
+            
+            # 3. 画像ファイルの存在による完全自動判定
+            content_id = main_content.get('id', '')
+            print(f"\n🔍 使用するコンテンツID: {content_id}")
+            print(f"🤖 画像ファイルの存在を自動チェック中...")
+            
+            # imagesディレクトリの存在確認
+            images_dir = "images"
+            if not os.path.exists(images_dir):
+                print(f"⚠️ 警告: {images_dir} ディレクトリが存在しません。作成します。")
+                os.makedirs(images_dir)
+            
+            # 画像ファイルの存在チェック
+            image_urls = self.detect_carousel_images(content_id)
+            
+            # 投稿タイプの自動判定
+            if len(image_urls) > 1:
+                post_type = "真のカルーセル"
+                print(f"🎠 自動判定結果: 真のカルーセル投稿（{len(image_urls)}枚の画像）")
+                for i, url in enumerate(image_urls, 1):
+                    print(f"  画像{i}: {url}")
+            elif len(image_urls) == 1:
+                post_type = "単一画像"
+                print(f"📷 自動判定結果: 単一画像投稿")
+                print(f"  画像: {image_urls[0]}")
+            else:
+                post_type = "テキスト"
+                print(f"📝 自動判定結果: テキストのみ投稿（画像ファイルなし）")
+            
+            # テストモードの場合はシミュレーションのみ
+            if test_mode:
+                main_post_id = f"POST_{random.randint(1000000000, 9999999999)}"
+                
+                if post_type == "真のカルーセル":
+                    print(f"🧪 真のカルーセル投稿シミュレーション: {len(image_urls)}枚")
+                elif post_type == "単一画像":
+                    print(f"🧪 画像投稿シミュレーション: {image_urls[0]}")
+                else:
+                    print(f"🧪 テキスト投稿シミュレーション")
+                
+                print(f"✅ メイン投稿成功（シミュレーション）: {main_post_id} - {post_type}")
+                print(f"ℹ️ リプライ投稿なし")
+                
+                print(f"🎉 {account_id}: 投稿完了（シミュレーション）")
+                
+                return {
+                    "success": True,
+                    "test_mode": True,
+                    "main_post_id": main_post_id,
+                    "main_content": main_content,
+                    "image_urls": image_urls,
+                    "post_type": post_type,
+                    "auto_detected": True,
+                    "no_reply": True
+                }
+            
+            # 実際の投稿処理
+            print("\n📤 === 実際の投稿実行 ===")
+            
+            if post_type == "真のカルーセル":
+                # 真のカルーセル投稿
+                print(f"🎠 真のカルーセル投稿として {len(image_urls)}枚の画像で投稿を実行します")
+                main_result = DirectPost.post_true_carousel(account_id, main_text, image_urls)
+            elif post_type == "単一画像":
+                # 単一画像投稿
+                print(f"🖼️ 画像URL: {image_urls[0]} で投稿を実行します")
+                main_result = DirectPost.post_image(account_id, main_text, image_urls[0])
+            else:
+                # テキストのみ投稿
+                print(f"📝 テキストのみで投稿を実行します")
+                main_result = DirectPost.post_text(account_id, main_text)
+            
+            if not main_result:
+                print(f"❌ {account_id}: メイン投稿に失敗しました")
+                return False
+            
+            main_post_id = main_result.get('id')
+            print(f"✅ {post_type}投稿成功: {main_post_id}")
+            print(f"ℹ️ リプライ投稿なし")
+            
+            print(f"🎉 {account_id}: 単一投稿完了")
+            
+            return {
+                "success": True,
+                "main_post_id": main_post_id,
+                "main_content": main_content,
+                "image_urls": image_urls,
+                "post_type": post_type,
+                "auto_detected": True,
+                "no_reply": True
+            }
+                
+        except Exception as e:
+            print(f"❌ 投稿エラー: {e}")
+            traceback.print_exc()
+            return False
+    
     def all_accounts_post(self, test_mode=False):
         """全アカウント投稿実行"""
         print("\n🚀 === 全アカウント投稿実行 ===")
@@ -560,6 +697,68 @@ class ThreadsAutomationSystem:
         # 結果サマリー
         success_rate = (results["success"] / total_accounts) * 100 if total_accounts > 0 else 0
         print(f"\n📊 === 全アカウント投稿結果 ===")
+        print(f"✅ 成功: {results['success']}/{total_accounts}")
+        print(f"❌ 失敗: {results['failed']}/{total_accounts}")
+        print(f"📈 成功率: {success_rate:.1f}%")
+        
+        return results
+    
+    def all_accounts_post_without_reply(self, test_mode=False):
+        """全アカウント投稿実行（リプライなし）"""
+        print("\n🚀 === 全アカウント投稿実行（リプライなし） ===")
+        
+        # トークンリストを再読み込み
+        self.tokens = settings.get_account_tokens()
+        
+        if not self.tokens:
+            print("❌ 利用可能なアカウントがありません")
+            return {"success": 0, "failed": 0, "accounts": []}
+        
+        results = {"success": 0, "failed": 0, "accounts": []}
+        total_accounts = len(self.tokens)
+        
+        for i, account_id in enumerate(self.tokens.keys(), 1):
+            try:
+                print(f"🔄 [{i}/{total_accounts}] {account_id} 投稿開始")
+                
+                result = self.single_post_without_reply(
+                    account_id=account_id,
+                    test_mode=test_mode
+                )
+                
+                if result and (result is True or (isinstance(result, dict) and result.get("success"))):
+                    results["success"] += 1
+                    results["accounts"].append({
+                        "account_id": account_id,
+                        "status": "success",
+                        "main_post_id": result.get("main_post_id") if isinstance(result, dict) else None,
+                        "post_type": result.get("post_type") if isinstance(result, dict) else "unknown",
+                        "auto_detected": result.get("auto_detected") if isinstance(result, dict) else False,
+                        "no_reply": True
+                    })
+                    print(f"✅ {account_id}: 投稿成功")
+                else:
+                    results["failed"] += 1
+                    results["accounts"].append({
+                        "account_id": account_id,
+                        "status": "failed",
+                        "error": str(result) if result else "Unknown error"
+                    })
+                    print(f"❌ {account_id}: 投稿失敗")
+                
+                # アカウント間の間隔
+                if i < total_accounts:
+                    interval = settings.posting.account_interval_seconds
+                    print(f"⏸️ 次のアカウントまで{interval}秒待機...")
+                    time.sleep(interval)
+                    
+            except Exception as e:
+                results["failed"] += 1
+                print(f"❌ {account_id} エラー: {e}")
+        
+        # 結果サマリー
+        success_rate = (results["success"] / total_accounts) * 100 if total_accounts > 0 else 0
+        print(f"\n📊 === 全アカウント投稿結果（リプライなし） ===")
         print(f"✅ 成功: {results['success']}/{total_accounts}")
         print(f"❌ 失敗: {results['failed']}/{total_accounts}")
         print(f"📈 成功率: {success_rate:.1f}%")
@@ -646,6 +845,83 @@ class ThreadsAutomationSystem:
         print(f"\n📊 === 画像アップロード結果 ===")
         print(f"✅ 成功: {success_count}件")
         print(f"❌ 失敗: {fail_count}件")
+    
+    def force_update_images(self):
+        """imagesフォルダの画像でCloudinaryの画像を強制上書き"""
+        from src.core.cloudinary_util import cloudinary_util
+        
+        print("\n🔄 === 画像強制更新（Cloudinary上書き） ===")
+        
+        # imagesディレクトリの存在確認
+        images_dir = "images"
+        if not os.path.exists(images_dir):
+            print(f"⚠️ {images_dir} ディレクトリが存在しません。作成します。")
+            os.makedirs(images_dir)
+            return False
+        
+        # 画像ファイルを直接検索
+        image_files = []
+        for file in os.listdir(images_dir):
+            if file.endswith(('.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG')):
+                # ファイル名からコンテンツIDを抽出
+                if '_image.' in file:
+                    content_id = file.split('_image.')[0]
+                    image_files.append((content_id, file))
+        
+        print(f"📊 検出した画像ファイル: {len(image_files)}件")
+        
+        if not image_files:
+            print("❌ 処理対象の画像ファイルがありません")
+            return False
+        
+        success_count = 0
+        fail_count = 0
+        
+        # 各画像ファイルをアップロード
+        unique_content_ids = list(set([content_id for content_id, _ in image_files]))
+        
+        for content_id in unique_content_ids:
+            print(f"🔄 コンテンツ {content_id} の画像を強制更新中...")
+            
+            try:
+                # ローカルファイルパスを取得
+                local_file_path = None
+                for cid, filename in image_files:
+                    if cid == content_id:
+                        local_file_path = os.path.join(images_dir, filename)
+                        break
+                
+                if not local_file_path or not os.path.exists(local_file_path):
+                    print(f"❌ {content_id}: ローカルファイルが見つかりません")
+                    fail_count += 1
+                    continue
+                
+                # 強制的にCloudinaryに再アップロード
+                print(f"📤 {content_id}: ローカルファイル {local_file_path} を強制アップロード中...")
+                
+                # 既存の関数を使用してアップロード
+                result = cloudinary_util.upload_to_cloudinary_with_content_id(local_file_path, content_id)
+                
+                if result and result.get('success'):
+                    print(f"✅ {content_id}: 強制アップロード成功 - {result.get('image_url')}")
+                    success_count += 1
+                else:
+                    print(f"❌ {content_id}: アップロード失敗")
+                    if result:
+                        print(f"  詳細: {result}")
+                    fail_count += 1
+                    
+            except Exception as e:
+                print(f"❌ {content_id}: エラー - {e}")
+                traceback.print_exc()
+                fail_count += 1
+        
+        # 結果サマリー
+        print(f"\n📊 === 強制画像更新結果 ===")
+        print(f"✅ 成功: {success_count}件")
+        print(f"❌ 失敗: {fail_count}件")
+        
+        return success_count > 0
     
     def system_status(self):
         """システム状況確認"""
@@ -1028,18 +1304,23 @@ class ThreadsAutomationSystem:
             print("12. 🌄 カルーセル投稿テスト（実際の投稿）")
             print("13. ✨ 真のカルーセル投稿テスト（テストモード）")
             print("14. 🌈 真のカルーセル投稿テスト（実際の投稿）")
+            print("15. 📩 単発投稿（リプライなし）")
+            print("16. 📨 全アカウント投稿（リプライなし）")
+            print("17. 🔄 画像強制更新（Cloudinary上書き）")
             if ACCOUNT_SETUP_AVAILABLE:
-                print("15. 🆕 新規アカウント追加（自動一括追加）")
+                print("18. 🆕 新規アカウント追加（自動一括追加）")
             print("0. 🚪 終了")
             print("-"*50)
             print("🤖 項目2は画像ファイルの存在を自動判定します")
             print("   - 複数画像 → 真のカルーセル投稿")
             print("   - 単一画像 → 画像投稿")
             print("   - 画像なし → テキスト投稿")
+            print("📩 項目15-16はツリー投稿（アフィリエイトリプライ）を行いません")
+            print("🔄 項目17はimagesフォルダの画像でCloudinaryを強制上書きします")
             print("-"*50)
             
             try:
-                choice = input("選択してください (0-15): ").strip()
+                choice = input("選択してください (0-18): ").strip()
                 
                 if choice == "0":
                     print("👋 システムを終了します")
@@ -1082,8 +1363,20 @@ class ThreadsAutomationSystem:
                     confirm = input("🚨 実際に真のカルーセル投稿します。続行しますか？ (y/n): ")
                     if confirm.lower() == 'y':
                         self.test_true_carousel_post(test_mode=False)
-                # 15番のメニュー項目（新規アカウント追加）を処理する部分に追加
-                elif choice == "15" and ACCOUNT_SETUP_AVAILABLE:
+                elif choice == "15":
+                    confirm = input("🚨 実際にThreadsに投稿します（リプライなし）。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.single_post_without_reply(test_mode=False)
+                elif choice == "16":
+                    confirm = input("🚨 全アカウントで実際にThreadsに投稿します（リプライなし）。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.all_accounts_post_without_reply(test_mode=False)
+                elif choice == "17":
+                    confirm = input("🚨 Cloudinary上の画像をimagesフォルダの画像で強制上書きします。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.force_update_images()
+                # ACCOUNT_SETUP_AVAILABLE の処理を項目18に移動
+                elif choice == "18" and ACCOUNT_SETUP_AVAILABLE:
                     print("\n🆕 === 新規アカウント自動一括追加 ===")
                     print("account_setup.py の accounts_to_add リストからアカウントを追加します")
                     print("💡 事前に account_setup.py を編集してください")
