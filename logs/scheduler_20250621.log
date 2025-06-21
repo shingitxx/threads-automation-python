@@ -88,3 +88,19 @@
 2025-06-21 18:45:36,723 - threads-scheduler - INFO - ユーザーによる中断
 2025-06-21 18:45:36,723 - threads-scheduler - INFO - スケジューラーを停止しました
 2025-06-21 18:45:36,724 - threads-scheduler - INFO - 状態ファイルを更新しました: logs\scheduler_status.json
+2025-06-21 18:45:39,376 - threads-scheduler - INFO - Threads自動投稿スケジューラーシステム v5.0 起動
+2025-06-21 18:45:39,376 - threads-scheduler - INFO - Threads自動投稿スケジューラーシステム 起動中...
+2025-06-21 18:45:39,397 - threads-scheduler - INFO - スケジューラー初期化完了
+2025-06-21 18:45:39,397 - threads-scheduler - INFO - 通常実行モード
+2025-06-21 18:45:39,398 - threads-scheduler - INFO - スケジューラーを開始します
+2025-06-21 18:45:39,398 - threads-scheduler - INFO - 02:00 に投稿するようスケジュール設定しました
+2025-06-21 18:45:39,398 - threads-scheduler - INFO - 05:00 に投稿するようスケジュール設定しました
+2025-06-21 18:45:39,399 - threads-scheduler - INFO - 08:00 に投稿するようスケジュール設定しました
+2025-06-21 18:45:39,399 - threads-scheduler - INFO - 12:00 に投稿するようスケジュール設定しました
+2025-06-21 18:45:39,399 - threads-scheduler - INFO - 17:00 に投稿するようスケジュール設定しました
+2025-06-21 18:45:39,399 - threads-scheduler - INFO - 20:00 に投稿するようスケジュール設定しました
+2025-06-21 18:45:39,400 - threads-scheduler - INFO - 22:00 に投稿するようスケジュール設定しました
+2025-06-21 18:45:39,400 - threads-scheduler - INFO - 00:00 に投稿するようスケジュール設定しました
+2025-06-21 18:45:39,400 - threads-scheduler - INFO - スケジュール設定完了
+2025-06-21 18:45:39,401 - threads-scheduler - INFO - 状態ファイルを作成しました: logs\scheduler_status.json
+2025-06-21 18:45:39,401 - threads-scheduler - INFO - スケジューラーがバックグラウンドで実行中
