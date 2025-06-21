@@ -7,6 +7,7 @@ import json
 import hashlib
 import cloudinary
 import cloudinary.uploader
+import cloudinary.api
 from datetime import datetime
 from typing import Dict, List, Optional, Any
 

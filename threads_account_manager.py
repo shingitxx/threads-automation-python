@@ -19,29 +19,30 @@ class ThreadsAccountManager:
         self.load_accounts()
     
     def load_accounts(self):
-        """利用可能なアカウント情報を読み込み"""
+        """利用可能なアカウント情報を読み込み（_で始まるディレクトリは除外）"""
         if not os.path.exists(self.base_dir):
             print(f"⚠️ アカウントディレクトリが見つかりません: {self.base_dir}")
             return
         
-        for account_dir in os.listdir(self.base_dir):
+        # _で始まるディレクトリを除外
+        for account_dir in [d for d in os.listdir(self.base_dir) 
+                        if os.path.isdir(os.path.join(self.base_dir, d)) and not d.startswith('_')]:
             account_path = os.path.join(self.base_dir, account_dir)
-            if os.path.isdir(account_path):
-                settings_file = os.path.join(account_path, "settings", "account_settings.json")
-                
-                if os.path.exists(settings_file):
-                    try:
-                        with open(settings_file, 'r', encoding='utf-8') as f:
-                            account_settings = json.load(f)
-                            self.accounts[account_dir] = account_settings
-                    except Exception as e:
-                        print(f"❌ アカウント設定読み込みエラー ({account_dir}): {e}")
-                else:
-                    # 設定ファイルがない場合は基本情報のみ
-                    self.accounts[account_dir] = {
-                        "id": account_dir,
-                        "content_count": self._count_contents(account_path)
-                    }
+            settings_file = os.path.join(account_path, "settings", "account_settings.json")
+            
+            if os.path.exists(settings_file):
+                try:
+                    with open(settings_file, 'r', encoding='utf-8') as f:
+                        account_settings = json.load(f)
+                        self.accounts[account_dir] = account_settings
+                except Exception as e:
+                    print(f"❌ アカウント設定読み込みエラー ({account_dir}): {e}")
+            else:
+                # 設定ファイルがない場合は基本情報のみ
+                self.accounts[account_dir] = {
+                    "id": account_dir,
+                    "content_count": self._count_contents(account_path)
+                }
         
         print(f"📊 読み込んだアカウント: {len(self.accounts)}件")
     
@@ -53,8 +54,14 @@ class ThreadsAccountManager:
         return 0
     
     def get_account_ids(self):
-        """利用可能なアカウントIDのリストを取得"""
-        return list(self.accounts.keys())
+        """利用可能なアカウントIDのリストを取得（_で始まるディレクトリは除外）"""
+        if not os.path.exists(self.base_dir):
+            print(f"⚠️ アカウントディレクトリが見つかりません: {self.base_dir}")
+            return []
+        
+        # _で始まるディレクトリを除外する
+        return [d for d in os.listdir(self.base_dir) 
+                if os.path.isdir(os.path.join(self.base_dir, d)) and not d.startswith('_')]
     
     def get_account_content_ids(self, account_id):
         """指定したアカウントのコンテンツIDリストを取得"""

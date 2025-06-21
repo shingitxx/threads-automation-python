@@ -1,0 +1,632 @@
+"""
+Threads自動投稿システム
+新しいフォルダ構造に対応した自動投稿機能を提供
+"""
+import os
+import sys
+import time
+import json
+import random
+import traceback
+import subprocess
+import chardet  # 文字エンコーディング検出用
+from datetime import datetime
+from subprocess import DEVNULL
+from typing import Dict, List, Optional, Any
+
+from threads_account_manager import ThreadsAccountManager
+from threads_cloudinary_manager import ThreadsCloudinaryManager
+from threads_direct_post import ThreadsDirectPost
+
+# ロガー設定
+import logging
+class EncodingStreamHandler(logging.StreamHandler):
+    """エンコーディング問題に対応したストリームハンドラ"""
+    def __init__(self, stream=None):
+        super().__init__(stream)
+    
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            stream = self.stream
+            
+            # 絵文字をテキストに置換（より広範囲に対応）
+            msg = msg.replace('\u2705', '[成功]').replace('\u274c', '[失敗]')
+            msg = msg.replace('✅', '[成功]').replace('❌', '[失敗]')
+            
+            try:
+                stream.write(msg + self.terminator)
+            except UnicodeEncodeError:
+                # それでも失敗する場合は安全なASCII文字のみに
+                safe_msg = ''.join(c if ord(c) < 128 else '?' for c in msg)
+                stream.write(safe_msg + self.terminator)
+            self.flush()
+        except Exception:
+            self.handleError(record)
+
+# ロガーの設定
+def setup_logger():
+    """ロガーを設定"""
+    logger = logging.getLogger('threads-automation')
+    logger.setLevel(logging.INFO)
+    
+    # ファイルハンドラ
+    log_dir = 'logs'
+    os.makedirs(log_dir, exist_ok=True)
+    log_file = os.path.join(log_dir, f"automation_{datetime.now().strftime('%Y%m%d')}.log")
+    file_handler = logging.FileHandler(log_file, encoding='utf-8')
+    file_handler.setLevel(logging.INFO)
+    
+    # コンソールハンドラ（エンコーディング対応）
+    console_handler = EncodingStreamHandler()
+    console_handler.setLevel(logging.INFO)
+    
+    # フォーマッタ
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+    
+    # ハンドラをロガーに追加
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+    
+    return logger
+
+# ロガーの初期化
+logger = setup_logger()
+
+class ThreadsAutomationSystem:
+    """Threads自動投稿システム"""
+    
+    def __init__(self):
+        """初期化"""
+        print("🚀 Python版Threads自動投稿システム起動中...")
+        logger.info("Python版Threads自動投稿システム起動中...")
+        
+        # 各マネージャークラスの初期化
+        self.account_manager = ThreadsAccountManager()
+        self.cloudinary_manager = ThreadsCloudinaryManager()
+        self.direct_post = ThreadsDirectPost()
+        
+        print("🎉 システム初期化完了")
+        logger.info("システム初期化完了")
+        print(f"📊 利用可能アカウント: {len(self.account_manager.get_account_ids())}件")
+        logger.info(f"利用可能アカウント: {len(self.account_manager.get_account_ids())}件")
+    
+    def single_post(self, account_id=None, test_mode=False, content_id=None):
+        """単発投稿実行（完全自動判定版）"""
+        print("\n🎯 === 単発投稿実行（完全自動判定版） ===")
+        logger.info("単発投稿実行（完全自動判定版）開始")
+        
+        if not account_id:
+            # アカウント選択
+            accounts = self.account_manager.get_account_ids()
+            if not accounts:
+                print("❌ 利用可能なアカウントがありません")
+                logger.error("利用可能なアカウントがありません")
+                return False
+            account_id = accounts[0]
+        
+        print(f"👤 アカウント: {account_id}")
+        logger.info(f"選択アカウント: {account_id}")
+        
+        try:
+            # コンテンツ選択（指定されていない場合はランダム）
+            if not content_id:
+                content = self.account_manager.get_random_content(account_id)
+                if not content:
+                    print(f"❌ {account_id}: コンテンツの取得に失敗しました")
+                    logger.error(f"{account_id}: コンテンツの取得に失敗")
+                    return False
+                content_id = content.get('id')
+            else:
+                content = self.account_manager.get_content(account_id, content_id)
+                if not content:
+                    print(f"❌ {account_id}: コンテンツ {content_id} が見つかりません")
+                    logger.error(f"{account_id}: コンテンツ {content_id} が見つかりません")
+                    return False
+            
+            print(f"📝 選択されたコンテンツ: {content_id}")
+            logger.info(f"選択コンテンツ: {content_id}")
+            
+            # テストモードの場合
+            if test_mode:
+                # コンテンツ情報を表示
+                print("\n🧪 テストモード: 実際には投稿されません")
+                logger.info("テストモード: 実際には投稿されません")
+                print(f"📄 メインテキスト:")
+                print(content.get('main_text', '')[:200] + "..." if len(content.get('main_text', '')) > 200 else content.get('main_text', ''))
+                
+                # 画像情報を表示
+                images = content.get('images', [])
+                post_type = "carousel" if len(images) > 1 else ("image" if images else "text")
+                print(f"📊 投稿タイプ: {post_type}")
+                logger.info(f"投稿タイプ: {post_type}")
+                
+                if images:
+                    print(f"🖼️ 画像数: {len(images)}枚")
+                    logger.info(f"画像数: {len(images)}枚")
+                    for i, image in enumerate(images, 1):
+                        print(f"  画像{i}: {image.get('path')}")
+                
+                # アフィリエイト情報
+                if "affiliate_text" in content:
+                    print("\n🔗 アフィリエイトテキスト:")
+                    print(content.get('affiliate_text', '')[:200] + "..." if len(content.get('affiliate_text', '')) > 200 else content.get('affiliate_text', ''))
+                    logger.info("アフィリエイトテキスト: あり")
+                else:
+                    logger.info("アフィリエイトテキスト: なし")
+                
+                print("\n✅ テストモード投稿シミュレーション完了")
+                logger.info("テストモード投稿シミュレーション完了")
+                
+                return {
+                    "success": True,
+                    "test_mode": True,
+                    "content_id": content_id,
+                    "post_type": post_type,
+                    "account_id": account_id
+                }
+            
+            # 実際の投稿
+            print("\n📤 === 実際の投稿実行 ===")
+            logger.info(f"{account_id}: 実際の投稿実行開始")
+            result = self.direct_post.post_with_affiliate(account_id, content_id)
+            
+            if result and result.get("success"):
+                print(f"🎉 {account_id}: 投稿完了")
+                logger.info(f"{account_id}: 投稿完了 - {result}")
+                return result
+            else:
+                print(f"❌ {account_id}: 投稿に失敗しました")
+                logger.error(f"{account_id}: 投稿失敗 - {result}")
+                return False
+                
+        except Exception as e:
+            print(f"❌ 投稿エラー: {e}")
+            logger.error(f"投稿エラー: {e}", exc_info=True)
+            traceback.print_exc()
+            return False
+    
+    def all_accounts_post(self, test_mode=False):
+        """全アカウント投稿実行"""
+        print("\n🚀 === 全アカウント投稿実行 ===")
+        logger.info(f"全アカウント投稿実行開始 (テストモード: {test_mode})")
+        
+        accounts = self.account_manager.get_account_ids()
+        if not accounts:
+            print("❌ 利用可能なアカウントがありません")
+            logger.error("利用可能なアカウントがありません")
+            return {"success": 0, "failed": 0, "accounts": []}
+        
+        results = {"success": 0, "failed": 0, "accounts": []}
+        total_accounts = len(accounts)
+        logger.info(f"投稿対象アカウント数: {total_accounts}件")
+        
+        for i, account_id in enumerate(accounts, 1):
+            try:
+                print(f"🔄 [{i}/{total_accounts}] {account_id} 投稿開始")
+                logger.info(f"[{i}/{total_accounts}] {account_id} 投稿開始")
+                
+                result = self.single_post(
+                    account_id=account_id,
+                    test_mode=test_mode
+                )
+                
+                if result and (result is True or (isinstance(result, dict) and result.get("success"))):
+                    results["success"] += 1
+                    results["accounts"].append({
+                        "account_id": account_id,
+                        "status": "success",
+                        "details": result if isinstance(result, dict) else {}
+                    })
+                    print(f"✅ {account_id}: 投稿成功")
+                    logger.info(f"{account_id}: 投稿成功")
+                else:
+                    results["failed"] += 1
+                    results["accounts"].append({
+                        "account_id": account_id,
+                        "status": "failed",
+                        "error": str(result) if result else "Unknown error"
+                    })
+                    print(f"❌ {account_id}: 投稿失敗")
+                    logger.error(f"{account_id}: 投稿失敗 - {result}")
+                
+                # アカウント間の間隔（本番環境では適切な間隔を設定）
+                if i < total_accounts:
+                    interval = 10  # 秒
+                    print(f"⏸️ 次のアカウントまで{interval}秒待機...")
+                    logger.info(f"次のアカウントまで{interval}秒待機")
+                    time.sleep(interval)
+                    
+            except Exception as e:
+                results["failed"] += 1
+                results["accounts"].append({
+                    "account_id": account_id,
+                    "status": "failed",
+                    "error": str(e)
+                })
+                print(f"❌ {account_id} エラー: {e}")
+                logger.error(f"{account_id} エラー: {e}", exc_info=True)
+        
+        # 結果サマリー
+        success_rate = (results["success"] / total_accounts) * 100 if total_accounts > 0 else 0
+        print(f"\n📊 === 全アカウント投稿結果 ===")
+        print(f"✅ 成功: {results['success']}/{total_accounts}")
+        print(f"❌ 失敗: {results['failed']}/{total_accounts}")
+        print(f"📈 成功率: {success_rate:.1f}%")
+        logger.info(f"全アカウント投稿完了 - 成功: {results['success']}/{total_accounts}, 失敗: {results['failed']}/{total_accounts}, 成功率: {success_rate:.1f}%")
+        
+        return results
+    
+    def system_status(self):
+        """システム状況確認"""
+        print("\n📊 === システム状況 ===")
+        logger.info("システム状況確認実行")
+        
+        # 基本情報
+        print(f"📁 プロジェクトルート: {os.getcwd()}")
+        print(f"🐍 Python版本: {sys.version.split()[0]}")
+        print(f"⏰ 現在時刻: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        
+        # アカウント状況
+        accounts = self.account_manager.get_account_ids()
+        print(f"\n👥 アカウント状況:")
+        print(f"  アカウント数: {len(accounts)}件")
+        logger.info(f"アカウント数: {len(accounts)}件")
+        
+        # 各アカウントのコンテンツ数を表示
+        for account_id in accounts[:5]:  # 最初の5つのみ表示
+            content_ids = self.account_manager.get_account_content_ids(account_id)
+            print(f"  {account_id}: {len(content_ids)}件のコンテンツ")
+        
+        if len(accounts) > 5:
+            print(f"  ... 他{len(accounts) - 5}件のアカウント")
+        
+        # Cloudinary接続テスト
+        try:
+            cloud_test = self.cloudinary_manager.test_connection()
+            if cloud_test:
+                print(f"\n☁️ Cloudinary接続: ✅ 成功")
+                logger.info("Cloudinary接続: 成功")
+            else:
+                print(f"\n☁️ Cloudinary接続: ❌ 失敗")
+                logger.warning("Cloudinary接続: 失敗")
+        except Exception as e:
+            print(f"\n☁️ Cloudinary接続: ❌ エラー ({str(e)[:100]}...)")
+            logger.error(f"Cloudinary接続エラー: {e}", exc_info=True)
+        
+        # フォルダ構造の確認
+        print(f"\n📂 フォルダ構造:")
+        accounts_dir = "accounts"
+        if os.path.exists(accounts_dir):
+            account_count = len([d for d in os.listdir(accounts_dir) if os.path.isdir(os.path.join(accounts_dir, d)) and not d.startswith("_")])
+            print(f"  アカウントディレクトリ数: {account_count}件")
+            
+            # キャッシュディレクトリの確認
+            cache_dir = os.path.join(accounts_dir, "_cache")
+            if os.path.exists(cache_dir):
+                cache_files = [f for f in os.listdir(cache_dir) if f.endswith('.json')]
+                print(f"  キャッシュファイル数: {len(cache_files)}件")
+                logger.info(f"キャッシュファイル数: {len(cache_files)}件")
+        else:
+            print(f"  ❌ {accounts_dir}ディレクトリが見つかりません")
+            logger.warning(f"{accounts_dir}ディレクトリが見つかりません")
+        
+        print("\n✅ システム状況確認完了")
+        logger.info("システム状況確認完了")
+    
+    def run_scheduler(self):
+        """スケジューラーを起動"""
+        print("\n⏰ === スケジューラー起動 ===")
+        logger.info("スケジューラー起動開始")
+        
+        try:
+            # 状態ファイルの保存先を明示的に指定
+            log_dir = os.path.join(os.getcwd(), 'logs')
+            os.makedirs(log_dir, exist_ok=True)
+            status_file = os.path.join(log_dir, 'scheduler_status.json')
+            
+            # 既存の状態ファイルを削除
+            if os.path.exists(status_file):
+                try:
+                    os.remove(status_file)
+                    logger.info("古い状態ファイルを削除しました")
+                except Exception as e:
+                    logger.error(f"状態ファイル削除エラー: {e}")
+            
+            print("🚀 スケジューラーをバックグラウンドで起動します...")
+            
+            # Windowsの場合
+            if os.name == 'nt':
+                # バッチファイルを使用してスケジューラーを起動
+                batch_content = '@echo off\n'
+                batch_content += f'cd "{os.getcwd()}"\n'  # 作業ディレクトリを明示的に設定
+                batch_content += f'python threads_scheduler_system.py > "{os.path.join(log_dir, "scheduler_output.log")}" 2>&1\n'
+                
+                # 一時的なバッチファイルを作成
+                batch_file = os.path.join(os.getcwd(), 'run_scheduler.bat')
+                with open(batch_file, 'w') as f:
+                    f.write(batch_content)
+                
+                # バッチファイルを実行
+                process = subprocess.Popen([batch_file], shell=True)
+                pid = process.pid
+                
+                # 状態ファイルを直接作成
+                with open(status_file, 'w', encoding='utf-8') as f:
+                    json.dump({
+                        'status': 'running',
+                        'start_time': datetime.now().isoformat(),
+                        'posting_hours': [2, 5, 8, 12, 17, 20, 22, 0],
+                        'pid': pid
+                    }, f, ensure_ascii=False)
+                
+                # 少し待機してプロセスが起動するのを待つ
+                print("スケジューラー起動中...")
+                time.sleep(2)
+                
+                print(f"✅ スケジューラーが起動しました (PID: {pid})")
+                print("スケジューラーはバックグラウンドで実行されています")
+                print("詳細はlogs/scheduler_*.logファイルを確認してください")
+                logger.info(f"スケジューラーが正常に起動しました (PID: {pid})")
+            
+            else:
+                # Linuxの場合
+                # ここにLinux用の起動コードを記述
+                process = subprocess.Popen(['nohup', 'python', 'threads_scheduler_system.py', '&'],
+                                         shell=True, 
+                                         stdout=open(os.path.join(log_dir, 'scheduler_output.log'), 'w'),
+                                         stderr=subprocess.STDOUT,
+                                         preexec_fn=os.setpgrp)
+                
+                pid = process.pid
+                
+                # 状態ファイルを直接作成
+                with open(status_file, 'w', encoding='utf-8') as f:
+                    json.dump({
+                        'status': 'running',
+                        'start_time': datetime.now().isoformat(),
+                        'posting_hours': [2, 5, 8, 12, 17, 20, 22, 0],
+                        'pid': pid
+                    }, f, ensure_ascii=False)
+                
+                print(f"✅ スケジューラーが起動しました (PID: {pid})")
+                print("スケジューラーはバックグラウンドで実行されています")
+                print("詳細はlogs/scheduler_*.logファイルを確認してください")
+                logger.info(f"スケジューラーが正常に起動しました (PID: {pid})")
+                
+        except Exception as e:
+            print(f"❌ スケジューラー起動エラー: {e}")
+            logger.error(f"スケジューラー起動エラー: {e}", exc_info=True)
+            traceback.print_exc()
+
+    def scheduler_status(self):
+        """スケジューラーの状態確認"""
+        print("\n⏰ === スケジューラー状態確認 ===")
+        logger.info("スケジューラー状態確認開始")
+        
+        try:
+            # 状態ファイルを確認
+            status_file = os.path.join(os.getcwd(), 'logs', 'scheduler_status.json')
+            
+            if not os.path.exists(status_file):
+                print("📊 === スケジューラー状況 ===")
+                print("⚙️ ステータス: 停止中")
+                print(f"⏰ 投稿時間: 02:00, 05:00, 08:00, 12:00, 17:00, 20:00, 22:00, 00:00")
+                
+                # アカウント情報
+                accounts = self.account_manager.get_account_ids()
+                print(f"👥 投稿対象アカウント: {len(accounts)}件")
+                
+                logger.info("スケジューラー状態確認完了: 状態ファイルがありません")
+                return
+                
+            try:
+                with open(status_file, 'r', encoding='utf-8') as f:
+                    status_data = json.load(f)
+                
+                status = status_data.get('status', '不明')
+                pid = status_data.get('pid')
+                start_time = None
+                
+                if 'start_time' in status_data:
+                    try:
+                        start_time = datetime.fromisoformat(status_data['start_time'])
+                    except Exception:
+                        pass
+                        
+                print("📊 === スケジューラー状況 ===")
+                
+                # プロセスが実際に存在するか確認
+                process_running = False
+                if pid:
+                    try:
+                        import psutil
+                        process_running = psutil.pid_exists(pid)
+                    except ImportError:
+                        # psutilがない場合はプロセス確認をスキップ
+                        process_running = True
+                
+                # 状態表示
+                if status == 'running' and process_running:
+                    print("⚙️ ステータス: 実行中")
+                    if pid:
+                        print(f"🔄 プロセスID: {pid}")
+                    if start_time:
+                        duration = datetime.now() - start_time
+                        hours, remainder = divmod(duration.total_seconds(), 3600)
+                        minutes, seconds = divmod(remainder, 60)
+                        print(f"⏱️ 実行時間: {int(hours)}時間{int(minutes)}分{int(seconds)}秒")
+                elif status == 'running' and not process_running:
+                    print("⚙️ ステータス: 異常終了 (プロセスが見つかりません)")
+                    print("🔄 再起動が必要です")
+                elif status == 'stopped':
+                    print("⚙️ ステータス: 停止中")
+                else:
+                    print(f"⚙️ ステータス: {status}")
+                
+                # 投稿時間の表示
+                posting_hours = status_data.get('posting_hours', [2, 5, 8, 12, 17, 20, 22, 0])
+                print(f"⏰ 投稿時間: {', '.join([f'{h:02d}:00' for h in posting_hours])}")
+                
+                # 次回実行時間の計算
+                if status == 'running' and process_running:
+                    now = datetime.now()
+                    next_hour = None
+                    
+                    for hour in sorted(posting_hours):
+                        if now.hour < hour:
+                            next_hour = hour
+                            break
+                    
+                    if next_hour is None and posting_hours:
+                        next_hour = posting_hours[0]  # 翌日の最初の時間
+                    
+                    if next_hour is not None:
+                        try:
+                            next_day = now.day + (1 if now.hour >= next_hour else 0)
+                            next_date = now.replace(day=next_day, hour=next_hour, minute=0, second=0, microsecond=0)
+                            print(f"📅 次回投稿予定: {next_date.strftime('%Y-%m-%d %H:%M:%S')}")
+                        except ValueError:
+                            # 月末の問題を処理
+                            next_month = now.month + 1 if now.month < 12 else 1
+                            next_year = now.year + (1 if now.month == 12 else 0)
+                            next_date = now.replace(year=next_year, month=next_month, day=1, 
+                                                  hour=next_hour, minute=0, second=0, microsecond=0)
+                            print(f"📅 次回投稿予定: {next_date.strftime('%Y-%m-%d %H:%M:%S')}")
+                
+                # アカウント情報
+                accounts = self.account_manager.get_account_ids()
+                print(f"👥 投稿対象アカウント: {len(accounts)}件")
+                
+                logger.info("スケジューラー状態確認完了")
+            
+            except Exception as e:
+                print(f"❌ 状態ファイル読み込みエラー: {e}")
+                logger.error(f"状態ファイル読み込みエラー: {e}", exc_info=True)
+                
+                # エラー時は基本情報のみ表示
+                print("📊 === スケジューラー状況 ===")
+                print("⚙️ ステータス: 不明 (ファイル読み込みエラー)")
+                print(f"⏰ 投稿時間: 02:00, 05:00, 08:00, 12:00, 17:00, 20:00, 22:00, 00:00")
+                
+                # アカウント情報
+                accounts = self.account_manager.get_account_ids()
+                print(f"👥 投稿対象アカウント: {len(accounts)}件")
+                
+        except Exception as e:
+            print(f"❌ スケジューラー状態確認エラー: {e}")
+            logger.error(f"スケジューラー状態確認エラー: {e}", exc_info=True)
+            traceback.print_exc()
+
+    def manual_scheduler_post(self):
+        """スケジューラーのテスト実行（手動投稿）"""
+        print("\n⏰ === スケジューラーテスト実行（手動投稿） ===")
+        logger.info("スケジューラーテスト実行（手動投稿）開始")
+        
+        try:
+            # スケジューラーシステムをインポート
+            from threads_scheduler_system import ThreadsSchedulerSystem
+            
+            # スケジューラーの手動実行
+            scheduler = ThreadsSchedulerSystem()
+            scheduler.manual_post()
+            logger.info("スケジューラーテスト実行（手動投稿）完了")
+            
+        except Exception as e:
+            print(f"❌ スケジューラー手動実行エラー: {e}")
+            logger.error(f"スケジューラー手動実行エラー: {e}", exc_info=True)
+            traceback.print_exc()
+    
+    def interactive_menu(self):
+        """対話型メニュー"""
+        while True:
+            print("\n" + "="*50)
+            print("🎯 Python版Threads自動投稿システム v5.0")
+            print("🤖 完全自動判定機能付き + 📂 フォルダ構造最適化")
+            print("="*50)
+            print("1. 📱 単発投稿（テストモード）")
+            print("2. 🚀 単発投稿（実際の投稿）🤖")
+            print("3. 👥 全アカウント投稿（テストモード）")
+            print("4. 🌟 全アカウント投稿（実際の投稿）")
+            print("5. 📊 システム状況確認")
+            print("-"*40)
+            print("6. ⏰ スケジューラー起動")
+            print("7. 📅 スケジューラー状況確認")
+            print("8. 🔄 スケジューラーテスト実行（手動投稿）")
+            print("-"*40)
+            print("0. 🚪 終了")
+            print("-"*50)
+            print("🤖 項目2は画像ファイルの存在を自動判定します")
+            print("-"*50)
+            
+            try:
+                choice = input("選択してください (0-8): ").strip()
+                
+                if choice == "0":
+                    print("👋 システムを終了します")
+                    logger.info("システム終了")
+                    break
+                elif choice == "1":
+                    self.single_post(test_mode=True)
+                elif choice == "2":
+                    confirm = input("🚨 実際にThreadsに投稿します（自動判定機能付き）。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.single_post(test_mode=False)
+                elif choice == "3":
+                    self.all_accounts_post(test_mode=True)
+                elif choice == "4":
+                    confirm = input("🚨 全アカウントで実際にThreadsに投稿します。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.all_accounts_post(test_mode=False)
+                elif choice == "5":
+                    self.system_status()
+                elif choice == "6":
+                    self.run_scheduler()
+                elif choice == "7":
+                    self.scheduler_status()
+                elif choice == "8":
+                    confirm = input("🚨 スケジューラーのテスト実行（手動投稿）を行います。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.manual_scheduler_post()
+                else:
+                    print("❌ 無効な選択です")
+                    
+            except KeyboardInterrupt:
+                print("\n👋 システムを終了します")
+                logger.info("ユーザーによる中断でシステム終了")
+                break
+            except Exception as e:
+                print(f"❌ エラー: {e}")
+                logger.error(f"メニュー操作エラー: {e}", exc_info=True)
+                traceback.print_exc()
+
+def main():
+    """メイン実行関数"""
+    print("🚀 Python版Threads自動投稿システム v5.0")
+    print("=" * 50)
+    print("🎉 フォルダ構造最適化 + 完全自動判定機能付き")
+    print("=" * 50)
+    logger.info("Python版Threads自動投稿システム v5.0 起動")
+    
+    try:
+        # システム初期化
+        system = ThreadsAutomationSystem()
+        
+        # 対話型メニュー起動
+        system.interactive_menu()
+        
+    except KeyboardInterrupt:
+        print("\n👋 システムを終了しました")
+        logger.info("ユーザーによる中断でシステム終了")
+    except Exception as e:
+        print(f"❌ システムエラー: {e}")
+        logger.error(f"システムエラー: {e}", exc_info=True)
+        traceback.print_exc()
+        return 1
+    
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main())

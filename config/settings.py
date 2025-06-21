@@ -13,7 +13,7 @@ from pathlib import Path
 try:
     from dotenv import load_dotenv
     load_dotenv()  # .envファイルを自動読み込み
-    print("✅ .env file loaded successfully")
+    print("[成功] .env file loaded successfully")
 except ImportError:
     print("⚠️ python-dotenv not installed, using system environment variables only")
 
