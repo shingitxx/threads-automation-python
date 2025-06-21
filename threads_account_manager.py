@@ -191,6 +191,143 @@ class ThreadsAccountManager:
                 print(f"❌ 使用回数更新エラー: {e}")
         
         return False
+    
+    def add_new_account(self, account_id, access_token, user_id):
+        """新規アカウントを追加する（Cloudinary更新なし）"""
+        if not account_id.startswith('ACCOUNT_'):
+            account_id = f'ACCOUNT_{account_id}'
+        
+        try:
+            # 1. 環境変数に追加
+            self._add_account_env_vars(account_id, access_token, user_id)
+            
+            # 2. フォルダ構造を作成
+            self._create_account_folders(account_id)
+            
+            # 3. アカウント設定を初期化
+            self._initialize_account_settings(account_id)
+            
+            # 4. トークンリストを更新（メモリ内のみ）
+            self.load_account_tokens()
+            
+            return {
+                'success': True,
+                'account_id': account_id,
+                'message': f'アカウント {account_id} が正常に追加されました'
+            }
+        except Exception as e:
+            return {
+                'success': False,
+                'account_id': account_id,
+                'message': str(e)
+            }
+
+    def _add_account_env_vars(self, account_id, access_token, user_id):
+        """環境変数ファイルにアカウント情報を追加"""
+        # .envファイルを読み込む
+        env_path = '.env'
+        lines = []
+        
+        if os.path.exists(env_path):
+            with open(env_path, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+        
+        # アカウントセクションを探す
+        account_section_found = False
+        user_id_section_found = False
+        
+        for i, line in enumerate(lines):
+            if '# アカウントトークン' in line:
+                account_section_found = True
+            elif '# インスタグラムユーザーID' in line:
+                user_id_section_found = True
+        
+        # 変更するための新しい行
+        token_line = f'TOKEN_{account_id}={access_token}\n'
+        user_id_line = f'INSTAGRAM_USER_ID_{account_id}={user_id}\n'
+        
+        # セクションが見つかった場合、そのセクションに追加
+        if account_section_found:
+            for i, line in enumerate(lines):
+                if '# アカウントトークン' in line:
+                    # セクション内の最後に追加
+                    j = i + 1
+                    while j < len(lines) and lines[j].strip() and not lines[j].startswith('#'):
+                        j += 1
+                    lines.insert(j, token_line)
+                    break
+        else:
+            # セクションが見つからない場合、ファイルの最後に追加
+            lines.append('\n# アカウントトークン\n')
+            lines.append(token_line)
+        
+        if user_id_section_found:
+            for i, line in enumerate(lines):
+                if '# インスタグラムユーザーID' in line:
+                    # セクション内の最後に追加
+                    j = i + 1
+                    while j < len(lines) and lines[j].strip() and not lines[j].startswith('#'):
+                        j += 1
+                    lines.insert(j, user_id_line)
+                    break
+        else:
+            # セクションが見つからない場合、ファイルの最後に追加
+            lines.append('\n# インスタグラムユーザーID\n')
+            lines.append(user_id_line)
+        
+        # 更新された内容を書き込む
+        with open(env_path, 'w', encoding='utf-8') as f:
+            f.writelines(lines)
+        
+        # 環境変数をメモリに読み込む
+        os.environ[f'TOKEN_{account_id}'] = access_token
+        os.environ[f'INSTAGRAM_USER_ID_{account_id}'] = user_id
+
+    def _create_account_folders(self, account_id):
+        """アカウント用のフォルダ構造を作成"""
+        # ベースディレクトリ
+        base_dir = os.path.join('accounts', account_id)
+        os.makedirs(base_dir, exist_ok=True)
+        
+        # コンテンツディレクトリ
+        contents_dir = os.path.join(base_dir, 'contents')
+        os.makedirs(contents_dir, exist_ok=True)
+        
+        # 設定ディレクトリ
+        settings_dir = os.path.join(base_dir, 'settings')
+        os.makedirs(settings_dir, exist_ok=True)
+        
+        # 初期設定ファイル
+        settings_file = os.path.join(settings_dir, 'account_settings.json')
+        if not os.path.exists(settings_file):
+            initial_settings = {
+                'account_id': account_id,
+                'created_at': datetime.now().isoformat(),
+                'status': 'active',
+                'content_count': 0
+            }
+            
+            with open(settings_file, 'w', encoding='utf-8') as f:
+                json.dump(initial_settings, f, ensure_ascii=False, indent=2)
+
+    def _initialize_account_settings(self, account_id):
+        """アカウントの初期設定を行う"""
+        # キャッシュディレクトリの作成
+        cache_dir = os.path.join('accounts', '_cache')
+        os.makedirs(cache_dir, exist_ok=True)
+        
+        # アカウントキャッシュファイル
+        cache_file = os.path.join(cache_dir, f'{account_id}_cache.json')
+        if not os.path.exists(cache_file):
+            initial_cache = {
+                'account_id': account_id,
+                'last_updated': datetime.now().isoformat(),
+                'content_ids': [],
+                'cloudinary_resources': {}
+            }
+            
+            with open(cache_file, 'w', encoding='utf-8') as f:
+                json.dump(initial_cache, f, ensure_ascii=False, indent=2)
 
 # モジュールとしてインポートされた場合の動作確認
 if __name__ == "__main__":

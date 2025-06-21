@@ -539,6 +539,73 @@ class ThreadsAutomationSystem:
             logger.error(f"スケジューラー手動実行エラー: {e}", exc_info=True)
             traceback.print_exc()
     
+    def add_new_account(self):
+        """新規アカウントを追加（Cloudinary更新なし）"""
+        print("\n🆕 === 新規アカウント追加 ===")
+        logger.info("新規アカウント追加処理開始")
+        
+        try:
+            # アカウントID入力
+            account_num = input("追加するアカウント番号を入力してください (例: 021): ").strip()
+            if account_num.startswith('ACCOUNT_'):
+                account_id = account_num
+            else:
+                # 3桁のゼロ埋め
+                account_num = account_num.zfill(3)
+                account_id = f'ACCOUNT_{account_num}'
+            
+            # 既存アカウントチェック
+            existing_accounts = self.account_manager.get_account_ids()
+            if account_id in existing_accounts:
+                confirm = input(f"⚠️ {account_id} は既に存在します。上書きしますか？ (y/n): ")
+                if confirm.lower() != 'y':
+                    print("❌ アカウント追加をキャンセルしました")
+                    logger.info("アカウント追加キャンセル")
+                    return
+            
+            # アクセストークン入力
+            access_token = input("アクセストークンを入力してください: ").strip()
+            if not access_token:
+                print("❌ アクセストークンが入力されていません")
+                logger.error("アクセストークンが空")
+                return
+            
+            # ユーザーID入力
+            user_id = input("インスタグラムユーザーIDを入力してください: ").strip()
+            if not user_id:
+                print("❌ ユーザーIDが入力されていません")
+                logger.error("ユーザーIDが空")
+                return
+            
+            # 確認
+            print("\n=== 確認情報 ===")
+            print(f"アカウントID: {account_id}")
+            print(f"アクセストークン: {access_token[:10]}...{access_token[-10:]}")
+            print(f"ユーザーID: {user_id}")
+            
+            confirm = input("\n情報を確認し、アカウントを追加しますか？ (y/n): ")
+            if confirm.lower() != 'y':
+                print("❌ アカウント追加をキャンセルしました")
+                logger.info("アカウント追加キャンセル")
+                return
+            
+            # アカウント追加
+            result = self.account_manager.add_new_account(account_id, access_token, user_id)
+            
+            if result.get('success'):
+                print(f"✅ {account_id} を追加しました")
+                print("フォルダ構造を作成しました")
+                print("環境変数を更新しました")
+                logger.info(f"{account_id} を正常に追加しました")
+            else:
+                print(f"❌ {account_id} の追加に失敗しました: {result.get('message')}")
+                logger.error(f"{account_id} の追加に失敗: {result.get('message')}")
+            
+        except Exception as e:
+            print(f"❌ アカウント追加エラー: {e}")
+            logger.error(f"アカウント追加エラー: {e}", exc_info=True)
+            traceback.print_exc()
+    
     def interactive_menu(self):
         """対話型メニュー"""
         while True:
@@ -556,13 +623,16 @@ class ThreadsAutomationSystem:
             print("7. 📅 スケジューラー状況確認")
             print("8. 🔄 スケジューラーテスト実行（手動投稿）")
             print("-"*40)
+            print("9. 📝 新規アカウント追加（Cloudinary更新なし）")
+            print("10. 📋 複数アカウント一括追加（Cloudinary更新なし）")
+            print("-"*40)
             print("0. 🚪 終了")
             print("-"*50)
             print("🤖 項目2は画像ファイルの存在を自動判定します")
             print("-"*50)
             
             try:
-                choice = input("選択してください (0-8): ").strip()
+                choice = input("選択してください (0-10): ").strip()
                 
                 if choice == "0":
                     print("👋 システムを終了します")
@@ -590,6 +660,10 @@ class ThreadsAutomationSystem:
                     confirm = input("🚨 スケジューラーのテスト実行（手動投稿）を行います。続行しますか？ (y/n): ")
                     if confirm.lower() == 'y':
                         self.manual_scheduler_post()
+                elif choice == "9":
+                    self.add_new_account()
+                elif choice == "10":
+                    self.add_multiple_accounts()
                 else:
                     print("❌ 無効な選択です")
                     
@@ -601,6 +675,123 @@ class ThreadsAutomationSystem:
                 print(f"❌ エラー: {e}")
                 logger.error(f"メニュー操作エラー: {e}", exc_info=True)
                 traceback.print_exc()
+                
+    def add_multiple_accounts(self):
+        """複数アカウントを一括追加（Cloudinary更新なし）"""
+        print("\n🆕 === 複数アカウント一括追加 ===")
+        logger.info("複数アカウント一括追加処理開始")
+        
+        try:
+            # 開始アカウント番号
+            start_num = input("開始アカウント番号を入力してください (例: 021): ").strip()
+            if start_num.startswith('ACCOUNT_'):
+                start_num = start_num[8:]
+            
+            # 終了アカウント番号
+            end_num = input("終了アカウント番号を入力してください (例: 030): ").strip()
+            if end_num.startswith('ACCOUNT_'):
+                end_num = end_num[8:]
+            
+            # 数値チェック
+            try:
+                start_num_int = int(start_num)
+                end_num_int = int(end_num)
+            except ValueError:
+                print("❌ 数値を入力してください")
+                logger.error("数値変換エラー")
+                return
+            
+            if start_num_int > end_num_int:
+                print("❌ 開始番号は終了番号より小さくしてください")
+                logger.error("番号範囲エラー")
+                return
+            
+            # アカウント数
+            account_count = end_num_int - start_num_int + 1
+            
+            # 共通アクセストークン（オプション）
+            use_common_token = input("すべてのアカウントに共通のアクセストークンを使用しますか？ (y/n): ").strip().lower() == 'y'
+            common_token = None
+            if use_common_token:
+                common_token = input("共通アクセストークンを入力してください: ").strip()
+                if not common_token:
+                    print("❌ アクセストークンが入力されていません")
+                    logger.error("アクセストークンが空")
+                    return
+            
+            # 共通ユーザーID（オプション）
+            use_common_user_id = input("すべてのアカウントに共通のユーザーIDを使用しますか？ (y/n): ").strip().lower() == 'y'
+            common_user_id = None
+            if use_common_user_id:
+                common_user_id = input("共通ユーザーIDを入力してください: ").strip()
+                if not common_user_id:
+                    print("❌ ユーザーIDが入力されていません")
+                    logger.error("ユーザーIDが空")
+                    return
+            
+            # 確認
+            print("\n=== 確認情報 ===")
+            print(f"追加するアカウント範囲: ACCOUNT_{start_num_int:03d} ~ ACCOUNT_{end_num_int:03d}")
+            print(f"アカウント数: {account_count}件")
+            if use_common_token:
+                print(f"共通アクセストークン: {common_token[:10]}...{common_token[-10:]}")
+            if use_common_user_id:
+                print(f"共通ユーザーID: {common_user_id}")
+            
+            confirm = input("\n上記の内容で一括追加を実行しますか？ (y/n): ")
+            if confirm.lower() != 'y':
+                print("❌ 一括追加をキャンセルしました")
+                logger.info("一括追加キャンセル")
+                return
+            
+            # アカウント一括追加
+            success_count = 0
+            failed_count = 0
+            
+            for num in range(start_num_int, end_num_int + 1):
+                account_id = f"ACCOUNT_{num:03d}"
+                
+                # 個別のトークンとユーザーIDを入力（共通でない場合）
+                token = common_token
+                user_id = common_user_id
+                
+                if not token:
+                    token = input(f"\n{account_id} のアクセストークンを入力してください: ").strip()
+                    if not token:
+                        print(f"❌ {account_id} のアクセストークンが入力されていません。このアカウントをスキップします。")
+                        failed_count += 1
+                        continue
+                
+                if not user_id:
+                    user_id = input(f"\n{account_id} のユーザーIDを入力してください: ").strip()
+                    if not user_id:
+                        print(f"❌ {account_id} のユーザーIDが入力されていません。このアカウントをスキップします。")
+                        failed_count += 1
+                        continue
+                
+                # アカウント追加
+                result = self.account_manager.add_new_account(account_id, token, user_id)
+                
+                if result.get('success'):
+                    print(f"✅ {account_id} を追加しました")
+                    logger.info(f"{account_id} を正常に追加しました")
+                    success_count += 1
+                else:
+                    print(f"❌ {account_id} の追加に失敗しました: {result.get('message')}")
+                    logger.error(f"{account_id} の追加に失敗: {result.get('message')}")
+                    failed_count += 1
+            
+            # 結果表示
+            print("\n=== 一括追加結果 ===")
+            print(f"✅ 成功: {success_count}件")
+            print(f"❌ 失敗: {failed_count}件")
+            print(f"📈 成功率: {(success_count / account_count) * 100:.1f}%")
+            logger.info(f"一括追加完了 - 成功: {success_count}件, 失敗: {failed_count}件")
+            
+        except Exception as e:
+            print(f"❌ 一括追加エラー: {e}")
+            logger.error(f"一括追加エラー: {e}", exc_info=True)
+            traceback.print_exc()
 
 def main():
     """メイン実行関数"""

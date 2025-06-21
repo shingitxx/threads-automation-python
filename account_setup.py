@@ -153,8 +153,8 @@ def bulk_setup_accounts():
     # ⭐ ここに複数アカウントの情報を設定 ⭐
     accounts_to_add = [
         {
-            "id": "ACCOUNT_001",
-            "token": "THAAkIds0IIlZABUVJ3ZA1NDM0pKQnd3MFg3MGJZAWWdfWTZABcFZAxc1dyd0NKU2hlaHNkR3ZARV2pQSloyeklRekJPSGFSbTNKT3A0UDNQTHdlclA1b1J2WTZAYbGZAYRDRpYkZAqbnRldEVXbmpvQWlJRlNOUmhNT2NMTk1BQ080S1JLY1Q3STVkMTBQTHRJRmh1bEEZD",
+            "id": "ACCOUNT_021",
+            "token": "THAAkIds0IIlZABUVEyTHNJOGIzRlY4czVYYVdYN3lxcTBYNnJnM3p2NjV1bHVhRXphSml4bWEzVG1ZAR0ZALSnEzZAk1QRTl6REs3dEpiSXVGVDllb01WSHV4aVFGcnRMQnhxSnRjRTVubzNzRDVkM2dqTkEtazBHaVhxLVBQSlBwR1ptZAXotQ21aS0JSQ0dacjAZD",
         }
         # 必要に応じて追加...
     ]
