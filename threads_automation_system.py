@@ -9,7 +9,6 @@ import json
 import random
 import traceback
 import subprocess
-from pathlib import Path
 import chardet  # 文字エンコーディング検出用
 from datetime import datetime
 from subprocess import DEVNULL
@@ -627,16 +626,13 @@ class ThreadsAutomationSystem:
             print("9. 📝 新規アカウント追加（Cloudinary更新なし）")
             print("10. 📋 複数アカウント一括追加（Cloudinary更新なし）")
             print("-"*40)
-            print("11. 📝 特定アカウント投稿（リプライなし）")  # 新機能
-            print("12. 🔄 アカウントコンテンツ同期")  # 新機能
-            print("-"*40)
             print("0. 🚪 終了")
             print("-"*50)
             print("🤖 項目2は画像ファイルの存在を自動判定します")
             print("-"*50)
             
             try:
-                choice = input("選択してください (0-12): ").strip()
+                choice = input("選択してください (0-10): ").strip()
                 
                 if choice == "0":
                     print("👋 システムを終了します")
@@ -668,43 +664,6 @@ class ThreadsAutomationSystem:
                     self.add_new_account()
                 elif choice == "10":
                     self.add_multiple_accounts()
-                elif choice == "11":
-                    self.post_specific_account_no_reply()
-                elif choice == "12":
-                    print("\n🔄 === アカウントコンテンツ同期メニュー ===")
-                    print("1. 特定アカウントのコンテンツを同期")
-                    print("2. 全アカウントのコンテンツを同期")
-                    print("0. 戻る")
-                    
-                    sync_choice = input("選択してください: ").strip()
-                    
-                    if sync_choice == "1":
-                        # アカウント一覧表示
-                        accounts = self.account_manager.get_account_ids()
-                        print("\n📊 利用可能なアカウント:")
-                        for i, acc in enumerate(accounts, 1):
-                            print(f"{i}. {acc}")
-                        
-                        try:
-                            selection = int(input("同期するアカウントの番号を入力してください: "))
-                            if 1 <= selection <= len(accounts):
-                                account_id = accounts[selection - 1]
-                                force = input("既存のデータを上書きしますか？ (y/n): ").lower() == 'y'
-                                self.sync_account_contents(account_id, force)
-                            else:
-                                print("❌ 無効な選択です")
-                        except ValueError:
-                            print("❌ 数値を入力してください")
-                    
-                    elif sync_choice == "2":
-                        force = input("既存のデータを上書きしますか？ (y/n): ").lower() == 'y'
-                        self.sync_account_contents(None, force)
-                    
-                    elif sync_choice == "0":
-                        continue
-                    
-                    else:
-                        print("❌ 無効な選択です")
                 else:
                     print("❌ 無効な選択です")
                     
@@ -834,291 +793,6 @@ class ThreadsAutomationSystem:
             logger.error(f"一括追加エラー: {e}", exc_info=True)
             traceback.print_exc()
 
-    def post_specific_account_no_reply(self, account_id=None, test_mode=None, custom_text=None):
-        """
-        特定のアカウントでリプライなしの投稿を実行する機能
-        
-        Args:
-            account_id (str, optional): 使用するアカウントID。指定がなければ対話式で選択
-            test_mode (bool, optional): テストモードフラグ。指定がなければ対話式で選択
-            custom_text (str, optional): カスタムテキスト。指定がなければ対話式で選択
-            
-        Returns:
-            dict: 投稿結果
-        """
-        print("\n🎯 === 特定アカウント投稿実行（リプライなし） ===")
-        logger.info("特定アカウント投稿実行（リプライなし）開始")
-        
-        # アカウントIDが指定されていない場合は対話式で選択
-        if account_id is None:
-            available_accounts = self.account_manager.get_account_ids()
-            print("📊 利用可能なアカウント:")
-            for i, acc in enumerate(available_accounts, 1):
-                print(f"{i}. {acc}")
-            
-            try:
-                selection = int(input("使用するアカウントの番号を入力してください: "))
-                if 1 <= selection <= len(available_accounts):
-                    account_id = available_accounts[selection - 1]
-                    print(f"✅ 選択されたアカウント: {account_id}")
-                    logger.info(f"選択されたアカウント: {account_id}")
-                else:
-                    print("❌ 無効な選択です")
-                    logger.error("無効なアカウント選択")
-                    return None
-            except ValueError:
-                print("❌ 数値を入力してください")
-                logger.error("数値入力エラー")
-                return None
-        
-        # テストモードの選択
-        if test_mode is None:
-            test_mode = input("テストモードで実行しますか？実際には投稿されません (y/n): ").lower() == 'y'
-            logger.info(f"テストモード: {test_mode}")
-        
-        # カスタムテキストの選択
-        if custom_text is None:
-            use_custom = input("カスタムテキストを使用しますか？ (y/n): ").lower() == 'y'
-            if use_custom:
-                custom_text = input("投稿するテキストを入力してください: ")
-                logger.info("カスタムテキスト使用")
-        
-        # 実行確認
-        if not test_mode:
-            confirm = input(f"🚨 {account_id} で実際に投稿を実行しますか？（リプライなし） (y/n): ").lower()
-            if confirm != 'y':
-                print("投稿をキャンセルしました")
-                logger.info("投稿キャンセル")
-                return None
-        
-        print(f"🚀 {account_id} で投稿実行中（リプライなし）...")
-        logger.info(f"{account_id} で投稿実行中（リプライなし）...")
-        
-        try:
-            # コンテンツを選択
-            content = self.account_manager.get_random_content(account_id)
-            if not content:
-                print(f"❌ {account_id}: コンテンツの取得に失敗しました")
-                logger.error(f"{account_id}: コンテンツの取得に失敗")
-                return False
-            
-            content_id = content.get('id')
-            print(f"📝 選択されたコンテンツ: {content_id}")
-            logger.info(f"選択されたコンテンツ: {content_id}")
-            
-            # メインテキスト取得
-            main_text = content.get('main_text', '')
-            if custom_text:
-                main_text = custom_text
-            
-            # テストモードの場合
-            if test_mode:
-                print("\n🧪 テストモード: 実際には投稿されません")
-                print(f"📄 メインテキスト:")
-                print(main_text[:200] + "..." if len(main_text) > 200 else main_text)
-                
-                # 画像情報
-                images = content.get('images', [])
-                post_type = "carousel" if len(images) > 1 else ("image" if images else "text")
-                print(f"📊 投稿タイプ: {post_type}")
-                
-                if images:
-                    print(f"🖼️ 画像数: {len(images)}枚")
-                    for i, image in enumerate(images, 1):
-                        print(f"  画像{i}: {image.get('path')}")
-                
-                print("\n✅ テストモード投稿シミュレーション完了（リプライなし）")
-                logger.info("テストモード投稿シミュレーション完了（リプライなし）")
-                
-                return {
-                    "success": True,
-                    "test_mode": True,
-                    "content_id": content_id,
-                    "post_type": post_type,
-                    "account_id": account_id
-                }
-            
-            # 実際の投稿（リプライなし）
-            print("\n📤 === 実際の投稿実行（リプライなし） ===")
-            logger.info(f"{account_id}: 実際の投稿実行開始（リプライなし）")
-            
-            # 投稿実行（アフィリエイトリプライなし）
-            result = self.direct_post.post_without_affiliate(account_id, content_id, main_text)
-            
-            if result and result.get("success"):
-                print(f"🎉 {account_id}: 投稿完了（リプライなし）")
-                logger.info(f"{account_id}: 投稿完了（リプライなし） - {result}")
-                return result
-            else:
-                print(f"❌ {account_id}: 投稿に失敗しました")
-                logger.error(f"{account_id}: 投稿失敗 - {result}")
-                return False
-            
-        except Exception as e:
-            print(f"❌ 投稿エラー: {e}")
-            logger.error(f"投稿エラー: {e}", exc_info=True)
-            traceback.print_exc()
-            return False
-
-    def sync_account_contents(self, account_id=None, force=False):
-        """
-        アカウントのコンテンツフォルダを読み込み、システムのキャッシュを更新
-        
-        Args:
-            account_id (str, optional): 同期するアカウントID（Noneの場合は全アカウント）
-            force (bool): 既存のデータを上書きするかどうか
-            
-        Returns:
-            dict: 同期結果の統計
-        """
-        stats = {
-            "total_scanned": 0,
-            "added": 0,
-            "updated": 0,
-            "unchanged": 0,
-            "errors": 0
-        }
-        
-        print("\n🔄 === アカウントコンテンツ同期 ===")
-        logger.info("アカウントコンテンツ同期開始")
-        
-        # 同期するアカウントのリスト
-        accounts_to_sync = []
-        if account_id:
-            accounts_to_sync = [account_id]
-            logger.info(f"同期対象: {account_id}")
-        else:
-            # 利用可能な全アカウントを取得
-            accounts_to_sync = self.account_manager.get_account_ids()
-            logger.info(f"同期対象: 全アカウント ({len(accounts_to_sync)}件)")
-        
-        print(f"🔄 {len(accounts_to_sync)}個のアカウントのコンテンツ同期を開始...")
-        
-        for acc_id in accounts_to_sync:
-            print(f"\n📂 {acc_id} の同期中...")
-            logger.info(f"{acc_id} の同期開始")
-            
-            content_dir = Path(f"accounts/{acc_id}/contents")
-            
-            if not content_dir.exists():
-                print(f"⚠ {acc_id} のコンテンツディレクトリが見つかりません")
-                logger.warning(f"{acc_id} のコンテンツディレクトリが見つかりません")
-                continue
-            
-            # コンテンツフォルダを検索
-            content_folders = [d for d in content_dir.glob(f"{acc_id}_CONTENT_*") if d.is_dir()]
-            print(f"📊 {len(content_folders)}個のコンテンツフォルダを検出")
-            logger.info(f"{acc_id}: {len(content_folders)}個のコンテンツフォルダを検出")
-            
-            # キャッシュディレクトリの作成
-            cache_dir = Path(f"accounts/{acc_id}/_cache")
-            cache_dir.mkdir(exist_ok=True, parents=True)
-            
-            # コンテンツキャッシュファイル
-            cache_file = cache_dir / "contents.json"
-            
-            # 既存のキャッシュを読み込む
-            existing_contents = {}
-            if cache_file.exists():
-                try:
-                    with open(cache_file, 'r', encoding='utf-8') as f:
-                        existing_contents = json.load(f)
-                except Exception as e:
-                    print(f"⚠ キャッシュファイル読み込みエラー: {e}")
-                    logger.warning(f"キャッシュファイル読み込みエラー: {e}")
-            
-            # 新しいコンテンツデータ
-            new_contents = {}
-            
-            for folder in content_folders:
-                stats["total_scanned"] += 1
-                content_id = folder.name
-                metadata_file = folder / "metadata.json"
-                
-                if not metadata_file.exists():
-                    print(f"⚠ {content_id}: メタデータファイルがありません")
-                    logger.warning(f"{content_id}: メタデータファイルがありません")
-                    stats["errors"] += 1
-                    continue
-                
-                try:
-                    with open(metadata_file, 'r', encoding='utf-8') as f:
-                        metadata = json.load(f)
-                    
-                    if "text" not in metadata:
-                        print(f"⚠ {content_id}: テキストデータがありません")
-                        logger.warning(f"{content_id}: テキストデータがありません")
-                        stats["errors"] += 1
-                        continue
-                    
-                    # コンテンツデータの作成
-                    content_data = {
-                        "main_text": metadata["text"],
-                        "id": content_id,
-                        "account_id": acc_id,
-                        "from_folder": True,
-                        "original_content_id": metadata.get("original_content_id", ""),
-                        "created_at": metadata.get("created_at", "")
-                    }
-                    
-                    # 画像ファイルの検出
-                    image_files = list(folder.glob("image_*.jpg"))
-                    if image_files:
-                        images = []
-                        for i, img_file in enumerate(sorted(image_files)):
-                            img_info = {
-                                "path": str(img_file),
-                                "index": i,
-                                "id": f"{content_id}_IMG_{i}"
-                            }
-                            images.append(img_info)
-                        content_data["images"] = images
-                    
-                    # 既存データとの比較
-                    if content_id in existing_contents and not force:
-                        existing_data = existing_contents[content_id]
-                        if existing_data.get("main_text") == content_data["main_text"]:
-                            print(f"ℹ {content_id}: 変更なし")
-                            logger.info(f"{content_id}: 変更なし")
-                            new_contents[content_id] = existing_data
-                            stats["unchanged"] += 1
-                        else:
-                            new_contents[content_id] = content_data
-                            print(f"✅ {content_id}: 更新")
-                            logger.info(f"{content_id}: 更新")
-                            stats["updated"] += 1
-                    else:
-                        new_contents[content_id] = content_data
-                        print(f"✅ {content_id}: 追加")
-                        logger.info(f"{content_id}: 追加")
-                        stats["added"] += 1
-                
-                except Exception as e:
-                    print(f"❌ {content_id}: エラー - {e}")
-                    logger.error(f"{content_id}: エラー - {e}", exc_info=True)
-                    stats["errors"] += 1
-            
-            # キャッシュファイルに保存
-            try:
-                with open(cache_file, 'w', encoding='utf-8') as f:
-                    json.dump(new_contents, f, ensure_ascii=False, indent=2)
-                print(f"✅ コンテンツキャッシュを保存しました: {len(new_contents)}件")
-                logger.info(f"コンテンツキャッシュを保存: {len(new_contents)}件")
-            except Exception as e:
-                print(f"❌ キャッシュ保存エラー: {e}")
-                logger.error(f"キャッシュ保存エラー: {e}")
-            
-        # 結果の表示
-        print("\n===== 同期結果 =====")
-        print(f"スキャンされたフォルダ: {stats['total_scanned']}")
-        print(f"追加されたコンテンツ: {stats['added']}")
-        print(f"更新されたコンテンツ: {stats['updated']}")
-        print(f"変更なし: {stats['unchanged']}")
-        print(f"エラー: {stats['errors']}")
-        logger.info(f"同期完了 - 追加: {stats['added']}件, 更新: {stats['updated']}件, 変更なし: {stats['unchanged']}件, エラー: {stats['errors']}件")
-        
-        return stats
-
 def main():
     """メイン実行関数"""
     print("🚀 Python版Threads自動投稿システム v5.0")
@@ -1128,44 +802,11 @@ def main():
     logger.info("Python版Threads自動投稿システム v5.0 起動")
     
     try:
-        # コマンドライン引数を解析
-        import argparse
-        parser = argparse.ArgumentParser(description='Python版Threads自動投稿システム')
-        subparsers = parser.add_subparsers(dest='command', help='実行するコマンド')
-        
-        # no-reply コマンド
-        no_reply_parser = subparsers.add_parser('no-reply', help='特定アカウント投稿（リプライなし）')
-        no_reply_parser.add_argument('--account', help='アカウントID（指定なしの場合は対話的に選択）')
-        no_reply_parser.add_argument('--test', action='store_true', help='テストモード（実際には投稿しない）')
-        no_reply_parser.add_argument('--text', help='カスタムテキスト（指定なしの場合は対話的に入力）')
-        
-        # sync コマンド
-        sync_parser = subparsers.add_parser('sync', help='アカウントコンテンツ同期')
-        sync_parser.add_argument('--account', help='同期するアカウントID（指定なしの場合は全アカウント）')
-        sync_parser.add_argument('--force', action='store_true', help='既存データを上書き')
-        
-        args = parser.parse_args()
-        
         # システム初期化
         system = ThreadsAutomationSystem()
         
-        if args.command == 'no-reply':
-            # 特定アカウント投稿（リプライなし）
-            system.post_specific_account_no_reply(
-                account_id=args.account,
-                test_mode=args.test,
-                custom_text=args.text
-            )
-        elif args.command == 'sync':
-            # アカウントコンテンツ同期
-            system.sync_account_contents(
-                account_id=args.account,
-                force=args.force
-            )
-        else:
-            # コマンドが指定されていない場合は対話型メニュー起動
-            system.interactive_menu()
-        
+        # 対話型メニュー起動
+        system.interactive_menu()
     except KeyboardInterrupt:
         print("\n👋 システムを終了しました")
         logger.info("ユーザーによる中断でシステム終了")

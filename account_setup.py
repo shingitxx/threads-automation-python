@@ -153,8 +153,40 @@ def bulk_setup_accounts():
     # ⭐ ここに複数アカウントの情報を設定 ⭐
     accounts_to_add = [
         {
-            "id": "ACCOUNT_021",
-            "token": "THAAkIds0IIlZABUVEyTHNJOGIzRlY4czVYYVdYN3lxcTBYNnJnM3p2NjV1bHVhRXphSml4bWEzVG1ZAR0ZALSnEzZAk1QRTl6REs3dEpiSXVGVDllb01WSHV4aVFGcnRMQnhxSnRjRTVubzNzRDVkM2dqTkEtazBHaVhxLVBQSlBwR1ptZAXotQ21aS0JSQ0dacjAZD",
+            "id": "ACCOUNT_022",
+            "token": "THAAkIds0IIlZABUVJ4b243TmRnRl85MnFoVHhNTWhyaXJrTkxJc3dIYXljbjJaUkc5XzdaaFdFdEdkV1o4ejFtYWFfWHRwVDlNYU5OREMxUlBrcEY1dm1DMGtySFZAmV00xZAzg2ZAXg2Q2xmZAzdCR29ub0FTZAkVmeGNwdzVpR2plbnUwcU1GczRPOXY2OG94ZAG8ZD",
+        },
+        {
+            "id": "ACCOUNT_023",
+            "token": "THAAkIds0IIlZABUVJ1VDdzVEdSa0FYcFBEMkh2RVlJaGxEdFozTkN0RzYxNFpSdGd3NnJYRHo2NW5DNXNZANFVtQkhxbWllM1RDX3pJNjVOZAlVxcWYyV25FRkFMNkd2eUJ3WXI4ekpIaVRXaURVOTNlVldsUzNEUUJ1ajVqTjZAuSkFzbnkwTjNXYnBoZAm9MM2MZD",
+        },
+        {
+            "id": "ACCOUNT_024",
+            "token": "THAAkIds0IIlZABUVJEczJNMnNHUHJ1RUlsWXdLcF9oSWp4Ry1QVnB0OXhteDlhVVByb3ZAQT3NKRnVPMm5nNFVVX3d1bTlvdnUyX19YQ18taHA0XzZAEYV9zUW5WYkVlZAnRUbTFCX09MUW1NOUVYZAEJ3eWpPZA2tJdjh1dHByc2FIc3E0cjBrOHFBSGczN1JadW8ZD",
+        },
+        {
+            "id": "ACCOUNT_025",
+            "token": "THAAkIds0IIlZABUVRXMFJpb3FRVzBaY01scFJHc2ZASRENCejJuNXcyQ3UtTF9CZAlgxRzktemlRVjdYWERLZADkwWFNmTnN6dEtsd195aFhmRjB5TDlsbkNOSGZAIalVFdV9OX0pkZAGlTWkRYMEpzOGQwTWtyNFM0c1JuSWUyOFlmVEFTRF9tV2w1R2JweTM0bzQZD",
+        },
+        {
+            "id": "ACCOUNT_026",
+            "token": "THAAkIds0IIlZABUVJsVXBzQXo1bEtsUUItTXBCcG5LbnZAuRnQyQTRjUmNLUTNsMkYzSWtyZATJGa1d6dnUtSXlUeHZArdWRIVURTSFJLMlZA1bjdPSU1QQTFEdHpMaGozY2s1ME5rbUlpNjhlUjZA0emgxQzVVT2ZAzWXl2dVJwVnlqeWdaaGgtUmw5N0RrNGR0c00ZD",
+        },
+        {
+            "id": "ACCOUNT_027",
+            "token": "THAAkIds0IIlZABUVM1cDBUVExpLWNPbFhXSXhIZAmxLUVcxVGlVbEJVeW5RUHlVN0JFQS1CSlZAmLXc0d2dGeW9xYUNMaTdEemx5bUlMSXAySHYwRkRDc2ljV3BYck5vV1N1OXhEWC1LU1VBdWtjbGljTEthY0U1NEtTNUc5Sm92MkNmSXJZAd0hoSTRzSUtDUncZD",
+        },
+        {
+            "id": "ACCOUNT_028",
+            "token": "THAAkIds0IIlZABUVJkOFJKY1M0bXFJLXdSM3FCQ1kxUzVRSDJVdVFiNHViSWNNUmZA1dndwQ092a2V2aERPdnE4UE51emFYOGw5R1JuOHlhYVZAuTDQ2R1o5NWlLdnR5M2lkRnZA0WDU1MlpTblpjTHI4NGlvQ3BhU2pRaEVfU2ctZAkR5dVhwb19FaUxfNGtKdFUZD",
+        },
+        {
+            "id": "ACCOUNT_029",
+            "token": "THAAkIds0IIlZABUVR3b1d2SGFLaDc0ZA2YxS01NVTdBbVhabDdHRDJqMEJjdk9Jd0NxVzVUelpKZAVJJQUw4QTcyUWYwa2hyNjZALaDJUcVVBaGEzbndMSHBjZAWtJTXA4MGpLNXQ5Q19iR3ZAHWlVkSUxRcVhkSDhtTlA0bzJPUmNicmNoYWk0eWhvQW9tRE01V2MZD",
+        },
+        {
+            "id": "ACCOUNT_030",
+            "token": "THAAkIds0IIlZABUVRvNHVqUkROWVRGZADFxc3ZAVMDZAoSVN6SWpUcmhhWkd2UkhuQ0ZAWT2ZAqRTZA2V0IwdjhqS0dUcXhpT3VjYlE3YWJNNVZA6bTFSUTM1RlNXSUhpVi1Ba1hNQmlfN0hMYi1KZAVBpQWU1TUpZAaVI3alRGamRqaFdmbjV0dkxPWTFnTmMxZA3dfOUUZD",
         }
         # 必要に応じて追加...
     ]

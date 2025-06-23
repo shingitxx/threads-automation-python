@@ -70,7 +70,7 @@ def create_content_structure(account_id, content_data_list, source_images_dir=No
 # 使用例
 if __name__ == "__main__":
     # コマンドライン引数を追加するなどの改良も可能
-    account_id = "ACCOUNT_021"
+    account_id = "ACCOUNT_030"
     
     # コンテンツデータの例
     content_data_list = [
@@ -82,7 +82,7 @@ if __name__ == "__main__":
         {
             "content_id": "002",
             "text": "中って…\n緩い方がいい？きつい方がいい？\nそれともあんまり分からないかな？",
-            "images": ["source_image2.jpg", "source_image3.jpg"]
+            "images": ["source_image1.jpg", "source_image3.jpg"]
         },
         {
             "content_id": "003",
@@ -92,7 +92,7 @@ if __name__ == "__main__":
         {
             "content_id": "004",
             "text": "今月は30人卒業させる‼️🍌💦",
-            "images": ["source_image2.jpg", "source_image3.jpg"]
+            "images": ["source_image1.jpg", "source_image3.jpg"]
         },
         {
             "content_id": "005",
@@ -102,7 +102,7 @@ if __name__ == "__main__":
         {
             "content_id": "006",
             "text": "めちゃくちゃにされるセ●●スなんてご褒美でしかないよね。\nThreadsで会ってくれた人ありがと♥",
-            "images": ["source_image2.jpg", "source_image3.jpg"]
+            "images": ["source_image1.jpg", "source_image3.jpg"]
         },
         {
             "content_id": "007",
@@ -112,7 +112,7 @@ if __name__ == "__main__":
         {
             "content_id": "008",
             "text": "Threads出会えすぎて笑うしかない\n最高すぎる",
-            "images": ["source_image2.jpg", "source_image3.jpg"]
+            "images": ["source_image1.jpg", "source_image3.jpg"]
         }
         # 必要に応じて追加
     ]

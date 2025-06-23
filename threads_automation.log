@@ -3965,3 +3965,2013 @@ AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_c
 2025-06-23 15:38:59,854 - threads-automation - INFO - コンテンツキャッシュを保存: 8件
 2025-06-23 15:38:59,855 - threads-automation - INFO - 同期完了 - 追加: 8件, 更新: 0件, 変更なし: 0件, エラー: 0件
 2025-06-23 15:40:42,656 - threads-automation - INFO - システム終了
+2025-06-23 20:49:16,354 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 20:49:16,357 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 20:49:16,363 - threads-automation - INFO - システム初期化完了
+2025-06-23 20:49:16,364 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 20:49:24,080 - threads-automation - INFO - スケジューラー状態確認開始
+2025-06-23 20:49:24,090 - threads-automation - INFO - スケジューラー状態確認完了
+2025-06-23 20:54:18,467 - threads-automation - INFO - 全アカウント投稿実行開始 (テストモード: False)
+2025-06-23 20:54:18,468 - threads-automation - INFO - 投稿対象アカウント数: 21件
+2025-06-23 20:54:18,468 - threads-automation - INFO - [1/21] ACCOUNT_001 投稿開始
+2025-06-23 20:54:18,468 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:54:18,468 - threads-automation - INFO - 選択アカウント: ACCOUNT_001
+2025-06-23 20:54:18,489 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_001_CONTENT_006
+2025-06-23 20:54:18,490 - threads-automation - INFO - ACCOUNT_001: 実際の投稿実行開始
+2025-06-23 20:54:18,506 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:54:18,506 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23881245698173501/threads
+2025-06-23 20:54:18,506 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750503641/threads/ACCOUNT_001/ACCOUNT_001_CONTENT_006.jpg'}
+2025-06-23 20:54:24,538 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:54:24,541 - threads-automation - INFO - レスポンス内容: {"id":"18045808388232507"}
+2025-06-23 20:54:24,543 - threads-automation - INFO - メディアコンテナ作成成功: 18045808388232507
+2025-06-23 20:54:26,548 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 20:54:26,550 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23881245698173501/threads
+2025-06-23 20:54:26,552 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750503642/threads/ACCOUNT_001/ACCOUNT_001_CONTENT_006_1.jpg'}
+2025-06-23 20:54:32,665 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:54:32,666 - threads-automation - INFO - レスポンス内容: {"id":"17928960408068623"}
+2025-06-23 20:54:32,666 - threads-automation - INFO - メディアコンテナ作成成功: 17928960408068623
+2025-06-23 20:54:34,681 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/23881245698173501/threads
+2025-06-23 20:54:39,252 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:54:39,253 - threads-automation - INFO - レスポンス内容: {"id":"18070468631501456"}
+2025-06-23 20:54:39,253 - threads-automation - INFO - カルーセルコンテナ作成成功: 18070468631501456
+2025-06-23 20:54:39,254 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 20:54:50,422 - threads-automation - INFO - カルーセル投稿成功: {'id': '18136607299418191'}
+2025-06-23 20:54:50,423 - threads-automation - INFO - ACCOUNT_001: 投稿完了 - {'success': True, 'main_post_id': '18136607299418191', 'post_type': 'carousel'}
+2025-06-23 20:54:50,424 - threads-automation - INFO - ACCOUNT_001: 投稿成功
+2025-06-23 20:54:50,424 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 20:55:00,425 - threads-automation - INFO - [2/21] ACCOUNT_002 投稿開始
+2025-06-23 20:55:00,425 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:55:00,425 - threads-automation - INFO - 選択アカウント: ACCOUNT_002
+2025-06-23 20:55:00,438 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_002_CONTENT_002
+2025-06-23 20:55:00,438 - threads-automation - INFO - ACCOUNT_002: 実際の投稿実行開始
+2025-06-23 20:55:00,455 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:55:00,456 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/8091935217596688/threads
+2025-06-23 20:55:00,456 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750503675/threads/ACCOUNT_002/ACCOUNT_002_CONTENT_002.jpg'}
+2025-06-23 20:55:05,579 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:55:05,580 - threads-automation - INFO - レスポンス内容: {"id":"18079162375856189"}
+2025-06-23 20:55:05,581 - threads-automation - INFO - メディアコンテナ作成成功: 18079162375856189
+2025-06-23 20:55:07,597 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 20:55:07,600 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/8091935217596688/threads
+2025-06-23 20:55:07,601 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750503675/threads/ACCOUNT_002/ACCOUNT_002_CONTENT_002_1.jpg'}
+2025-06-23 20:55:12,614 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:55:12,616 - threads-automation - INFO - レスポンス内容: {"id":"17889821397272698"}
+2025-06-23 20:55:12,617 - threads-automation - INFO - メディアコンテナ作成成功: 17889821397272698
+2025-06-23 20:55:14,622 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/8091935217596688/threads
+2025-06-23 20:55:14,625 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18079162375856189,17889821397272698', 'text': 'みんなどこに出すのが好き？\n1.お腹\n2.口の中\n3.おっπ\n4.あそこの中\nコメントで教えてね\U0001faf6\U0001faf6'}
+2025-06-23 20:55:18,938 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:55:18,938 - threads-automation - INFO - レスポンス内容: {"id":"18230236993293478"}
+2025-06-23 20:55:18,938 - threads-automation - INFO - カルーセルコンテナ作成成功: 18230236993293478
+2025-06-23 20:55:18,939 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 20:55:30,269 - threads-automation - INFO - カルーセル投稿成功: {'id': '17917019829101710'}
+2025-06-23 20:55:30,271 - threads-automation - INFO - ACCOUNT_002: 投稿完了 - {'success': True, 'main_post_id': '17917019829101710', 'post_type': 'carousel'}
+2025-06-23 20:55:30,271 - threads-automation - INFO - ACCOUNT_002: 投稿成功
+2025-06-23 20:55:30,271 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 20:55:40,275 - threads-automation - INFO - [3/21] ACCOUNT_003 投稿開始
+2025-06-23 20:55:40,276 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:55:40,277 - threads-automation - INFO - 選択アカウント: ACCOUNT_003
+2025-06-23 20:55:40,302 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_003_CONTENT_007
+2025-06-23 20:55:40,303 - threads-automation - INFO - ACCOUNT_003: 実際の投稿実行開始
+2025-06-23 20:55:43,520 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:55:43,520 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30733650642886897/threads
+2025-06-23 20:55:43,521 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750679742/threads/ACCOUNT_003/ACCOUNT_003_CONTENT_007.jpg'}
+2025-06-23 20:55:49,329 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:55:49,330 - threads-automation - INFO - レスポンス内容: {"id":"17851261050475375"}
+2025-06-23 20:55:49,330 - threads-automation - INFO - メディアコンテナ作成成功: 17851261050475375
+2025-06-23 20:55:51,335 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 20:55:51,336 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30733650642886897/threads
+2025-06-23 20:55:51,336 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750679742/threads/ACCOUNT_003/ACCOUNT_003_CONTENT_007_1.jpg'}
+2025-06-23 20:55:57,068 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:55:57,070 - threads-automation - INFO - レスポンス内容: {"id":"17949511031996790"}
+2025-06-23 20:55:57,072 - threads-automation - INFO - メディアコンテナ作成成功: 17949511031996790
+2025-06-23 20:55:59,085 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/30733650642886897/threads
+2025-06-23 20:56:03,983 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:56:03,985 - threads-automation - INFO - レスポンス内容: {"id":"18083681734766687"}
+2025-06-23 20:56:03,987 - threads-automation - INFO - カルーセルコンテナ作成成功: 18083681734766687
+2025-06-23 20:56:03,989 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 20:56:14,216 - threads-automation - INFO - カルーセル投稿成功: {'id': '18059462198250768'}
+2025-06-23 20:56:14,224 - threads-automation - INFO - ACCOUNT_003: 投稿完了 - {'success': True, 'main_post_id': '18059462198250768', 'post_type': 'carousel'}
+2025-06-23 20:56:14,227 - threads-automation - INFO - ACCOUNT_003: 投稿成功
+2025-06-23 20:56:14,229 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 20:56:24,245 - threads-automation - INFO - [4/21] ACCOUNT_004 投稿開始
+2025-06-23 20:56:24,248 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:56:24,250 - threads-automation - INFO - 選択アカウント: ACCOUNT_004
+2025-06-23 20:56:24,290 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_004_CONTENT_006
+2025-06-23 20:56:24,290 - threads-automation - INFO - ACCOUNT_004: 実際の投稿実行開始
+2025-06-23 20:56:24,320 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:56:24,320 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/29787801417533769/threads
+2025-06-23 20:56:24,321 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750495452/threads/ACCOUNT_004/ACCOUNT_004_CONTENT_006.jpg'}
+2025-06-23 20:56:31,085 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:56:31,087 - threads-automation - INFO - レスポンス内容: {"id":"18096534445522922"}
+2025-06-23 20:56:31,089 - threads-automation - INFO - メディアコンテナ作成成功: 18096534445522922
+2025-06-23 20:56:33,096 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 20:56:33,099 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/29787801417533769/threads
+2025-06-23 20:56:33,102 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750495452/threads/ACCOUNT_004/ACCOUNT_004_CONTENT_006_1.jpg'}
+2025-06-23 20:56:39,219 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:56:39,221 - threads-automation - INFO - レスポンス内容: {"id":"17900412780213837"}
+2025-06-23 20:56:39,223 - threads-automation - INFO - メディアコンテナ作成成功: 17900412780213837
+2025-06-23 20:56:41,236 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/29787801417533769/threads
+2025-06-23 20:56:45,940 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:56:45,942 - threads-automation - INFO - レスポンス内容: {"id":"18042003071638047"}
+2025-06-23 20:56:45,943 - threads-automation - INFO - カルーセルコンテナ作成成功: 18042003071638047
+2025-06-23 20:56:45,946 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 20:56:56,328 - threads-automation - INFO - カルーセル投稿成功: {'id': '18319132699224498'}
+2025-06-23 20:56:56,336 - threads-automation - INFO - ACCOUNT_004: 投稿完了 - {'success': True, 'main_post_id': '18319132699224498', 'post_type': 'carousel'}
+2025-06-23 20:56:56,339 - threads-automation - INFO - ACCOUNT_004: 投稿成功
+2025-06-23 20:56:56,342 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 20:57:06,349 - threads-automation - INFO - [5/21] ACCOUNT_005 投稿開始
+2025-06-23 20:57:06,352 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:57:06,355 - threads-automation - INFO - 選択アカウント: ACCOUNT_005
+2025-06-23 20:57:06,387 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_005_CONTENT_003
+2025-06-23 20:57:06,388 - threads-automation - INFO - ACCOUNT_005: 実際の投稿実行開始
+2025-06-23 20:57:10,854 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:57:10,854 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9253576544745885/threads
+2025-06-23 20:57:10,854 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750679829/threads/ACCOUNT_005/ACCOUNT_005_CONTENT_003.png'}
+2025-06-23 20:57:17,112 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:57:17,114 - threads-automation - INFO - レスポンス内容: {"id":"18081422347839257"}
+2025-06-23 20:57:17,116 - threads-automation - INFO - メディアコンテナ作成成功: 18081422347839257
+2025-06-23 20:57:19,128 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 20:57:19,130 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9253576544745885/threads
+2025-06-23 20:57:19,132 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750679830/threads/ACCOUNT_005/ACCOUNT_005_CONTENT_003_1.jpg'}
+2025-06-23 20:57:23,877 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:57:23,879 - threads-automation - INFO - レスポンス内容: {"id":"18091933027618239"}
+2025-06-23 20:57:23,881 - threads-automation - INFO - メディアコンテナ作成成功: 18091933027618239
+2025-06-23 20:57:25,889 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9253576544745885/threads
+2025-06-23 20:57:25,892 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18081422347839257,18091933027618239', 'text': '中って…\n緩い方がいい？きつい方がいい？\nそれともあんまり分からないかな？'}
+2025-06-23 20:57:30,571 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:57:30,573 - threads-automation - INFO - レスポンス内容: {"id":"17886611592285252"}
+2025-06-23 20:57:30,576 - threads-automation - INFO - カルーセルコンテナ作成成功: 17886611592285252
+2025-06-23 20:57:30,578 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 20:57:40,706 - threads-automation - INFO - カルーセル投稿成功: {'id': '17989814933816408'}
+2025-06-23 20:57:40,708 - threads-automation - INFO - ACCOUNT_005: 投稿完了 - {'success': True, 'main_post_id': '17989814933816408', 'post_type': 'carousel'}
+2025-06-23 20:57:40,711 - threads-automation - INFO - ACCOUNT_005: 投稿成功
+2025-06-23 20:57:40,714 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 20:57:50,732 - threads-automation - INFO - [6/21] ACCOUNT_006 投稿開始
+2025-06-23 20:57:50,736 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:57:50,739 - threads-automation - INFO - 選択アカウント: ACCOUNT_006
+2025-06-23 20:57:50,783 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_006_CONTENT_003
+2025-06-23 20:57:50,785 - threads-automation - INFO - ACCOUNT_006: 実際の投稿実行開始
+2025-06-23 20:57:50,833 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:57:50,834 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/29997707833209756/threads
+2025-06-23 20:57:50,835 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750484753/threads/ACCOUNT_006/ACCOUNT_006_CONTENT_003.png'}
+2025-06-23 20:57:57,699 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:57:57,702 - threads-automation - INFO - レスポンス内容: {"id":"18326914867203234"}
+2025-06-23 20:57:57,703 - threads-automation - INFO - メディアコンテナ作成成功: 18326914867203234
+2025-06-23 20:57:59,714 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 20:57:59,716 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/29997707833209756/threads
+2025-06-23 20:57:59,718 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750484754/threads/ACCOUNT_006/ACCOUNT_006_CONTENT_003_1.jpg'}
+2025-06-23 20:58:04,646 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:58:04,648 - threads-automation - INFO - レスポンス内容: {"id":"18175359718328186"}
+2025-06-23 20:58:04,650 - threads-automation - INFO - メディアコンテナ作成成功: 18175359718328186
+2025-06-23 20:58:06,658 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/29997707833209756/threads
+2025-06-23 20:58:06,661 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18326914867203234,18175359718328186', 'text': '中って…\n緩い方がいい？きつい方がいい？\nそれともあんまり分からないかな？'}
+2025-06-23 20:58:10,720 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:58:10,722 - threads-automation - INFO - レスポンス内容: {"id":"18096859030585342"}
+2025-06-23 20:58:10,724 - threads-automation - INFO - カルーセルコンテナ作成成功: 18096859030585342
+2025-06-23 20:58:10,727 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 20:58:21,368 - threads-automation - INFO - カルーセル投稿成功: {'id': '17886651930287149'}
+2025-06-23 20:58:21,376 - threads-automation - INFO - ACCOUNT_006: 投稿完了 - {'success': True, 'main_post_id': '17886651930287149', 'post_type': 'carousel'}
+2025-06-23 20:58:21,376 - threads-automation - INFO - ACCOUNT_006: 投稿成功
+2025-06-23 20:58:21,377 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 20:58:31,391 - threads-automation - INFO - [7/21] ACCOUNT_007 投稿開始
+2025-06-23 20:58:31,394 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:58:31,396 - threads-automation - INFO - 選択アカウント: ACCOUNT_007
+2025-06-23 20:58:31,431 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_007_CONTENT_001
+2025-06-23 20:58:31,433 - threads-automation - INFO - ACCOUNT_007: 実際の投稿実行開始
+2025-06-23 20:58:32,975 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:58:32,977 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9926872104055991/threads
+2025-06-23 20:58:32,978 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750679911/threads/ACCOUNT_007/ACCOUNT_007_CONTENT_001.jpg'}
+2025-06-23 20:58:38,962 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:58:38,964 - threads-automation - INFO - レスポンス内容: {"id":"17958657077959172"}
+2025-06-23 20:58:38,966 - threads-automation - INFO - メディアコンテナ作成成功: 17958657077959172
+2025-06-23 20:58:40,974 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 20:58:40,977 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9926872104055991/threads
+2025-06-23 20:58:40,979 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750679912/threads/ACCOUNT_007/ACCOUNT_007_CONTENT_001_1.jpg'}
+2025-06-23 20:58:48,699 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:58:48,701 - threads-automation - INFO - レスポンス内容: {"id":"18063533978130879"}
+2025-06-23 20:58:48,703 - threads-automation - INFO - メディアコンテナ作成成功: 18063533978130879
+2025-06-23 20:58:50,707 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9926872104055991/threads
+2025-06-23 20:58:50,709 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '17958657077959172,18063533978130879', 'text': '40歳以上とデートしたいな\n年下も良いけど年上の方が好きみんな年下嫌いかな？'}
+2025-06-23 20:58:56,046 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:58:56,048 - threads-automation - INFO - レスポンス内容: {"id":"18083288290831469"}
+2025-06-23 20:58:56,050 - threads-automation - INFO - カルーセルコンテナ作成成功: 18083288290831469
+2025-06-23 20:58:56,053 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 20:59:06,331 - threads-automation - INFO - カルーセル投稿成功: {'id': '18054394940377790'}
+2025-06-23 20:59:06,338 - threads-automation - INFO - ACCOUNT_007: 投稿完了 - {'success': True, 'main_post_id': '18054394940377790', 'post_type': 'carousel'}
+2025-06-23 20:59:06,339 - threads-automation - INFO - ACCOUNT_007: 投稿成功
+2025-06-23 20:59:06,340 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 20:59:16,351 - threads-automation - INFO - [8/21] ACCOUNT_008 投稿開始
+2025-06-23 20:59:16,353 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:59:16,356 - threads-automation - INFO - 選択アカウント: ACCOUNT_008
+2025-06-23 20:59:16,398 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_008_CONTENT_003
+2025-06-23 20:59:16,399 - threads-automation - INFO - ACCOUNT_008: 実際の投稿実行開始
+2025-06-23 20:59:18,062 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:59:18,064 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23887572274188622/threads
+2025-06-23 20:59:18,066 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750679956/threads/ACCOUNT_008/ACCOUNT_008_CONTENT_003.jpg'}
+2025-06-23 20:59:24,232 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:59:24,234 - threads-automation - INFO - レスポンス内容: {"id":"18073051408786038"}
+2025-06-23 20:59:24,237 - threads-automation - INFO - メディアコンテナ作成成功: 18073051408786038
+2025-06-23 20:59:26,246 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 20:59:26,249 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23887572274188622/threads
+2025-06-23 20:59:26,250 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750679957/threads/ACCOUNT_008/ACCOUNT_008_CONTENT_003_1.jpg'}
+2025-06-23 20:59:31,892 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:59:31,894 - threads-automation - INFO - レスポンス内容: {"id":"18070278442956757"}
+2025-06-23 20:59:31,896 - threads-automation - INFO - メディアコンテナ作成成功: 18070278442956757
+2025-06-23 20:59:33,901 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/23887572274188622/threads
+2025-06-23 20:59:33,903 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18073051408786038,18070278442956757', 'text': 'CAだって、乱れたいな。。\nお空の上では、緊張してるから\n陸の上では、え ● ちにさせて…\nダメですか…？'}
+2025-06-23 20:59:38,535 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 20:59:38,537 - threads-automation - INFO - レスポンス内容: {"id":"17965234391782504"}
+2025-06-23 20:59:38,539 - threads-automation - INFO - カルーセルコンテナ作成成功: 17965234391782504
+2025-06-23 20:59:38,541 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 20:59:49,134 - threads-automation - INFO - カルーセル投稿成功: {'id': '18275399953280925'}
+2025-06-23 20:59:49,143 - threads-automation - INFO - ACCOUNT_008: 投稿完了 - {'success': True, 'main_post_id': '18275399953280925', 'post_type': 'carousel'}
+2025-06-23 20:59:49,145 - threads-automation - INFO - ACCOUNT_008: 投稿成功
+2025-06-23 20:59:49,148 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 20:59:59,156 - threads-automation - INFO - [9/21] ACCOUNT_009 投稿開始
+2025-06-23 20:59:59,158 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 20:59:59,161 - threads-automation - INFO - 選択アカウント: ACCOUNT_009
+2025-06-23 20:59:59,188 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_009_CONTENT_007
+2025-06-23 20:59:59,189 - threads-automation - INFO - ACCOUNT_009: 実際の投稿実行開始
+2025-06-23 20:59:59,214 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 20:59:59,215 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-23 20:59:59,215 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750549433/threads/ACCOUNT_009/ACCOUNT_009_CONTENT_007.jpg'}
+2025-06-23 21:00:04,393 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:00:04,395 - threads-automation - INFO - レスポンス内容: {"id":"18325935052203995"}
+2025-06-23 21:00:04,397 - threads-automation - INFO - メディアコンテナ作成成功: 18325935052203995
+2025-06-23 21:00:06,414 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:00:06,417 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-23 21:00:06,419 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750549434/threads/ACCOUNT_009/ACCOUNT_009_CONTENT_007_1.jpg'}
+2025-06-23 21:00:11,262 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:00:11,264 - threads-automation - INFO - レスポンス内容: {"id":"18041456162303896"}
+2025-06-23 21:00:11,266 - threads-automation - INFO - メディアコンテナ作成成功: 18041456162303896
+2025-06-23 21:00:13,273 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-23 21:00:18,479 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:00:18,481 - threads-automation - INFO - レスポンス内容: {"id":"18080296021680648"}
+2025-06-23 21:00:18,483 - threads-automation - INFO - カルーセルコンテナ作成成功: 18080296021680648
+2025-06-23 21:00:18,486 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:00:29,160 - threads-automation - INFO - カルーセル投稿成功: {'id': '17976318830896553'}
+2025-06-23 21:00:29,164 - threads-automation - INFO - ACCOUNT_009: 投稿完了 - {'success': True, 'main_post_id': '17976318830896553', 'post_type': 'carousel'}
+2025-06-23 21:00:29,166 - threads-automation - INFO - ACCOUNT_009: 投稿成功
+2025-06-23 21:00:29,168 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:00:39,184 - threads-automation - INFO - [10/21] ACCOUNT_010 投稿開始
+2025-06-23 21:00:39,187 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:00:39,189 - threads-automation - INFO - 選択アカウント: ACCOUNT_010
+2025-06-23 21:00:39,226 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_010_CONTENT_007
+2025-06-23 21:00:39,227 - threads-automation - INFO - ACCOUNT_010: 実際の投稿実行開始
+2025-06-23 21:00:39,241 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:00:39,241 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24112122328393306/threads
+2025-06-23 21:00:39,241 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750549468/threads/ACCOUNT_010/ACCOUNT_010_CONTENT_007.jpg'}
+2025-06-23 21:00:44,327 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:00:44,330 - threads-automation - INFO - レスポンス内容: {"id":"18062861828134263"}
+2025-06-23 21:00:44,332 - threads-automation - INFO - メディアコンテナ作成成功: 18062861828134263
+2025-06-23 21:00:46,343 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:00:46,344 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24112122328393306/threads
+2025-06-23 21:00:46,346 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750549469/threads/ACCOUNT_010/ACCOUNT_010_CONTENT_007_1.jpg'}
+2025-06-23 21:00:51,834 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:00:51,835 - threads-automation - INFO - レスポンス内容: {"id":"18078604366860426"}
+2025-06-23 21:00:51,837 - threads-automation - INFO - メディアコンテナ作成成功: 18078604366860426
+2025-06-23 21:00:53,842 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24112122328393306/threads
+2025-06-23 21:00:58,041 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:00:58,043 - threads-automation - INFO - レスポンス内容: {"id":"18091601581721730"}
+2025-06-23 21:00:58,045 - threads-automation - INFO - カルーセルコンテナ作成成功: 18091601581721730
+2025-06-23 21:00:58,047 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:01:08,931 - threads-automation - INFO - カルーセル投稿成功: {'id': '18096923344525371'}
+2025-06-23 21:01:08,939 - threads-automation - INFO - ACCOUNT_010: 投稿完了 - {'success': True, 'main_post_id': '18096923344525371', 'post_type': 'carousel'}
+2025-06-23 21:01:08,941 - threads-automation - INFO - ACCOUNT_010: 投稿成功
+2025-06-23 21:01:08,941 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:01:18,955 - threads-automation - INFO - [11/21] ACCOUNT_011 投稿開始
+2025-06-23 21:01:18,957 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:01:18,959 - threads-automation - INFO - 選択アカウント: ACCOUNT_011
+2025-06-23 21:01:18,992 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_011_CONTENT_002
+2025-06-23 21:01:18,993 - threads-automation - INFO - ACCOUNT_011: 実際の投稿実行開始
+2025-06-23 21:01:20,796 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:01:20,798 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-23 21:01:20,800 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680079/threads/ACCOUNT_011/ACCOUNT_011_CONTENT_002.jpg'}
+2025-06-23 21:01:27,031 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:01:27,033 - threads-automation - INFO - レスポンス内容: {"id":"18307993540243810"}
+2025-06-23 21:01:27,034 - threads-automation - INFO - メディアコンテナ作成成功: 18307993540243810
+2025-06-23 21:01:29,040 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:01:29,042 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-23 21:01:29,044 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680080/threads/ACCOUNT_011/ACCOUNT_011_CONTENT_002_1.jpg'}
+2025-06-23 21:01:34,192 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:01:34,194 - threads-automation - INFO - レスポンス内容: {"id":"18046575668550520"}
+2025-06-23 21:01:34,196 - threads-automation - INFO - メディアコンテナ作成成功: 18046575668550520
+2025-06-23 21:01:36,202 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-23 21:01:36,205 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18307993540243810,18046575668550520', 'text': 'みんなどこに出すのが好き？\n1.お腹\n2.口の中\n3.おっπ\n4.あそこの中\nコメントで教えてね\U0001faf6\U0001faf6'}
+2025-06-23 21:01:40,515 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:01:40,517 - threads-automation - INFO - レスポンス内容: {"id":"18089655619724790"}
+2025-06-23 21:01:40,518 - threads-automation - INFO - カルーセルコンテナ作成成功: 18089655619724790
+2025-06-23 21:01:40,521 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:01:51,207 - threads-automation - INFO - カルーセル投稿成功: {'id': '18039048662639051'}
+2025-06-23 21:01:51,215 - threads-automation - INFO - ACCOUNT_011: 投稿完了 - {'success': True, 'main_post_id': '18039048662639051', 'post_type': 'carousel'}
+2025-06-23 21:01:51,217 - threads-automation - INFO - ACCOUNT_011: 投稿成功
+2025-06-23 21:01:51,220 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:02:01,235 - threads-automation - INFO - [12/21] ACCOUNT_012 投稿開始
+2025-06-23 21:02:01,239 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:02:01,241 - threads-automation - INFO - 選択アカウント: ACCOUNT_012
+2025-06-23 21:02:01,269 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_012_CONTENT_003
+2025-06-23 21:02:01,271 - threads-automation - INFO - ACCOUNT_012: 実際の投稿実行開始
+2025-06-23 21:02:02,723 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:02:02,726 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24077475695215745/threads
+2025-06-23 21:02:02,729 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680121/threads/ACCOUNT_012/ACCOUNT_012_CONTENT_003.jpg'}
+2025-06-23 21:02:08,054 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:02:08,056 - threads-automation - INFO - レスポンス内容: {"id":"18065943799885213"}
+2025-06-23 21:02:08,058 - threads-automation - INFO - メディアコンテナ作成成功: 18065943799885213
+2025-06-23 21:02:10,071 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:02:10,073 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24077475695215745/threads
+2025-06-23 21:02:10,075 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680122/threads/ACCOUNT_012/ACCOUNT_012_CONTENT_003_1.jpg'}
+2025-06-23 21:02:15,898 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:02:15,900 - threads-automation - INFO - レスポンス内容: {"id":"17863383195422239"}
+2025-06-23 21:02:15,902 - threads-automation - INFO - メディアコンテナ作成成功: 17863383195422239
+2025-06-23 21:02:17,914 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24077475695215745/threads
+2025-06-23 21:02:17,916 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18065943799885213,17863383195422239', 'text': '中って…\n緩い方がいい？きつい方がいい？\nそれともあんまり分からないかな？'}
+2025-06-23 21:02:23,361 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:02:23,363 - threads-automation - INFO - レスポンス内容: {"id":"18068117822013566"}
+2025-06-23 21:02:23,365 - threads-automation - INFO - カルーセルコンテナ作成成功: 18068117822013566
+2025-06-23 21:02:23,367 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:02:34,508 - threads-automation - INFO - カルーセル投稿成功: {'id': '17908485135053931'}
+2025-06-23 21:02:34,516 - threads-automation - INFO - ACCOUNT_012: 投稿完了 - {'success': True, 'main_post_id': '17908485135053931', 'post_type': 'carousel'}
+2025-06-23 21:02:34,519 - threads-automation - INFO - ACCOUNT_012: 投稿成功
+2025-06-23 21:02:34,522 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:02:44,538 - threads-automation - INFO - [13/21] ACCOUNT_013 投稿開始
+2025-06-23 21:02:44,542 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:02:44,544 - threads-automation - INFO - 選択アカウント: ACCOUNT_013
+2025-06-23 21:02:44,578 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_013_CONTENT_003
+2025-06-23 21:02:44,579 - threads-automation - INFO - ACCOUNT_013: 実際の投稿実行開始
+2025-06-23 21:02:46,269 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:02:46,272 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30920200597578697/threads
+2025-06-23 21:02:46,274 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680164/threads/ACCOUNT_013/ACCOUNT_013_CONTENT_003.jpg'}
+2025-06-23 21:02:52,065 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:02:52,065 - threads-automation - INFO - レスポンス内容: {"id":"17874143205367549"}
+2025-06-23 21:02:52,066 - threads-automation - INFO - メディアコンテナ作成成功: 17874143205367549
+2025-06-23 21:02:54,070 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:02:54,073 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30920200597578697/threads
+2025-06-23 21:02:54,074 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680165/threads/ACCOUNT_013/ACCOUNT_013_CONTENT_003_1.jpg'}
+2025-06-23 21:02:58,853 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:02:58,854 - threads-automation - INFO - レスポンス内容: {"id":"18020858066713460"}
+2025-06-23 21:02:58,856 - threads-automation - INFO - メディアコンテナ作成成功: 18020858066713460
+2025-06-23 21:03:00,868 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/30920200597578697/threads
+2025-06-23 21:03:00,870 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '17874143205367549,18020858066713460', 'text': '中って…\n緩い方がいい？きつい方がいい？\nそれともあんまり分からないかな？'}
+2025-06-23 21:03:04,808 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:03:04,810 - threads-automation - INFO - レスポンス内容: {"id":"18026115974686695"}
+2025-06-23 21:03:04,811 - threads-automation - INFO - カルーセルコンテナ作成成功: 18026115974686695
+2025-06-23 21:03:04,814 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:03:15,220 - threads-automation - INFO - カルーセル投稿成功: {'id': '18045957137219438'}
+2025-06-23 21:03:15,228 - threads-automation - INFO - ACCOUNT_013: 投稿完了 - {'success': True, 'main_post_id': '18045957137219438', 'post_type': 'carousel'}
+2025-06-23 21:03:15,231 - threads-automation - INFO - ACCOUNT_013: 投稿成功
+2025-06-23 21:03:15,231 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:03:25,247 - threads-automation - INFO - [14/21] ACCOUNT_014 投稿開始
+2025-06-23 21:03:25,250 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:03:25,252 - threads-automation - INFO - 選択アカウント: ACCOUNT_014
+2025-06-23 21:03:25,286 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_014_CONTENT_004
+2025-06-23 21:03:25,286 - threads-automation - INFO - ACCOUNT_014: 実際の投稿実行開始
+2025-06-23 21:03:25,296 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:03:25,296 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23938614452425056/threads
+2025-06-23 21:03:25,296 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750504053/threads/ACCOUNT_014/ACCOUNT_014_CONTENT_004.jpg'}
+2025-06-23 21:03:30,470 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:03:30,473 - threads-automation - INFO - レスポンス内容: {"id":"17971984352859819"}
+2025-06-23 21:03:30,475 - threads-automation - INFO - メディアコンテナ作成成功: 17971984352859819
+2025-06-23 21:03:32,488 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:03:32,490 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23938614452425056/threads
+2025-06-23 21:03:32,492 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750504054/threads/ACCOUNT_014/ACCOUNT_014_CONTENT_004_1.jpg'}
+2025-06-23 21:03:38,140 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:03:38,142 - threads-automation - INFO - レスポンス内容: {"id":"18003601142787953"}
+2025-06-23 21:03:38,144 - threads-automation - INFO - メディアコンテナ作成成功: 18003601142787953
+2025-06-23 21:03:40,150 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/23938614452425056/threads
+2025-06-23 21:03:45,116 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:03:45,118 - threads-automation - INFO - レスポンス内容: {"id":"17909610495081628"}
+2025-06-23 21:03:45,120 - threads-automation - INFO - カルーセルコンテナ作成成功: 17909610495081628
+2025-06-23 21:03:45,123 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:03:56,007 - threads-automation - INFO - カルーセル投稿成功: {'id': '17915198445109021'}
+2025-06-23 21:03:56,014 - threads-automation - INFO - ACCOUNT_014: 投稿完了 - {'success': True, 'main_post_id': '17915198445109021', 'post_type': 'carousel'}
+2025-06-23 21:03:56,016 - threads-automation - INFO - ACCOUNT_014: 投稿成功
+2025-06-23 21:03:56,019 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:04:06,024 - threads-automation - INFO - [15/21] ACCOUNT_015 投稿開始
+2025-06-23 21:04:06,027 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:04:06,029 - threads-automation - INFO - 選択アカウント: ACCOUNT_015
+2025-06-23 21:04:06,061 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_015_CONTENT_004
+2025-06-23 21:04:06,062 - threads-automation - INFO - ACCOUNT_015: 実際の投稿実行開始
+2025-06-23 21:04:07,615 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:04:07,617 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23934054476290648/threads
+2025-06-23 21:04:07,619 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680246/threads/ACCOUNT_015/ACCOUNT_015_CONTENT_004.jpg'}
+2025-06-23 21:04:13,131 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:04:13,133 - threads-automation - INFO - レスポンス内容: {"id":"17975965754734382"}
+2025-06-23 21:04:13,135 - threads-automation - INFO - メディアコンテナ作成成功: 17975965754734382
+2025-06-23 21:04:15,136 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:04:15,138 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23934054476290648/threads
+2025-06-23 21:04:15,141 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680247/threads/ACCOUNT_015/ACCOUNT_015_CONTENT_004_1.jpg'}
+2025-06-23 21:04:21,183 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:04:21,185 - threads-automation - INFO - レスポンス内容: {"id":"18080630851666846"}
+2025-06-23 21:04:21,187 - threads-automation - INFO - メディアコンテナ作成成功: 18080630851666846
+2025-06-23 21:04:23,203 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/23934054476290648/threads
+2025-06-23 21:04:27,117 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:04:27,119 - threads-automation - INFO - レスポンス内容: {"id":"18344402155094211"}
+2025-06-23 21:04:27,121 - threads-automation - INFO - カルーセルコンテナ作成成功: 18344402155094211
+2025-06-23 21:04:27,125 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:04:49,234 - threads-automation - INFO - カルーセル投稿成功: {'id': '18033391694418547'}
+2025-06-23 21:04:49,243 - threads-automation - INFO - ACCOUNT_015: 投稿完了 - {'success': True, 'main_post_id': '18033391694418547', 'post_type': 'carousel'}
+2025-06-23 21:04:49,245 - threads-automation - INFO - ACCOUNT_015: 投稿成功
+2025-06-23 21:04:49,248 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:04:59,261 - threads-automation - INFO - [16/21] ACCOUNT_016 投稿開始
+2025-06-23 21:04:59,264 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:04:59,267 - threads-automation - INFO - 選択アカウント: ACCOUNT_016
+2025-06-23 21:04:59,294 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_016_CONTENT_009
+2025-06-23 21:04:59,294 - threads-automation - INFO - ACCOUNT_016: 実際の投稿実行開始
+2025-06-23 21:05:11,219 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:05:11,221 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9620967151359166/threads
+2025-06-23 21:05:11,223 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680299/threads/ACCOUNT_016/ACCOUNT_016_CONTENT_009.jpg'}
+2025-06-23 21:05:25,459 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:05:25,461 - threads-automation - INFO - レスポンス内容: {"id":"17866093662407441"}
+2025-06-23 21:05:25,463 - threads-automation - INFO - メディアコンテナ作成成功: 17866093662407441
+2025-06-23 21:05:27,464 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:05:27,467 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9620967151359166/threads
+2025-06-23 21:05:27,468 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680306/threads/ACCOUNT_016/ACCOUNT_016_CONTENT_009_1.jpg'}
+2025-06-23 21:05:34,329 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:05:34,331 - threads-automation - INFO - レスポンス内容: {"id":"18042032600294769"}
+2025-06-23 21:05:34,333 - threads-automation - INFO - メディアコンテナ作成成功: 18042032600294769
+2025-06-23 21:05:36,337 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9620967151359166/threads
+2025-06-23 21:05:36,339 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '17866093662407441,18042032600294769', 'text': 'Threads出会えすぎて笑うしかない\n最高すぎる///'}
+2025-06-23 21:05:42,554 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:05:42,557 - threads-automation - INFO - レスポンス内容: {"id":"18274968349276390"}
+2025-06-23 21:05:42,558 - threads-automation - INFO - カルーセルコンテナ作成成功: 18274968349276390
+2025-06-23 21:05:42,561 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:05:54,380 - threads-automation - INFO - カルーセル投稿成功: {'id': '18043274156633816'}
+2025-06-23 21:05:54,388 - threads-automation - INFO - ACCOUNT_016: 投稿完了 - {'success': True, 'main_post_id': '18043274156633816', 'post_type': 'carousel'}
+2025-06-23 21:05:54,391 - threads-automation - INFO - ACCOUNT_016: 投稿成功
+2025-06-23 21:05:54,393 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:06:04,409 - threads-automation - INFO - [17/21] ACCOUNT_017 投稿開始
+2025-06-23 21:06:04,412 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:06:04,415 - threads-automation - INFO - 選択アカウント: ACCOUNT_017
+2025-06-23 21:06:04,443 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_017_CONTENT_008
+2025-06-23 21:06:04,443 - threads-automation - INFO - ACCOUNT_017: 実際の投稿実行開始
+2025-06-23 21:06:04,455 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:06:04,456 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24128386680120249/threads
+2025-06-23 21:06:04,456 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750485105/threads/ACCOUNT_017/ACCOUNT_017_CONTENT_008.jpg'}
+2025-06-23 21:06:19,755 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:06:19,757 - threads-automation - INFO - レスポンス内容: {"id":"18094220767614522"}
+2025-06-23 21:06:19,759 - threads-automation - INFO - メディアコンテナ作成成功: 18094220767614522
+2025-06-23 21:06:21,775 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:06:21,778 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24128386680120249/threads
+2025-06-23 21:06:21,779 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750485105/threads/ACCOUNT_017/ACCOUNT_017_CONTENT_008_1.jpg'}
+2025-06-23 21:06:30,228 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:06:30,230 - threads-automation - INFO - レスポンス内容: {"id":"18061220432335775"}
+2025-06-23 21:06:30,231 - threads-automation - INFO - メディアコンテナ作成成功: 18061220432335775
+2025-06-23 21:06:32,237 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24128386680120249/threads
+2025-06-23 21:06:40,519 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:06:40,522 - threads-automation - INFO - レスポンス内容: {"id":"18389135287138946"}
+2025-06-23 21:06:40,524 - threads-automation - INFO - カルーセルコンテナ作成成功: 18389135287138946
+2025-06-23 21:06:40,526 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:06:58,675 - threads-automation - INFO - カルーセル投稿成功: {'id': '17933272047052422'}
+2025-06-23 21:06:58,683 - threads-automation - INFO - ACCOUNT_017: 投稿完了 - {'success': True, 'main_post_id': '17933272047052422', 'post_type': 'carousel'}
+2025-06-23 21:06:58,685 - threads-automation - INFO - ACCOUNT_017: 投稿成功
+2025-06-23 21:06:58,687 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:07:08,701 - threads-automation - INFO - [18/21] ACCOUNT_018 投稿開始
+2025-06-23 21:07:08,703 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:07:08,705 - threads-automation - INFO - 選択アカウント: ACCOUNT_018
+2025-06-23 21:07:08,742 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_018_CONTENT_008
+2025-06-23 21:07:08,743 - threads-automation - INFO - ACCOUNT_018: 実際の投稿実行開始
+2025-06-23 21:07:08,771 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:07:08,772 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24625332200418747/threads
+2025-06-23 21:07:08,772 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750504172/threads/ACCOUNT_018/ACCOUNT_018_CONTENT_008.jpg'}
+2025-06-23 21:07:15,557 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:07:15,559 - threads-automation - INFO - レスポンス内容: {"id":"17852103603438470"}
+2025-06-23 21:07:15,561 - threads-automation - INFO - メディアコンテナ作成成功: 17852103603438470
+2025-06-23 21:07:17,565 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:07:17,568 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24625332200418747/threads
+2025-06-23 21:07:17,569 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750504173/threads/ACCOUNT_018/ACCOUNT_018_CONTENT_008_1.jpg'}
+2025-06-23 21:07:22,929 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:07:22,931 - threads-automation - INFO - レスポンス内容: {"id":"18067380358872737"}
+2025-06-23 21:07:22,933 - threads-automation - INFO - メディアコンテナ作成成功: 18067380358872737
+2025-06-23 21:07:24,940 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24625332200418747/threads
+2025-06-23 21:07:31,012 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:07:31,014 - threads-automation - INFO - レスポンス内容: {"id":"17974022219853661"}
+2025-06-23 21:07:31,016 - threads-automation - INFO - カルーセルコンテナ作成成功: 17974022219853661
+2025-06-23 21:07:31,018 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:07:42,308 - threads-automation - INFO - カルーセル投稿成功: {'id': '18035525630380767'}
+2025-06-23 21:07:42,317 - threads-automation - INFO - ACCOUNT_018: 投稿完了 - {'success': True, 'main_post_id': '18035525630380767', 'post_type': 'carousel'}
+2025-06-23 21:07:42,320 - threads-automation - INFO - ACCOUNT_018: 投稿成功
+2025-06-23 21:07:42,322 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:07:52,326 - threads-automation - INFO - [19/21] ACCOUNT_019 投稿開始
+2025-06-23 21:07:52,330 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:07:52,333 - threads-automation - INFO - 選択アカウント: ACCOUNT_019
+2025-06-23 21:07:52,372 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_019_CONTENT_008
+2025-06-23 21:07:52,372 - threads-automation - INFO - ACCOUNT_019: 実際の投稿実行開始
+2025-06-23 21:07:55,300 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:07:55,302 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9569590389814055/threads
+2025-06-23 21:07:55,303 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680473/threads/ACCOUNT_019/ACCOUNT_019_CONTENT_008.jpg'}
+2025-06-23 21:08:00,457 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:08:00,459 - threads-automation - INFO - レスポンス内容: {"id":"17939835897034945"}
+2025-06-23 21:08:00,461 - threads-automation - INFO - メディアコンテナ作成成功: 17939835897034945
+2025-06-23 21:08:02,470 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:08:02,472 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9569590389814055/threads
+2025-06-23 21:08:02,473 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680474/threads/ACCOUNT_019/ACCOUNT_019_CONTENT_008_1.jpg'}
+2025-06-23 21:08:08,716 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:08:08,718 - threads-automation - INFO - レスポンス内容: {"id":"18065858705134116"}
+2025-06-23 21:08:08,720 - threads-automation - INFO - メディアコンテナ作成成功: 18065858705134116
+2025-06-23 21:08:10,733 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9569590389814055/threads
+2025-06-23 21:08:14,339 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:08:14,341 - threads-automation - INFO - レスポンス内容: {"id":"18044084906537404"}
+2025-06-23 21:08:14,343 - threads-automation - INFO - カルーセルコンテナ作成成功: 18044084906537404
+2025-06-23 21:08:14,346 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:08:24,886 - threads-automation - INFO - カルーセル投稿成功: {'id': '18029132441693790'}
+2025-06-23 21:08:24,893 - threads-automation - INFO - ACCOUNT_019: 投稿完了 - {'success': True, 'main_post_id': '18029132441693790', 'post_type': 'carousel'}
+2025-06-23 21:08:24,896 - threads-automation - INFO - ACCOUNT_019: 投稿成功
+2025-06-23 21:08:24,898 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:08:34,910 - threads-automation - INFO - [20/21] ACCOUNT_020 投稿開始
+2025-06-23 21:08:34,913 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:08:34,915 - threads-automation - INFO - 選択アカウント: ACCOUNT_020
+2025-06-23 21:08:34,946 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_020_CONTENT_002
+2025-06-23 21:08:34,946 - threads-automation - INFO - ACCOUNT_020: 実際の投稿実行開始
+2025-06-23 21:08:34,999 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:08:35,000 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9997940190241975/threads
+2025-06-23 21:08:35,002 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750549794/threads/ACCOUNT_020/ACCOUNT_020_CONTENT_002.jpg'}
+2025-06-23 21:08:39,757 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:08:39,760 - threads-automation - INFO - レスポンス内容: {"id":"18093794548531927"}
+2025-06-23 21:08:39,762 - threads-automation - INFO - メディアコンテナ作成成功: 18093794548531927
+2025-06-23 21:08:41,772 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:08:41,775 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9997940190241975/threads
+2025-06-23 21:08:41,776 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750549795/threads/ACCOUNT_020/ACCOUNT_020_CONTENT_002_1.jpg'}
+2025-06-23 21:08:46,899 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:08:46,902 - threads-automation - INFO - レスポンス内容: {"id":"18085833220667233"}
+2025-06-23 21:08:46,903 - threads-automation - INFO - メディアコンテナ作成成功: 18085833220667233
+2025-06-23 21:08:48,913 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9997940190241975/threads
+2025-06-23 21:08:48,915 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18093794548531927,18085833220667233', 'text': 'みんなどこに出すのが好き？\n1.お腹\n2.口の中\n3.おっπ\n4.あそこの中\nコメントで教えてね\U0001faf6\U0001faf6'}
+2025-06-23 21:08:53,550 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:08:53,552 - threads-automation - INFO - レスポンス内容: {"id":"17893194849257106"}
+2025-06-23 21:08:53,554 - threads-automation - INFO - カルーセルコンテナ作成成功: 17893194849257106
+2025-06-23 21:08:53,557 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:09:04,225 - threads-automation - INFO - カルーセル投稿成功: {'id': '17994054671653403'}
+2025-06-23 21:09:04,234 - threads-automation - INFO - ACCOUNT_020: 投稿完了 - {'success': True, 'main_post_id': '17994054671653403', 'post_type': 'carousel'}
+2025-06-23 21:09:04,237 - threads-automation - INFO - ACCOUNT_020: 投稿成功
+2025-06-23 21:09:04,239 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-23 21:09:14,254 - threads-automation - INFO - [21/21] ACCOUNT_021 投稿開始
+2025-06-23 21:09:14,257 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-23 21:09:14,260 - threads-automation - INFO - 選択アカウント: ACCOUNT_021
+2025-06-23 21:09:14,294 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_021_CONTENT_004
+2025-06-23 21:09:14,296 - threads-automation - INFO - ACCOUNT_021: 実際の投稿実行開始
+2025-06-23 21:09:16,427 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-23 21:09:16,430 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9937358983026583/threads
+2025-06-23 21:09:16,432 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680554/threads/ACCOUNT_021/ACCOUNT_021_CONTENT_004.jpg'}
+2025-06-23 21:09:22,044 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:09:22,048 - threads-automation - INFO - レスポンス内容: {"id":"17898775209233533"}
+2025-06-23 21:09:22,051 - threads-automation - INFO - メディアコンテナ作成成功: 17898775209233533
+2025-06-23 21:09:24,056 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-23 21:09:24,056 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9937358983026583/threads
+2025-06-23 21:09:24,057 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750680555/threads/ACCOUNT_021/ACCOUNT_021_CONTENT_004_1.jpg'}
+2025-06-23 21:09:29,942 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:09:29,944 - threads-automation - INFO - レスポンス内容: {"id":"17948517482856263"}
+2025-06-23 21:09:29,946 - threads-automation - INFO - メディアコンテナ作成成功: 17948517482856263
+2025-06-23 21:09:31,961 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9937358983026583/threads
+2025-06-23 21:09:31,961 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '17898775209233533,17948517482856263'}
+2025-06-23 21:09:34,797 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-23 21:09:34,799 - threads-automation - INFO - レスポンス内容: {"id":"18083551513793720"}
+2025-06-23 21:09:34,801 - threads-automation - INFO - カルーセルコンテナ作成成功: 18083551513793720
+2025-06-23 21:09:34,803 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-23 21:09:44,913 - threads-automation - INFO - カルーセル投稿成功: {'id': '18065720609117655'}
+2025-06-23 21:09:44,920 - threads-automation - INFO - ACCOUNT_021: 投稿完了 - {'success': True, 'main_post_id': '18065720609117655', 'post_type': 'carousel'}
+2025-06-23 21:09:44,923 - threads-automation - INFO - ACCOUNT_021: 投稿成功
+2025-06-23 21:09:44,928 - threads-automation - INFO - 全アカウント投稿完了 - 成功: 21/21, 失敗: 0/21, 成功率: 100.0%
+2025-06-23 22:26:16,312 - threads-automation - INFO - システム終了
+2025-06-23 22:32:18,835 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 22:32:18,838 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 22:32:18,843 - threads-automation - INFO - システム初期化完了
+2025-06-23 22:32:18,845 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 22:32:28,597 - threads-automation - INFO - 複数アカウント一括追加処理開始
+2025-06-23 22:34:52,057 - threads-automation - INFO - ユーザーによる中断でシステム終了
+2025-06-23 22:47:21,450 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 22:47:21,454 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 22:47:21,460 - threads-automation - INFO - システム初期化完了
+2025-06-23 22:47:21,461 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 22:47:36,368 - threads-automation - INFO - システム状況確認実行
+2025-06-23 22:47:36,369 - threads-automation - INFO - アカウント数: 21件
+2025-06-23 22:47:37,510 - threads-automation - INFO - Cloudinary接続: 成功
+2025-06-23 22:47:37,521 - threads-automation - INFO - キャッシュファイル数: 165件
+2025-06-23 22:47:37,524 - threads-automation - INFO - システム状況確認完了
+2025-06-23 22:47:57,719 - threads-automation - INFO - アカウントコンテンツ同期開始
+2025-06-23 22:47:57,720 - threads-automation - INFO - 同期対象: 全アカウント (21件)
+2025-06-23 22:47:57,721 - threads-automation - INFO - ACCOUNT_001 の同期開始
+2025-06-23 22:47:57,722 - threads-automation - INFO - ACCOUNT_001: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:57,731 - threads-automation - WARNING - ACCOUNT_001_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:57,740 - threads-automation - WARNING - ACCOUNT_001_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:57,750 - threads-automation - WARNING - ACCOUNT_001_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:57,768 - threads-automation - WARNING - ACCOUNT_001_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:57,784 - threads-automation - WARNING - ACCOUNT_001_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:57,793 - threads-automation - WARNING - ACCOUNT_001_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:57,800 - threads-automation - WARNING - ACCOUNT_001_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:57,809 - threads-automation - WARNING - ACCOUNT_001_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:57,813 - threads-automation - WARNING - ACCOUNT_001_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:57,814 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:57,814 - threads-automation - INFO - ACCOUNT_002 の同期開始
+2025-06-23 22:47:57,815 - threads-automation - INFO - ACCOUNT_002: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:57,822 - threads-automation - WARNING - ACCOUNT_002_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:57,827 - threads-automation - WARNING - ACCOUNT_002_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:57,831 - threads-automation - WARNING - ACCOUNT_002_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:57,836 - threads-automation - WARNING - ACCOUNT_002_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:57,842 - threads-automation - WARNING - ACCOUNT_002_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:57,846 - threads-automation - WARNING - ACCOUNT_002_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:57,850 - threads-automation - WARNING - ACCOUNT_002_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:57,858 - threads-automation - WARNING - ACCOUNT_002_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:57,862 - threads-automation - WARNING - ACCOUNT_002_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:57,863 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:57,863 - threads-automation - INFO - ACCOUNT_003 の同期開始
+2025-06-23 22:47:57,864 - threads-automation - INFO - ACCOUNT_003: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:57,872 - threads-automation - WARNING - ACCOUNT_003_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:57,877 - threads-automation - WARNING - ACCOUNT_003_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:57,882 - threads-automation - WARNING - ACCOUNT_003_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:57,887 - threads-automation - WARNING - ACCOUNT_003_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:57,893 - threads-automation - WARNING - ACCOUNT_003_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:57,897 - threads-automation - WARNING - ACCOUNT_003_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:57,903 - threads-automation - WARNING - ACCOUNT_003_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:57,909 - threads-automation - WARNING - ACCOUNT_003_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:57,914 - threads-automation - WARNING - ACCOUNT_003_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:57,914 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:57,914 - threads-automation - INFO - ACCOUNT_004 の同期開始
+2025-06-23 22:47:57,915 - threads-automation - INFO - ACCOUNT_004: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:57,924 - threads-automation - WARNING - ACCOUNT_004_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:57,929 - threads-automation - WARNING - ACCOUNT_004_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:57,934 - threads-automation - WARNING - ACCOUNT_004_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:57,940 - threads-automation - WARNING - ACCOUNT_004_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:57,945 - threads-automation - WARNING - ACCOUNT_004_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:57,949 - threads-automation - WARNING - ACCOUNT_004_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:57,954 - threads-automation - WARNING - ACCOUNT_004_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:57,960 - threads-automation - WARNING - ACCOUNT_004_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:57,964 - threads-automation - WARNING - ACCOUNT_004_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:57,965 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:57,965 - threads-automation - INFO - ACCOUNT_005 の同期開始
+2025-06-23 22:47:57,965 - threads-automation - INFO - ACCOUNT_005: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:57,973 - threads-automation - WARNING - ACCOUNT_005_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:57,978 - threads-automation - WARNING - ACCOUNT_005_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:57,982 - threads-automation - WARNING - ACCOUNT_005_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:57,988 - threads-automation - WARNING - ACCOUNT_005_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:57,993 - threads-automation - WARNING - ACCOUNT_005_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:57,997 - threads-automation - WARNING - ACCOUNT_005_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,002 - threads-automation - WARNING - ACCOUNT_005_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,009 - threads-automation - WARNING - ACCOUNT_005_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,013 - threads-automation - WARNING - ACCOUNT_005_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,014 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,014 - threads-automation - INFO - ACCOUNT_006 の同期開始
+2025-06-23 22:47:58,015 - threads-automation - INFO - ACCOUNT_006: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,020 - threads-automation - WARNING - ACCOUNT_006_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,026 - threads-automation - WARNING - ACCOUNT_006_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,030 - threads-automation - WARNING - ACCOUNT_006_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,034 - threads-automation - WARNING - ACCOUNT_006_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,040 - threads-automation - WARNING - ACCOUNT_006_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,045 - threads-automation - WARNING - ACCOUNT_006_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,050 - threads-automation - WARNING - ACCOUNT_006_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,056 - threads-automation - WARNING - ACCOUNT_006_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,061 - threads-automation - WARNING - ACCOUNT_006_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,062 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,062 - threads-automation - INFO - ACCOUNT_007 の同期開始
+2025-06-23 22:47:58,063 - threads-automation - INFO - ACCOUNT_007: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,068 - threads-automation - WARNING - ACCOUNT_007_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,074 - threads-automation - WARNING - ACCOUNT_007_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,079 - threads-automation - WARNING - ACCOUNT_007_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,083 - threads-automation - WARNING - ACCOUNT_007_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,089 - threads-automation - WARNING - ACCOUNT_007_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,094 - threads-automation - WARNING - ACCOUNT_007_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,098 - threads-automation - WARNING - ACCOUNT_007_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,104 - threads-automation - WARNING - ACCOUNT_007_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,110 - threads-automation - WARNING - ACCOUNT_007_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,110 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,111 - threads-automation - INFO - ACCOUNT_008 の同期開始
+2025-06-23 22:47:58,111 - threads-automation - INFO - ACCOUNT_008: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,116 - threads-automation - WARNING - ACCOUNT_008_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,123 - threads-automation - WARNING - ACCOUNT_008_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,128 - threads-automation - WARNING - ACCOUNT_008_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,132 - threads-automation - WARNING - ACCOUNT_008_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,138 - threads-automation - WARNING - ACCOUNT_008_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,143 - threads-automation - WARNING - ACCOUNT_008_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,147 - threads-automation - WARNING - ACCOUNT_008_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,151 - threads-automation - WARNING - ACCOUNT_008_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,158 - threads-automation - WARNING - ACCOUNT_008_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,159 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,159 - threads-automation - INFO - ACCOUNT_009 の同期開始
+2025-06-23 22:47:58,159 - threads-automation - INFO - ACCOUNT_009: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,164 - threads-automation - WARNING - ACCOUNT_009_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,169 - threads-automation - WARNING - ACCOUNT_009_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,175 - threads-automation - WARNING - ACCOUNT_009_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,180 - threads-automation - WARNING - ACCOUNT_009_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,187 - threads-automation - WARNING - ACCOUNT_009_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,192 - threads-automation - WARNING - ACCOUNT_009_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,197 - threads-automation - WARNING - ACCOUNT_009_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,202 - threads-automation - WARNING - ACCOUNT_009_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,208 - threads-automation - WARNING - ACCOUNT_009_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,209 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,209 - threads-automation - INFO - ACCOUNT_010 の同期開始
+2025-06-23 22:47:58,210 - threads-automation - INFO - ACCOUNT_010: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,216 - threads-automation - WARNING - ACCOUNT_010_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,222 - threads-automation - WARNING - ACCOUNT_010_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,227 - threads-automation - WARNING - ACCOUNT_010_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,233 - threads-automation - WARNING - ACCOUNT_010_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,240 - threads-automation - WARNING - ACCOUNT_010_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,244 - threads-automation - WARNING - ACCOUNT_010_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,248 - threads-automation - WARNING - ACCOUNT_010_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,253 - threads-automation - WARNING - ACCOUNT_010_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,259 - threads-automation - WARNING - ACCOUNT_010_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,260 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,260 - threads-automation - INFO - ACCOUNT_011 の同期開始
+2025-06-23 22:47:58,261 - threads-automation - INFO - ACCOUNT_011: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,265 - threads-automation - WARNING - ACCOUNT_011_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,270 - threads-automation - WARNING - ACCOUNT_011_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,276 - threads-automation - WARNING - ACCOUNT_011_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,286 - threads-automation - WARNING - ACCOUNT_011_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,304 - threads-automation - WARNING - ACCOUNT_011_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,318 - threads-automation - WARNING - ACCOUNT_011_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,330 - threads-automation - WARNING - ACCOUNT_011_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,341 - threads-automation - WARNING - ACCOUNT_011_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,349 - threads-automation - WARNING - ACCOUNT_011_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,349 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,350 - threads-automation - INFO - ACCOUNT_012 の同期開始
+2025-06-23 22:47:58,350 - threads-automation - INFO - ACCOUNT_012: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,359 - threads-automation - WARNING - ACCOUNT_012_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,363 - threads-automation - WARNING - ACCOUNT_012_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,368 - threads-automation - WARNING - ACCOUNT_012_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,376 - threads-automation - WARNING - ACCOUNT_012_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,381 - threads-automation - WARNING - ACCOUNT_012_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,389 - threads-automation - WARNING - ACCOUNT_012_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,395 - threads-automation - WARNING - ACCOUNT_012_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,400 - threads-automation - WARNING - ACCOUNT_012_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,410 - threads-automation - WARNING - ACCOUNT_012_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,411 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,411 - threads-automation - INFO - ACCOUNT_013 の同期開始
+2025-06-23 22:47:58,412 - threads-automation - INFO - ACCOUNT_013: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,417 - threads-automation - WARNING - ACCOUNT_013_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,424 - threads-automation - WARNING - ACCOUNT_013_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,429 - threads-automation - WARNING - ACCOUNT_013_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,433 - threads-automation - WARNING - ACCOUNT_013_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,440 - threads-automation - WARNING - ACCOUNT_013_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,445 - threads-automation - WARNING - ACCOUNT_013_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,450 - threads-automation - WARNING - ACCOUNT_013_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,458 - threads-automation - WARNING - ACCOUNT_013_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,468 - threads-automation - WARNING - ACCOUNT_013_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,469 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,470 - threads-automation - INFO - ACCOUNT_014 の同期開始
+2025-06-23 22:47:58,474 - threads-automation - INFO - ACCOUNT_014: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,481 - threads-automation - WARNING - ACCOUNT_014_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,488 - threads-automation - WARNING - ACCOUNT_014_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,494 - threads-automation - WARNING - ACCOUNT_014_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,499 - threads-automation - WARNING - ACCOUNT_014_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,505 - threads-automation - WARNING - ACCOUNT_014_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,511 - threads-automation - WARNING - ACCOUNT_014_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,515 - threads-automation - WARNING - ACCOUNT_014_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,519 - threads-automation - WARNING - ACCOUNT_014_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,526 - threads-automation - WARNING - ACCOUNT_014_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,526 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,527 - threads-automation - INFO - ACCOUNT_015 の同期開始
+2025-06-23 22:47:58,527 - threads-automation - INFO - ACCOUNT_015: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,532 - threads-automation - WARNING - ACCOUNT_015_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,538 - threads-automation - WARNING - ACCOUNT_015_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,544 - threads-automation - WARNING - ACCOUNT_015_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,549 - threads-automation - WARNING - ACCOUNT_015_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,556 - threads-automation - WARNING - ACCOUNT_015_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,562 - threads-automation - WARNING - ACCOUNT_015_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,565 - threads-automation - WARNING - ACCOUNT_015_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,571 - threads-automation - WARNING - ACCOUNT_015_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,576 - threads-automation - WARNING - ACCOUNT_015_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,577 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,577 - threads-automation - INFO - ACCOUNT_016 の同期開始
+2025-06-23 22:47:58,578 - threads-automation - INFO - ACCOUNT_016: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,583 - threads-automation - WARNING - ACCOUNT_016_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,589 - threads-automation - WARNING - ACCOUNT_016_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,596 - threads-automation - WARNING - ACCOUNT_016_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,601 - threads-automation - WARNING - ACCOUNT_016_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,608 - threads-automation - WARNING - ACCOUNT_016_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,612 - threads-automation - WARNING - ACCOUNT_016_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,617 - threads-automation - WARNING - ACCOUNT_016_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,623 - threads-automation - WARNING - ACCOUNT_016_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,627 - threads-automation - WARNING - ACCOUNT_016_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,628 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,628 - threads-automation - INFO - ACCOUNT_017 の同期開始
+2025-06-23 22:47:58,629 - threads-automation - INFO - ACCOUNT_017: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,634 - threads-automation - WARNING - ACCOUNT_017_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,640 - threads-automation - WARNING - ACCOUNT_017_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,645 - threads-automation - WARNING - ACCOUNT_017_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,649 - threads-automation - WARNING - ACCOUNT_017_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,654 - threads-automation - WARNING - ACCOUNT_017_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,659 - threads-automation - WARNING - ACCOUNT_017_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,664 - threads-automation - WARNING - ACCOUNT_017_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,668 - threads-automation - WARNING - ACCOUNT_017_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,676 - threads-automation - WARNING - ACCOUNT_017_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,677 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,677 - threads-automation - INFO - ACCOUNT_018 の同期開始
+2025-06-23 22:47:58,678 - threads-automation - INFO - ACCOUNT_018: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,683 - threads-automation - WARNING - ACCOUNT_018_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,689 - threads-automation - WARNING - ACCOUNT_018_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,694 - threads-automation - WARNING - ACCOUNT_018_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,698 - threads-automation - WARNING - ACCOUNT_018_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,702 - threads-automation - WARNING - ACCOUNT_018_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,709 - threads-automation - WARNING - ACCOUNT_018_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,713 - threads-automation - WARNING - ACCOUNT_018_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,717 - threads-automation - WARNING - ACCOUNT_018_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,728 - threads-automation - WARNING - ACCOUNT_018_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,729 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,729 - threads-automation - INFO - ACCOUNT_019 の同期開始
+2025-06-23 22:47:58,730 - threads-automation - INFO - ACCOUNT_019: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,735 - threads-automation - WARNING - ACCOUNT_019_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,742 - threads-automation - WARNING - ACCOUNT_019_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,747 - threads-automation - WARNING - ACCOUNT_019_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,752 - threads-automation - WARNING - ACCOUNT_019_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,759 - threads-automation - WARNING - ACCOUNT_019_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,763 - threads-automation - WARNING - ACCOUNT_019_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,767 - threads-automation - WARNING - ACCOUNT_019_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,774 - threads-automation - WARNING - ACCOUNT_019_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,778 - threads-automation - WARNING - ACCOUNT_019_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,779 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,779 - threads-automation - INFO - ACCOUNT_020 の同期開始
+2025-06-23 22:47:58,780 - threads-automation - INFO - ACCOUNT_020: 9個のコンテンツフォルダを検出
+2025-06-23 22:47:58,784 - threads-automation - WARNING - ACCOUNT_020_CONTENT_001: テキストデータがありません
+2025-06-23 22:47:58,791 - threads-automation - WARNING - ACCOUNT_020_CONTENT_002: テキストデータがありません
+2025-06-23 22:47:58,795 - threads-automation - WARNING - ACCOUNT_020_CONTENT_003: テキストデータがありません
+2025-06-23 22:47:58,799 - threads-automation - WARNING - ACCOUNT_020_CONTENT_004: テキストデータがありません
+2025-06-23 22:47:58,805 - threads-automation - WARNING - ACCOUNT_020_CONTENT_005: テキストデータがありません
+2025-06-23 22:47:58,810 - threads-automation - WARNING - ACCOUNT_020_CONTENT_006: テキストデータがありません
+2025-06-23 22:47:58,814 - threads-automation - WARNING - ACCOUNT_020_CONTENT_007: テキストデータがありません
+2025-06-23 22:47:58,818 - threads-automation - WARNING - ACCOUNT_020_CONTENT_008: テキストデータがありません
+2025-06-23 22:47:58,824 - threads-automation - WARNING - ACCOUNT_020_CONTENT_009: テキストデータがありません
+2025-06-23 22:47:58,825 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 22:47:58,825 - threads-automation - INFO - ACCOUNT_021 の同期開始
+2025-06-23 22:47:58,826 - threads-automation - INFO - ACCOUNT_021: 8個のコンテンツフォルダを検出
+2025-06-23 22:47:58,836 - threads-automation - INFO - ACCOUNT_021_CONTENT_001: 追加
+2025-06-23 22:47:58,842 - threads-automation - INFO - ACCOUNT_021_CONTENT_002: 追加
+2025-06-23 22:47:58,847 - threads-automation - INFO - ACCOUNT_021_CONTENT_003: 追加
+2025-06-23 22:47:58,853 - threads-automation - INFO - ACCOUNT_021_CONTENT_004: 追加
+2025-06-23 22:47:58,860 - threads-automation - INFO - ACCOUNT_021_CONTENT_005: 追加
+2025-06-23 22:47:58,865 - threads-automation - INFO - ACCOUNT_021_CONTENT_006: 追加
+2025-06-23 22:47:58,872 - threads-automation - INFO - ACCOUNT_021_CONTENT_007: 追加
+2025-06-23 22:47:58,877 - threads-automation - INFO - ACCOUNT_021_CONTENT_008: 追加
+2025-06-23 22:47:58,878 - threads-automation - INFO - コンテンツキャッシュを保存: 8件
+2025-06-23 22:47:58,878 - threads-automation - INFO - 同期完了 - 追加: 8件, 更新: 0件, 変更なし: 0件, エラー: 180件
+2025-06-23 22:48:42,930 - threads-automation - INFO - システム状況確認実行
+2025-06-23 22:48:42,932 - threads-automation - INFO - アカウント数: 21件
+2025-06-23 22:48:43,285 - threads-automation - INFO - Cloudinary接続: 成功
+2025-06-23 22:48:43,296 - threads-automation - INFO - キャッシュファイル数: 165件
+2025-06-23 22:48:43,299 - threads-automation - INFO - システム状況確認完了
+2025-06-23 22:49:04,860 - threads-automation - INFO - システム終了
+2025-06-23 22:51:33,702 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 22:51:33,706 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 22:51:33,712 - threads-automation - INFO - システム初期化完了
+2025-06-23 22:51:33,714 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 22:51:42,825 - threads-automation - INFO - 複数アカウント一括追加処理開始
+2025-06-23 22:52:45,043 - threads-automation - INFO - ユーザーによる中断でシステム終了
+2025-06-23 22:52:47,003 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 22:52:47,006 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 22:52:47,011 - threads-automation - INFO - システム初期化完了
+2025-06-23 22:52:47,013 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 22:52:51,428 - threads-automation - INFO - 複数アカウント一括追加処理開始
+2025-06-23 22:53:24,445 - threads-automation - ERROR - ACCOUNT_022 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 22:53:39,085 - threads-automation - INFO - ユーザーによる中断でシステム終了
+2025-06-23 22:53:41,160 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 22:53:41,163 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 22:53:41,169 - threads-automation - INFO - システム初期化完了
+2025-06-23 22:53:41,170 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 22:53:44,801 - threads-automation - INFO - 新規アカウント追加処理開始
+2025-06-23 22:54:07,887 - threads-automation - INFO - ユーザーによる中断でシステム終了
+2025-06-23 23:04:29,155 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 23:04:29,158 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 23:04:29,165 - threads-automation - INFO - システム初期化完了
+2025-06-23 23:04:29,166 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 23:04:34,167 - threads-automation - INFO - 複数アカウント一括追加処理開始
+2025-06-23 23:08:09,195 - threads-automation - ERROR - ACCOUNT_022 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:08:26,133 - threads-automation - ERROR - ACCOUNT_023 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:09:21,189 - threads-automation - ERROR - ACCOUNT_024 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:09:35,082 - threads-automation - ERROR - ACCOUNT_025 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:09:48,246 - threads-automation - ERROR - ACCOUNT_026 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:09:58,993 - threads-automation - ERROR - ACCOUNT_027 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:10:14,355 - threads-automation - ERROR - ACCOUNT_028 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:10:26,171 - threads-automation - ERROR - ACCOUNT_029 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:10:36,288 - threads-automation - ERROR - ACCOUNT_030 の追加に失敗: 'ThreadsAccountManager' object has no attribute 'load_account_tokens'
+2025-06-23 23:10:36,288 - threads-automation - INFO - 一括追加完了 - 成功: 0件, 失敗: 9件
+2025-06-23 23:12:56,145 - threads-automation - INFO - システム終了
+2025-06-23 23:21:36,927 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 23:21:36,930 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 23:21:36,974 - threads-automation - INFO - システム初期化完了
+2025-06-23 23:21:36,976 - threads-automation - INFO - 利用可能アカウント: 30件
+2025-06-23 23:23:21,809 - threads-automation - INFO - アカウントコンテンツ同期開始
+2025-06-23 23:23:21,811 - threads-automation - INFO - 同期対象: 全アカウント (30件)
+2025-06-23 23:23:21,811 - threads-automation - INFO - ACCOUNT_001 の同期開始
+2025-06-23 23:23:21,812 - threads-automation - INFO - ACCOUNT_001: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,812 - threads-automation - WARNING - ACCOUNT_001_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,813 - threads-automation - WARNING - ACCOUNT_001_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,814 - threads-automation - WARNING - ACCOUNT_001_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,814 - threads-automation - WARNING - ACCOUNT_001_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,815 - threads-automation - WARNING - ACCOUNT_001_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,815 - threads-automation - WARNING - ACCOUNT_001_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,816 - threads-automation - WARNING - ACCOUNT_001_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,816 - threads-automation - WARNING - ACCOUNT_001_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,817 - threads-automation - WARNING - ACCOUNT_001_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,818 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,818 - threads-automation - INFO - ACCOUNT_002 の同期開始
+2025-06-23 23:23:21,819 - threads-automation - INFO - ACCOUNT_002: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,820 - threads-automation - WARNING - ACCOUNT_002_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,820 - threads-automation - WARNING - ACCOUNT_002_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,821 - threads-automation - WARNING - ACCOUNT_002_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,821 - threads-automation - WARNING - ACCOUNT_002_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,821 - threads-automation - WARNING - ACCOUNT_002_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,822 - threads-automation - WARNING - ACCOUNT_002_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,822 - threads-automation - WARNING - ACCOUNT_002_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,822 - threads-automation - WARNING - ACCOUNT_002_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,823 - threads-automation - WARNING - ACCOUNT_002_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,823 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,824 - threads-automation - INFO - ACCOUNT_003 の同期開始
+2025-06-23 23:23:21,825 - threads-automation - INFO - ACCOUNT_003: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,825 - threads-automation - WARNING - ACCOUNT_003_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,826 - threads-automation - WARNING - ACCOUNT_003_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,827 - threads-automation - WARNING - ACCOUNT_003_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,827 - threads-automation - WARNING - ACCOUNT_003_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,827 - threads-automation - WARNING - ACCOUNT_003_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,828 - threads-automation - WARNING - ACCOUNT_003_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,828 - threads-automation - WARNING - ACCOUNT_003_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,829 - threads-automation - WARNING - ACCOUNT_003_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,829 - threads-automation - WARNING - ACCOUNT_003_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,829 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,830 - threads-automation - INFO - ACCOUNT_004 の同期開始
+2025-06-23 23:23:21,830 - threads-automation - INFO - ACCOUNT_004: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,831 - threads-automation - WARNING - ACCOUNT_004_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,831 - threads-automation - WARNING - ACCOUNT_004_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,832 - threads-automation - WARNING - ACCOUNT_004_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,832 - threads-automation - WARNING - ACCOUNT_004_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,832 - threads-automation - WARNING - ACCOUNT_004_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,832 - threads-automation - WARNING - ACCOUNT_004_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,833 - threads-automation - WARNING - ACCOUNT_004_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,833 - threads-automation - WARNING - ACCOUNT_004_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,833 - threads-automation - WARNING - ACCOUNT_004_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,834 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,834 - threads-automation - INFO - ACCOUNT_005 の同期開始
+2025-06-23 23:23:21,835 - threads-automation - INFO - ACCOUNT_005: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,835 - threads-automation - WARNING - ACCOUNT_005_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,835 - threads-automation - WARNING - ACCOUNT_005_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,836 - threads-automation - WARNING - ACCOUNT_005_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,836 - threads-automation - WARNING - ACCOUNT_005_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,837 - threads-automation - WARNING - ACCOUNT_005_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,837 - threads-automation - WARNING - ACCOUNT_005_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,837 - threads-automation - WARNING - ACCOUNT_005_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,838 - threads-automation - WARNING - ACCOUNT_005_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,838 - threads-automation - WARNING - ACCOUNT_005_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,838 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,839 - threads-automation - INFO - ACCOUNT_006 の同期開始
+2025-06-23 23:23:21,839 - threads-automation - INFO - ACCOUNT_006: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,840 - threads-automation - WARNING - ACCOUNT_006_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,840 - threads-automation - WARNING - ACCOUNT_006_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,840 - threads-automation - WARNING - ACCOUNT_006_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,841 - threads-automation - WARNING - ACCOUNT_006_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,841 - threads-automation - WARNING - ACCOUNT_006_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,842 - threads-automation - WARNING - ACCOUNT_006_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,842 - threads-automation - WARNING - ACCOUNT_006_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,842 - threads-automation - WARNING - ACCOUNT_006_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,843 - threads-automation - WARNING - ACCOUNT_006_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,843 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,843 - threads-automation - INFO - ACCOUNT_007 の同期開始
+2025-06-23 23:23:21,844 - threads-automation - INFO - ACCOUNT_007: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,845 - threads-automation - WARNING - ACCOUNT_007_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,845 - threads-automation - WARNING - ACCOUNT_007_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,845 - threads-automation - WARNING - ACCOUNT_007_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,845 - threads-automation - WARNING - ACCOUNT_007_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,846 - threads-automation - WARNING - ACCOUNT_007_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,846 - threads-automation - WARNING - ACCOUNT_007_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,846 - threads-automation - WARNING - ACCOUNT_007_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,846 - threads-automation - WARNING - ACCOUNT_007_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,847 - threads-automation - WARNING - ACCOUNT_007_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,847 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,847 - threads-automation - INFO - ACCOUNT_008 の同期開始
+2025-06-23 23:23:21,848 - threads-automation - INFO - ACCOUNT_008: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,848 - threads-automation - WARNING - ACCOUNT_008_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,849 - threads-automation - WARNING - ACCOUNT_008_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,849 - threads-automation - WARNING - ACCOUNT_008_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,849 - threads-automation - WARNING - ACCOUNT_008_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,850 - threads-automation - WARNING - ACCOUNT_008_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,850 - threads-automation - WARNING - ACCOUNT_008_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,850 - threads-automation - WARNING - ACCOUNT_008_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,850 - threads-automation - WARNING - ACCOUNT_008_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,851 - threads-automation - WARNING - ACCOUNT_008_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,851 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,851 - threads-automation - INFO - ACCOUNT_009 の同期開始
+2025-06-23 23:23:21,852 - threads-automation - INFO - ACCOUNT_009: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,852 - threads-automation - WARNING - ACCOUNT_009_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,853 - threads-automation - WARNING - ACCOUNT_009_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,853 - threads-automation - WARNING - ACCOUNT_009_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,853 - threads-automation - WARNING - ACCOUNT_009_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,854 - threads-automation - WARNING - ACCOUNT_009_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,854 - threads-automation - WARNING - ACCOUNT_009_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,854 - threads-automation - WARNING - ACCOUNT_009_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,855 - threads-automation - WARNING - ACCOUNT_009_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,855 - threads-automation - WARNING - ACCOUNT_009_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,855 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,855 - threads-automation - INFO - ACCOUNT_010 の同期開始
+2025-06-23 23:23:21,856 - threads-automation - INFO - ACCOUNT_010: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,856 - threads-automation - WARNING - ACCOUNT_010_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,857 - threads-automation - WARNING - ACCOUNT_010_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,857 - threads-automation - WARNING - ACCOUNT_010_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,858 - threads-automation - WARNING - ACCOUNT_010_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,859 - threads-automation - WARNING - ACCOUNT_010_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,860 - threads-automation - WARNING - ACCOUNT_010_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,861 - threads-automation - WARNING - ACCOUNT_010_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,861 - threads-automation - WARNING - ACCOUNT_010_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,862 - threads-automation - WARNING - ACCOUNT_010_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,862 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,862 - threads-automation - INFO - ACCOUNT_011 の同期開始
+2025-06-23 23:23:21,863 - threads-automation - INFO - ACCOUNT_011: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,863 - threads-automation - WARNING - ACCOUNT_011_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,864 - threads-automation - WARNING - ACCOUNT_011_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,864 - threads-automation - WARNING - ACCOUNT_011_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,864 - threads-automation - WARNING - ACCOUNT_011_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,865 - threads-automation - WARNING - ACCOUNT_011_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,865 - threads-automation - WARNING - ACCOUNT_011_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,865 - threads-automation - WARNING - ACCOUNT_011_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,865 - threads-automation - WARNING - ACCOUNT_011_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,866 - threads-automation - WARNING - ACCOUNT_011_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,866 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,866 - threads-automation - INFO - ACCOUNT_012 の同期開始
+2025-06-23 23:23:21,867 - threads-automation - INFO - ACCOUNT_012: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,868 - threads-automation - WARNING - ACCOUNT_012_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,868 - threads-automation - WARNING - ACCOUNT_012_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,868 - threads-automation - WARNING - ACCOUNT_012_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,869 - threads-automation - WARNING - ACCOUNT_012_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,869 - threads-automation - WARNING - ACCOUNT_012_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,869 - threads-automation - WARNING - ACCOUNT_012_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,870 - threads-automation - WARNING - ACCOUNT_012_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,870 - threads-automation - WARNING - ACCOUNT_012_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,870 - threads-automation - WARNING - ACCOUNT_012_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,871 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,871 - threads-automation - INFO - ACCOUNT_013 の同期開始
+2025-06-23 23:23:21,871 - threads-automation - INFO - ACCOUNT_013: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,872 - threads-automation - WARNING - ACCOUNT_013_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,872 - threads-automation - WARNING - ACCOUNT_013_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,872 - threads-automation - WARNING - ACCOUNT_013_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,873 - threads-automation - WARNING - ACCOUNT_013_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,873 - threads-automation - WARNING - ACCOUNT_013_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,874 - threads-automation - WARNING - ACCOUNT_013_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,875 - threads-automation - WARNING - ACCOUNT_013_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,876 - threads-automation - WARNING - ACCOUNT_013_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,877 - threads-automation - WARNING - ACCOUNT_013_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,878 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,878 - threads-automation - INFO - ACCOUNT_014 の同期開始
+2025-06-23 23:23:21,879 - threads-automation - INFO - ACCOUNT_014: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,880 - threads-automation - WARNING - ACCOUNT_014_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,880 - threads-automation - WARNING - ACCOUNT_014_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,880 - threads-automation - WARNING - ACCOUNT_014_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,881 - threads-automation - WARNING - ACCOUNT_014_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,881 - threads-automation - WARNING - ACCOUNT_014_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,881 - threads-automation - WARNING - ACCOUNT_014_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,881 - threads-automation - WARNING - ACCOUNT_014_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,882 - threads-automation - WARNING - ACCOUNT_014_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,882 - threads-automation - WARNING - ACCOUNT_014_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,882 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,882 - threads-automation - INFO - ACCOUNT_015 の同期開始
+2025-06-23 23:23:21,883 - threads-automation - INFO - ACCOUNT_015: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,884 - threads-automation - WARNING - ACCOUNT_015_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,884 - threads-automation - WARNING - ACCOUNT_015_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,884 - threads-automation - WARNING - ACCOUNT_015_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,885 - threads-automation - WARNING - ACCOUNT_015_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,885 - threads-automation - WARNING - ACCOUNT_015_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,885 - threads-automation - WARNING - ACCOUNT_015_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,885 - threads-automation - WARNING - ACCOUNT_015_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,886 - threads-automation - WARNING - ACCOUNT_015_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,886 - threads-automation - WARNING - ACCOUNT_015_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,886 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,887 - threads-automation - INFO - ACCOUNT_016 の同期開始
+2025-06-23 23:23:21,887 - threads-automation - INFO - ACCOUNT_016: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,888 - threads-automation - WARNING - ACCOUNT_016_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,888 - threads-automation - WARNING - ACCOUNT_016_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,888 - threads-automation - WARNING - ACCOUNT_016_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,889 - threads-automation - WARNING - ACCOUNT_016_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,889 - threads-automation - WARNING - ACCOUNT_016_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,889 - threads-automation - WARNING - ACCOUNT_016_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,890 - threads-automation - WARNING - ACCOUNT_016_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,890 - threads-automation - WARNING - ACCOUNT_016_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,890 - threads-automation - WARNING - ACCOUNT_016_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,891 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,891 - threads-automation - INFO - ACCOUNT_017 の同期開始
+2025-06-23 23:23:21,892 - threads-automation - INFO - ACCOUNT_017: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,893 - threads-automation - WARNING - ACCOUNT_017_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,894 - threads-automation - WARNING - ACCOUNT_017_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,894 - threads-automation - WARNING - ACCOUNT_017_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,894 - threads-automation - WARNING - ACCOUNT_017_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,895 - threads-automation - WARNING - ACCOUNT_017_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,895 - threads-automation - WARNING - ACCOUNT_017_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,896 - threads-automation - WARNING - ACCOUNT_017_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,896 - threads-automation - WARNING - ACCOUNT_017_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,896 - threads-automation - WARNING - ACCOUNT_017_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,897 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,897 - threads-automation - INFO - ACCOUNT_018 の同期開始
+2025-06-23 23:23:21,897 - threads-automation - INFO - ACCOUNT_018: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,898 - threads-automation - WARNING - ACCOUNT_018_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,898 - threads-automation - WARNING - ACCOUNT_018_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,899 - threads-automation - WARNING - ACCOUNT_018_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,899 - threads-automation - WARNING - ACCOUNT_018_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,899 - threads-automation - WARNING - ACCOUNT_018_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,899 - threads-automation - WARNING - ACCOUNT_018_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,900 - threads-automation - WARNING - ACCOUNT_018_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,900 - threads-automation - WARNING - ACCOUNT_018_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,900 - threads-automation - WARNING - ACCOUNT_018_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,901 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,901 - threads-automation - INFO - ACCOUNT_019 の同期開始
+2025-06-23 23:23:21,902 - threads-automation - INFO - ACCOUNT_019: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,902 - threads-automation - WARNING - ACCOUNT_019_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,902 - threads-automation - WARNING - ACCOUNT_019_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,903 - threads-automation - WARNING - ACCOUNT_019_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,903 - threads-automation - WARNING - ACCOUNT_019_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,903 - threads-automation - WARNING - ACCOUNT_019_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,904 - threads-automation - WARNING - ACCOUNT_019_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,904 - threads-automation - WARNING - ACCOUNT_019_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,904 - threads-automation - WARNING - ACCOUNT_019_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,904 - threads-automation - WARNING - ACCOUNT_019_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,905 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,905 - threads-automation - INFO - ACCOUNT_020 の同期開始
+2025-06-23 23:23:21,906 - threads-automation - INFO - ACCOUNT_020: 9個のコンテンツフォルダを検出
+2025-06-23 23:23:21,906 - threads-automation - WARNING - ACCOUNT_020_CONTENT_001: テキストデータがありません
+2025-06-23 23:23:21,907 - threads-automation - WARNING - ACCOUNT_020_CONTENT_002: テキストデータがありません
+2025-06-23 23:23:21,907 - threads-automation - WARNING - ACCOUNT_020_CONTENT_003: テキストデータがありません
+2025-06-23 23:23:21,908 - threads-automation - WARNING - ACCOUNT_020_CONTENT_004: テキストデータがありません
+2025-06-23 23:23:21,908 - threads-automation - WARNING - ACCOUNT_020_CONTENT_005: テキストデータがありません
+2025-06-23 23:23:21,909 - threads-automation - WARNING - ACCOUNT_020_CONTENT_006: テキストデータがありません
+2025-06-23 23:23:21,909 - threads-automation - WARNING - ACCOUNT_020_CONTENT_007: テキストデータがありません
+2025-06-23 23:23:21,910 - threads-automation - WARNING - ACCOUNT_020_CONTENT_008: テキストデータがありません
+2025-06-23 23:23:21,911 - threads-automation - WARNING - ACCOUNT_020_CONTENT_009: テキストデータがありません
+2025-06-23 23:23:21,911 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,912 - threads-automation - INFO - ACCOUNT_021 の同期開始
+2025-06-23 23:23:21,912 - threads-automation - INFO - ACCOUNT_021: 8個のコンテンツフォルダを検出
+2025-06-23 23:23:21,914 - threads-automation - INFO - ACCOUNT_021_CONTENT_001: 追加
+2025-06-23 23:23:21,914 - threads-automation - INFO - ACCOUNT_021_CONTENT_002: 追加
+2025-06-23 23:23:21,914 - threads-automation - INFO - ACCOUNT_021_CONTENT_003: 追加
+2025-06-23 23:23:21,915 - threads-automation - INFO - ACCOUNT_021_CONTENT_004: 追加
+2025-06-23 23:23:21,915 - threads-automation - INFO - ACCOUNT_021_CONTENT_005: 追加
+2025-06-23 23:23:21,916 - threads-automation - INFO - ACCOUNT_021_CONTENT_006: 追加
+2025-06-23 23:23:21,916 - threads-automation - INFO - ACCOUNT_021_CONTENT_007: 追加
+2025-06-23 23:23:21,916 - threads-automation - INFO - ACCOUNT_021_CONTENT_008: 追加
+2025-06-23 23:23:21,917 - threads-automation - INFO - コンテンツキャッシュを保存: 8件
+2025-06-23 23:23:21,917 - threads-automation - INFO - ACCOUNT_022 の同期開始
+2025-06-23 23:23:21,917 - threads-automation - INFO - ACCOUNT_022: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,918 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,918 - threads-automation - INFO - ACCOUNT_023 の同期開始
+2025-06-23 23:23:21,919 - threads-automation - INFO - ACCOUNT_023: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,919 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,920 - threads-automation - INFO - ACCOUNT_024 の同期開始
+2025-06-23 23:23:21,920 - threads-automation - INFO - ACCOUNT_024: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,920 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,921 - threads-automation - INFO - ACCOUNT_025 の同期開始
+2025-06-23 23:23:21,921 - threads-automation - INFO - ACCOUNT_025: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,922 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,922 - threads-automation - INFO - ACCOUNT_026 の同期開始
+2025-06-23 23:23:21,922 - threads-automation - INFO - ACCOUNT_026: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,923 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,923 - threads-automation - INFO - ACCOUNT_027 の同期開始
+2025-06-23 23:23:21,924 - threads-automation - INFO - ACCOUNT_027: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,925 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,925 - threads-automation - INFO - ACCOUNT_028 の同期開始
+2025-06-23 23:23:21,927 - threads-automation - INFO - ACCOUNT_028: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,927 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,928 - threads-automation - INFO - ACCOUNT_029 の同期開始
+2025-06-23 23:23:21,928 - threads-automation - INFO - ACCOUNT_029: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,929 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,929 - threads-automation - INFO - ACCOUNT_030 の同期開始
+2025-06-23 23:23:21,929 - threads-automation - INFO - ACCOUNT_030: 0個のコンテンツフォルダを検出
+2025-06-23 23:23:21,930 - threads-automation - INFO - コンテンツキャッシュを保存: 0件
+2025-06-23 23:23:21,930 - threads-automation - INFO - 同期完了 - 追加: 8件, 更新: 0件, 変更なし: 0件, エラー: 180件
+2025-06-23 23:24:02,218 - threads-automation - INFO - システム終了
+2025-06-24 00:02:21,593 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-24 00:02:21,593 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-24 00:02:21,599 - threads-automation - INFO - システム初期化完了
+2025-06-24 00:02:21,601 - threads-automation - INFO - 利用可能アカウント: 30件
+2025-06-24 00:02:25,984 - threads-automation - INFO - システム終了
+2025-06-24 00:02:41,281 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-24 00:02:41,282 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-24 00:02:41,288 - threads-automation - INFO - システム初期化完了
+2025-06-24 00:02:41,289 - threads-automation - INFO - 利用可能アカウント: 30件
+2025-06-24 00:02:55,596 - threads-automation - INFO - システム状況確認実行
+2025-06-24 00:02:55,598 - threads-automation - INFO - アカウント数: 30件
+2025-06-24 00:02:56,422 - threads-automation - INFO - Cloudinary接続: 成功
+2025-06-24 00:02:56,435 - threads-automation - INFO - キャッシュファイル数: 174件
+2025-06-24 00:02:56,439 - threads-automation - INFO - システム状況確認完了
+2025-06-24 00:03:16,234 - threads-automation - INFO - システム終了
+2025-06-24 00:04:49,345 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-24 00:04:49,345 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-24 00:04:49,351 - threads-automation - INFO - システム初期化完了
+2025-06-24 00:04:49,353 - threads-automation - INFO - 利用可能アカウント: 30件
+2025-06-24 00:04:58,330 - threads-automation - INFO - 全アカウント投稿実行開始 (テストモード: False)
+2025-06-24 00:04:58,331 - threads-automation - INFO - 投稿対象アカウント数: 30件
+2025-06-24 00:04:58,332 - threads-automation - INFO - [1/30] ACCOUNT_001 投稿開始
+2025-06-24 00:04:58,332 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:04:58,332 - threads-automation - INFO - 選択アカウント: ACCOUNT_001
+2025-06-24 00:04:58,335 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_001_CONTENT_004
+2025-06-24 00:04:58,335 - threads-automation - INFO - ACCOUNT_001: 実際の投稿実行開始
+2025-06-24 00:04:58,357 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:04:58,358 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23881245698173501/threads
+2025-06-24 00:04:58,358 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750495356/threads/ACCOUNT_001/ACCOUNT_001_CONTENT_004.jpg'}
+2025-06-24 00:05:04,844 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:05:04,846 - threads-automation - INFO - レスポンス内容: {"id":"17990674067666768"}
+2025-06-24 00:05:04,848 - threads-automation - INFO - メディアコンテナ作成成功: 17990674067666768
+2025-06-24 00:05:06,855 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:05:06,857 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23881245698173501/threads
+2025-06-24 00:05:06,859 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750495357/threads/ACCOUNT_001/ACCOUNT_001_CONTENT_004_1.jpg'}
+2025-06-24 00:05:12,606 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:05:12,607 - threads-automation - INFO - レスポンス内容: {"id":"17997481325799712"}
+2025-06-24 00:05:12,609 - threads-automation - INFO - メディアコンテナ作成成功: 17997481325799712
+2025-06-24 00:05:14,622 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/23881245698173501/threads
+2025-06-24 00:05:20,707 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:05:20,710 - threads-automation - INFO - レスポンス内容: {"id":"18013717868735187"}
+2025-06-24 00:05:20,712 - threads-automation - INFO - カルーセルコンテナ作成成功: 18013717868735187
+2025-06-24 00:05:20,714 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:05:31,350 - threads-automation - INFO - カルーセル投稿成功: {'id': '18302648980170560'}
+2025-06-24 00:05:31,357 - threads-automation - INFO - ACCOUNT_001: 投稿完了 - {'success': True, 'main_post_id': '18302648980170560', 'post_type': 'carousel'}
+2025-06-24 00:05:31,358 - threads-automation - INFO - ACCOUNT_001: 投稿成功
+2025-06-24 00:05:31,358 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:05:41,368 - threads-automation - INFO - [2/30] ACCOUNT_002 投稿開始
+2025-06-24 00:05:41,371 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:05:41,372 - threads-automation - INFO - 選択アカウント: ACCOUNT_002
+2025-06-24 00:05:41,386 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_002_CONTENT_006
+2025-06-24 00:05:41,388 - threads-automation - INFO - ACCOUNT_002: 実際の投稿実行開始
+2025-06-24 00:05:46,223 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:05:46,226 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/8091935217596688/threads
+2025-06-24 00:05:46,228 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691143/threads/ACCOUNT_002/ACCOUNT_002_CONTENT_006.jpg'}
+2025-06-24 00:05:51,816 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:05:51,818 - threads-automation - INFO - レスポンス内容: {"id":"18117588505487209"}
+2025-06-24 00:05:51,820 - threads-automation - INFO - メディアコンテナ作成成功: 18117588505487209
+2025-06-24 00:05:53,824 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:05:53,827 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/8091935217596688/threads
+2025-06-24 00:05:53,829 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691145/threads/ACCOUNT_002/ACCOUNT_002_CONTENT_006_1.jpg'}
+2025-06-24 00:05:59,587 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:05:59,589 - threads-automation - INFO - レスポンス内容: {"id":"18129433639431056"}
+2025-06-24 00:05:59,591 - threads-automation - INFO - メディアコンテナ作成成功: 18129433639431056
+2025-06-24 00:06:01,595 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/8091935217596688/threads
+2025-06-24 00:06:06,410 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:06:06,412 - threads-automation - INFO - レスポンス内容: {"id":"17930540508061038"}
+2025-06-24 00:06:06,414 - threads-automation - INFO - カルーセルコンテナ作成成功: 17930540508061038
+2025-06-24 00:06:06,417 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:06:16,948 - threads-automation - INFO - カルーセル投稿成功: {'id': '18072438202772641'}
+2025-06-24 00:06:16,954 - threads-automation - INFO - ACCOUNT_002: 投稿完了 - {'success': True, 'main_post_id': '18072438202772641', 'post_type': 'carousel'}
+2025-06-24 00:06:16,957 - threads-automation - INFO - ACCOUNT_002: 投稿成功
+2025-06-24 00:06:16,959 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:06:26,976 - threads-automation - INFO - [3/30] ACCOUNT_003 投稿開始
+2025-06-24 00:06:26,979 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:06:26,980 - threads-automation - INFO - 選択アカウント: ACCOUNT_003
+2025-06-24 00:06:27,001 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_003_CONTENT_003
+2025-06-24 00:06:27,002 - threads-automation - INFO - ACCOUNT_003: 実際の投稿実行開始
+2025-06-24 00:06:27,030 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:06:27,030 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30733650642886897/threads
+2025-06-24 00:06:27,031 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750484652/threads/ACCOUNT_003/ACCOUNT_003_CONTENT_003.jpg'}
+2025-06-24 00:06:32,127 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:06:32,129 - threads-automation - INFO - レスポンス内容: {"id":"18034632500402211"}
+2025-06-24 00:06:32,131 - threads-automation - INFO - メディアコンテナ作成成功: 18034632500402211
+2025-06-24 00:06:34,134 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:06:34,136 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30733650642886897/threads
+2025-06-24 00:06:34,138 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750484653/threads/ACCOUNT_003/ACCOUNT_003_CONTENT_003_1.jpg'}
+2025-06-24 00:06:40,178 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:06:40,180 - threads-automation - INFO - レスポンス内容: {"id":"17957712626810023"}
+2025-06-24 00:06:40,182 - threads-automation - INFO - メディアコンテナ作成成功: 17957712626810023
+2025-06-24 00:06:42,186 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/30733650642886897/threads
+2025-06-24 00:06:42,188 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18034632500402211,17957712626810023', 'text': '中って…\n緩い方がいい？きつい方がいい？\nそれともあんまり分からないかな？'}
+2025-06-24 00:06:47,160 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:06:47,163 - threads-automation - INFO - レスポンス内容: {"id":"17994011378653491"}
+2025-06-24 00:06:47,164 - threads-automation - INFO - カルーセルコンテナ作成成功: 17994011378653491
+2025-06-24 00:06:47,167 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:06:57,665 - threads-automation - INFO - カルーセル投稿成功: {'id': '18016173431725847'}
+2025-06-24 00:06:57,672 - threads-automation - INFO - ACCOUNT_003: 投稿完了 - {'success': True, 'main_post_id': '18016173431725847', 'post_type': 'carousel'}
+2025-06-24 00:06:57,675 - threads-automation - INFO - ACCOUNT_003: 投稿成功
+2025-06-24 00:06:57,677 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:07:07,681 - threads-automation - INFO - [4/30] ACCOUNT_004 投稿開始
+2025-06-24 00:07:07,684 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:07:07,686 - threads-automation - INFO - 選択アカウント: ACCOUNT_004
+2025-06-24 00:07:07,702 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_004_CONTENT_004
+2025-06-24 00:07:07,703 - threads-automation - INFO - ACCOUNT_004: 実際の投稿実行開始
+2025-06-24 00:07:09,946 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:07:09,949 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/29787801417533769/threads
+2025-06-24 00:07:09,951 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691228/threads/ACCOUNT_004/ACCOUNT_004_CONTENT_004.jpg'}
+2025-06-24 00:07:15,921 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:07:15,923 - threads-automation - INFO - レスポンス内容: {"id":"18366768130180380"}
+2025-06-24 00:07:15,924 - threads-automation - INFO - メディアコンテナ作成成功: 18366768130180380
+2025-06-24 00:07:17,935 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:07:17,938 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/29787801417533769/threads
+2025-06-24 00:07:17,940 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691229/threads/ACCOUNT_004/ACCOUNT_004_CONTENT_004_1.jpg'}
+2025-06-24 00:07:23,319 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:07:23,320 - threads-automation - INFO - レスポンス内容: {"id":"18509195503017900"}
+2025-06-24 00:07:23,320 - threads-automation - INFO - メディアコンテナ作成成功: 18509195503017900
+2025-06-24 00:07:25,323 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/29787801417533769/threads
+2025-06-24 00:07:31,075 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:07:31,078 - threads-automation - INFO - レスポンス内容: {"id":"18190198768315816"}
+2025-06-24 00:07:31,079 - threads-automation - INFO - カルーセルコンテナ作成成功: 18190198768315816
+2025-06-24 00:07:31,082 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:07:42,842 - threads-automation - INFO - カルーセル投稿成功: {'id': '18118820008469228'}
+2025-06-24 00:07:42,851 - threads-automation - INFO - ACCOUNT_004: 投稿完了 - {'success': True, 'main_post_id': '18118820008469228', 'post_type': 'carousel'}
+2025-06-24 00:07:42,854 - threads-automation - INFO - ACCOUNT_004: 投稿成功
+2025-06-24 00:07:42,857 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:07:52,869 - threads-automation - INFO - [5/30] ACCOUNT_005 投稿開始
+2025-06-24 00:07:52,870 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:07:52,872 - threads-automation - INFO - 選択アカウント: ACCOUNT_005
+2025-06-24 00:07:52,884 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_005_CONTENT_002
+2025-06-24 00:07:52,886 - threads-automation - INFO - ACCOUNT_005: 実際の投稿実行開始
+2025-06-24 00:07:57,638 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:07:57,640 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9253576544745885/threads
+2025-06-24 00:07:57,642 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691275/threads/ACCOUNT_005/ACCOUNT_005_CONTENT_002.png'}
+2025-06-24 00:08:03,709 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:08:03,713 - threads-automation - INFO - レスポンス内容: {"id":"18105666583475405"}
+2025-06-24 00:08:03,715 - threads-automation - INFO - メディアコンテナ作成成功: 18105666583475405
+2025-06-24 00:08:05,721 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:08:05,723 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9253576544745885/threads
+2025-06-24 00:08:05,724 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691276/threads/ACCOUNT_005/ACCOUNT_005_CONTENT_002_1.jpg'}
+2025-06-24 00:08:11,277 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:08:11,279 - threads-automation - INFO - レスポンス内容: {"id":"18093366460610884"}
+2025-06-24 00:08:11,280 - threads-automation - INFO - メディアコンテナ作成成功: 18093366460610884
+2025-06-24 00:08:13,292 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9253576544745885/threads
+2025-06-24 00:08:13,294 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18105666583475405,18093366460610884', 'text': 'みんなどこに出すのが好き？\n1.お腹\n2.口の中\n3.おっπ\n4.あそこの中\nコメントで教えてね\U0001faf6\U0001faf6'}
+2025-06-24 00:08:18,345 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:08:18,347 - threads-automation - INFO - レスポンス内容: {"id":"17885991939291772"}
+2025-06-24 00:08:18,350 - threads-automation - INFO - カルーセルコンテナ作成成功: 17885991939291772
+2025-06-24 00:08:18,353 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:08:29,686 - threads-automation - INFO - カルーセル投稿成功: {'id': '18050229251411949'}
+2025-06-24 00:08:29,695 - threads-automation - INFO - ACCOUNT_005: 投稿完了 - {'success': True, 'main_post_id': '18050229251411949', 'post_type': 'carousel'}
+2025-06-24 00:08:29,697 - threads-automation - INFO - ACCOUNT_005: 投稿成功
+2025-06-24 00:08:29,699 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:08:39,708 - threads-automation - INFO - [6/30] ACCOUNT_006 投稿開始
+2025-06-24 00:08:39,710 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:08:39,712 - threads-automation - INFO - 選択アカウント: ACCOUNT_006
+2025-06-24 00:08:39,730 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_006_CONTENT_008
+2025-06-24 00:08:39,732 - threads-automation - INFO - ACCOUNT_006: 実際の投稿実行開始
+2025-06-24 00:08:44,284 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:08:44,286 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/29997707833209756/threads
+2025-06-24 00:08:44,288 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691322/threads/ACCOUNT_006/ACCOUNT_006_CONTENT_008.png'}
+2025-06-24 00:08:54,314 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:08:54,316 - threads-automation - INFO - レスポンス内容: {"id":"18072148744978111"}
+2025-06-24 00:08:54,318 - threads-automation - INFO - メディアコンテナ作成成功: 18072148744978111
+2025-06-24 00:08:56,326 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:08:56,328 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/29997707833209756/threads
+2025-06-24 00:08:56,331 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691323/threads/ACCOUNT_006/ACCOUNT_006_CONTENT_008_1.jpg'}
+2025-06-24 00:09:04,851 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:09:04,853 - threads-automation - INFO - レスポンス内容: {"id":"17914658388110921"}
+2025-06-24 00:09:04,854 - threads-automation - INFO - メディアコンテナ作成成功: 17914658388110921
+2025-06-24 00:09:06,860 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/29997707833209756/threads
+2025-06-24 00:09:11,378 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:09:11,381 - threads-automation - INFO - レスポンス内容: {"id":"18053407199366103"}
+2025-06-24 00:09:11,382 - threads-automation - INFO - カルーセルコンテナ作成成功: 18053407199366103
+2025-06-24 00:09:11,384 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:09:21,496 - threads-automation - INFO - カルーセル投稿成功: {'id': '17970417728871993'}
+2025-06-24 00:09:21,504 - threads-automation - INFO - ACCOUNT_006: 投稿完了 - {'success': True, 'main_post_id': '17970417728871993', 'post_type': 'carousel'}
+2025-06-24 00:09:21,507 - threads-automation - INFO - ACCOUNT_006: 投稿成功
+2025-06-24 00:09:21,510 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:09:31,517 - threads-automation - INFO - [7/30] ACCOUNT_007 投稿開始
+2025-06-24 00:09:31,520 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:09:31,522 - threads-automation - INFO - 選択アカウント: ACCOUNT_007
+2025-06-24 00:09:31,564 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_007_CONTENT_005
+2025-06-24 00:09:31,565 - threads-automation - INFO - ACCOUNT_007: 実際の投稿実行開始
+2025-06-24 00:09:31,590 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:09:31,591 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9926872104055991/threads
+2025-06-24 00:09:31,591 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750549370/threads/ACCOUNT_007/ACCOUNT_007_CONTENT_005.jpg'}
+2025-06-24 00:09:44,475 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:09:44,476 - threads-automation - INFO - レスポンス内容: {"id":"18062915834331355"}
+2025-06-24 00:09:44,477 - threads-automation - INFO - メディアコンテナ作成成功: 18062915834331355
+2025-06-24 00:09:46,483 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:09:46,485 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9926872104055991/threads
+2025-06-24 00:09:46,488 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750549370/threads/ACCOUNT_007/ACCOUNT_007_CONTENT_005_1.jpg'}
+2025-06-24 00:09:52,382 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:09:52,385 - threads-automation - INFO - レスポンス内容: {"id":"18035348726378135"}
+2025-06-24 00:09:52,385 - threads-automation - INFO - メディアコンテナ作成成功: 18035348726378135
+2025-06-24 00:09:54,390 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9926872104055991/threads
+2025-06-24 00:10:00,359 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:10:00,361 - threads-automation - INFO - レスポンス内容: {"id":"18013169429568059"}
+2025-06-24 00:10:00,362 - threads-automation - INFO - カルーセルコンテナ作成成功: 18013169429568059
+2025-06-24 00:10:00,364 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:10:12,232 - threads-automation - INFO - カルーセル投稿成功: {'id': '18070191674072810'}
+2025-06-24 00:10:12,240 - threads-automation - INFO - ACCOUNT_007: 投稿完了 - {'success': True, 'main_post_id': '18070191674072810', 'post_type': 'carousel'}
+2025-06-24 00:10:12,244 - threads-automation - INFO - ACCOUNT_007: 投稿成功
+2025-06-24 00:10:12,246 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:10:22,253 - threads-automation - INFO - [8/30] ACCOUNT_008 投稿開始
+2025-06-24 00:10:22,256 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:10:22,259 - threads-automation - INFO - 選択アカウント: ACCOUNT_008
+2025-06-24 00:10:22,292 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_008_CONTENT_004
+2025-06-24 00:10:22,294 - threads-automation - INFO - ACCOUNT_008: 実際の投稿実行開始
+2025-06-24 00:10:24,741 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:10:24,742 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23887572274188622/threads
+2025-06-24 00:10:24,742 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691422/threads/ACCOUNT_008/ACCOUNT_008_CONTENT_004.jpg'}
+2025-06-24 00:10:30,445 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:10:30,447 - threads-automation - INFO - レスポンス内容: {"id":"18149148919377996"}
+2025-06-24 00:10:30,449 - threads-automation - INFO - メディアコンテナ作成成功: 18149148919377996
+2025-06-24 00:10:32,454 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:10:32,456 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23887572274188622/threads
+2025-06-24 00:10:32,459 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691423/threads/ACCOUNT_008/ACCOUNT_008_CONTENT_004_1.jpg'}
+2025-06-24 00:10:39,032 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:10:39,033 - threads-automation - INFO - レスポンス内容: {"id":"18078859159698390"}
+2025-06-24 00:10:39,035 - threads-automation - INFO - メディアコンテナ作成成功: 18078859159698390
+2025-06-24 00:10:41,048 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/23887572274188622/threads
+2025-06-24 00:10:41,051 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18149148919377996,18078859159698390', 'text': 'CAの制服とおしゃれ着\nあなたはどっち派ですか？\nそれとも、\nいきなりハダカでいいかな…？'}
+2025-06-24 00:10:45,607 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:10:45,609 - threads-automation - INFO - レスポンス内容: {"id":"17935772675919701"}
+2025-06-24 00:10:45,611 - threads-automation - INFO - カルーセルコンテナ作成成功: 17935772675919701
+2025-06-24 00:10:45,613 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:10:56,012 - threads-automation - INFO - カルーセル投稿成功: {'id': '17843329413518027'}
+2025-06-24 00:10:56,021 - threads-automation - INFO - ACCOUNT_008: 投稿完了 - {'success': True, 'main_post_id': '17843329413518027', 'post_type': 'carousel'}
+2025-06-24 00:10:56,024 - threads-automation - INFO - ACCOUNT_008: 投稿成功
+2025-06-24 00:10:56,028 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:11:06,044 - threads-automation - INFO - [9/30] ACCOUNT_009 投稿開始
+2025-06-24 00:11:06,048 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:11:06,050 - threads-automation - INFO - 選択アカウント: ACCOUNT_009
+2025-06-24 00:11:06,063 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_009_CONTENT_008
+2025-06-24 00:11:06,066 - threads-automation - INFO - ACCOUNT_009: 実際の投稿実行開始
+2025-06-24 00:11:06,108 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:11:06,109 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-24 00:11:06,111 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750484853/threads/ACCOUNT_009/ACCOUNT_009_CONTENT_008.jpg'}
+2025-06-24 00:11:13,909 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:11:13,911 - threads-automation - INFO - レスポンス内容: {"id":"17952113678988377"}
+2025-06-24 00:11:13,914 - threads-automation - INFO - メディアコンテナ作成成功: 17952113678988377
+2025-06-24 00:11:15,921 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:11:15,923 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-24 00:11:15,925 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750484854/threads/ACCOUNT_009/ACCOUNT_009_CONTENT_008_1.jpg'}
+2025-06-24 00:11:23,147 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:11:23,149 - threads-automation - INFO - レスポンス内容: {"id":"18060145679195209"}
+2025-06-24 00:11:23,151 - threads-automation - INFO - メディアコンテナ作成成功: 18060145679195209
+2025-06-24 00:11:25,156 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24116592981299477/threads
+2025-06-24 00:11:30,733 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:11:30,735 - threads-automation - INFO - レスポンス内容: {"id":"18015039386554720"}
+2025-06-24 00:11:30,737 - threads-automation - INFO - カルーセルコンテナ作成成功: 18015039386554720
+2025-06-24 00:11:30,739 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:11:47,556 - threads-automation - INFO - カルーセル投稿成功: {'id': '17962453001938642'}
+2025-06-24 00:11:47,563 - threads-automation - INFO - ACCOUNT_009: 投稿完了 - {'success': True, 'main_post_id': '17962453001938642', 'post_type': 'carousel'}
+2025-06-24 00:11:47,566 - threads-automation - INFO - ACCOUNT_009: 投稿成功
+2025-06-24 00:11:47,568 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:11:57,577 - threads-automation - INFO - [10/30] ACCOUNT_010 投稿開始
+2025-06-24 00:11:57,579 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:11:57,581 - threads-automation - INFO - 選択アカウント: ACCOUNT_010
+2025-06-24 00:11:57,598 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_010_CONTENT_004
+2025-06-24 00:11:57,600 - threads-automation - INFO - ACCOUNT_010: 実際の投稿実行開始
+2025-06-24 00:12:00,742 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:12:00,743 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24112122328393306/threads
+2025-06-24 00:12:00,743 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691518/threads/ACCOUNT_010/ACCOUNT_010_CONTENT_004.jpg'}
+2025-06-24 00:12:11,553 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:12:11,555 - threads-automation - INFO - レスポンス内容: {"id":"18074822353821675"}
+2025-06-24 00:12:11,557 - threads-automation - INFO - メディアコンテナ作成成功: 18074822353821675
+2025-06-24 00:12:13,575 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:12:13,577 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24112122328393306/threads
+2025-06-24 00:12:13,578 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691519/threads/ACCOUNT_010/ACCOUNT_010_CONTENT_004_1.jpg'}
+2025-06-24 00:12:21,737 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:12:21,740 - threads-automation - INFO - レスポンス内容: {"id":"18061553075183334"}
+2025-06-24 00:12:21,742 - threads-automation - INFO - メディアコンテナ作成成功: 18061553075183334
+2025-06-24 00:12:23,753 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24112122328393306/threads
+2025-06-24 00:12:29,012 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:12:29,014 - threads-automation - INFO - レスポンス内容: {"id":"18088510741655982"}
+2025-06-24 00:12:29,017 - threads-automation - INFO - カルーセルコンテナ作成成功: 18088510741655982
+2025-06-24 00:12:29,019 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:12:44,623 - threads-automation - INFO - カルーセル投稿成功: {'id': '18131979487390916'}
+2025-06-24 00:12:44,633 - threads-automation - INFO - ACCOUNT_010: 投稿完了 - {'success': True, 'main_post_id': '18131979487390916', 'post_type': 'carousel'}
+2025-06-24 00:12:44,637 - threads-automation - INFO - ACCOUNT_010: 投稿成功
+2025-06-24 00:12:44,639 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:12:54,652 - threads-automation - INFO - [11/30] ACCOUNT_011 投稿開始
+2025-06-24 00:12:54,654 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:12:54,656 - threads-automation - INFO - 選択アカウント: ACCOUNT_011
+2025-06-24 00:12:54,674 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_011_CONTENT_005
+2025-06-24 00:12:54,676 - threads-automation - INFO - ACCOUNT_011: 実際の投稿実行開始
+2025-06-24 00:12:54,720 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:12:54,721 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-24 00:12:54,721 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750503959/threads/ACCOUNT_011/ACCOUNT_011_CONTENT_005.jpg'}
+2025-06-24 00:13:02,641 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:13:02,643 - threads-automation - INFO - レスポンス内容: {"id":"18084241597688971"}
+2025-06-24 00:13:02,645 - threads-automation - INFO - メディアコンテナ作成成功: 18084241597688971
+2025-06-24 00:13:04,659 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:13:04,661 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-24 00:13:04,663 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750503959/threads/ACCOUNT_011/ACCOUNT_011_CONTENT_005_1.jpg'}
+2025-06-24 00:13:12,162 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:13:12,165 - threads-automation - INFO - レスポンス内容: {"id":"17849852850488668"}
+2025-06-24 00:13:12,167 - threads-automation - INFO - メディアコンテナ作成成功: 17849852850488668
+2025-06-24 00:13:14,172 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/10068250716584647/threads
+2025-06-24 00:13:20,169 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:13:20,171 - threads-automation - INFO - レスポンス内容: {"id":"18515643268002074"}
+2025-06-24 00:13:20,172 - threads-automation - INFO - カルーセルコンテナ作成成功: 18515643268002074
+2025-06-24 00:13:20,174 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:13:42,940 - threads-automation - INFO - カルーセル投稿成功: {'id': '17854692114460817'}
+2025-06-24 00:13:42,948 - threads-automation - INFO - ACCOUNT_011: 投稿完了 - {'success': True, 'main_post_id': '17854692114460817', 'post_type': 'carousel'}
+2025-06-24 00:13:42,950 - threads-automation - INFO - ACCOUNT_011: 投稿成功
+2025-06-24 00:13:42,953 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:13:52,968 - threads-automation - INFO - [12/30] ACCOUNT_012 投稿開始
+2025-06-24 00:13:52,970 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:13:52,971 - threads-automation - INFO - 選択アカウント: ACCOUNT_012
+2025-06-24 00:13:52,981 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_012_CONTENT_008
+2025-06-24 00:13:52,983 - threads-automation - INFO - ACCOUNT_012: 実際の投稿実行開始
+2025-06-24 00:13:55,964 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:13:55,966 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24077475695215745/threads
+2025-06-24 00:13:55,966 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691633/threads/ACCOUNT_012/ACCOUNT_012_CONTENT_008.jpg'}
+2025-06-24 00:14:03,439 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:14:03,441 - threads-automation - INFO - レスポンス内容: {"id":"18053365865590583"}
+2025-06-24 00:14:03,443 - threads-automation - INFO - メディアコンテナ作成成功: 18053365865590583
+2025-06-24 00:14:05,448 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:14:05,450 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24077475695215745/threads
+2025-06-24 00:14:05,451 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691635/threads/ACCOUNT_012/ACCOUNT_012_CONTENT_008_1.jpg'}
+2025-06-24 00:14:14,492 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:14:14,492 - threads-automation - INFO - レスポンス内容: {"id":"18047143592449311"}
+2025-06-24 00:14:14,493 - threads-automation - INFO - メディアコンテナ作成成功: 18047143592449311
+2025-06-24 00:14:16,500 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24077475695215745/threads
+2025-06-24 00:14:22,023 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:14:22,025 - threads-automation - INFO - レスポンス内容: {"id":"17876848587359802"}
+2025-06-24 00:14:22,027 - threads-automation - INFO - カルーセルコンテナ作成成功: 17876848587359802
+2025-06-24 00:14:22,029 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:14:34,865 - threads-automation - INFO - カルーセル投稿成功: {'id': '17843132667518987'}
+2025-06-24 00:14:34,867 - threads-automation - INFO - ACCOUNT_012: 投稿完了 - {'success': True, 'main_post_id': '17843132667518987', 'post_type': 'carousel'}
+2025-06-24 00:14:34,869 - threads-automation - INFO - ACCOUNT_012: 投稿成功
+2025-06-24 00:14:34,871 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:14:44,880 - threads-automation - INFO - [13/30] ACCOUNT_013 投稿開始
+2025-06-24 00:14:44,883 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:14:44,885 - threads-automation - INFO - 選択アカウント: ACCOUNT_013
+2025-06-24 00:14:44,903 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_013_CONTENT_002
+2025-06-24 00:14:44,905 - threads-automation - INFO - ACCOUNT_013: 実際の投稿実行開始
+2025-06-24 00:14:50,333 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:14:50,335 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30920200597578697/threads
+2025-06-24 00:14:50,336 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691685/threads/ACCOUNT_013/ACCOUNT_013_CONTENT_002.jpg'}
+2025-06-24 00:14:59,576 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:14:59,579 - threads-automation - INFO - レスポンス内容: {"id":"18066032690030337"}
+2025-06-24 00:14:59,581 - threads-automation - INFO - メディアコンテナ作成成功: 18066032690030337
+2025-06-24 00:15:01,599 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:15:01,601 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30920200597578697/threads
+2025-06-24 00:15:01,603 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691688/threads/ACCOUNT_013/ACCOUNT_013_CONTENT_002_1.jpg'}
+2025-06-24 00:15:08,663 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:15:08,666 - threads-automation - INFO - レスポンス内容: {"id":"17898050616233364"}
+2025-06-24 00:15:08,668 - threads-automation - INFO - メディアコンテナ作成成功: 17898050616233364
+2025-06-24 00:15:10,686 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/30920200597578697/threads
+2025-06-24 00:15:10,688 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18066032690030337,17898050616233364', 'text': 'みんなどこに出すのが好き？\n1.お腹\n2.口の中\n3.おっπ\n4.あそこの中\nコメントで教えてね\U0001faf6\U0001faf6'}
+2025-06-24 00:15:15,905 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:15:15,907 - threads-automation - INFO - レスポンス内容: {"id":"18057033983254396"}
+2025-06-24 00:15:15,909 - threads-automation - INFO - カルーセルコンテナ作成成功: 18057033983254396
+2025-06-24 00:15:15,911 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:15:26,496 - threads-automation - INFO - カルーセル投稿成功: {'id': '18080396356871173'}
+2025-06-24 00:15:26,499 - threads-automation - INFO - ACCOUNT_013: 投稿完了 - {'success': True, 'main_post_id': '18080396356871173', 'post_type': 'carousel'}
+2025-06-24 00:15:26,500 - threads-automation - INFO - ACCOUNT_013: 投稿成功
+2025-06-24 00:15:26,501 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:15:36,515 - threads-automation - INFO - [14/30] ACCOUNT_014 投稿開始
+2025-06-24 00:15:36,518 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:15:36,520 - threads-automation - INFO - 選択アカウント: ACCOUNT_014
+2025-06-24 00:15:36,539 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_014_CONTENT_007
+2025-06-24 00:15:36,541 - threads-automation - INFO - ACCOUNT_014: 実際の投稿実行開始
+2025-06-24 00:15:42,439 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:15:42,440 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23938614452425056/threads
+2025-06-24 00:15:42,441 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691736/threads/ACCOUNT_014/ACCOUNT_014_CONTENT_007.jpg'}
+2025-06-24 00:15:51,962 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:15:51,962 - threads-automation - INFO - レスポンス内容: {"id":"18100665916560075"}
+2025-06-24 00:15:51,963 - threads-automation - INFO - メディアコンテナ作成成功: 18100665916560075
+2025-06-24 00:15:53,972 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:15:53,974 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23938614452425056/threads
+2025-06-24 00:15:53,976 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691738/threads/ACCOUNT_014/ACCOUNT_014_CONTENT_007_1.jpg'}
+2025-06-24 00:16:06,001 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:16:06,003 - threads-automation - INFO - レスポンス内容: {"id":"17970274010876913"}
+2025-06-24 00:16:06,005 - threads-automation - INFO - メディアコンテナ作成成功: 17970274010876913
+2025-06-24 00:16:08,022 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/23938614452425056/threads
+2025-06-24 00:16:15,789 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:16:15,791 - threads-automation - INFO - レスポンス内容: {"id":"18047816996395776"}
+2025-06-24 00:16:15,793 - threads-automation - INFO - カルーセルコンテナ作成成功: 18047816996395776
+2025-06-24 00:16:15,795 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:16:27,929 - threads-automation - INFO - カルーセル投稿成功: {'id': '17916071199103720'}
+2025-06-24 00:16:27,930 - threads-automation - INFO - ACCOUNT_014: 投稿完了 - {'success': True, 'main_post_id': '17916071199103720', 'post_type': 'carousel'}
+2025-06-24 00:16:27,930 - threads-automation - INFO - ACCOUNT_014: 投稿成功
+2025-06-24 00:16:27,931 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:16:37,945 - threads-automation - INFO - [15/30] ACCOUNT_015 投稿開始
+2025-06-24 00:16:37,947 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:16:37,950 - threads-automation - INFO - 選択アカウント: ACCOUNT_015
+2025-06-24 00:16:37,966 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_015_CONTENT_009
+2025-06-24 00:16:37,967 - threads-automation - INFO - ACCOUNT_015: 実際の投稿実行開始
+2025-06-24 00:16:38,006 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:16:38,007 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23934054476290648/threads
+2025-06-24 00:16:38,007 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750504085/threads/ACCOUNT_015/ACCOUNT_015_CONTENT_009.jpg'}
+2025-06-24 00:16:45,624 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:16:45,626 - threads-automation - INFO - レスポンス内容: {"id":"18370390000182718"}
+2025-06-24 00:16:45,627 - threads-automation - INFO - メディアコンテナ作成成功: 18370390000182718
+2025-06-24 00:16:47,630 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:16:47,633 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23934054476290648/threads
+2025-06-24 00:16:47,634 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750504085/threads/ACCOUNT_015/ACCOUNT_015_CONTENT_009_1.jpg'}
+2025-06-24 00:16:58,117 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:16:58,120 - threads-automation - INFO - レスポンス内容: {"id":"18144029563395319"}
+2025-06-24 00:16:58,123 - threads-automation - INFO - メディアコンテナ作成成功: 18144029563395319
+2025-06-24 00:17:00,131 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/23934054476290648/threads
+2025-06-24 00:17:00,133 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18370390000182718,18144029563395319', 'text': 'Threads出会えすぎて笑うしかない\n最高すぎる///'}
+2025-06-24 00:17:05,418 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:17:05,421 - threads-automation - INFO - レスポンス内容: {"id":"18085216714615233"}
+2025-06-24 00:17:05,424 - threads-automation - INFO - カルーセルコンテナ作成成功: 18085216714615233
+2025-06-24 00:17:05,427 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:17:15,837 - threads-automation - INFO - カルーセル投稿成功: {'id': '18093256030549166'}
+2025-06-24 00:17:15,841 - threads-automation - INFO - ACCOUNT_015: 投稿完了 - {'success': True, 'main_post_id': '18093256030549166', 'post_type': 'carousel'}
+2025-06-24 00:17:15,842 - threads-automation - INFO - ACCOUNT_015: 投稿成功
+2025-06-24 00:17:15,842 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:17:25,858 - threads-automation - INFO - [16/30] ACCOUNT_016 投稿開始
+2025-06-24 00:17:25,863 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:17:25,865 - threads-automation - INFO - 選択アカウント: ACCOUNT_016
+2025-06-24 00:17:25,881 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_016_CONTENT_003
+2025-06-24 00:17:25,883 - threads-automation - INFO - ACCOUNT_016: 実際の投稿実行開始
+2025-06-24 00:17:30,112 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:17:30,112 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9620967151359166/threads
+2025-06-24 00:17:30,113 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691847/threads/ACCOUNT_016/ACCOUNT_016_CONTENT_003.jpg'}
+2025-06-24 00:17:35,417 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:17:35,419 - threads-automation - INFO - レスポンス内容: {"id":"18074409625939930"}
+2025-06-24 00:17:35,420 - threads-automation - INFO - メディアコンテナ作成成功: 18074409625939930
+2025-06-24 00:17:37,424 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:17:37,426 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9620967151359166/threads
+2025-06-24 00:17:37,428 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691849/threads/ACCOUNT_016/ACCOUNT_016_CONTENT_003_1.jpg'}
+2025-06-24 00:17:44,440 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:17:44,443 - threads-automation - INFO - レスポンス内容: {"id":"18059773634004603"}
+2025-06-24 00:17:44,446 - threads-automation - INFO - メディアコンテナ作成成功: 18059773634004603
+2025-06-24 00:17:46,457 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9620967151359166/threads
+2025-06-24 00:17:46,460 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18074409625939930,18059773634004603', 'text': '中って…\n緩い方がいい？きつい方がいい？\nそれともあんまり分からないかな？'}
+2025-06-24 00:17:51,270 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:17:51,272 - threads-automation - INFO - レスポンス内容: {"id":"17960933771930684"}
+2025-06-24 00:17:51,272 - threads-automation - INFO - カルーセルコンテナ作成成功: 17960933771930684
+2025-06-24 00:17:51,274 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:18:05,213 - threads-automation - INFO - カルーセル投稿成功: {'id': '17951837762841000'}
+2025-06-24 00:18:05,221 - threads-automation - INFO - ACCOUNT_016: 投稿完了 - {'success': True, 'main_post_id': '17951837762841000', 'post_type': 'carousel'}
+2025-06-24 00:18:05,224 - threads-automation - INFO - ACCOUNT_016: 投稿成功
+2025-06-24 00:18:05,225 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:18:15,240 - threads-automation - INFO - [17/30] ACCOUNT_017 投稿開始
+2025-06-24 00:18:15,243 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:18:15,245 - threads-automation - INFO - 選択アカウント: ACCOUNT_017
+2025-06-24 00:18:15,262 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_017_CONTENT_007
+2025-06-24 00:18:15,263 - threads-automation - INFO - ACCOUNT_017: 実際の投稿実行開始
+2025-06-24 00:18:18,460 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:18:18,462 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24128386680120249/threads
+2025-06-24 00:18:18,462 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691895/threads/ACCOUNT_017/ACCOUNT_017_CONTENT_007.jpg'}
+2025-06-24 00:18:24,394 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:18:24,396 - threads-automation - INFO - レスポンス内容: {"id":"18078648247848552"}
+2025-06-24 00:18:24,398 - threads-automation - INFO - メディアコンテナ作成成功: 18078648247848552
+2025-06-24 00:18:26,412 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:18:26,414 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24128386680120249/threads
+2025-06-24 00:18:26,415 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691897/threads/ACCOUNT_017/ACCOUNT_017_CONTENT_007_1.jpg'}
+2025-06-24 00:18:32,722 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:18:32,725 - threads-automation - INFO - レスポンス内容: {"id":"18069815410951425"}
+2025-06-24 00:18:32,726 - threads-automation - INFO - メディアコンテナ作成成功: 18069815410951425
+2025-06-24 00:18:34,743 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24128386680120249/threads
+2025-06-24 00:18:50,792 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:18:50,793 - threads-automation - INFO - レスポンス内容: {"id":"18009510950788036"}
+2025-06-24 00:18:50,794 - threads-automation - INFO - カルーセルコンテナ作成成功: 18009510950788036
+2025-06-24 00:18:50,795 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:19:02,886 - threads-automation - INFO - カルーセル投稿成功: {'id': '18274217824279017'}
+2025-06-24 00:19:02,893 - threads-automation - INFO - ACCOUNT_017: 投稿完了 - {'success': True, 'main_post_id': '18274217824279017', 'post_type': 'carousel'}
+2025-06-24 00:19:02,896 - threads-automation - INFO - ACCOUNT_017: 投稿成功
+2025-06-24 00:19:02,898 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:19:12,902 - threads-automation - INFO - [18/30] ACCOUNT_018 投稿開始
+2025-06-24 00:19:12,904 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:19:12,907 - threads-automation - INFO - 選択アカウント: ACCOUNT_018
+2025-06-24 00:19:12,943 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_018_CONTENT_003
+2025-06-24 00:19:12,945 - threads-automation - INFO - ACCOUNT_018: 実際の投稿実行開始
+2025-06-24 00:19:16,230 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:19:16,231 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24625332200418747/threads
+2025-06-24 00:19:16,233 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691953/threads/ACCOUNT_018/ACCOUNT_018_CONTENT_003.jpg'}
+2025-06-24 00:19:21,922 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:19:21,924 - threads-automation - INFO - レスポンス内容: {"id":"18407760418105152"}
+2025-06-24 00:19:21,925 - threads-automation - INFO - メディアコンテナ作成成功: 18407760418105152
+2025-06-24 00:19:23,939 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:19:23,941 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24625332200418747/threads
+2025-06-24 00:19:23,942 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750691955/threads/ACCOUNT_018/ACCOUNT_018_CONTENT_003_1.jpg'}
+2025-06-24 00:19:29,738 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:19:29,739 - threads-automation - INFO - レスポンス内容: {"id":"18060249836333559"}
+2025-06-24 00:19:29,739 - threads-automation - INFO - メディアコンテナ作成成功: 18060249836333559
+2025-06-24 00:19:31,741 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24625332200418747/threads
+2025-06-24 00:19:31,741 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18407760418105152,18060249836333559', 'text': '中って…\n緩い方がいい？きつい方がいい？\nそれともあんまり分からないかな？'}
+2025-06-24 00:19:41,948 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:19:41,951 - threads-automation - INFO - レスポンス内容: {"id":"17853444420466854"}
+2025-06-24 00:19:41,953 - threads-automation - INFO - カルーセルコンテナ作成成功: 17853444420466854
+2025-06-24 00:19:41,955 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:19:55,072 - threads-automation - INFO - カルーセル投稿成功: {'id': '18049400543611589'}
+2025-06-24 00:19:55,080 - threads-automation - INFO - ACCOUNT_018: 投稿完了 - {'success': True, 'main_post_id': '18049400543611589', 'post_type': 'carousel'}
+2025-06-24 00:19:55,083 - threads-automation - INFO - ACCOUNT_018: 投稿成功
+2025-06-24 00:19:55,086 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:20:05,098 - threads-automation - INFO - [19/30] ACCOUNT_019 投稿開始
+2025-06-24 00:20:05,100 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:20:05,104 - threads-automation - INFO - 選択アカウント: ACCOUNT_019
+2025-06-24 00:20:05,119 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_019_CONTENT_004
+2025-06-24 00:20:05,121 - threads-automation - INFO - ACCOUNT_019: 実際の投稿実行開始
+2025-06-24 00:20:05,158 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:20:05,159 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9569590389814055/threads
+2025-06-24 00:20:05,160 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750495937/threads/ACCOUNT_019/ACCOUNT_019_CONTENT_004.jpg'}
+2025-06-24 00:20:18,243 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:20:18,245 - threads-automation - INFO - レスポンス内容: {"id":"17844009669515476"}
+2025-06-24 00:20:18,246 - threads-automation - INFO - メディアコンテナ作成成功: 17844009669515476
+2025-06-24 00:20:20,259 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:20:20,259 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9569590389814055/threads
+2025-06-24 00:20:20,259 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750495937/threads/ACCOUNT_019/ACCOUNT_019_CONTENT_004_1.jpg'}
+2025-06-24 00:20:29,471 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:20:29,474 - threads-automation - INFO - レスポンス内容: {"id":"18069914260821587"}
+2025-06-24 00:20:29,476 - threads-automation - INFO - メディアコンテナ作成成功: 18069914260821587
+2025-06-24 00:20:31,482 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9569590389814055/threads
+2025-06-24 00:20:37,018 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:20:37,020 - threads-automation - INFO - レスポンス内容: {"id":"17971539023871609"}
+2025-06-24 00:20:37,022 - threads-automation - INFO - カルーセルコンテナ作成成功: 17971539023871609
+2025-06-24 00:20:37,025 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:20:49,444 - threads-automation - INFO - カルーセル投稿成功: {'id': '17936711376033056'}
+2025-06-24 00:20:49,453 - threads-automation - INFO - ACCOUNT_019: 投稿完了 - {'success': True, 'main_post_id': '17936711376033056', 'post_type': 'carousel'}
+2025-06-24 00:20:49,456 - threads-automation - INFO - ACCOUNT_019: 投稿成功
+2025-06-24 00:20:49,457 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:20:59,469 - threads-automation - INFO - [20/30] ACCOUNT_020 投稿開始
+2025-06-24 00:20:59,471 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:20:59,475 - threads-automation - INFO - 選択アカウント: ACCOUNT_020
+2025-06-24 00:20:59,491 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_020_CONTENT_004
+2025-06-24 00:20:59,496 - threads-automation - INFO - ACCOUNT_020: 実際の投稿実行開始
+2025-06-24 00:21:02,421 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:21:02,422 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9997940190241975/threads
+2025-06-24 00:21:02,424 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692060/threads/ACCOUNT_020/ACCOUNT_020_CONTENT_004.jpg'}
+2025-06-24 00:21:08,028 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:21:08,029 - threads-automation - INFO - レスポンス内容: {"id":"17994827816800544"}
+2025-06-24 00:21:08,029 - threads-automation - INFO - メディアコンテナ作成成功: 17994827816800544
+2025-06-24 00:21:10,031 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:21:10,033 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9997940190241975/threads
+2025-06-24 00:21:10,035 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692061/threads/ACCOUNT_020/ACCOUNT_020_CONTENT_004_1.jpg'}
+2025-06-24 00:21:16,252 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:21:16,252 - threads-automation - INFO - レスポンス内容: {"id":"18053597225599566"}
+2025-06-24 00:21:16,253 - threads-automation - INFO - メディアコンテナ作成成功: 18053597225599566
+2025-06-24 00:21:18,254 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9997940190241975/threads
+2025-06-24 00:21:23,536 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:21:23,539 - threads-automation - INFO - レスポンス内容: {"id":"17897107791234107"}
+2025-06-24 00:21:23,541 - threads-automation - INFO - カルーセルコンテナ作成成功: 17897107791234107
+2025-06-24 00:21:23,543 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:21:33,816 - threads-automation - INFO - カルーセル投稿成功: {'id': '17889076881166808'}
+2025-06-24 00:21:33,824 - threads-automation - INFO - ACCOUNT_020: 投稿完了 - {'success': True, 'main_post_id': '17889076881166808', 'post_type': 'carousel'}
+2025-06-24 00:21:33,827 - threads-automation - INFO - ACCOUNT_020: 投稿成功
+2025-06-24 00:21:33,829 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:21:43,847 - threads-automation - INFO - [21/30] ACCOUNT_021 投稿開始
+2025-06-24 00:21:43,849 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:21:43,852 - threads-automation - INFO - 選択アカウント: ACCOUNT_021
+2025-06-24 00:21:43,862 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_021_CONTENT_003
+2025-06-24 00:21:43,865 - threads-automation - INFO - ACCOUNT_021: 実際の投稿実行開始
+2025-06-24 00:21:47,312 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:21:47,314 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9937358983026583/threads
+2025-06-24 00:21:47,316 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692105/threads/ACCOUNT_021/ACCOUNT_021_CONTENT_003.jpg'}
+2025-06-24 00:21:53,690 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:21:53,692 - threads-automation - INFO - レスポンス内容: {"id":"18090021448567074"}
+2025-06-24 00:21:53,693 - threads-automation - INFO - メディアコンテナ作成成功: 18090021448567074
+2025-06-24 00:21:55,705 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:21:55,707 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9937358983026583/threads
+2025-06-24 00:21:55,709 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692106/threads/ACCOUNT_021/ACCOUNT_021_CONTENT_003_1.jpg'}
+2025-06-24 00:22:06,777 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:22:06,780 - threads-automation - INFO - レスポンス内容: {"id":"17856792405397632"}
+2025-06-24 00:22:06,782 - threads-automation - INFO - メディアコンテナ作成成功: 17856792405397632
+2025-06-24 00:22:08,787 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9937358983026583/threads
+2025-06-24 00:22:08,789 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18090021448567074,17856792405397632'}
+2025-06-24 00:22:12,401 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:22:12,403 - threads-automation - INFO - レスポンス内容: {"id":"18069512912482000"}
+2025-06-24 00:22:12,405 - threads-automation - INFO - カルーセルコンテナ作成成功: 18069512912482000
+2025-06-24 00:22:12,408 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:22:21,718 - threads-automation - INFO - カルーセル投稿成功: {'id': '17856808017397939'}
+2025-06-24 00:22:21,726 - threads-automation - INFO - ACCOUNT_021: 投稿完了 - {'success': True, 'main_post_id': '17856808017397939', 'post_type': 'carousel'}
+2025-06-24 00:22:21,730 - threads-automation - INFO - ACCOUNT_021: 投稿成功
+2025-06-24 00:22:21,732 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:22:31,738 - threads-automation - INFO - [22/30] ACCOUNT_022 投稿開始
+2025-06-24 00:22:31,741 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:22:31,743 - threads-automation - INFO - 選択アカウント: ACCOUNT_022
+2025-06-24 00:22:31,751 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_022_CONTENT_002
+2025-06-24 00:22:31,754 - threads-automation - INFO - ACCOUNT_022: 実際の投稿実行開始
+2025-06-24 00:22:33,900 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:22:33,902 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9968599689893619/threads
+2025-06-24 00:22:33,904 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692151/threads/ACCOUNT_022/ACCOUNT_022_CONTENT_002.jpg'}
+2025-06-24 00:22:39,028 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:22:39,029 - threads-automation - INFO - レスポンス内容: {"id":"18480961441070233"}
+2025-06-24 00:22:39,030 - threads-automation - INFO - メディアコンテナ作成成功: 18480961441070233
+2025-06-24 00:22:41,043 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:22:41,045 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9968599689893619/threads
+2025-06-24 00:22:41,047 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692152/threads/ACCOUNT_022/ACCOUNT_022_CONTENT_002_1.jpg'}
+2025-06-24 00:22:46,269 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:22:46,271 - threads-automation - INFO - レスポンス内容: {"id":"18084981679740556"}
+2025-06-24 00:22:46,273 - threads-automation - INFO - メディアコンテナ作成成功: 18084981679740556
+2025-06-24 00:22:48,285 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9968599689893619/threads
+2025-06-24 00:22:48,285 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18480961441070233,18084981679740556'}
+2025-06-24 00:22:51,849 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:22:51,849 - threads-automation - INFO - レスポンス内容: {"id":"18309332488212153"}
+2025-06-24 00:22:51,849 - threads-automation - INFO - カルーセルコンテナ作成成功: 18309332488212153
+2025-06-24 00:22:51,850 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:23:01,197 - threads-automation - INFO - カルーセル投稿成功: {'id': '18093148768553359'}
+2025-06-24 00:23:01,204 - threads-automation - INFO - ACCOUNT_022: 投稿完了 - {'success': True, 'main_post_id': '18093148768553359', 'post_type': 'carousel'}
+2025-06-24 00:23:01,207 - threads-automation - INFO - ACCOUNT_022: 投稿成功
+2025-06-24 00:23:01,210 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:23:11,227 - threads-automation - INFO - [23/30] ACCOUNT_023 投稿開始
+2025-06-24 00:23:11,230 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:23:11,232 - threads-automation - INFO - 選択アカウント: ACCOUNT_023
+2025-06-24 00:23:11,242 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_023_CONTENT_005
+2025-06-24 00:23:11,247 - threads-automation - INFO - ACCOUNT_023: 実際の投稿実行開始
+2025-06-24 00:23:12,969 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:23:12,972 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9927458107352332/threads
+2025-06-24 00:23:12,974 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692191/threads/ACCOUNT_023/ACCOUNT_023_CONTENT_005.jpg'}
+2025-06-24 00:23:17,808 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:23:17,810 - threads-automation - INFO - レスポンス内容: {"id":"17911727523114830"}
+2025-06-24 00:23:17,812 - threads-automation - INFO - メディアコンテナ作成成功: 17911727523114830
+2025-06-24 00:23:19,820 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:23:19,823 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/9927458107352332/threads
+2025-06-24 00:23:19,827 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692192/threads/ACCOUNT_023/ACCOUNT_023_CONTENT_005_1.jpg'}
+2025-06-24 00:23:25,126 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:23:25,128 - threads-automation - INFO - レスポンス内容: {"id":"18405572908106728"}
+2025-06-24 00:23:25,129 - threads-automation - INFO - メディアコンテナ作成成功: 18405572908106728
+2025-06-24 00:23:27,145 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/9927458107352332/threads
+2025-06-24 00:23:27,147 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '17911727523114830,18405572908106728'}
+2025-06-24 00:23:31,834 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:23:31,837 - threads-automation - INFO - レスポンス内容: {"id":"17883215622305501"}
+2025-06-24 00:23:31,839 - threads-automation - INFO - カルーセルコンテナ作成成功: 17883215622305501
+2025-06-24 00:23:31,841 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:23:42,915 - threads-automation - INFO - カルーセル投稿成功: {'id': '18010363064592155'}
+2025-06-24 00:23:42,919 - threads-automation - INFO - ACCOUNT_023: 投稿完了 - {'success': True, 'main_post_id': '18010363064592155', 'post_type': 'carousel'}
+2025-06-24 00:23:42,921 - threads-automation - INFO - ACCOUNT_023: 投稿成功
+2025-06-24 00:23:42,923 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:23:52,936 - threads-automation - INFO - [24/30] ACCOUNT_024 投稿開始
+2025-06-24 00:23:52,940 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:23:52,943 - threads-automation - INFO - 選択アカウント: ACCOUNT_024
+2025-06-24 00:23:52,956 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_024_CONTENT_005
+2025-06-24 00:23:52,959 - threads-automation - INFO - ACCOUNT_024: 実際の投稿実行開始
+2025-06-24 00:24:14,788 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:24:14,789 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30367963832817086/threads
+2025-06-24 00:24:14,791 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692237/threads/ACCOUNT_024/ACCOUNT_024_CONTENT_005.jpg'}
+2025-06-24 00:24:23,994 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:24:23,997 - threads-automation - INFO - レスポンス内容: {"id":"18115291171491018"}
+2025-06-24 00:24:23,999 - threads-automation - INFO - メディアコンテナ作成成功: 18115291171491018
+2025-06-24 00:24:26,012 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:24:26,014 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30367963832817086/threads
+2025-06-24 00:24:26,016 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692253/threads/ACCOUNT_024/ACCOUNT_024_CONTENT_005_1.jpg'}
+2025-06-24 00:24:39,082 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:24:39,084 - threads-automation - INFO - レスポンス内容: {"id":"17975104610893813"}
+2025-06-24 00:24:39,087 - threads-automation - INFO - メディアコンテナ作成成功: 17975104610893813
+2025-06-24 00:24:41,100 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/30367963832817086/threads
+2025-06-24 00:24:41,102 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18115291171491018,17975104610893813'}
+2025-06-24 00:24:44,361 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:24:44,363 - threads-automation - INFO - レスポンス内容: {"id":"18387089245136300"}
+2025-06-24 00:24:44,365 - threads-automation - INFO - カルーセルコンテナ作成成功: 18387089245136300
+2025-06-24 00:24:44,367 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:24:54,371 - threads-automation - INFO - カルーセル投稿成功: {'id': '18006257441609357'}
+2025-06-24 00:24:54,372 - threads-automation - INFO - ACCOUNT_024: 投稿完了 - {'success': True, 'main_post_id': '18006257441609357', 'post_type': 'carousel'}
+2025-06-24 00:24:54,372 - threads-automation - INFO - ACCOUNT_024: 投稿成功
+2025-06-24 00:24:54,373 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:25:04,388 - threads-automation - INFO - [25/30] ACCOUNT_025 投稿開始
+2025-06-24 00:25:04,390 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:25:04,392 - threads-automation - INFO - 選択アカウント: ACCOUNT_025
+2025-06-24 00:25:04,399 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_025_CONTENT_006
+2025-06-24 00:25:04,400 - threads-automation - INFO - ACCOUNT_025: 実際の投稿実行開始
+2025-06-24 00:25:07,233 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:25:07,233 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24274633052142337/threads
+2025-06-24 00:25:07,233 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692304/threads/ACCOUNT_025/ACCOUNT_025_CONTENT_006.jpg'}
+2025-06-24 00:25:12,191 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:25:12,193 - threads-automation - INFO - レスポンス内容: {"id":"18316753171228901"}
+2025-06-24 00:25:12,195 - threads-automation - INFO - メディアコンテナ作成成功: 18316753171228901
+2025-06-24 00:25:14,211 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:25:14,213 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24274633052142337/threads
+2025-06-24 00:25:14,214 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692306/threads/ACCOUNT_025/ACCOUNT_025_CONTENT_006_1.jpg'}
+2025-06-24 00:25:19,780 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:25:19,782 - threads-automation - INFO - レスポンス内容: {"id":"18070431871840044"}
+2025-06-24 00:25:19,783 - threads-automation - INFO - メディアコンテナ作成成功: 18070431871840044
+2025-06-24 00:25:21,786 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24274633052142337/threads
+2025-06-24 00:25:21,789 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18316753171228901,18070431871840044'}
+2025-06-24 00:25:25,953 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:25:25,955 - threads-automation - INFO - レスポンス内容: {"id":"18061967801162334"}
+2025-06-24 00:25:25,957 - threads-automation - INFO - カルーセルコンテナ作成成功: 18061967801162334
+2025-06-24 00:25:25,960 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:25:38,071 - threads-automation - INFO - カルーセル投稿成功: {'id': '18046060502197695'}
+2025-06-24 00:25:38,075 - threads-automation - INFO - ACCOUNT_025: 投稿完了 - {'success': True, 'main_post_id': '18046060502197695', 'post_type': 'carousel'}
+2025-06-24 00:25:38,076 - threads-automation - INFO - ACCOUNT_025: 投稿成功
+2025-06-24 00:25:38,076 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:25:48,078 - threads-automation - INFO - [26/30] ACCOUNT_026 投稿開始
+2025-06-24 00:25:48,081 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:25:48,082 - threads-automation - INFO - 選択アカウント: ACCOUNT_026
+2025-06-24 00:25:48,088 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_026_CONTENT_004
+2025-06-24 00:25:48,089 - threads-automation - INFO - ACCOUNT_026: 実際の投稿実行開始
+2025-06-24 00:25:50,065 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:25:50,066 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30207244905557066/threads
+2025-06-24 00:25:50,066 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692348/threads/ACCOUNT_026/ACCOUNT_026_CONTENT_004.jpg'}
+2025-06-24 00:25:56,657 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:25:56,659 - threads-automation - INFO - レスポンス内容: {"id":"18088069858637403"}
+2025-06-24 00:25:56,660 - threads-automation - INFO - メディアコンテナ作成成功: 18088069858637403
+2025-06-24 00:25:58,667 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:25:58,668 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/30207244905557066/threads
+2025-06-24 00:25:58,670 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692349/threads/ACCOUNT_026/ACCOUNT_026_CONTENT_004_1.jpg'}
+2025-06-24 00:26:11,341 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:26:11,344 - threads-automation - INFO - レスポンス内容: {"id":"18092795347622134"}
+2025-06-24 00:26:11,346 - threads-automation - INFO - メディアコンテナ作成成功: 18092795347622134
+2025-06-24 00:26:13,359 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/30207244905557066/threads
+2025-06-24 00:26:13,361 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18088069858637403,18092795347622134'}
+2025-06-24 00:26:22,918 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:26:22,920 - threads-automation - INFO - レスポンス内容: {"id":"18046728656222409"}
+2025-06-24 00:26:22,921 - threads-automation - INFO - カルーセルコンテナ作成成功: 18046728656222409
+2025-06-24 00:26:22,924 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:26:43,044 - threads-automation - INFO - カルーセル投稿成功: {'id': '17980794797843847'}
+2025-06-24 00:26:43,052 - threads-automation - INFO - ACCOUNT_026: 投稿完了 - {'success': True, 'main_post_id': '17980794797843847', 'post_type': 'carousel'}
+2025-06-24 00:26:43,056 - threads-automation - INFO - ACCOUNT_026: 投稿成功
+2025-06-24 00:26:43,057 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:26:53,073 - threads-automation - INFO - [27/30] ACCOUNT_027 投稿開始
+2025-06-24 00:26:53,076 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:26:53,079 - threads-automation - INFO - 選択アカウント: ACCOUNT_027
+2025-06-24 00:26:53,089 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_027_CONTENT_004
+2025-06-24 00:26:53,093 - threads-automation - INFO - ACCOUNT_027: 実際の投稿実行開始
+2025-06-24 00:26:54,847 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:26:54,849 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24324505713808092/threads
+2025-06-24 00:26:54,851 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692413/threads/ACCOUNT_027/ACCOUNT_027_CONTENT_004.jpg'}
+2025-06-24 00:27:00,703 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:27:00,705 - threads-automation - INFO - レスポンス内容: {"id":"18069207418831509"}
+2025-06-24 00:27:00,707 - threads-automation - INFO - メディアコンテナ作成成功: 18069207418831509
+2025-06-24 00:27:02,709 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:27:02,712 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24324505713808092/threads
+2025-06-24 00:27:02,713 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692414/threads/ACCOUNT_027/ACCOUNT_027_CONTENT_004_1.jpg'}
+2025-06-24 00:27:08,028 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:27:08,030 - threads-automation - INFO - レスポンス内容: {"id":"17848378104500331"}
+2025-06-24 00:27:08,032 - threads-automation - INFO - メディアコンテナ作成成功: 17848378104500331
+2025-06-24 00:27:10,038 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24324505713808092/threads
+2025-06-24 00:27:10,040 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18069207418831509,17848378104500331'}
+2025-06-24 00:27:14,044 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:27:14,047 - threads-automation - INFO - レスポンス内容: {"id":"17987159969683244"}
+2025-06-24 00:27:14,049 - threads-automation - INFO - カルーセルコンテナ作成成功: 17987159969683244
+2025-06-24 00:27:14,052 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:27:25,796 - threads-automation - INFO - カルーセル投稿成功: {'id': '18283709527251955'}
+2025-06-24 00:27:25,804 - threads-automation - INFO - ACCOUNT_027: 投稿完了 - {'success': True, 'main_post_id': '18283709527251955', 'post_type': 'carousel'}
+2025-06-24 00:27:25,807 - threads-automation - INFO - ACCOUNT_027: 投稿成功
+2025-06-24 00:27:25,810 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:27:35,813 - threads-automation - INFO - [28/30] ACCOUNT_028 投稿開始
+2025-06-24 00:27:35,817 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:27:35,820 - threads-automation - INFO - 選択アカウント: ACCOUNT_028
+2025-06-24 00:27:35,828 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_028_CONTENT_006
+2025-06-24 00:27:35,832 - threads-automation - INFO - ACCOUNT_028: 実際の投稿実行開始
+2025-06-24 00:27:37,695 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:27:37,697 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24000612922883855/threads
+2025-06-24 00:27:37,699 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692456/threads/ACCOUNT_028/ACCOUNT_028_CONTENT_006.jpg'}
+2025-06-24 00:27:43,462 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:27:43,464 - threads-automation - INFO - レスポンス内容: {"id":"18071110897817454"}
+2025-06-24 00:27:43,465 - threads-automation - INFO - メディアコンテナ作成成功: 18071110897817454
+2025-06-24 00:27:45,480 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:27:45,482 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24000612922883855/threads
+2025-06-24 00:27:45,485 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692457/threads/ACCOUNT_028/ACCOUNT_028_CONTENT_006_1.jpg'}
+2025-06-24 00:27:51,100 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:27:51,103 - threads-automation - INFO - レスポンス内容: {"id":"18068412463849961"}
+2025-06-24 00:27:51,105 - threads-automation - INFO - メディアコンテナ作成成功: 18068412463849961
+2025-06-24 00:27:53,119 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24000612922883855/threads
+2025-06-24 00:27:53,121 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18071110897817454,18068412463849961'}
+2025-06-24 00:27:56,085 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:27:56,087 - threads-automation - INFO - レスポンス内容: {"id":"18488771161070936"}
+2025-06-24 00:27:56,089 - threads-automation - INFO - カルーセルコンテナ作成成功: 18488771161070936
+2025-06-24 00:27:56,093 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:28:09,665 - threads-automation - INFO - カルーセル投稿成功: {'id': '17935722341915671'}
+2025-06-24 00:28:09,667 - threads-automation - INFO - ACCOUNT_028: 投稿完了 - {'success': True, 'main_post_id': '17935722341915671', 'post_type': 'carousel'}
+2025-06-24 00:28:09,667 - threads-automation - INFO - ACCOUNT_028: 投稿成功
+2025-06-24 00:28:09,667 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:28:19,683 - threads-automation - INFO - [29/30] ACCOUNT_029 投稿開始
+2025-06-24 00:28:19,686 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:28:19,688 - threads-automation - INFO - 選択アカウント: ACCOUNT_029
+2025-06-24 00:28:19,697 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_029_CONTENT_001
+2025-06-24 00:28:19,701 - threads-automation - INFO - ACCOUNT_029: 実際の投稿実行開始
+2025-06-24 00:28:21,331 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:28:21,333 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/25133053796387630/threads
+2025-06-24 00:28:21,335 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692499/threads/ACCOUNT_029/ACCOUNT_029_CONTENT_001.jpg'}
+2025-06-24 00:28:26,693 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:28:26,695 - threads-automation - INFO - レスポンス内容: {"id":"18513783625042865"}
+2025-06-24 00:28:26,696 - threads-automation - INFO - メディアコンテナ作成成功: 18513783625042865
+2025-06-24 00:28:28,708 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:28:28,710 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/25133053796387630/threads
+2025-06-24 00:28:28,712 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692500/threads/ACCOUNT_029/ACCOUNT_029_CONTENT_001_1.jpg'}
+2025-06-24 00:28:34,508 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:28:34,511 - threads-automation - INFO - レスポンス内容: {"id":"17976667106731663"}
+2025-06-24 00:28:34,512 - threads-automation - INFO - メディアコンテナ作成成功: 17976667106731663
+2025-06-24 00:28:36,518 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/25133053796387630/threads
+2025-06-24 00:28:36,521 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18513783625042865,17976667106731663'}
+2025-06-24 00:28:39,276 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:28:39,278 - threads-automation - INFO - レスポンス内容: {"id":"18037367258644236"}
+2025-06-24 00:28:39,280 - threads-automation - INFO - カルーセルコンテナ作成成功: 18037367258644236
+2025-06-24 00:28:39,282 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:28:48,381 - threads-automation - INFO - カルーセル投稿成功: {'id': '17964977507781653'}
+2025-06-24 00:28:48,390 - threads-automation - INFO - ACCOUNT_029: 投稿完了 - {'success': True, 'main_post_id': '17964977507781653', 'post_type': 'carousel'}
+2025-06-24 00:28:48,392 - threads-automation - INFO - ACCOUNT_029: 投稿成功
+2025-06-24 00:28:48,395 - threads-automation - INFO - 次のアカウントまで10秒待機
+2025-06-24 00:28:58,408 - threads-automation - INFO - [30/30] ACCOUNT_030 投稿開始
+2025-06-24 00:28:58,411 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:28:58,414 - threads-automation - INFO - 選択アカウント: ACCOUNT_030
+2025-06-24 00:28:58,423 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_030_CONTENT_003
+2025-06-24 00:28:58,426 - threads-automation - INFO - ACCOUNT_030: 実際の投稿実行開始
+2025-06-24 00:29:00,133 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:29:00,135 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24445624258362692/threads
+2025-06-24 00:29:00,137 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692538/threads/ACCOUNT_030/ACCOUNT_030_CONTENT_003.jpg'}
+2025-06-24 00:29:05,566 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:29:05,568 - threads-automation - INFO - レスポンス内容: {"id":"18083018761752716"}
+2025-06-24 00:29:05,570 - threads-automation - INFO - メディアコンテナ作成成功: 18083018761752716
+2025-06-24 00:29:07,573 - threads-automation - INFO - カルーセルアイテム 2/2 作成中
+2025-06-24 00:29:07,575 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/24445624258362692/threads
+2025-06-24 00:29:07,577 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750692539/threads/ACCOUNT_030/ACCOUNT_030_CONTENT_003_1.jpg'}
+2025-06-24 00:29:12,636 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:29:12,639 - threads-automation - INFO - レスポンス内容: {"id":"18067331948098247"}
+2025-06-24 00:29:12,642 - threads-automation - INFO - メディアコンテナ作成成功: 18067331948098247
+2025-06-24 00:29:14,658 - threads-automation - INFO - カルーセルコンテナ作成URL: https://graph.threads.net/v1.0/24445624258362692/threads
+2025-06-24 00:29:14,660 - threads-automation - INFO - ペイロード: {'media_type': 'CAROUSEL', 'children': '18083018761752716,18067331948098247'}
+2025-06-24 00:29:17,017 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:29:17,019 - threads-automation - INFO - レスポンス内容: {"id":"18166979521350463"}
+2025-06-24 00:29:17,021 - threads-automation - INFO - カルーセルコンテナ作成成功: 18166979521350463
+2025-06-24 00:29:17,024 - threads-automation - INFO - APIの処理を待機中（5秒）...
+2025-06-24 00:29:25,687 - threads-automation - INFO - カルーセル投稿成功: {'id': '18137103454417263'}
+2025-06-24 00:29:25,695 - threads-automation - INFO - ACCOUNT_030: 投稿完了 - {'success': True, 'main_post_id': '18137103454417263', 'post_type': 'carousel'}
+2025-06-24 00:29:25,698 - threads-automation - INFO - ACCOUNT_030: 投稿成功
+2025-06-24 00:29:25,701 - threads-automation - INFO - 全アカウント投稿完了 - 成功: 30/30, 失敗: 0/30, 成功率: 100.0%
+2025-06-24 00:38:01,877 - threads-automation - INFO - スケジューラーテスト実行（手動投稿）開始
+2025-06-24 00:38:01,891 - threads-scheduler - INFO - Threads自動投稿スケジューラーシステム 起動中...
+2025-06-24 00:38:01,900 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-24 00:38:01,907 - threads-automation - INFO - システム初期化完了
+2025-06-24 00:38:01,909 - threads-automation - INFO - 利用可能アカウント: 30件
+2025-06-24 00:38:01,909 - threads-scheduler - INFO - スケジューラー初期化完了
+2025-06-24 00:38:01,909 - threads-scheduler - INFO - 手動投稿を実行します
+2025-06-24 00:38:01,910 - threads-scheduler - INFO - === スケジュール投稿実行 2025-06-24 00:38:01 ===
+2025-06-24 00:38:01,910 - threads-automation - INFO - 全アカウント投稿実行開始 (テストモード: False)
+2025-06-24 00:38:01,911 - threads-automation - INFO - 投稿対象アカウント数: 30件
+2025-06-24 00:38:01,911 - threads-automation - INFO - [1/30] ACCOUNT_001 投稿開始
+2025-06-24 00:38:01,911 - threads-automation - INFO - 単発投稿実行（完全自動判定版）開始
+2025-06-24 00:38:01,912 - threads-automation - INFO - 選択アカウント: ACCOUNT_001
+2025-06-24 00:38:01,913 - threads-automation - INFO - 選択コンテンツ: ACCOUNT_001_CONTENT_006
+2025-06-24 00:38:01,913 - threads-automation - INFO - ACCOUNT_001: 実際の投稿実行開始
+2025-06-24 00:38:01,914 - threads-automation - INFO - カルーセルアイテム 1/2 作成中
+2025-06-24 00:38:01,914 - threads-automation - INFO - メディアコンテナ作成URL: https://graph.threads.net/v1.0/23881245698173501/threads
+2025-06-24 00:38:01,915 - threads-automation - INFO - ペイロード: {'media_type': 'IMAGE', 'is_carousel_item': True, 'image_url': 'https://res.cloudinary.com/duu2ybdru/image/upload/v1750503641/threads/ACCOUNT_001/ACCOUNT_001_CONTENT_006.jpg'}
+2025-06-24 00:38:08,369 - threads-automation - INFO - ユーザーによる中断でシステム終了
+2025-06-24 00:38:10,850 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-24 00:38:10,851 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-24 00:38:10,856 - threads-automation - INFO - システム初期化完了
+2025-06-24 00:38:10,858 - threads-automation - INFO - 利用可能アカウント: 30件
+2025-06-24 00:38:17,559 - threads-automation - INFO - ユーザーによる中断でシステム終了
+2025-06-24 00:38:48,323 - threads-automation - INFO - Cloudinaryに既存画像なし: Error 404 - Resource not found - threads/ACCOUNT_030_CONTENT_004
+2025-06-24 00:38:48,347 - threads-automation - INFO - 投稿URL: https://graph.threads.net/v1.0/24445624258362692/threads
+2025-06-24 00:38:48,347 - threads-automation - INFO - ユーザーID: 24445624258362692
+2025-06-24 00:38:52,407 - threads-automation - INFO - レスポンスステータス: 200
+2025-06-24 00:38:52,409 - threads-automation - INFO - レスポンス内容: {"id":"18284299540268659"}
+2025-06-24 00:38:58,793 - threads-automation - INFO - 投稿成功: {'id': '18090105064729954'}
