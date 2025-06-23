@@ -1,0 +1,87 @@
+2025-06-23 09:50:28,703 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 09:50:28,705 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 09:50:28,858 - threads-automation - INFO - システム初期化完了
+2025-06-23 09:50:28,859 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 09:50:37,041 - threads-automation - INFO - ユーザーによる中断でシステム終了
+2025-06-23 11:55:45,436 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 11:55:45,438 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 11:55:45,584 - threads-automation - INFO - システム初期化完了
+2025-06-23 11:55:45,585 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 13:17:44,123 - threads-automation - INFO - システム終了
+2025-06-23 15:34:13,640 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 15:34:13,648 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 15:34:13,660 - threads-automation - INFO - システム初期化完了
+2025-06-23 15:34:13,661 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 15:34:33,786 - threads-automation - INFO - アカウントコンテンツ同期開始
+2025-06-23 15:34:33,794 - threads-automation - INFO - 同期対象: ACCOUNT_021
+2025-06-23 15:34:33,795 - threads-automation - INFO - ACCOUNT_021 の同期開始
+2025-06-23 15:34:33,796 - threads-automation - INFO - ACCOUNT_021: 8個のコンテンツフォルダを検出
+2025-06-23 15:34:33,797 - threads-automation - ERROR - ACCOUNT_021_CONTENT_001: エラー - 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+Traceback (most recent call last):
+  File "C:\Users\sanwa2021052\Desktop\threads-automation-python\threads_automation_system.py", line 1045, in sync_account_contents
+    result = self.account_manager.add_or_update_content(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+2025-06-23 15:34:33,800 - threads-automation - ERROR - ACCOUNT_021_CONTENT_002: エラー - 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+Traceback (most recent call last):
+  File "C:\Users\sanwa2021052\Desktop\threads-automation-python\threads_automation_system.py", line 1045, in sync_account_contents
+    result = self.account_manager.add_or_update_content(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+2025-06-23 15:34:33,801 - threads-automation - ERROR - ACCOUNT_021_CONTENT_003: エラー - 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+Traceback (most recent call last):
+  File "C:\Users\sanwa2021052\Desktop\threads-automation-python\threads_automation_system.py", line 1045, in sync_account_contents
+    result = self.account_manager.add_or_update_content(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+2025-06-23 15:34:33,801 - threads-automation - ERROR - ACCOUNT_021_CONTENT_004: エラー - 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+Traceback (most recent call last):
+  File "C:\Users\sanwa2021052\Desktop\threads-automation-python\threads_automation_system.py", line 1045, in sync_account_contents
+    result = self.account_manager.add_or_update_content(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+2025-06-23 15:34:33,802 - threads-automation - ERROR - ACCOUNT_021_CONTENT_005: エラー - 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+Traceback (most recent call last):
+  File "C:\Users\sanwa2021052\Desktop\threads-automation-python\threads_automation_system.py", line 1045, in sync_account_contents
+    result = self.account_manager.add_or_update_content(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+2025-06-23 15:34:33,803 - threads-automation - ERROR - ACCOUNT_021_CONTENT_006: エラー - 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+Traceback (most recent call last):
+  File "C:\Users\sanwa2021052\Desktop\threads-automation-python\threads_automation_system.py", line 1045, in sync_account_contents
+    result = self.account_manager.add_or_update_content(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+2025-06-23 15:34:33,804 - threads-automation - ERROR - ACCOUNT_021_CONTENT_007: エラー - 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+Traceback (most recent call last):
+  File "C:\Users\sanwa2021052\Desktop\threads-automation-python\threads_automation_system.py", line 1045, in sync_account_contents
+    result = self.account_manager.add_or_update_content(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+2025-06-23 15:34:33,806 - threads-automation - ERROR - ACCOUNT_021_CONTENT_008: エラー - 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+Traceback (most recent call last):
+  File "C:\Users\sanwa2021052\Desktop\threads-automation-python\threads_automation_system.py", line 1045, in sync_account_contents
+    result = self.account_manager.add_or_update_content(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ThreadsAccountManager' object has no attribute 'add_or_update_content'
+2025-06-23 15:34:33,808 - threads-automation - INFO - 同期完了 - 追加: 0件, 更新: 0件, 変更なし: 0件, エラー: 8件
+2025-06-23 15:38:50,021 - threads-automation - INFO - システム終了
+2025-06-23 15:38:52,315 - threads-automation - INFO - Python版Threads自動投稿システム v5.0 起動
+2025-06-23 15:38:52,322 - threads-automation - INFO - Python版Threads自動投稿システム起動中...
+2025-06-23 15:38:52,331 - threads-automation - INFO - システム初期化完了
+2025-06-23 15:38:52,332 - threads-automation - INFO - 利用可能アカウント: 21件
+2025-06-23 15:38:59,843 - threads-automation - INFO - アカウントコンテンツ同期開始
+2025-06-23 15:38:59,844 - threads-automation - INFO - 同期対象: ACCOUNT_021
+2025-06-23 15:38:59,844 - threads-automation - INFO - ACCOUNT_021 の同期開始
+2025-06-23 15:38:59,846 - threads-automation - INFO - ACCOUNT_021: 8個のコンテンツフォルダを検出
+2025-06-23 15:38:59,847 - threads-automation - INFO - ACCOUNT_021_CONTENT_001: 追加
+2025-06-23 15:38:59,848 - threads-automation - INFO - ACCOUNT_021_CONTENT_002: 追加
+2025-06-23 15:38:59,848 - threads-automation - INFO - ACCOUNT_021_CONTENT_003: 追加
+2025-06-23 15:38:59,849 - threads-automation - INFO - ACCOUNT_021_CONTENT_004: 追加
+2025-06-23 15:38:59,850 - threads-automation - INFO - ACCOUNT_021_CONTENT_005: 追加
+2025-06-23 15:38:59,851 - threads-automation - INFO - ACCOUNT_021_CONTENT_006: 追加
+2025-06-23 15:38:59,852 - threads-automation - INFO - ACCOUNT_021_CONTENT_007: 追加
+2025-06-23 15:38:59,853 - threads-automation - INFO - ACCOUNT_021_CONTENT_008: 追加
+2025-06-23 15:38:59,854 - threads-automation - INFO - コンテンツキャッシュを保存: 8件
+2025-06-23 15:38:59,855 - threads-automation - INFO - 同期完了 - 追加: 8件, 更新: 0件, 変更なし: 0件, エラー: 0件
+2025-06-23 15:40:42,656 - threads-automation - INFO - システム終了

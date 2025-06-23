@@ -7,9 +7,11 @@ import os
 import sys
 import time
 import random
+import json
 import traceback
 from datetime import datetime
 from typing import Dict, List, Optional
+from pathlib import Path
 
 # ロガー設定の修正（エンコーディング問題対応）
 import logging
@@ -1283,6 +1285,180 @@ class ThreadsAutomationSystem:
                 print(f"❌ 記念投稿エラー: {e}")
                 print("💡 代替案：メニューの '2. 🚀 単発投稿（実際の投稿）' で記念投稿を実行してください")
     
+    def post_specific_account_no_reply(self, account_id=None, test_mode=None, custom_text=None):
+        """
+        特定のアカウントでリプライなしの投稿を実行する機能
+        
+        Args:
+            account_id (str, optional): 使用するアカウントID。指定がなければ対話式で選択
+            test_mode (bool, optional): テストモードフラグ。指定がなければ対話式で選択
+            custom_text (str, optional): カスタムテキスト。指定がなければ対話式で選択
+            
+        Returns:
+            dict: 投稿結果
+        """
+        print("\n🎯 === 特定アカウント投稿実行（リプライなし） ===")
+        
+        # アカウントIDが指定されていない場合は対話式で選択
+        if account_id is None:
+            # トークンリストを再読み込み
+            self.tokens = settings.get_account_tokens()
+            available_accounts = list(self.tokens.keys())
+            
+            print("📊 利用可能なアカウント:")
+            for i, acc in enumerate(available_accounts, 1):
+                print(f"{i}. {acc}")
+            
+            try:
+                selection = int(input("使用するアカウントの番号を入力してください: "))
+                if 1 <= selection <= len(available_accounts):
+                    account_id = available_accounts[selection - 1]
+                    print(f"✅ 選択されたアカウント: {account_id}")
+                else:
+                    print("❌ 無効な選択です")
+                    return None
+            except ValueError:
+                print("❌ 数値を入力してください")
+                return None
+        
+        # テストモードの選択
+        if test_mode is None:
+            test_mode = input("テストモードで実行しますか？実際には投稿されません (y/n): ").lower() == 'y'
+        
+        # カスタムテキストの選択
+        if custom_text is None:
+            use_custom = input("カスタムテキストを使用しますか？ (y/n): ").lower() == 'y'
+            if use_custom:
+                custom_text = input("投稿するテキストを入力してください: ")
+        
+        # 実行確認
+        if not test_mode:
+            confirm = input(f"🚨 {account_id} で実際に投稿を実行しますか？（リプライなし） (y/n): ").lower()
+            if confirm != 'y':
+                print("投稿をキャンセルしました")
+                return None
+        
+        print(f"🚀 {account_id} で投稿実行中（リプライなし）...")
+        
+        # 実際の投稿処理（既存のsingle_post_without_reply関数を使用）
+        return self.single_post_without_reply(account_id=account_id, test_mode=test_mode, custom_text=custom_text)
+
+    def sync_account_contents(self, account_id=None, force=False):
+        """
+        アカウントのコンテンツフォルダを読み込み、システムのキャッシュを更新
+        
+        Args:
+            account_id (str, optional): 同期するアカウントID（Noneの場合は全アカウント）
+            force (bool): 既存のデータを上書きするかどうか
+            
+        Returns:
+            dict: 同期結果の統計
+        """
+        stats = {
+            "total_scanned": 0,
+            "added": 0,
+            "updated": 0,
+            "unchanged": 0,
+            "errors": 0
+        }
+        
+        print("\n🔄 === アカウントコンテンツ同期 ===")
+        
+        # 同期するアカウントのリスト
+        accounts_to_sync = []
+        if account_id:
+            accounts_to_sync = [account_id]
+        else:
+            # 利用可能な全アカウントを取得
+            self.tokens = settings.get_account_tokens()
+            accounts_to_sync = list(self.tokens.keys())
+        
+        print(f"🔄 {len(accounts_to_sync)}個のアカウントのコンテンツ同期を開始...")
+        
+        for acc_id in accounts_to_sync:
+            print(f"\n📂 {acc_id} の同期中...")
+            content_dir = Path(f"accounts/{acc_id}/contents")
+            
+            if not content_dir.exists():
+                print(f"⚠ {acc_id} のコンテンツディレクトリが見つかりません")
+                continue
+            
+            # コンテンツフォルダを検索
+            content_folders = [d for d in content_dir.glob(f"{acc_id}_CONTENT_*") if d.is_dir()]
+            print(f"📊 {len(content_folders)}個のコンテンツフォルダを検出")
+            
+            for folder in content_folders:
+                stats["total_scanned"] += 1
+                content_id = folder.name
+                metadata_file = folder / "metadata.json"
+                
+                if not metadata_file.exists():
+                    print(f"⚠ {content_id}: メタデータファイルがありません")
+                    stats["errors"] += 1
+                    continue
+                
+                try:
+                    with open(metadata_file, 'r', encoding='utf-8') as f:
+                        metadata = json.load(f)
+                    
+                    if "text" not in metadata:
+                        print(f"⚠ {content_id}: テキストデータがありません")
+                        stats["errors"] += 1
+                        continue
+                    
+                    # コンテンツデータの作成
+                    content_data = {
+                        "main_text": metadata["text"],  # 既存のシステム形式に合わせる
+                        "id": content_id,  # 既存のシステム形式に合わせる
+                        "account_id": acc_id,
+                        "from_folder": True,
+                        "original_content_id": metadata.get("original_content_id", ""),
+                        "created_at": metadata.get("created_at", "")
+                    }
+                    
+                    # 既存のコンテンツをチェック
+                    content_in_system = False
+                    for existing_id, existing_content in self.content_system.main_contents.items():
+                        if existing_id == content_id:
+                            content_in_system = True
+                            if force or existing_content.get("main_text") != content_data["main_text"]:
+                                self.content_system.main_contents[content_id] = content_data
+                                print(f"✅ {content_id}: 更新")
+                                stats["updated"] += 1
+                            else:
+                                print(f"ℹ {content_id}: 変更なし")
+                                stats["unchanged"] += 1
+                            break
+                    
+                    if not content_in_system:
+                        self.content_system.main_contents[content_id] = content_data
+                        print(f"✅ {content_id}: 追加")
+                        stats["added"] += 1
+                
+                except Exception as e:
+                    print(f"❌ {content_id}: エラー - {e}")
+                    stats["errors"] += 1        
+        # キャッシュの保存
+        try:
+            # self.content_system.save_main_contents_cache() の代わりに
+            # 直接JSONファイルに書き込む
+            cache_file = 'src/data/main_contents.json'
+            with open(cache_file, 'w', encoding='utf-8') as f:
+                json.dump(self.content_system.main_contents, f, ensure_ascii=False, indent=2)
+            print("\n✅ コンテンツキャッシュを保存しました")
+        except Exception as e:
+            print(f"\n❌ キャッシュ保存エラー: {e}")
+        
+        # 結果の表示
+        print("\n===== 同期結果 =====")
+        print(f"スキャンされたフォルダ: {stats['total_scanned']}")
+        print(f"追加されたコンテンツ: {stats['added']}")
+        print(f"更新されたコンテンツ: {stats['updated']}")
+        print(f"変更なし: {stats['unchanged']}")
+        print(f"エラー: {stats['errors']}")
+        
+        return stats
+    
     def interactive_menu(self):
         """対話型メニュー"""
         while True:
@@ -1309,6 +1485,8 @@ class ThreadsAutomationSystem:
             print("17. 🔄 画像強制更新（Cloudinary上書き）")
             if ACCOUNT_SETUP_AVAILABLE:
                 print("18. 🆕 新規アカウント追加（自動一括追加）")
+            print("19. 📝 特定アカウント投稿（リプライなし）")  # 新機能
+            print("20. 🔄 アカウントコンテンツ同期")  # 新機能
             print("0. 🚪 終了")
             print("-"*50)
             print("🤖 項目2は画像ファイルの存在を自動判定します")
@@ -1317,10 +1495,12 @@ class ThreadsAutomationSystem:
             print("   - 画像なし → テキスト投稿")
             print("📩 項目15-16はツリー投稿（アフィリエイトリプライ）を行いません")
             print("🔄 項目17はimagesフォルダの画像でCloudinaryを強制上書きします")
+            print("📝 項目19は特定アカウントでリプライなし投稿を行います")  # 新機能の説明
+            print("🔄 項目20はアカウントフォルダからコンテンツを同期します")  # 新機能の説明
             print("-"*50)
             
             try:
-                choice = input("選択してください (0-18): ").strip()
+                choice = input("選択してください (0-20): ").strip()
                 
                 if choice == "0":
                     print("👋 システムを終了します")
@@ -1411,6 +1591,46 @@ class ThreadsAutomationSystem:
                         except Exception as e:
                             print(f"❌ アカウント追加エラー: {str(e)}")
                             traceback.print_exc()
+                # 新機能の処理を追加
+                elif choice == "19":
+                    self.post_specific_account_no_reply()
+                elif choice == "20":
+                    print("\n🔄 === アカウントコンテンツ同期メニュー ===")
+                    print("1. 特定アカウントのコンテンツを同期")
+                    print("2. 全アカウントのコンテンツを同期")
+                    print("0. 戻る")
+                    
+                    sync_choice = input("選択してください: ").strip()
+                    
+                    if sync_choice == "1":
+                        # トークンリストを再読み込み
+                        self.tokens = settings.get_account_tokens()
+                        available_accounts = list(self.tokens.keys())
+                        
+                        print("\n📊 利用可能なアカウント:")
+                        for i, acc in enumerate(available_accounts, 1):
+                            print(f"{i}. {acc}")
+                        
+                        try:
+                            selection = int(input("同期するアカウントの番号を入力してください: "))
+                            if 1 <= selection <= len(available_accounts):
+                                account_id = available_accounts[selection - 1]
+                                force = input("既存のデータを上書きしますか？ (y/n): ").lower() == 'y'
+                                self.sync_account_contents(account_id, force)
+                            else:
+                                print("❌ 無効な選択です")
+                        except ValueError:
+                            print("❌ 数値を入力してください")
+                    
+                    elif sync_choice == "2":
+                        force = input("既存のデータを上書きしますか？ (y/n): ").lower() == 'y'
+                        self.sync_account_contents(None, force)
+                    
+                    elif sync_choice == "0":
+                        continue
+                    
+                    else:
+                        print("❌ 無効な選択です")
                 else:
                     print("❌ 無効な選択です")
                     

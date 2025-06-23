@@ -5,7 +5,7 @@
 """
 import sys
 import traceback
-from final_system import ThreadsAutomationSystem
+from threads_automation_system import ThreadsAutomationSystem
 
 def test_specific_account_no_reply():
     """特定アカウントでテスト投稿を実行（リプライなし）"""
@@ -16,12 +16,12 @@ def test_specific_account_no_reply():
         
         # 利用可能なアカウント表示
         print("\n📊 利用可能なアカウント:")
-        tokens = system.tokens
-        if not tokens:
+        accounts = system.account_manager.get_account_ids()
+        if not accounts:
             print("❌ 利用可能なアカウントがありません")
             return 1
         
-        for i, account_id in enumerate(tokens.keys(), 1):
+        for i, account_id in enumerate(accounts, 1):
             print(f"{i}. {account_id}")
         
         # アカウント選択
@@ -29,11 +29,11 @@ def test_specific_account_no_reply():
             selection = input("\n使用するアカウントの番号を入力してください: ").strip()
             selection_idx = int(selection) - 1
             
-            if selection_idx < 0 or selection_idx >= len(tokens):
+            if selection_idx < 0 or selection_idx >= len(accounts):
                 print("❌ 無効な選択です")
                 return 1
             
-            account_id = list(tokens.keys())[selection_idx]
+            account_id = accounts[selection_idx]
             print(f"✅ 選択されたアカウント: {account_id}")
             
             # テストモード選択
@@ -68,7 +68,7 @@ def test_specific_account_no_reply():
             
             # リプライなしで投稿実行
             print(f"\n🚀 {account_id} で投稿実行中（リプライなし）...")
-            result = system.single_post_without_reply(
+            result = system.post_specific_account_no_reply(
                 account_id=account_id,
                 test_mode=test_mode,
                 custom_text=custom_text

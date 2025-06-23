@@ -104,3 +104,31 @@
 2025-06-21 18:45:39,400 - threads-scheduler - INFO - スケジュール設定完了
 2025-06-21 18:45:39,401 - threads-scheduler - INFO - 状態ファイルを作成しました: logs\scheduler_status.json
 2025-06-21 18:45:39,401 - threads-scheduler - INFO - スケジューラーがバックグラウンドで実行中
+2025-06-21 20:00:39,495 - threads-scheduler - INFO - === スケジュール投稿実行 2025-06-21 20:00:39 ===
+2025-06-21 20:11:14,543 - threads-scheduler - INFO - 成功: 20件
+2025-06-21 20:11:14,545 - threads-scheduler - INFO - 失敗: 1件
+2025-06-21 20:11:14,545 - threads-scheduler - INFO - [成功] ACCOUNT_001
+2025-06-21 20:11:14,545 - threads-scheduler - INFO - [成功] ACCOUNT_002
+2025-06-21 20:11:14,546 - threads-scheduler - INFO - [成功] ACCOUNT_003
+2025-06-21 20:11:14,546 - threads-scheduler - INFO - [成功] ACCOUNT_004
+2025-06-21 20:11:14,546 - threads-scheduler - INFO - [成功] ACCOUNT_005
+2025-06-21 20:11:14,547 - threads-scheduler - INFO - [成功] ACCOUNT_006
+2025-06-21 20:11:14,547 - threads-scheduler - INFO - [成功] ACCOUNT_007
+2025-06-21 20:11:14,547 - threads-scheduler - INFO - [成功] ACCOUNT_008
+2025-06-21 20:11:14,548 - threads-scheduler - INFO - [成功] ACCOUNT_009
+2025-06-21 20:11:14,548 - threads-scheduler - INFO - [成功] ACCOUNT_010
+2025-06-21 20:11:14,548 - threads-scheduler - INFO - [成功] ACCOUNT_011
+2025-06-21 20:11:14,548 - threads-scheduler - INFO - [成功] ACCOUNT_012
+2025-06-21 20:11:14,549 - threads-scheduler - INFO - [成功] ACCOUNT_013
+2025-06-21 20:11:14,549 - threads-scheduler - INFO - [成功] ACCOUNT_014
+2025-06-21 20:11:14,549 - threads-scheduler - INFO - [成功] ACCOUNT_015
+2025-06-21 20:11:14,549 - threads-scheduler - INFO - [成功] ACCOUNT_016
+2025-06-21 20:11:14,549 - threads-scheduler - INFO - [成功] ACCOUNT_017
+2025-06-21 20:11:14,550 - threads-scheduler - INFO - [成功] ACCOUNT_018
+2025-06-21 20:11:14,550 - threads-scheduler - INFO - [成功] ACCOUNT_019
+2025-06-21 20:11:14,550 - threads-scheduler - INFO - [成功] ACCOUNT_020
+2025-06-21 20:11:14,550 - threads-scheduler - INFO - [失敗] ACCOUNT_021
+2025-06-21 20:11:14,551 - threads-scheduler - INFO - スケジュール投稿完了
+2025-06-21 20:21:18,703 - threads-scheduler - INFO - ユーザーによる中断
+2025-06-21 20:21:18,711 - threads-scheduler - INFO - スケジューラーを停止しました
+2025-06-21 20:21:18,715 - threads-scheduler - INFO - 状態ファイルを更新しました: logs\scheduler_status.json
