@@ -606,76 +606,6 @@ class ThreadsAutomationSystem:
             logger.error(f"アカウント追加エラー: {e}", exc_info=True)
             traceback.print_exc()
     
-    def interactive_menu(self):
-        """対話型メニュー"""
-        while True:
-            print("\n" + "="*50)
-            print("🎯 Python版Threads自動投稿システム v5.0")
-            print("🤖 完全自動判定機能付き + 📂 フォルダ構造最適化")
-            print("="*50)
-            print("1. 📱 単発投稿（テストモード）")
-            print("2. 🚀 単発投稿（実際の投稿）🤖")
-            print("3. 👥 全アカウント投稿（テストモード）")
-            print("4. 🌟 全アカウント投稿（実際の投稿）")
-            print("5. 📊 システム状況確認")
-            print("-"*40)
-            print("6. ⏰ スケジューラー起動")
-            print("7. 📅 スケジューラー状況確認")
-            print("8. 🔄 スケジューラーテスト実行（手動投稿）")
-            print("-"*40)
-            print("9. 📝 新規アカウント追加（Cloudinary更新なし）")
-            print("10. 📋 複数アカウント一括追加（Cloudinary更新なし）")
-            print("-"*40)
-            print("0. 🚪 終了")
-            print("-"*50)
-            print("🤖 項目2は画像ファイルの存在を自動判定します")
-            print("-"*50)
-            
-            try:
-                choice = input("選択してください (0-10): ").strip()
-                
-                if choice == "0":
-                    print("👋 システムを終了します")
-                    logger.info("システム終了")
-                    break
-                elif choice == "1":
-                    self.single_post(test_mode=True)
-                elif choice == "2":
-                    confirm = input("🚨 実際にThreadsに投稿します（自動判定機能付き）。続行しますか？ (y/n): ")
-                    if confirm.lower() == 'y':
-                        self.single_post(test_mode=False)
-                elif choice == "3":
-                    self.all_accounts_post(test_mode=True)
-                elif choice == "4":
-                    confirm = input("🚨 全アカウントで実際にThreadsに投稿します。続行しますか？ (y/n): ")
-                    if confirm.lower() == 'y':
-                        self.all_accounts_post(test_mode=False)
-                elif choice == "5":
-                    self.system_status()
-                elif choice == "6":
-                    self.run_scheduler()
-                elif choice == "7":
-                    self.scheduler_status()
-                elif choice == "8":
-                    confirm = input("🚨 スケジューラーのテスト実行（手動投稿）を行います。続行しますか？ (y/n): ")
-                    if confirm.lower() == 'y':
-                        self.manual_scheduler_post()
-                elif choice == "9":
-                    self.add_new_account()
-                elif choice == "10":
-                    self.add_multiple_accounts()
-                else:
-                    print("❌ 無効な選択です")
-                    
-            except KeyboardInterrupt:
-                print("\n👋 システムを終了します")
-                logger.info("ユーザーによる中断でシステム終了")
-                break
-            except Exception as e:
-                print(f"❌ エラー: {e}")
-                logger.error(f"メニュー操作エラー: {e}", exc_info=True)
-                traceback.print_exc()
-                
     def add_multiple_accounts(self):
         """複数アカウントを一括追加（Cloudinary更新なし）"""
         print("\n🆕 === 複数アカウント一括追加 ===")
@@ -792,6 +722,213 @@ class ThreadsAutomationSystem:
             print(f"❌ 一括追加エラー: {e}")
             logger.error(f"一括追加エラー: {e}", exc_info=True)
             traceback.print_exc()
+
+    def csv_to_folder_structure_with_main_txt(self):
+        """
+        main.csvからアカウント別フォルダ構造とmain.txtを作成
+        - Cloudinary更新なし（軽量版）
+        - main.txtファイル作成（投稿システム対応）
+        - アカウント別フォルダ構造（ACCOUNT_XXX_CONTENT_XXX）
+        - 4カラム対応（ACCOUNT_ID, CONTENT_ID, main_text, image_usage）
+        """
+        try:
+            import pandas as pd
+            from pathlib import Path
+            import json
+            from collections import defaultdict
+            
+            print("📊 === CSV読み込み（フォルダ構造+main.txt作成） ===")
+            logger.info("CSV読み込み（フォルダ構造+main.txt作成）開始")
+            
+            # main.csvの存在確認
+            csv_path = "main.csv"
+            if not os.path.exists(csv_path):
+                print(f"❌ {csv_path} が見つかりません")
+                logger.error(f"{csv_path} が見つかりません")
+                return
+            
+            # CSVを読み込み
+            print(f"📋 {csv_path} を読み込み中...")
+            df = pd.read_csv(csv_path)
+            
+            # 必要なカラムの確認
+            required_columns = ['ACCOUNT_ID', 'CONTENT_ID', 'main_text', 'image_usage']
+            for col in required_columns:
+                if col not in df.columns:
+                    print(f"❌ 必要なカラム '{col}' が見つかりません")
+                    print(f"📋 利用可能なカラム: {list(df.columns)}")
+                    logger.error(f"必要なカラム '{col}' が見つかりません")
+                    return
+            
+            print(f"✅ CSVファイル読み込み完了: {len(df)} 件のコンテンツ")
+            logger.info(f"CSVファイル読み込み完了: {len(df)} 件のコンテンツ")
+            
+            # アカウント別にコンテンツをグループ化
+            account_contents = defaultdict(list)
+            for _, row in df.iterrows():
+                account_id = row['ACCOUNT_ID']
+                content_data = {
+                    'content_id': row['CONTENT_ID'],
+                    'main_text': row['main_text'], 
+                    'image_usage': row['image_usage']
+                }
+                account_contents[account_id].append(content_data)
+            
+            # アカウント情報の表示
+            print(f"📊 CSV分析結果:")
+            print(f"   - 対象アカウント: {len(account_contents)}個")
+            for account_id, contents in account_contents.items():
+                print(f"   - {account_id}: {len(contents)}件のコンテンツ")
+            
+            confirm = input("📝 この設定で実行しますか？ (y/n): ").lower()
+            if confirm != 'y':
+                print("❌ 処理をキャンセルしました")
+                logger.info("処理をキャンセルしました")
+                return
+            
+            # アカウント別にコンテンツを作成
+            total_success_count = 0
+            total_accounts = len(account_contents)
+            
+            for account_index, (account_id, contents) in enumerate(account_contents.items(), 1):
+                print(f"\n🔄 [{account_index}/{total_accounts}] {account_id} の処理中... ({len(contents)} コンテンツ)")
+                logger.info(f"{account_id} の処理中... ({len(contents)} コンテンツ)")
+                
+                # アカウントフォルダの作成
+                account_base_dir = Path(f"accounts/{account_id}/contents")
+                account_base_dir.mkdir(parents=True, exist_ok=True)
+                
+                # コンテンツを番号順に処理
+                contents.sort(key=lambda x: x['content_id'])  # CONTENT_IDでソート
+                
+                for content_index, content_data in enumerate(contents, 1):
+                    content_id = content_data['content_id']
+                    main_text = content_data['main_text']
+                    image_usage = content_data['image_usage']
+                    
+                    # コンテンツフォルダの作成（ACCOUNT_XXX_CONTENT_XXX形式）
+                    content_folder_name = f"{account_id}_{content_id}"
+                    content_dir = account_base_dir / content_folder_name
+                    content_dir.mkdir(exist_ok=True)
+                    
+                    # main.txtファイルの作成（重要！）
+                    main_txt_path = content_dir / "main.txt"
+                    with open(main_txt_path, "w", encoding="utf-8") as f:
+                        f.write(main_text)
+                    
+                    # metadata.jsonファイルの作成（互換性）
+                    metadata = {
+                        "id": content_folder_name,
+                        "original_id": content_id,
+                        "account_id": account_id,
+                        "created_at": "2025-06-24",
+                        "updated_at": "2025-06-24",
+                        "usage_count": 0,
+                        "has_images": True if image_usage.upper() == "YES" else False,
+                        "carousel_count": 1,  # 画像検出システムで自動判定
+                        "is_active": True
+                    }
+                    
+                    metadata_path = content_dir / "metadata.json"
+                    with open(metadata_path, "w", encoding="utf-8") as f:
+                        json.dump(metadata, f, ensure_ascii=False, indent=2)
+                    
+                    print(f"   ✅ {content_folder_name} 作成完了")
+                    print(f"      - main.txt: {len(main_text)} 文字")
+                    print(f"      - metadata.json: 作成済み")
+                    print(f"      - 画像使用: {image_usage}")
+                    
+                    total_success_count += 1
+                
+                print(f"✅ {account_id} 完了: {len(contents)} コンテンツ作成")
+                logger.info(f"{account_id} 完了: {len(contents)} コンテンツ作成")
+            
+            print(f"\n🎉 === 処理完了 ===")
+            print(f"✅ 作成完了: {total_success_count} コンテンツ")
+            print(f"📁 対象アカウント: {total_accounts}個")
+            print(f"📋 各フォルダに main.txt と metadata.json を作成しました")
+            print(f"🚀 投稿準備完了！メニュー項目2または4で投稿できます")
+            logger.info(f"処理完了 - 作成完了: {total_success_count} コンテンツ, 対象アカウント: {total_accounts}個")
+            
+        except Exception as e:
+            print(f"❌ エラーが発生しました: {str(e)}")
+            logger.error(f"CSV読み込みエラー: {str(e)}", exc_info=True)
+            traceback.print_exc()
+
+    def interactive_menu(self):
+        """対話型メニュー"""
+        while True:
+            print("\n" + "="*50)
+            print("🎯 Python版Threads自動投稿システム v5.0")
+            print("🤖 完全自動判定機能付き + 📂 フォルダ構造最適化")
+            print("="*50)
+            print("1. 📱 単発投稿（テストモード）")
+            print("2. 🚀 単発投稿（実際の投稿）🤖")
+            print("3. 👥 全アカウント投稿（テストモード）")
+            print("4. 🌟 全アカウント投稿（実際の投稿）")
+            print("5. 📊 システム状況確認")
+            print("-"*40)
+            print("6. ⏰ スケジューラー起動")
+            print("7. 📅 スケジューラー状況確認")
+            print("8. 🔄 スケジューラーテスト実行（手動投稿）")
+            print("-"*40)
+            print("9. 📝 新規アカウント追加（Cloudinary更新なし）")
+            print("10. 📋 複数アカウント一括追加（Cloudinary更新なし）")
+            print("-"*40)
+            print("21. 📊 CSV読み込み（フォルダ構造+main.txt作成）")
+            print("-"*40)
+            print("0. 🚪 終了")
+            print("-"*50)
+            print("🤖 項目2は画像ファイルの存在を自動判定します")
+            print("📊 項目21は main.csv から最適化フォルダ構造を作成します")
+            print("-"*50)
+            
+            try:
+                choice = input("選択してください (0-21): ").strip()
+                
+                if choice == "0":
+                    print("👋 システムを終了します")
+                    logger.info("システム終了")
+                    break
+                elif choice == "1":
+                    self.single_post(test_mode=True)
+                elif choice == "2":
+                    confirm = input("🚨 実際にThreadsに投稿します（自動判定機能付き）。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.single_post(test_mode=False)
+                elif choice == "3":
+                    self.all_accounts_post(test_mode=True)
+                elif choice == "4":
+                    confirm = input("🚨 全アカウントで実際にThreadsに投稿します。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.all_accounts_post(test_mode=False)
+                elif choice == "5":
+                    self.system_status()
+                elif choice == "6":
+                    self.run_scheduler()
+                elif choice == "7":
+                    self.scheduler_status()
+                elif choice == "8":
+                    confirm = input("🚨 スケジューラーのテスト実行（手動投稿）を行います。続行しますか？ (y/n): ")
+                    if confirm.lower() == 'y':
+                        self.manual_scheduler_post()
+                elif choice == "9":
+                    self.add_new_account()
+                elif choice == "10":
+                    self.add_multiple_accounts()
+                elif choice == "21":
+                    self.csv_to_folder_structure_with_main_txt()
+                else:
+                    print("❌ 無効な選択です")
+                    
+            except KeyboardInterrupt:
+                print("\n👋 システムを終了します")
+                logger.info("ユーザーによる中断でシステム終了")
+                break
+            except Exception as e:
+                print(f"❌ エラー: {e}")
+                logger.error(f"メニュー操作エラー: {e}", exc_info=True)
+                traceback.print_exc()
 
 def main():
     """メイン実行関数"""

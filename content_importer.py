@@ -70,7 +70,7 @@ def create_content_structure(account_id, content_data_list, source_images_dir=No
 # 使用例
 if __name__ == "__main__":
     # コマンドライン引数を追加するなどの改良も可能
-    account_id = "ACCOUNT_030"
+    account_id = "ACCOUNT_036"
     
     # コンテンツデータの例
     content_data_list = [
