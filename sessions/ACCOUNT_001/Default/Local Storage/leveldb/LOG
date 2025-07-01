@@ -1,0 +1,6 @@
+2025/06/30-10:00:35.240 45cc Reusing MANIFEST C:\Users\sanwa2021052\Desktop\threads-automation-python\sessions\ACCOUNT_001\Default\Local Storage\leveldb/MANIFEST-000001
+2025/06/30-10:00:35.252 45cc Recovering log #3
+2025/06/30-10:00:35.257 45cc Reusing old log C:\Users\sanwa2021052\Desktop\threads-automation-python\sessions\ACCOUNT_001\Default\Local Storage\leveldb/000003.log 
+2025/06/30-10:38:36.207 45cc Level-0 table #5: started
+2025/06/30-10:38:36.215 45cc Level-0 table #5: 11179 bytes OK
+2025/06/30-10:38:36.220 45cc Delete type=0 #3

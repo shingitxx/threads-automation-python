@@ -83,45 +83,60 @@ class ThreadsAccountManager:
         return self.get_content(account_id, content_id)
     
     def get_content(self, account_id, content_id):
-        """指定したコンテンツの情報を取得"""
-        content_dir = os.path.join(self.base_dir, account_id, "contents", content_id)
-        if not os.path.exists(content_dir):
-            return None
-        
-        result = {
-            "id": content_id,
-            "account_id": account_id
-        }
-        
-        # メインテキスト読み込み
-        main_text_path = os.path.join(content_dir, "main.txt")
-        if os.path.exists(main_text_path):
-            with open(main_text_path, 'r', encoding='utf-8') as f:
-                result["main_text"] = f.read()
-        
-        # メタデータ読み込み
-        metadata_path = os.path.join(content_dir, "metadata.json")
-        if os.path.exists(metadata_path):
-            with open(metadata_path, 'r', encoding='utf-8') as f:
-                metadata = json.load(f)
-                result.update(metadata)
-        
-        # 画像情報を取得
-        result["images"] = self._get_content_images(content_dir)
-        
-        # アフィリエイト情報
-        affiliate_path = os.path.join(content_dir, "affiliate.txt")
-        if os.path.exists(affiliate_path):
-            with open(affiliate_path, 'r', encoding='utf-8') as f:
-                result["affiliate_text"] = f.read()
+        """特定のコンテンツ情報を取得（tree_post対応版）"""
+        try:
+            # パスの構築
+            content_path = os.path.join(self.base_dir, account_id, "contents", content_id)
             
-            # アフィリエイトメタデータ
-            aff_metadata_path = os.path.join(content_dir, "affiliate_metadata.json")
-            if os.path.exists(aff_metadata_path):
-                with open(aff_metadata_path, 'r', encoding='utf-8') as f:
-                    result["affiliate_metadata"] = json.load(f)
-        
-        return result
+            if not os.path.exists(content_path):
+                print(f"❌ コンテンツパスが存在しません: {content_path}")
+                return None
+            
+            # 基本情報
+            result = {
+                "id": content_id,
+                "account_id": account_id
+            }
+            
+            # main.txtを読み込み
+            main_txt_path = os.path.join(content_path, 'main.txt')
+            if os.path.exists(main_txt_path):
+                with open(main_txt_path, 'r', encoding='utf-8') as f:
+                    result["main_text"] = f.read().strip()
+            else:
+                result["main_text"] = ""
+            
+            # metadata.jsonを読み込み
+            metadata_path = os.path.join(content_path, 'metadata.json')
+            if os.path.exists(metadata_path):
+                with open(metadata_path, 'r', encoding='utf-8') as f:
+                    metadata = json.load(f)
+                    result.update(metadata)
+            
+            # tree_post関連の情報を確実に設定
+            if "tree_post" not in result:
+                result["tree_post"] = "NO"
+            if "tree_text" not in result:
+                result["tree_text"] = ""
+            if "quote_account" not in result:
+                result["quote_account"] = ""
+            
+            # 画像情報を取得
+            result["images"] = self._get_content_images(content_path)
+            
+            # 旧形式のaffiliate_text互換性（もし存在する場合）
+            if "affiliate_text" in result and result.get("tree_post") == "NO":
+                # 旧データでtree_postが設定されていない場合、affiliate_textをtree_textとして使用
+                result["tree_post"] = "YES"
+                result["tree_text"] = result["affiliate_text"]
+            
+            return result
+            
+        except Exception as e:
+            print(f"❌ コンテンツ取得エラー: {e}")
+            import traceback
+            traceback.print_exc()
+            return None
     
     def _get_content_images(self, content_dir):
         """コンテンツディレクトリから画像情報を取得"""
@@ -207,8 +222,8 @@ class ThreadsAccountManager:
             # 3. アカウント設定を初期化
             self._initialize_account_settings(account_id)
             
-            # 4. トークンリストを更新（メモリ内のみ）
-            self.load_account_tokens()
+            # 4. アカウント情報を再読み込み
+            self.load_accounts()
             
             return {
                 'success': True,
@@ -328,6 +343,12 @@ class ThreadsAccountManager:
             
             with open(cache_file, 'w', encoding='utf-8') as f:
                 json.dump(initial_cache, f, ensure_ascii=False, indent=2)
+
+    def load_account_tokens(self):
+        """アカウントトークンを環境変数から読み込み（add_new_accountで参照されるため追加）"""
+        # この実装では環境変数は既に読み込まれているため、特に処理は不要
+        # ただし、メソッドが存在しないとエラーになるため空実装を提供
+        pass
 
 # モジュールとしてインポートされた場合の動作確認
 if __name__ == "__main__":

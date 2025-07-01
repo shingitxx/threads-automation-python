@@ -1,22 +1,6 @@
 [
   {
     "success": true,
-    "timestamp": "2025-06-19T21:19:03.757188",
-    "main_contents": {
-      "before": 266,
-      "after": 266,
-      "updated": true,
-      "source_file": "main.csv"
-    },
-    "affiliates": {
-      "before": 0,
-      "after": 0,
-      "updated": false
-    },
-    "errors": []
-  },
-  {
-    "success": true,
     "timestamp": "2025-06-19T21:20:26.962964",
     "main_contents": {
       "before": 0,
@@ -149,6 +133,22 @@
     "main_contents": {
       "before": 0,
       "after": 180,
+      "updated": true,
+      "source_file": "main.csv"
+    },
+    "affiliates": {
+      "before": 0,
+      "after": 0,
+      "updated": false
+    },
+    "errors": []
+  },
+  {
+    "success": true,
+    "timestamp": "2025-07-01T07:17:25.918722",
+    "main_contents": {
+      "before": 260,
+      "after": 0,
       "updated": true,
       "source_file": "main.csv"
     },

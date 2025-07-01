@@ -1,0 +1,26 @@
+[2224:22792:0630/164207.069:INFO:components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc:202] No machine level policy manager exists.
+[2224:22792:0630/164208.812:INFO:CONSOLE:250] "
+%cSTOP！ font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black;", source: https://static.cdninstagram.com/rsrc.php/v4/yO/r/0AuMd33iLCn.js (250)
+[2224:22792:0630/164208.812:INFO:CONSOLE:250] "
+%cこれは開発者向けのブラウザー機能です。Threads機能を有効にするためまたは誰かのアカウントをハッキングするために、ここに何かをコピー・貼り付けするように言われた場合、それは第三者があなたのThreadsアカウントへのアクセスを得るための詐欺・不正行為です。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yO/r/0AuMd33iLCn.js (250)
+[2224:22792:0630/164208.812:INFO:CONSOLE:250] "
+%c詳細はhttps://www.facebook.com/selfxssをご覧ください。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yO/r/0AuMd33iLCn.js (250)
+[2224:22792:0630/164208.812:INFO:CONSOLE:250] "
+%c ", source: https://static.cdninstagram.com/rsrc.php/v4/yO/r/0AuMd33iLCn.js (250)
+[17824:22124:0630/164208.824:ERROR:gpu\command_buffer\service\gles2_cmd_decoder_passthrough.cc:1092] [GroupMarkerNotSet(crbug.com/242999)!:A0702400F4430000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[2224:22792:0630/164208.833:INFO:CONSOLE:0] "[GroupMarkerNotSet(crbug.com/242999)!:A0702400F4430000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.", source: https://www.threads.com/ (0)
+[17824:22124:0630/164208.837:ERROR:gpu\command_buffer\service\gles2_cmd_decoder_passthrough.cc:1092] [GroupMarkerNotSet(crbug.com/242999)!:A0402400F4430000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[2224:22792:0630/164208.841:INFO:CONSOLE:0] "[GroupMarkerNotSet(crbug.com/242999)!:A0402400F4430000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.", source: https://www.threads.com/ (0)
+[2224:22792:0630/164212.532:INFO:CONSOLE:250] "
+%cSTOP！ font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black;", source: https://static.cdninstagram.com/rsrc.php/v4/yO/r/0AuMd33iLCn.js (250)
+[2224:22792:0630/164212.532:INFO:CONSOLE:250] "
+%cこれは開発者向けのブラウザー機能です。Threads機能を有効にするためまたは誰かのアカウントをハッキングするために、ここに何かをコピー・貼り付けするように言われた場合、それは第三者があなたのThreadsアカウントへのアクセスを得るための詐欺・不正行為です。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yO/r/0AuMd33iLCn.js (250)
+[2224:22792:0630/164212.532:INFO:CONSOLE:250] "
+%c詳細はhttps://www.facebook.com/selfxssをご覧ください。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yO/r/0AuMd33iLCn.js (250)
+[2224:22792:0630/164212.532:INFO:CONSOLE:250] "
+%c ", source: https://static.cdninstagram.com/rsrc.php/v4/yO/r/0AuMd33iLCn.js (250)
+[17824:22124:0630/164212.535:ERROR:gpu\command_buffer\service\gles2_cmd_decoder_passthrough.cc:1092] [GroupMarkerNotSet(crbug.com/242999)!:A0602500F4430000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.
+[2224:22792:0630/164212.538:INFO:CONSOLE:0] "[GroupMarkerNotSet(crbug.com/242999)!:A0602500F4430000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.", source: https://www.threads.com/ (0)
+[2224:22792:0630/164215.510:ERROR:components\device_event_log\device_event_log_impl.cc:202] [16:42:15.511] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 要素が見つかりません。 (0x490)
+[16024:24496:0630/164632.691:WARNING:net\extras\sqlite\sqlite_persistent_store_backend_base.cc:176] Failed to post task from FlushAndNotifyInBackground@net\extras\sqlite\sqlite_persistent_store_backend_base.cc:226 to client_task_runner_.
+[16024:24496:0630/164632.691:WARNING:net\extras\sqlite\sqlite_persistent_store_backend_base.cc:176] Failed to post task from FlushAndNotifyInBackground@net\extras\sqlite\sqlite_persistent_store_backend_base.cc:226 to client_task_runner_.

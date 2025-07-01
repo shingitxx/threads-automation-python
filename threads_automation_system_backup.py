@@ -1179,3 +1179,112 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+    
+# threads_automation_system.pyに追加するメソッド
+
+def auto_like_posts(self):
+    """自動いいね機能"""
+    print("\n💗 === Threads自動いいね機能 ===")
+    logger.info("Threads自動いいね機能開始")
+    
+    try:
+        from threads_auto_like import ThreadsAutoLike
+        
+        # アカウント選択
+        accounts = self.account_manager.get_account_ids()
+        if not accounts:
+            print("❌ 利用可能なアカウントがありません")
+            return
+        
+        print("\n📋 利用可能なアカウント:")
+        for i, account_id in enumerate(accounts, 1):
+            print(f"{i}. {account_id}")
+        
+        choice = input("\nアカウントを選択してください (番号): ").strip()
+        try:
+            account_index = int(choice) - 1
+            if 0 <= account_index < len(accounts):
+                selected_account = accounts[account_index]
+            else:
+                print("❌ 無効な番号です")
+                return
+        except ValueError:
+            print("❌ 数字を入力してください")
+            return
+        
+        print(f"\n👤 選択されたアカウント: {selected_account}")
+        
+        # いいね数を指定
+        like_count = input("何件いいねしますか？: ").strip()
+        try:
+            like_count = int(like_count)
+            if like_count <= 0:
+                print("❌ 1以上の数を入力してください")
+                return
+        except ValueError:
+            print("❌ 数字を入力してください")
+            return
+        
+        # 特定ユーザー指定（オプション）
+        target_user = input("特定ユーザーを優先しますか？ (ユーザー名を入力/Enterでスキップ): ").strip()
+        if target_user and target_user.startswith('@'):
+            target_user = target_user[1:]  # @を除去
+        
+        # 確認
+        print(f"\n📊 === 実行内容確認 ===")
+        print(f"アカウント: {selected_account}")
+        print(f"いいね数: {like_count}件")
+        if target_user:
+            print(f"優先ユーザー: @{target_user}")
+        
+        confirm = input("\n実行しますか？ (y/n): ").lower()
+        if confirm != 'y':
+            print("❌ キャンセルしました")
+            return
+        
+        # 自動いいね実行
+        auto_like = ThreadsAutoLike()
+        
+        try:
+            # ドライバーセットアップ
+            print("\n🌐 ブラウザを起動中...")
+            auto_like.setup_driver(selected_account)
+            
+            # ログイン（初回は手動）
+            session_file = os.path.join(auto_like.session_dir, selected_account, "Default", "Cookies")
+            is_first_login = not os.path.exists(session_file)
+            
+            if not auto_like.login(selected_account, manual=is_first_login):
+                print("❌ ログインに失敗しました")
+                return
+            
+            # ホームフィードへ移動
+            if not auto_like.navigate_to_home():
+                print("❌ ホームフィードへの移動に失敗しました")
+                return
+            
+            # いいね実行
+            print(f"\n🚀 {like_count}件のいいねを実行します...")
+            results = auto_like.like_posts(selected_account, like_count, target_user)
+            
+            # 結果をログに記録
+            logger.info(f"自動いいね完了 - アカウント: {selected_account}, 成功: {results['success']}, 失敗: {results['failed']}")
+            
+        finally:
+            # ブラウザを閉じる
+            auto_like.close()
+            print("\n✅ 自動いいね処理が完了しました")
+            
+    except ImportError:
+        print("❌ threads_auto_like.py が見つかりません")
+        print("threads_auto_like.py ファイルを作成してください")
+        logger.error("threads_auto_like.py が見つかりません")
+    except Exception as e:
+        print(f"❌ 自動いいねエラー: {e}")
+        logger.error(f"自動いいねエラー: {e}", exc_info=True)
+        import traceback
+        traceback.print_exc()
+
+# interactive_menuメソッドに追加する項目
+# elif choice == "11":
+#     self.auto_like_posts()

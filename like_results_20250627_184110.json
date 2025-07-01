@@ -1,0 +1,224 @@
+{
+  "success_accounts": 36,
+  "failed_accounts": 0,
+  "total_likes": 360,
+  "total_failed_likes": 6,
+  "account_details": [
+    {
+      "account_id": "ACCOUNT_001",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_002",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_003",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_004",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_005",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_006",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_007",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_008",
+      "success": 10,
+      "failed": 1,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_009",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_010",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_011",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_012",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_013",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_014",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_015",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_016",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_017",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_018",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_019",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_020",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_021",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_022",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_023",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_024",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_025",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_026",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_027",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_028",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_029",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_030",
+      "success": 10,
+      "failed": 2,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_031",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_032",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_033",
+      "success": 10,
+      "failed": 1,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_034",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_035",
+      "success": 10,
+      "failed": 0,
+      "error": null
+    },
+    {
+      "account_id": "ACCOUNT_036",
+      "success": 10,
+      "failed": 2,
+      "error": null
+    }
+  ]
+}

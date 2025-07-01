@@ -854,7 +854,347 @@ class ThreadsAutomationSystem:
             print(f"❌ エラーが発生しました: {str(e)}")
             logger.error(f"CSV読み込みエラー: {str(e)}", exc_info=True)
             traceback.print_exc()
-
+            
+    def auto_like_posts(self):
+        """自動いいね機能"""
+        print("\n💗 === Threads自動いいね機能 ===")
+        logger.info("Threads自動いいね機能開始")
+        
+        try:
+            from threads_auto_like import ThreadsAutoLike
+            
+            # いいねタイプを選択
+            print("\n📋 いいねタイプを選択してください:")
+            print("1. 🏠 おすすめの投稿にいいね")
+            print("2. 👤 特定アカウントの投稿にいいね")
+            
+            like_type = input("\n選択してください (1/2): ").strip()
+            if like_type not in ["1", "2"]:
+                print("❌ 無効な選択です")
+                return
+            
+            # アカウント選択
+            accounts = self.account_manager.get_account_ids()
+            if not accounts:
+                print("❌ 利用可能なアカウントがありません")
+                return
+            
+            print("\n📋 利用可能なアカウント:")
+            for i, account_id in enumerate(accounts, 1):
+                print(f"{i}. {account_id}")
+            
+            choice = input("\nアカウントを選択してください (番号): ").strip()
+            try:
+                account_index = int(choice) - 1
+                if 0 <= account_index < len(accounts):
+                    selected_account = accounts[account_index]
+                else:
+                    print("❌ 無効な番号です")
+                    return
+            except ValueError:
+                print("❌ 数字を入力してください")
+                return
+            
+            print(f"\n👤 選択されたアカウント: {selected_account}")
+            
+            # いいね数を指定
+            like_count = input("何件いいねしますか？: ").strip()
+            try:
+                like_count = int(like_count)
+                if like_count <= 0:
+                    print("❌ 1以上の数を入力してください")
+                    return
+            except ValueError:
+                print("❌ 数字を入力してください")
+                return
+            
+            # 特定ユーザー指定（タイプ2の場合）
+            target_user = None
+            if like_type == "2":
+                target_user = input("対象ユーザー名を入力してください (@なしで): ").strip()
+                if not target_user:
+                    print("❌ ユーザー名を入力してください")
+                    return
+                if target_user.startswith('@'):
+                    target_user = target_user[1:]  # @を除去
+            
+            # バックグラウンド処理の選択
+            background_mode = False
+            bg_choice = input("\nバックグラウンド処理を使用しますか？ (y/n): ").strip().lower()
+            if bg_choice == 'y':
+                background_mode = True
+                print("✅ バックグラウンドモードで実行します")
+            else:
+                print("✅ 通常モード（ブラウザ表示）で実行します")
+            
+            # 確認
+            print(f"\n📊 === 実行内容確認 ===")
+            print(f"アカウント: {selected_account}")
+            print(f"いいね数: {like_count}件")
+            if like_type == "1":
+                print(f"対象: おすすめの投稿")
+            else:
+                print(f"対象: @{target_user} の投稿")
+            print(f"モード: {'バックグラウンド' if background_mode else '通常（ブラウザ表示）'}")
+            
+            confirm = input("\n実行しますか？ (y/n): ").lower()
+            if confirm != 'y':
+                print("❌ キャンセルしました")
+                return
+            
+            # 自動いいね実行
+            auto_like = ThreadsAutoLike()
+            
+            try:
+                # ドライバーセットアップ
+                print("\n🌐 ブラウザを起動中...")
+                auto_like.setup_driver(selected_account, headless=background_mode)
+                
+                # ログイン（初回は手動）
+                session_file = os.path.join(auto_like.session_dir, selected_account, "Default", "Cookies")
+                is_first_login = not os.path.exists(session_file)
+                
+                if not auto_like.login(selected_account, manual=is_first_login):
+                    print("❌ ログインに失敗しました")
+                    return
+                
+                # いいね実行
+                if like_type == "1":
+                    # おすすめの投稿にいいね
+                    print(f"\n🚀 おすすめの投稿に{like_count}件のいいねを実行します...")
+                    results = auto_like.like_home_feed_posts(selected_account, like_count)
+                else:
+                    # 特定ユーザーの投稿にいいね
+                    print(f"\n🚀 @{target_user} の投稿に{like_count}件のいいねを実行します...")
+                    results = auto_like.like_user_posts(selected_account, target_user, like_count)
+                
+                # 結果をログに記録
+                logger.info(f"自動いいね完了 - アカウント: {selected_account}, 成功: {results['success']}, 失敗: {results['failed']}")
+                
+            finally:
+                # ブラウザを閉じる
+                auto_like.close()
+                print("\n✅ 自動いいね処理が完了しました")
+                
+        except ImportError:
+            print("❌ threads_auto_like.py が見つかりません")
+            print("threads_auto_like.py ファイルを作成してください")
+            logger.error("threads_auto_like.py が見つかりません")
+        except Exception as e:
+            print(f"❌ 自動いいねエラー: {e}")
+            logger.error(f"自動いいねエラー: {e}", exc_info=True)
+            import traceback
+            traceback.print_exc()
+            
+    
+    def auto_like_all_accounts(self):
+        """全アカウント自動いいね機能（1アカウントずつ順番に実行）"""
+        print("\n💗 === 全アカウント自動いいね機能 ===")
+        logger.info("全アカウント自動いいね機能開始")
+        
+        try:
+            from threads_auto_like import ThreadsAutoLike
+            
+            # いいねタイプを選択
+            print("\n📋 いいねタイプを選択してください:")
+            print("1. 🏠 おすすめの投稿にいいね")
+            print("2. 👤 特定アカウントの投稿にいいね")
+            
+            like_type = input("\n選択してください (1/2): ").strip()
+            if like_type not in ["1", "2"]:
+                print("❌ 無効な選択です")
+                return
+            
+            # いいね数を指定
+            like_count = input("\n各アカウントで何件いいねしますか？: ").strip()
+            try:
+                like_count = int(like_count)
+                if like_count <= 0:
+                    print("❌ 1以上の数を入力してください")
+                    return
+            except ValueError:
+                print("❌ 数字を入力してください")
+                return
+            
+            # 特定ユーザー指定（タイプ2の場合）
+            target_user = None
+            if like_type == "2":
+                target_user = input("対象ユーザー名を入力してください (@なしで): ").strip()
+                if not target_user:
+                    print("❌ ユーザー名を入力してください")
+                    return
+                if target_user.startswith('@'):
+                    target_user = target_user[1:]  # @を除去
+            
+            # バックグラウンド処理の選択
+            background_mode = False
+            bg_choice = input("\nバックグラウンド処理を使用しますか？ (y/n): ").strip().lower()
+            if bg_choice == 'y':
+                background_mode = True
+                print("✅ バックグラウンドモードで実行します")
+            else:
+                print("✅ 通常モード（ブラウザ表示）で実行します")
+            
+            # アカウント間の待機時間
+            wait_time = input("\nアカウント間の待機時間（秒）を入力してください (推奨: 30-60): ").strip()
+            try:
+                wait_time = int(wait_time)
+                if wait_time < 10:
+                    print("⚠️ 10秒未満は推奨されません。10秒に設定します。")
+                    wait_time = 10
+            except ValueError:
+                print("⚠️ 無効な入力です。30秒に設定します。")
+                wait_time = 30
+            
+            # 利用可能なアカウントを取得
+            accounts = self.account_manager.get_account_ids()
+            if not accounts:
+                print("❌ 利用可能なアカウントがありません")
+                return
+            
+            # 確認
+            print(f"\n📊 === 実行内容確認 ===")
+            print(f"対象アカウント数: {len(accounts)}件")
+            print(f"各アカウントのいいね数: {like_count}件")
+            print(f"合計いいね予定数: {len(accounts) * like_count}件")
+            if like_type == "1":
+                print(f"対象: おすすめの投稿")
+            else:
+                print(f"対象: @{target_user} の投稿")
+            print(f"モード: {'バックグラウンド' if background_mode else '通常（ブラウザ表示）'}")
+            print(f"アカウント間待機時間: {wait_time}秒")
+            print(f"予想所要時間: 約{(len(accounts) * (like_count * 3 + wait_time)) // 60}分")
+            
+            # アカウントリストを表示
+            print("\n📋 実行順序:")
+            for i, account_id in enumerate(accounts[:10], 1):  # 最初の10件のみ表示
+                print(f"  {i}. {account_id}")
+            if len(accounts) > 10:
+                print(f"  ... 他 {len(accounts) - 10} アカウント")
+            
+            confirm = input("\n実行しますか？ (y/n): ").lower()
+            if confirm != 'y':
+                print("❌ キャンセルしました")
+                return
+            
+            # 実行結果を記録
+            total_results = {
+                'success_accounts': 0,
+                'failed_accounts': 0,
+                'total_likes': 0,
+                'total_failed_likes': 0,
+                'account_details': []
+            }
+            
+            # 各アカウントで順番に実行
+            for index, account_id in enumerate(accounts, 1):
+                print(f"\n{'='*60}")
+                print(f"🔄 [{index}/{len(accounts)}] {account_id} 処理開始")
+                print(f"{'='*60}")
+                
+                # 自動いいね実行
+                auto_like = ThreadsAutoLike()
+                account_result = {
+                    'account_id': account_id,
+                    'success': 0,
+                    'failed': 0,
+                    'error': None
+                }
+                
+                try:
+                    # ドライバーセットアップ
+                    print(f"\n🌐 {account_id} のブラウザを起動中...")
+                    auto_like.setup_driver(account_id, headless=background_mode)
+                    
+                    # ログイン（初回は手動）
+                    session_file = os.path.join(auto_like.session_dir, account_id, "Default", "Cookies")
+                    is_first_login = not os.path.exists(session_file)
+                    
+                    if not auto_like.login(account_id, manual=is_first_login):
+                        print(f"❌ {account_id} のログインに失敗しました")
+                        account_result['error'] = "ログイン失敗"
+                        total_results['failed_accounts'] += 1
+                    else:
+                        # いいね実行
+                        if like_type == "1":
+                            # おすすめの投稿にいいね
+                            print(f"\n🚀 {account_id}: おすすめの投稿に{like_count}件のいいねを実行します...")
+                            results = auto_like.like_home_feed_posts(account_id, like_count)
+                        else:
+                            # 特定ユーザーの投稿にいいね
+                            print(f"\n🚀 {account_id}: @{target_user} の投稿に{like_count}件のいいねを実行します...")
+                            results = auto_like.like_user_posts(account_id, target_user, like_count)
+                        
+                        # 結果を記録
+                        account_result['success'] = results.get('success', 0)
+                        account_result['failed'] = results.get('failed', 0)
+                        
+                        if results.get('success', 0) > 0:
+                            total_results['success_accounts'] += 1
+                        else:
+                            total_results['failed_accounts'] += 1
+                        
+                        total_results['total_likes'] += results.get('success', 0)
+                        total_results['total_failed_likes'] += results.get('failed', 0)
+                    
+                except Exception as e:
+                    print(f"❌ {account_id} エラー: {e}")
+                    logger.error(f"{account_id} エラー: {e}", exc_info=True)
+                    account_result['error'] = str(e)
+                    total_results['failed_accounts'] += 1
+                    
+                finally:
+                    # ブラウザを閉じる
+                    auto_like.close()
+                    
+                    # 結果を追加
+                    total_results['account_details'].append(account_result)
+                    
+                    # アカウントの結果表示
+                    print(f"\n📊 {account_id} の結果:")
+                    print(f"  成功: {account_result['success']}件")
+                    print(f"  失敗: {account_result['failed']}件")
+                    if account_result['error']:
+                        print(f"  エラー: {account_result['error']}")
+                    
+                    # 次のアカウントまで待機（最後のアカウントは除く）
+                    if index < len(accounts):
+                        print(f"\n⏸️ 次のアカウントまで{wait_time}秒待機...")
+                        for i in range(wait_time, 0, -10):
+                            if i >= 10:
+                                print(f"  残り{i}秒...")
+                                time.sleep(10)
+                            else:
+                                time.sleep(i)
+                                break
+            
+            # 全体の結果表示
+            print(f"\n{'='*60}")
+            print("📊 === 全アカウント実行結果 ===")
+            print(f"{'='*60}")
+            print(f"✅ 成功アカウント: {total_results['success_accounts']}/{len(accounts)}")
+            print(f"❌ 失敗アカウント: {total_results['failed_accounts']}/{len(accounts)}")
+            print(f"💗 総いいね成功数: {total_results['total_likes']}件")
+            print(f"❌ 総いいね失敗数: {total_results['total_failed_likes']}件")
+            print(f"📈 成功率: {(total_results['total_likes'] / (len(accounts) * like_count) * 100) if len(accounts) > 0 else 0:.1f}%")
+            
+            # 詳細結果の保存
+            result_file = f"like_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            with open(result_file, 'w', encoding='utf-8') as f:
+                json.dump(total_results, f, ensure_ascii=False, indent=2)
+            print(f"\n📁 詳細結果を保存しました: {result_file}")
+            
+            logger.info(f"全アカウント自動いいね完了 - 成功: {total_results['success_accounts']}, 失敗: {total_results['failed_accounts']}, 総いいね数: {total_results['total_likes']}")
+            
+        except ImportError:
+            print("❌ threads_auto_like.py が見つかりません")
+            logger.error("threads_auto_like.py が見つかりません")
+        except Exception as e:
+            print(f"❌ 全アカウント自動いいねエラー: {e}")
+            logger.error(f"全アカウント自動いいねエラー: {e}", exc_info=True)
+            import traceback
+            traceback.print_exc()
+    
     def interactive_menu(self):
         """対話型メニュー"""
         while True:
@@ -874,6 +1214,8 @@ class ThreadsAutomationSystem:
             print("-"*40)
             print("9. 📝 新規アカウント追加（Cloudinary更新なし）")
             print("10. 📋 複数アカウント一括追加（Cloudinary更新なし）")
+            print("11. 💗 Threads自動いいね機能（単一アカウント）")
+            print("12. 💗 Threads自動いいね機能（全アカウント順次実行）")            
             print("-"*40)
             print("21. 📊 CSV読み込み（フォルダ構造+main.txt作成）")
             print("-"*40)
@@ -916,6 +1258,10 @@ class ThreadsAutomationSystem:
                     self.add_new_account()
                 elif choice == "10":
                     self.add_multiple_accounts()
+                elif choice == "11":
+                    self.auto_like_posts()
+                elif choice == "12":
+                    self.auto_like_all_accounts()
                 elif choice == "21":
                     self.csv_to_folder_structure_with_main_txt()
                 else:
@@ -955,5 +1301,125 @@ def main():
     
     return 0
 
+def load_csv_to_folders(self, csv_file='main.csv'):
+    """CSVファイルを読み込んでフォルダ構造を生成（6カラム対応版）"""
+    try:
+        if not os.path.exists(csv_file):
+            print(f"❌ CSVファイル '{csv_file}' が見つかりません")
+            return False
+        
+        # CSVファイルを読み込み（改行を含むテキストに対応）
+        import pandas as pd
+        df = pd.read_csv(csv_file, encoding='utf-8', quoting=1)  # QUOTE_ALL = 1
+        
+        print(f"📊 読み込まれたデータ: {len(df)}行")
+        print(f"   カラム: {list(df.columns)}")
+        
+        # デバッグ用：最初の数行を表示
+        if len(df) > 0:
+            print("\n📋 データサンプル:")
+            for idx, row in df.head(3).iterrows():
+                print(f"   行{idx}: ACCOUNT_ID={row.get('ACCOUNT_ID', 'N/A')}, CONTENT_ID={row.get('CONTENT_ID', 'N/A')}")
+        
+        # 必須カラムの確認（7カラム対応）
+        required_columns = ['ACCOUNT_ID', 'CONTENT_ID', 'main_text', 'image_usage', 'tree_post', 'tree_text', 'quote_account']
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        
+        if missing_columns:
+            print(f"❌ CSVファイルに必須カラムがありません: {missing_columns}")
+            print(f"   必須カラム: {required_columns}")
+            return False
+        
+        # 空の値をチェックして置換
+        df['ACCOUNT_ID'] = df['ACCOUNT_ID'].fillna('')
+        df['CONTENT_ID'] = df['CONTENT_ID'].fillna('')
+        df['main_text'] = df['main_text'].fillna('')
+        df['tree_text'] = df['tree_text'].fillna('')
+        
+        # 空のACCOUNT_IDまたはCONTENT_IDを持つ行を除外
+        df = df[(df['ACCOUNT_ID'] != '') & (df['CONTENT_ID'] != '')]
+        
+        if len(df) == 0:
+            print(f"❌ 有効なデータがCSVファイルにありません")
+            return False
+        
+        # アカウント別にグループ化
+        grouped = df.groupby('ACCOUNT_ID')
+        
+        total_contents = 0
+        
+        for account_id, group in grouped:
+            print(f"\n📁 {account_id} の処理中...")
+            
+            # アカウントフォルダのパス
+            account_path = os.path.join('accounts', account_id)
+            contents_path = os.path.join(account_path, 'contents')
+            
+            # フォルダが存在しない場合は作成
+            os.makedirs(contents_path, exist_ok=True)
+            
+            # 各コンテンツを処理
+            for idx, row in group.iterrows():
+                # 値の存在確認
+                if pd.isna(row['ACCOUNT_ID']) or pd.isna(row['CONTENT_ID']):
+                    print(f"   ⚠️ 行 {idx}: ACCOUNT_IDまたはCONTENT_IDが空のためスキップ")
+                    continue
+                    
+                account_id_str = str(row['ACCOUNT_ID']).strip()
+                content_id_str = str(row['CONTENT_ID']).strip()
+                
+                if not account_id_str or not content_id_str:
+                    print(f"   ⚠️ 行 {idx}: 無効なデータのためスキップ")
+                    continue
+                
+                content_id = f"{account_id_str}_{content_id_str}"
+                content_path = os.path.join(contents_path, content_id)
+                
+                # コンテンツフォルダを作成
+                os.makedirs(content_path, exist_ok=True)
+                
+                # main.txtを作成
+                main_txt_path = os.path.join(content_path, 'main.txt')
+                with open(main_txt_path, 'w', encoding='utf-8') as f:
+                    f.write(row['main_text'])
+                
+                # metadata.jsonを作成（quote_account情報を含む）
+                metadata = {
+                    "content_id": content_id,
+                    "original_id": row['CONTENT_ID'],
+                    "main_text": row['main_text'],
+                    "image_usage": row['image_usage'],
+                    "tree_post": row['tree_post'],
+                    "tree_text": row['tree_text'] if pd.notna(row['tree_text']) else "",
+                    "quote_account": row['quote_account'] if pd.notna(row['quote_account']) else "",
+                    "created_at": datetime.now().isoformat(),
+                    "usage_count": 0
+                }
+                
+                metadata_path = os.path.join(content_path, 'metadata.json')
+                with open(metadata_path, 'w', encoding='utf-8') as f:
+                    json.dump(metadata, f, ensure_ascii=False, indent=2)
+                
+                print(f"   ✅ {content_id} - ツリー投稿: {row['tree_post']}")
+                total_contents += 1
+        
+        print(f"\n✅ CSV読み込み完了")
+        print(f"   総コンテンツ数: {total_contents}")
+        print(f"   処理アカウント数: {len(grouped)}")
+        
+        # キャッシュを更新
+        print("\n🔄 キャッシュを更新中...")
+        for account_id in grouped.groups.keys():
+            self.sync_account_contents(account_id)
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ CSV読み込みエラー: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
 if __name__ == "__main__":
     sys.exit(main())
+    

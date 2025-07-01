@@ -1,0 +1,47 @@
+{
+    "default_provider": "mock",
+    "test_mode": true,
+    "providers": {
+        "mock": {
+            "type": "mock",
+            "enabled": true,
+            "description": "開発・テスト用モックプロキシ"
+        },
+        "smartproxy": {
+            "type": "http",
+            "endpoint": "gate.smartproxy.com",
+            "port": 10000,
+            "auth_format": "{username}:{password}",
+            "enabled": false
+        },
+        "iproyal": {
+            "type": "http",
+            "endpoint": "iproyal-aisa.hellworld.io",
+            "port": 12322,
+            "auth_format": "{username}:{password}",
+            "enabled": true
+        },
+        "brightdata": {
+            "type": "http",
+            "endpoint": "brd.superproxy.io",
+            "port": 22225,
+            "auth_format": "{username}-session-{session}:{password}",
+            "enabled": false
+        }
+    },
+    "rotation": {
+        "enabled": false,
+        "strategy": "round_robin",
+        "sticky_session": true,
+        "session_duration": 3600
+    },
+    "retry": {
+        "max_attempts": 3,
+        "backoff_seconds": 5
+    },
+    "monitoring": {
+        "log_usage": true,
+        "track_success_rate": true,
+        "alert_on_failure": false
+    }
+}

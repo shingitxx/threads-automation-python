@@ -5,6 +5,8 @@ import time
 from dataclasses import dataclass
 from typing import Optional, List
 from config.settings import THREADS_API_BASE_URL, THREADS_ACCESS_TOKEN, INSTAGRAM_USER_ID, logger, settings
+from proxy.proxy_manager import ProxyManager
+
 
 @dataclass
 class Account:
@@ -26,6 +28,8 @@ class ThreadsAPI:
         self.access_token = THREADS_ACCESS_TOKEN
         self.user_id = INSTAGRAM_USER_ID
         self.logger = logger
+        self.proxy_manager = ProxyManager()
+
     
     def get_headers(self, access_token=None):
         """API呼び出し用のヘッダーを取得"""
@@ -35,7 +39,7 @@ class ThreadsAPI:
             "Content-Type": "application/json"
         }
     
-    def get_user_info(self, access_token=None, user_id=None):
+    def get_user_info(self, access_token=None, user_id=None, account_id=None):
         """ユーザー情報を取得"""
         try:
             token = access_token or self.access_token
@@ -43,7 +47,12 @@ class ThreadsAPI:
             url = f"{self.base_url}/me"
             headers = self.get_headers(token)
             
-            response = requests.get(url, headers=headers)
+            # プロキシを取得
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
+            response = requests.get(url, headers=headers, proxies=proxies)
             response.raise_for_status()
             result = response.json()
             self.logger.info(f"ユーザー情報取得成功: {result}")
@@ -66,11 +75,10 @@ class ThreadsAPI:
     def create_text_post(self, account, text):
         """テキスト投稿を作成"""
         try:
-            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
             user_id = account.get("user_id", self.user_id)
             token = account.get("access_token", self.access_token)
+            account_id = account.get("id")  # アカウントIDを取得
             
-            # 2. スレッド（投稿）の作成
             url = f"{self.base_url}/{user_id}/threads"
             payload = {
                 "text": text,
@@ -82,7 +90,13 @@ class ThreadsAPI:
             self.logger.info(f"ペイロード: {payload}")
             
             headers = self.get_headers(token)
-            response = requests.post(url, json=payload, headers=headers)
+            
+            # プロキシを取得
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
+            response = requests.post(url, json=payload, headers=headers, proxies=proxies)
             
             self.logger.info(f"レスポンスステータス: {response.status_code}")
             self.logger.info(f"レスポンス内容: {response.text}")
@@ -95,16 +109,21 @@ class ThreadsAPI:
                 self.logger.error("投稿IDの取得に失敗しました")
                 return None
             
-            # 3. スレッドの公開
+            # スレッドの公開
             publish_url = f"{self.base_url}/{user_id}/threads_publish"
             publish_payload = {
                 "creation_id": creation_id
             }
             
-            # 少し待機（API制限対策）
             time.sleep(2)
             
-            publish_response = requests.post(publish_url, json=publish_payload, headers=headers)
+            # 公開リクエストにもプロキシを使用
+            publish_response = requests.post(
+                publish_url, 
+                json=publish_payload, 
+                headers=headers, 
+                proxies=proxies
+            )
             publish_response.raise_for_status()
             publish_result = publish_response.json()
             
@@ -115,18 +134,19 @@ class ThreadsAPI:
             return None
     
     def create_reply_post(self, account, text, reply_to_id):
-        """リプライ投稿を作成 (GASコードと同じパラメータ名)"""
+        """リプライ投稿を作成（修正版：publishを追加）"""
         try:
-            # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
+            # アカウントから渡されたユーザーIDとアクセストークンを使用
             user_id = account.get("user_id", self.user_id)
             token = account.get("access_token", self.access_token)
+            account_id = account.get("id")  # アカウントIDを取得
             
-            # 2. リプライ投稿の作成 - GASコードと同じパラメータ名を使用
+            # 1. リプライ投稿の作成
             url = f"{self.base_url}/{user_id}/threads"
             payload = {
                 "text": text,
                 "media_type": "TEXT",
-                "reply_to_id": reply_to_id  # GASコードと同じパラメータ名
+                "reply_to_id": reply_to_id  # リプライ先のID
             }
             
             self.logger.info(f"リプライURL: {url}")
@@ -135,17 +155,45 @@ class ThreadsAPI:
             self.logger.info(f"ペイロード: {payload}")
             
             headers = self.get_headers(token)
-            response = requests.post(url, json=payload, headers=headers)
+            
+            # プロキシを取得
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
+            response = requests.post(url, json=payload, headers=headers, proxies=proxies)
             
             self.logger.info(f"レスポンスステータス: {response.status_code}")
             self.logger.info(f"レスポンス内容: {response.text}")
             
             response.raise_for_status()
             result = response.json()
+            creation_id = result.get("id")
             
-            # 修正: threads_publishを呼び出さずに直接結果を返す
-            self.logger.info(f"リプライ投稿成功: {result}")
-            return result
+            if not creation_id:
+                self.logger.error("リプライ投稿IDの取得に失敗しました")
+                return None
+            
+            # 2. スレッドの公開（重要：これがないとリプライが表示されない）
+            publish_url = f"{self.base_url}/{user_id}/threads_publish"
+            publish_payload = {
+                "creation_id": creation_id
+            }
+            
+            # 少し待機（API制限対策）
+            time.sleep(2)
+            
+            publish_response = requests.post(
+                publish_url, 
+                json=publish_payload, 
+                headers=headers,
+                proxies=proxies
+            )
+            publish_response.raise_for_status()
+            publish_result = publish_response.json()
+            
+            self.logger.info(f"リプライ投稿公開成功: {publish_result}")
+            return publish_result
             
         except Exception as e:
             self.logger.error(f"リプライ投稿エラー: {str(e)}")
@@ -157,6 +205,8 @@ class ThreadsAPI:
             # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
             user_id = account.get("user_id", self.user_id)
             token = account.get("access_token", self.access_token)
+            account_id = account.get("id")  # アカウントIDを取得
+
             
             # 2. 画像付きスレッドの作成
             url = f"{self.base_url}/{user_id}/threads"
@@ -173,6 +223,13 @@ class ThreadsAPI:
             
             headers = self.get_headers(token)
             response = requests.post(url, json=payload, headers=headers)
+            
+            # プロキシを取得
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
+            response = requests.post(url, json=payload, headers=headers, proxies=proxies)
             
             self.logger.info(f"レスポンスステータス: {response.status_code}")
             self.logger.info(f"レスポンス内容: {response.text}")
@@ -210,6 +267,8 @@ class ThreadsAPI:
             # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
             user_id = account.get("user_id", self.user_id)
             token = account.get("access_token", self.access_token)
+            account_id = account.get("id")  # アカウントIDを取得
+
             
             # 2. 画像付きリプライの作成 - GASコードと同じパラメータ名を使用
             url = f"{self.base_url}/{user_id}/threads"
@@ -226,8 +285,15 @@ class ThreadsAPI:
             self.logger.info(f"画像URL: {image_url}")
             self.logger.info(f"ペイロード: {payload}")
             
+            # プロキシを取得
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
             headers = self.get_headers(token)
-            response = requests.post(url, json=payload, headers=headers)
+            response = requests.post(url, json=payload, headers=headers, proxies=proxies)
+            
+            
             
             self.logger.info(f"レスポンスステータス: {response.status_code}")
             self.logger.info(f"レスポンス内容: {response.text}")
@@ -326,6 +392,8 @@ class ThreadsAPI:
             # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
             user_id = account.get("user_id", self.user_id)
             token = account.get("access_token", self.access_token)
+            account_id = account.get("id")  # アカウントIDを取得
+
             
             # 2. メディアコンテナの作成
             url = f"{self.base_url}/{user_id}/threads"
@@ -344,7 +412,12 @@ class ThreadsAPI:
             self.logger.info(f"ペイロード: {payload}")
             
             headers = self.get_headers(token)
-            response = requests.post(url, json=payload, headers=headers)
+            
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
+            response = requests.post(url, json=payload, headers=headers, proxies=proxies)
             
             self.logger.info(f"レスポンスステータス: {response.status_code}")
             self.logger.info(f"レスポンス内容: {response.text}")
@@ -370,6 +443,8 @@ class ThreadsAPI:
             # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
             user_id = account.get("user_id", self.user_id)
             token = account.get("access_token", self.access_token)
+            account_id = account.get("id")  # アカウントIDを取得
+
             
             # 2. カルーセルコンテナの作成
             url = f"{self.base_url}/{user_id}/threads"
@@ -385,7 +460,13 @@ class ThreadsAPI:
             self.logger.info(f"ペイロード: {payload}")
             
             headers = self.get_headers(token)
-            response = requests.post(url, json=payload, headers=headers)
+            
+            # プロキシを取得
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
+            response = requests.post(url, json=payload, headers=headers, proxies=proxies)
             
             self.logger.info(f"レスポンスステータス: {response.status_code}")
             self.logger.info(f"レスポンス内容: {response.text}")
@@ -419,6 +500,8 @@ class ThreadsAPI:
             # 修正: アカウントから渡されたユーザーIDとアクセストークンを使用
             user_id = account.get("user_id", self.user_id)
             token = account.get("access_token", self.access_token)
+            account_id = account.get("id")  # アカウントIDを取得
+
             
             # 1. 各画像のメディアコンテナを作成
             children_ids = []
@@ -450,7 +533,18 @@ class ThreadsAPI:
             }
             
             headers = self.get_headers(token)
-            publish_response = requests.post(publish_url, json=publish_payload, headers=headers)
+            
+                        # プロキシを取得
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
+            publish_response = requests.post(
+                publish_url, 
+                json=publish_payload, 
+                headers=headers, 
+                proxies=proxies
+            )
             publish_response.raise_for_status()
             publish_result = publish_response.json()
             
@@ -459,6 +553,74 @@ class ThreadsAPI:
             
         except Exception as e:
             self.logger.error(f"カルーセル投稿エラー: {str(e)}")
+            return None
+        
+    def create_quote_reply_post(self, account, text, reply_to_id, quote_post_id):
+        """引用付きリプライ投稿を作成"""
+        try:
+            # アカウントから渡されたユーザーIDとアクセストークンを使用
+            user_id = account.get("user_id", self.user_id)
+            token = account.get("access_token", self.access_token)
+            account_id = account.get("id")
+            
+            # 1. 引用付きリプライ投稿の作成
+            url = f"{self.base_url}/{user_id}/threads"
+            payload = {
+                "text": text,
+                "media_type": "TEXT",
+                "reply_to_id": reply_to_id,      # リプライ先のID
+                "quote_post_id": quote_post_id   # 引用する投稿のID
+            }
+            
+            self.logger.info(f"引用リプライURL: {url}")
+            self.logger.info(f"ユーザーID: {user_id}")
+            self.logger.info(f"リプライ先ID: {reply_to_id}")
+            self.logger.info(f"引用投稿ID: {quote_post_id}")
+            self.logger.info(f"ペイロード: {payload}")
+            
+            headers = self.get_headers(token)
+            
+            # プロキシを取得
+            proxies = None
+            if account_id:
+                proxies = self.proxy_manager.get_proxy_for_account(account_id)
+            
+            response = requests.post(url, json=payload, headers=headers, proxies=proxies)
+            
+            self.logger.info(f"レスポンスステータス: {response.status_code}")
+            self.logger.info(f"レスポンス内容: {response.text}")
+            
+            response.raise_for_status()
+            result = response.json()
+            creation_id = result.get("id")
+            
+            if not creation_id:
+                self.logger.error("引用リプライ投稿IDの取得に失敗しました")
+                return None
+            
+            # 2. スレッドの公開
+            publish_url = f"{self.base_url}/{user_id}/threads_publish"
+            publish_payload = {
+                "creation_id": creation_id
+            }
+            
+            # 少し待機（API制限対策）
+            time.sleep(2)
+            
+            publish_response = requests.post(
+                publish_url, 
+                json=publish_payload, 
+                headers=headers,
+                proxies=proxies
+            )
+            publish_response.raise_for_status()
+            publish_result = publish_response.json()
+            
+            self.logger.info(f"引用リプライ投稿公開成功: {publish_result}")
+            return publish_result
+            
+        except Exception as e:
+            self.logger.error(f"引用リプライ投稿エラー: {str(e)}")
             return None
 
 # グローバルインスタンス作成

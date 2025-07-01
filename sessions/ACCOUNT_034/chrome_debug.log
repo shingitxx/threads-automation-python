@@ -1,0 +1,36 @@
+[17524:8624:0627/183447.792:INFO:components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc:202] No machine level policy manager exists.
+[852:17548:0627/183448.978:WARNING:net\spdy\spdy_session.cc:3054] Received HEADERS for invalid stream 1
+[17524:8624:0627/183449.439:INFO:CONSOLE:250] "
+%cSTOP！ font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black;", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183449.439:INFO:CONSOLE:250] "
+%cこれは開発者向けのブラウザー機能です。Threads機能を有効にするためまたは誰かのアカウントをハッキングするために、ここに何かをコピー・貼り付けするように言われた場合、それは第三者があなたのThreadsアカウントへのアクセスを得るための詐欺・不正行為です。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183449.439:INFO:CONSOLE:250] "
+%c詳細はhttps://www.facebook.com/selfxssをご覧ください。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183449.439:INFO:CONSOLE:250] "
+%c ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183451.271:ERROR:components\device_event_log\device_event_log_impl.cc:202] [18:34:51.272] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 要素が見つかりません。 (0x490)
+[17524:8624:0627/183458.411:WARNING:components\download\internal\background_service\controller_impl.cc:1187] Background download complete, client: 6, completion type: 0, file size:5155
+[17524:8624:0627/183458.411:WARNING:components\download\internal\background_service\controller_impl.cc:1187] Background download complete, client: 6, completion type: 0, file size:265059
+[17524:8624:0627/183458.712:WARNING:components\download\internal\background_service\controller_impl.cc:1187] Background download complete, client: 6, completion type: 0, file size:45175
+[17524:8624:0627/183458.850:WARNING:components\download\internal\background_service\controller_impl.cc:1187] Background download complete, client: 6, completion type: 0, file size:2200227
+[17524:8624:0627/183459.142:WARNING:components\download\internal\background_service\controller_impl.cc:1187] Background download complete, client: 6, completion type: 0, file size:4680
+[17524:8624:0627/183459.214:WARNING:components\download\internal\background_service\controller_impl.cc:1187] Background download complete, client: 6, completion type: 0, file size:2747169
+[17524:8624:0627/183459.386:WARNING:components\download\internal\background_service\controller_impl.cc:1187] Background download complete, client: 6, completion type: 0, file size:118577
+[17524:8624:0627/183502.666:INFO:CONSOLE:250] "
+%cSTOP！ font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black;", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183502.666:INFO:CONSOLE:250] "
+%cこれは開発者向けのブラウザー機能です。Threads機能を有効にするためまたは誰かのアカウントをハッキングするために、ここに何かをコピー・貼り付けするように言われた場合、それは第三者があなたのThreadsアカウントへのアクセスを得るための詐欺・不正行為です。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183502.666:INFO:CONSOLE:250] "
+%c詳細はhttps://www.facebook.com/selfxssをご覧ください。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183502.666:INFO:CONSOLE:250] "
+%c ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183516.429:INFO:CONSOLE:250] "
+%cSTOP！ font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black;", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183516.429:INFO:CONSOLE:250] "
+%cこれは開発者向けのブラウザー機能です。Threads機能を有効にするためまたは誰かのアカウントをハッキングするために、ここに何かをコピー・貼り付けするように言われた場合、それは第三者があなたのThreadsアカウントへのアクセスを得るための詐欺・不正行為です。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183516.429:INFO:CONSOLE:250] "
+%c詳細はhttps://www.facebook.com/selfxssをご覧ください。 font-family:helvetica; font-size:20px; ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[17524:8624:0627/183516.429:INFO:CONSOLE:250] "
+%c ", source: https://static.cdninstagram.com/rsrc.php/v4/yV/r/SbZOjC4lYT_.js (250)
+[852:12748:0627/183620.579:WARNING:net\extras\sqlite\sqlite_persistent_store_backend_base.cc:176] Failed to post task from FlushAndNotifyInBackground@net\extras\sqlite\sqlite_persistent_store_backend_base.cc:226 to client_task_runner_.
+[852:12748:0627/183620.579:WARNING:net\extras\sqlite\sqlite_persistent_store_backend_base.cc:176] Failed to post task from FlushAndNotifyInBackground@net\extras\sqlite\sqlite_persistent_store_backend_base.cc:226 to client_task_runner_.

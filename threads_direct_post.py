@@ -128,7 +128,7 @@ class ThreadsDirectPost:
             return None
     
     def post_with_affiliate(self, account_id, content_id):
-        """メイン投稿＋アフィリエイトリプライを実行"""
+        """メイン投稿＋ツリー投稿を実行（tree_post対応版）"""
         try:
             # コンテンツ情報を取得
             content = self.account_manager.get_content(account_id, content_id)
@@ -177,53 +177,105 @@ class ThreadsDirectPost:
             main_post_id = main_result.get('id')
             print(f"✅ メイン投稿成功: {main_post_id}")
             
-            # アフィリエイト情報があればリプライ投稿
-            if "affiliate_text" in content:
-                print(f"⏸️ リプライ準備中（5秒待機）...")
-                time.sleep(5)
+            # ツリー投稿の処理（tree_post = YES の場合）
+            tree_post = content.get("tree_post", "NO").upper()
+            if tree_post == "YES":
+                tree_text = content.get("tree_text", "")
+                quote_account = content.get("quote_account", "")
                 
-                reply_text = content.get("affiliate_text", "")
-                
-                # リプライ投稿を実行
-                reply_result = self.post_reply(account_id, reply_text, main_post_id)
-                
-                if not reply_result:
-                    print(f"❌ リプライ失敗")
+                if tree_text:
+                    print(f"🌳 ツリー投稿を準備中...")
+                    print(f"   内容: {tree_text[:50]}..." if len(tree_text) > 50 else f"   内容: {tree_text}")
+                    
+                    # 引用投稿IDを取得（もし指定されていれば）
+                    quote_post_id = None
+                    if quote_account:
+                        quote_id_key = f"QUOTE_POST_ID_{quote_account}"
+                        quote_post_id = os.getenv(quote_id_key)
+                        if quote_post_id:
+                            print(f"   📎 引用アカウント: @{quote_account}")
+                            print(f"   📌 引用投稿ID: {quote_post_id}")
+                    
+                    print(f"⏸️ リプライ準備中（5秒待機）...")
+                    time.sleep(5)
+                    
+                    # ツリー投稿（リプライ）を実行
+                    if quote_post_id:
+                        # 引用投稿として実行
+                        reply_result = self.post_quote_reply(account_id, tree_text, main_post_id, quote_post_id)
+                    else:
+                        # 通常のリプライとして実行
+                        reply_result = self.post_reply(account_id, tree_text, main_post_id)
+                    
+                    if not reply_result:
+                        print(f"❌ ツリー投稿失敗")
+                        return {
+                            "success": True,  # メイン投稿は成功
+                            "main_post_id": main_post_id,
+                            "tree_status": "failed"
+                        }
+                    
+                    reply_post_id = reply_result.get('id')
+                    print(f"✅ ツリー投稿成功: {reply_post_id}")
+                    
+                    # 使用回数をインクリメント
+                    self.account_manager.increment_usage_count(account_id, content_id)
+                    
                     return {
-                        "success": True,  # メイン投稿は成功
+                        "success": True,
                         "main_post_id": main_post_id,
-                        "affiliate_status": "failed"
+                        "reply_post_id": reply_post_id,
+                        "post_type": "carousel" if len(image_urls) > 1 else ("image" if image_urls else "text"),
+                        "tree_post": "YES"
                     }
-                
-                reply_post_id = reply_result.get('id')
-                print(f"✅ リプライ成功: {reply_post_id}")
-                
-                # 使用回数をインクリメント
-                self.account_manager.increment_usage_count(account_id, content_id)
-                
-                return {
-                    "success": True,
-                    "main_post_id": main_post_id,
-                    "reply_post_id": reply_post_id,
-                    "post_type": "carousel" if len(image_urls) > 1 else ("image" if image_urls else "text")
-                }
+                else:
+                    print(f"⚠️ tree_post=YESですが、tree_textが空です")
             else:
-                # アフィリエイト情報がない場合
-                print(f"ℹ️ アフィリエイト情報なし")
-                
-                # 使用回数をインクリメント
-                self.account_manager.increment_usage_count(account_id, content_id)
-                
-                return {
-                    "success": True,
-                    "main_post_id": main_post_id,
-                    "post_type": "carousel" if len(image_urls) > 1 else ("image" if image_urls else "text")
-                }
+                print(f"ℹ️ ツリー投稿なし (tree_post={tree_post})")
+            
+            # 使用回数をインクリメント
+            self.account_manager.increment_usage_count(account_id, content_id)
+            
+            return {
+                "success": True,
+                "main_post_id": main_post_id,
+                "post_type": "carousel" if len(image_urls) > 1 else ("image" if image_urls else "text"),
+                "tree_post": "NO"
+            }
                 
         except Exception as e:
             print(f"❌ 投稿エラー: {e}")
             traceback.print_exc()
             return {"success": False, "error": str(e)}
+        
+    def post_quote_reply(self, account_id, text, reply_to_id, quote_post_id):
+        """引用付きリプライ投稿を実行"""
+        try:
+            # アカウント固有のユーザーIDを取得
+            user_id_key = f"INSTAGRAM_USER_ID_{account_id}"
+            instagram_user_id = os.getenv(user_id_key, os.getenv("INSTAGRAM_USER_ID"))
+            
+            # アカウント固有のアクセストークンを取得
+            token_key = f"TOKEN_{account_id}"
+            access_token = os.getenv(token_key, os.getenv("THREADS_ACCESS_TOKEN"))
+            
+            # アカウント情報
+            account_data = {
+                "id": account_id,
+                "username": account_id,
+                "user_id": instagram_user_id,
+                "access_token": access_token
+            }
+            
+            # 引用付きリプライ実行
+            print(f"📡 APIを呼び出して引用リプライ中...")
+            print(f"   引用投稿ID: {quote_post_id}")
+            result = threads_api.create_quote_reply_post(account_data, text, reply_to_id, quote_post_id)
+            
+            return result
+        except Exception as e:
+            print(f"❌ 引用リプライエラー: {e}")
+            return None
 
 # モジュールとしてインポートされた場合の動作確認
 if __name__ == "__main__":
