@@ -1,0 +1,18 @@
+{
+  "account_number": 6,
+  "email": "b8ltbqjif0@punkproof.com",
+  "password": "sU&ArkOiBp0",
+  "username": "owowqhkz4640",
+  "proxy": "pr.smtproxies.com:7777:customer-SR001pgFWbvMXm-cc-JP-sessid-smt3254795949:SMT011+xtkWUziE9W",
+  "proxy_ip": "",
+  "created_at": "2025-07-05T18:37:52.359338",
+  "status": "不明",
+  "browser": "Firefox",
+  "mail_account": {
+    "email": "b8ltbqjif0@punkproof.com",
+    "password": "gdf2NSenjNQh!@#",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3NTE3MDgyNzUsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJhZGRyZXNzIjoiYjhsdGJxamlmMEBwdW5rcHJvb2YuY29tIiwiaWQiOiI2ODY4ZjI3MjBhMjE2NGU1NzkwZTk2M2IiLCJtZXJjdXJlIjp7InN1YnNjcmliZSI6WyIvYWNjb3VudHMvNjg2OGYyNzIwYTIxNjRlNTc5MGU5NjNiIl19fQ.me5LvTpln-aouE7qAVGZSeuCPlZGX2gjkMmQGLAbZend8lgwcxWprLXVjjnd90t0oO4OGetIz3rJiBVgQPdDCw",
+    "domain": "punkproof.com",
+    "created_at": "2025-07-05T18:37:53.897985"
+  }
+}

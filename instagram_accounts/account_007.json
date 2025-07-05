@@ -1,0 +1,18 @@
+{
+  "account_number": 7,
+  "email": "1h1n4x0wms@punkproof.com",
+  "password": "Bb*WI5eu3sz",
+  "username": "ofzstkbi4009",
+  "proxy": "pr.smtproxies.com:7777:customer-SR001pgFWbvMXm-cc-JP-sessid-smt2733580798:SMT011+xtkWUziE9W",
+  "proxy_ip": "27.82.11.187",
+  "created_at": "2025-07-05T18:47:16.947639",
+  "status": "作成失敗",
+  "browser": "Brave",
+  "mail_account": {
+    "email": "1h1n4x0wms@punkproof.com",
+    "password": "KOAlu7huBtZM!@#",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3NTE3MDg4MzksInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJhZGRyZXNzIjoiMWgxbjR4MHdtc0BwdW5rcHJvb2YuY29tIiwiaWQiOiI2ODY4ZjRhNzljMjVjNzA5MzkwM2M0NjIiLCJtZXJjdXJlIjp7InN1YnNjcmliZSI6WyIvYWNjb3VudHMvNjg2OGY0YTc5YzI1YzcwOTM5MDNjNDYyIl19fQ.Y5od3GvBLc9i6WXtFTdyBvCZ7ig99GI98mclu11gTfKvLun2pY5ODu8PlXwfr2r6RD01KYCF3FCslleItk-hhA",
+    "domain": "punkproof.com",
+    "created_at": "2025-07-05T18:47:18.518509"
+  }
+}

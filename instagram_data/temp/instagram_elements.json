@@ -1,0 +1,32 @@
+{
+  "email": {
+    "selector": "input[name='emailOrPhone']",
+    "found": true,
+    "visible": true,
+    "enabled": true
+  },
+  "fullname": {
+    "selector": "input[name='fullName']",
+    "found": true,
+    "visible": true,
+    "enabled": true
+  },
+  "username": {
+    "selector": "input[name='username']",
+    "found": true,
+    "visible": true,
+    "enabled": true
+  },
+  "password": {
+    "selector": "input[name='password']",
+    "found": true,
+    "visible": true,
+    "enabled": true
+  },
+  "submit_button": {
+    "selector": "button[type='submit']",
+    "found": true,
+    "visible": true,
+    "enabled": false
+  }
+}

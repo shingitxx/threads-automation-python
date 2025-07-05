@@ -1,0 +1,5 @@
+selenium==4.16.0
+undetected-chromedriver==3.5.4
+requests==2.31.0
+2captcha-python==1.2.1
+faker==20.1.0

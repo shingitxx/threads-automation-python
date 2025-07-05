@@ -1,0 +1,37 @@
+[
+  {
+    "session": "w0sc3hsf_lifetime-2h",
+    "proxy_ip": "95.134.253.44",
+    "location": "Tokyo, Japan",
+    "isp": "FiberPower LLC",
+    "status": "working"
+  },
+  {
+    "session": "3icgignj_lifetime-9h",
+    "proxy_ip": "95.134.254.133",
+    "location": "Tokyo, Japan",
+    "isp": "FiberPower LLC",
+    "status": "working"
+  },
+  {
+    "session": "y107zwat_lifetime-22h",
+    "proxy_ip": "58.138.6.132",
+    "location": "Koshigaya, Japan",
+    "isp": "Internet Initiative Japan Inc.",
+    "status": "working"
+  },
+  {
+    "session": "ezru8kd7_lifetime-8h",
+    "proxy_ip": "212.68.184.9",
+    "location": "Kawasaki, Japan",
+    "isp": "Hydra Communications Ltd",
+    "status": "working"
+  },
+  {
+    "session": "p86tr9m9_lifetime-11h",
+    "proxy_ip": "61.23.44.109",
+    "location": "Fujisawa, Japan",
+    "isp": "JCOM Co., Ltd.",
+    "status": "working"
+  }
+]
